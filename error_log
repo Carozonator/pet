@@ -1,0 +1,65 @@
+[02-Mar-2014 23:40:31 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'127.0.0.1' (using password: NO)' in /home/jleira/public_html/test/framework/Database.php:28
+Stack trace:
+#0 /home/jleira/public_html/test/framework/Database.php(28): PDO->__construct('mysql:host=127....', 'root', '')
+#1 /home/jleira/public_html/test/framework/Database.php(21): pluralpet\Database->connect()
+#2 /home/jleira/public_html/test/framework/Model.php(8): pluralpet\Database::getInstance()
+#3 /home/jleira/public_html/test/application/model/User.php(7): pluralpet\Model->__construct()
+#4 /home/jleira/public_html/test/application/controller/RegistracionController.php(12): pluralpet\User->__construct()
+#5 /home/jleira/public_html/test/framework/Controller.php(18): pluralpet\RegistracionController->registerUser()
+#6 /home/jleira/public_html/test/index.php(19): pluralpet\Controller->init()
+#7 {main}
+  thrown in /home/jleira/public_html/test/framework/Database.php on line 28
+[02-Mar-2014 23:40:47 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'rafael'@'192.186.233.197' (using password: YES)' in /home/jleira/public_html/test/framework/Database.php:28
+Stack trace:
+#0 /home/jleira/public_html/test/framework/Database.php(28): PDO->__construct('mysql:host=192....', 'rafael', 'rafael')
+#1 /home/jleira/public_html/test/framework/Database.php(21): pluralpet\Database->connect()
+#2 /home/jleira/public_html/test/framework/Model.php(8): pluralpet\Database::getInstance()
+#3 /home/jleira/public_html/test/application/model/User.php(7): pluralpet\Model->__construct()
+#4 /home/jleira/public_html/test/application/controller/RegistracionController.php(12): pluralpet\User->__construct()
+#5 /home/jleira/public_html/test/framework/Controller.php(18): pluralpet\RegistracionController->registerUser()
+#6 /home/jleira/public_html/test/index.php(19): pluralpet\Controller->init()
+#7 {main}
+  thrown in /home/jleira/public_html/test/framework/Database.php on line 28
+[02-Mar-2014 23:41:07 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1044] Access denied for user 'rafael'@'localhost' to database 'pluralpet'' in /home/jleira/public_html/test/framework/Database.php:28
+Stack trace:
+#0 /home/jleira/public_html/test/framework/Database.php(28): PDO->__construct('mysql:host=loca...', 'rafael', 'rafael')
+#1 /home/jleira/public_html/test/framework/Database.php(21): pluralpet\Database->connect()
+#2 /home/jleira/public_html/test/framework/Model.php(8): pluralpet\Database::getInstance()
+#3 /home/jleira/public_html/test/application/model/User.php(7): pluralpet\Model->__construct()
+#4 /home/jleira/public_html/test/application/controller/RegistracionController.php(12): pluralpet\User->__construct()
+#5 /home/jleira/public_html/test/framework/Controller.php(18): pluralpet\RegistracionController->registerUser()
+#6 /home/jleira/public_html/test/index.php(19): pluralpet\Controller->init()
+#7 {main}
+  thrown in /home/jleira/public_html/test/framework/Database.php on line 28
+[03-Mar-2014 00:00:21 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'juan'@'192.186.233.197' (using password: YES)' in /home/jleira/public_html/test/framework/Database.php:40
+Stack trace:
+#0 /home/jleira/public_html/test/framework/Database.php(40): PDO->__construct('mysql:host=192....', 'juan', 'Andthenew12')
+#1 /home/jleira/public_html/test/framework/Database.php(33): pluralpet\Database->connect()
+#2 /home/jleira/public_html/test/framework/Model.php(8): pluralpet\Database::getInstance()
+#3 /home/jleira/public_html/test/application/model/User.php(7): pluralpet\Model->__construct()
+#4 /home/jleira/public_html/test/application/controller/RegistracionController.php(12): pluralpet\User->__construct()
+#5 /home/jleira/public_html/test/framework/Controller.php(18): pluralpet\RegistracionController->registerUser()
+#6 /home/jleira/public_html/test/index.php(19): pluralpet\Controller->init()
+#7 {main}
+  thrown in /home/jleira/public_html/test/framework/Database.php on line 40
+[16-Mar-2014 23:39:35 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:41 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:41 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:43 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:43 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:44 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:44 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:48 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:48 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:49 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:49 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:51 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Mar-2014 23:39:51 UTC] PHP Fatal error:  Class 'pluralpet\SessionController' not found in /home/jleira/public_html/test/index.php on line 9
+[16-Apr-2014 01:18:15 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'departamento' in 'where clause'' in /home/jleira/public_html/test/application/model/Mascota.php:42
+Stack trace:
+#0 /home/jleira/public_html/test/application/model/Mascota.php(42): PDOStatement->execute(Array)
+#1 /home/jleira/public_html/test/application/module/mascota/MascotaController.php(32): pluralpet\Mascota->filter(Array)
+#2 /home/jleira/public_html/test/framework/Controller.php(18): pluralpet\MascotaController->filtro()
+#3 /home/jleira/public_html/test/index.php(16): pluralpet\Controller->init()
+#4 {main}
+  thrown in /home/jleira/public_html/test/application/model/Mascota.php on line 42

@@ -25,7 +25,7 @@ class Controller{
      * the new controller
      * Else show 404 error
      */
-    function __call ($name,$args){
+    function __call($name,$args){
         
         $this->index();
         return;
@@ -33,7 +33,7 @@ class Controller{
         if(is_numeric($name) || $name=='' || substr($name, 0, 1) === '?'){
             $this->index();
         }elseif(file_exists ($subcontroller)){
-           // echo 'here';die;
+            echo 'here';die;
             require_once $subcontroller;
             $this->request = new Request(substr($_SERVER['REQUEST_URI'],1));
             $act = $this->request->getPost('action');
@@ -53,5 +53,6 @@ class Controller{
             //$error->setError('error404');
             //$error->init();
         }
-    }    
+    }
+    
 }

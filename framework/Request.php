@@ -3,7 +3,6 @@ namespace pluralpet;
 
 
 class Request{
-	echo "entramos";
     private $_controller;
     private $_method;
     private $_args;

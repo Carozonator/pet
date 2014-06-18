@@ -2,7 +2,6 @@
 //namespace pluralpet;
 // Directories
 $constant['ROOT'] =  dirname(__FILE__).'/';
-//$constant['ROOT'] = "";
 
 $constant['MEDIA'] = '/media/';
 
@@ -12,13 +11,13 @@ $constant['PUBLIC_PATH'] = '/public/';
 
 //$constant['MEDIA'] = '/public/media/';
 // Database
-$constant['DB_ADD'] = 'localhost:8889';
+$constant['DB_ADD'] = '192.186.233.197';
 
 $constant['DB_NAME'] = 'pet';
 
-$constant['DB_USER'] = 'root';
+$constant['DB_USER'] = 'juan';
 
-$constant['DB_PASSWORD'] = '';
+$constant['DB_PASSWORD'] = 'Andthenew12';
 
 
 $GLOBALS['nav_menu'] = array('publicar'=>array(

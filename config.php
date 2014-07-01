@@ -33,7 +33,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('mamifero'=>'Peque&ntilde;os mamiferos'),
                                                             array('otro'=>'Otros')
                                 ),'tienda'=> array(
-                                                            array('' => 'Ir a la tienda'),
+                                                            array('producto' => 'Ir a la tienda'),
                                                             array('ofertas' => 'Ofertas del dia')
                                 ),'adoptar'=> array(
                                                             array('perro'=> 'Perros'),

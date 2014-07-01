@@ -72,8 +72,8 @@ $opcion = array('Vender'=>'comprar','Poner en adopcion'=>'adoptar','Perdido'=>'p
                     </div>
         </div>
         <div class="slides" style="position:absolute;left:2000px;width:100%;">
-            <form action="/publicar/mascota/" method="post" enctype="multipart/form-data">
-                <input type="hidden" value="addMascota" name="action"/>
+            <form action="/publicar/addProducto/" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="addProduct" name="action"/>
                 <div style="position:relative;padding:40px">
                     <div class="publicar_item">
                         <div class="publicar_item_header">Fotos</div>

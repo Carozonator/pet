@@ -121,10 +121,12 @@ var Publicar = {
                 $('#nicedit_text').next().html('* dato obligatorio');
             }
         }*/
+        console.log("----hola----");
         if(submit_ok){
             form.submit();
         }
         return;
+        console.log("----hola----");
         var url ='/publicar/anuncios/';
         $.ajax({
             type: "POST",

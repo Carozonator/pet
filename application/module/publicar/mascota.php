@@ -1,7 +1,11 @@
 <?php 
 
 
-$opcion = array('Vender'=>'comprar','Poner en adopcion'=>'adoptar','Perdido'=>'perdido','Encontrado'=>'encontrado','Cruzar'=>'cruzar');
+$opcion = array('Vender'=>'comprar',
+                'Poner en adopcion'=>'adoptar',
+                'Perdido'=>'perdido',
+                'Encontrado'=>'encontrado',
+                'Cruzar'=>'cruzar');
 
 
 
@@ -44,7 +48,7 @@ $opcion = array('Vender'=>'comprar','Poner en adopcion'=>'adoptar','Perdido'=>'p
                 </div>
         </div>
         <div class="slides description" style="position:absolute;left:2000px;width:100%;">
-            
+           
         </div>
         <div style="clear:both"></div>
     </div>

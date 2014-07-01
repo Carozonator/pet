@@ -3,6 +3,7 @@ namespace pluralpet;
 
 include dirname(__FILE__).'/config.php';
 
+
 // Check if user is logged in
 session_start();
 /*

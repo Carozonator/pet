@@ -77,7 +77,6 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
     </div>
     <div style="width:75%;position:relative;float:right;margin-bottom:60px;min-height:500px;" class="img150 results">
 
-here
 <?php
 if(empty($data)){
     echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay mascotas en esta categoria</div>';

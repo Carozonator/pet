@@ -19,6 +19,21 @@ class PublicarController extends \pluralpet\Controller{
         //$this->view->render();
     }
     
+    
+    
+    
+    function delete(){
+        $table = '\pluralpet\\'.ucfirst($_POST['table']);
+        $model = new $table();
+        $model->delete();
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    }
+    
+    
+    
+    
+    
+    
     function addAnuncio(){
         if ($_FILES["file"][0]["error"] > 0)
         {

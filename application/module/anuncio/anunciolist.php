@@ -8,7 +8,9 @@ foreach($data as $row){
 ?>
     <div style="margin:40px;position:relative;"class="img150">
         <div style="float:left;margin-right:10px;" class="thumb">
-            <a title="<?php echo $row['titulo'];?>" href="#"><img alt="<?php echo $row['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$row['foto_1']; ?>"></a>
+            <a title="<?php echo $row['titulo'];?>" href="/anuncio/<?php echo $row['id'];?>">
+                <img alt="<?php echo $row['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$row['foto_1']; ?>">
+            </a>
         </div>
         <div class="overflow mbottom">
             <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
@@ -32,10 +34,10 @@ foreach($data as $row){
                     <button style="margin-left:10px;">Editar</button>
                 </form>
                 -->
-                <form style="display:inline;" method="POST" action="/comprar/delete/">
+                <!--<form style="display:inline;" method="POST" action="/comprar/delete/">
                     <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
                     <button style="margin-left:10px;">Borrar</button>
-                </form>
+                </form>-->
             </div>
         </div>
     </div>

@@ -81,10 +81,19 @@ class User extends Model{
                     . "WHERE user.id=?";
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute(array($_SESSION['user']->id));
-            $results = array_merge($results,$stmt->fetchAll(\PDO::FETCH_OBJ));
+            $results[$table]=$stmt->fetchAll(\PDO::FETCH_OBJ);
+            //$results = array_merge($results,);
         }
+        
         return $results;
     }
+    
+    
+    
+    
+    
+    
+    
     
     function get($id){
         $sql = "SELECT * FROM user WHERE id=?";

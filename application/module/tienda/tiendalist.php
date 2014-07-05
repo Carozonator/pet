@@ -5,6 +5,7 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
 
 
 ?>
+<!--
 <div style="margin-top:40px">
     <div class="publicar" style='margin:0px 20px 0px 0px;width:20%;float:left;'>
         <form action="/comprar/filtro/" method="GET" id="filter">
@@ -77,7 +78,6 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
     </div>
     <div style="width:75%;position:relative;float:right;margin-bottom:60px;min-height:500px;" class="img150 results">
 
-here
 <?php
 if(empty($data)){
     echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay mascotas en esta categoria</div>';
@@ -93,7 +93,6 @@ foreach($data as $row){
             </a>
         </div>
         <div class="overflow mbottom">
-            <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
             <h3>
                 <a class="bigtxt" href="/mascota/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
             </h3>
@@ -130,3 +129,4 @@ echo '</div>';
 echo '<div style="clear:both"></div>';
 echo '</div>';
 ?>
+-->

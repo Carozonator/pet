@@ -5,7 +5,7 @@ class TiendaController extends Controller{
     
     function index(){
         
-        $this->view->setFile('tienda');
+        $this->view->setFile('tiendalist');
         $this->view->render();
     }
     

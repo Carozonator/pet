@@ -47,7 +47,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('perro'=> 'Perros'),
                                                             array('gato'=> 'Gatos'),
                                                             array('otro'=> 'Otros')
-                                ),'anuncios'=> array(
+                                ),'anuncio'=> array(
                                                             array('veterinaria'=> 'veterinarias'),
                                                             array('paseador'=> 'paseadores'),
                                                             array('adiestrador'=> 'Adiestradores'),

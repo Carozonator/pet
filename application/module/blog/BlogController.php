@@ -8,6 +8,7 @@ class BlogController extends Controller{
     }
     
     function index(){
+    	$this->view->setFile('blog');
         $this->view->render();
     }
     

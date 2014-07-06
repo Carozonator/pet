@@ -26,11 +26,28 @@ class Mascota extends Model{
         return $affected_rows;
     }
     
+    
+    
+    
+    
+    
+    
+    
     function getAll($type,$animal){
+        
         $sql = "SELECT * FROM mascota WHERE tab=? and animal=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($type,$animal));
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $rows;
+    }
+    
+    function getAllWhere($where_stmt,$where_vals){
+        
+        $sql = "SELECT * FROM mascota ".$where_stmt;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($where_vals);
+        $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
         return $rows;
     }
     
@@ -42,6 +59,15 @@ class Mascota extends Model{
         return $rows[0];
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     function filter($vals){
         foreach($vals as $rows){
             $vals_decoded[]=urldecode($rows);
@@ -52,6 +78,18 @@ class Mascota extends Model{
         $stmt->execute($vals_decoded);
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
+    }
+    
+    
+    
+    
+    
+    function updateStatus($status){
+        $sql =  "UPDATE mascota set status=? WHERE id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($status,$_POST['id']));
+        $affected_rows = $stmt->rowCount();
+        return $affected_rows;
     }
     
 }

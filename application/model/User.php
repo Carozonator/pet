@@ -52,20 +52,22 @@ class User extends Model{
     function getPublicacionesStatus(){
         $publication = $this->getPublicaciones();
         $status=array('activo'=>0,'pausado'=>0,'finalizado'=>0);
-        foreach($publication as $row){
-            switch($row->status){
-                case '':
-                    $status['activo']+=1;
-                break;
-                case 'activo':
-                    $status['activo']+=1;
-                break;
-                case 'pausado':
-                    $status['pausado']+=1;
-                break;
-                case 'finalizado':
-                    $status['finalizado']+=1;
-                break;
+        foreach($publication as $table){
+            foreach($table as $row){
+                switch($row->status){
+                    case '':
+                        $status['activo']+=1;
+                    break;
+                    case 'activo':
+                        $status['activo']+=1;
+                    break;
+                    case 'pausado':
+                        $status['pausado']+=1;
+                    break;
+                    case 'finalizado':
+                        $status['finalizado']+=1;
+                    break;
+                }
             }
         }
         return $status;

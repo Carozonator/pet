@@ -7,7 +7,8 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                      array('title'=>'','text'=>'Visita nuestra tienda y descubre los mejores productos','loc'=>'top:20px;left:600px;','img'=>'tienda.jpg'),
                      array('title'=>'','text'=>'Visita nuestra seccion dedicada especificamente a refuigios','loc'=>'top:20px;left:600px;','img'=>'adoptar.jpg')
     );
-
+//echo '<pre>';
+//print_r($perro[0]);die;
 ?>
         <div class="grid_12" style="margin-top:30px;">
             <div class="slidprev" style="display: block;margin-top:230px;margin-left:20px;"><span>Prev</span></div>
@@ -92,8 +93,8 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         <div id="primary">
             
             <?php 
-            $paneles = array('Ofertas del d&iacute;a','Productos destacados','Perros destacados','Gatos destacados', 'Servicios destacados');
-            foreach($paneles as $row){ ?>
+            $paneles = array('oferta'=>'Ofertas del d&iacute;a','producto'=>'Productos destacados','perro'=>'Perros destacados','gato'=>'Gatos destacados', 'servicio'=>'Servicios destacados');
+            foreach($paneles as $key=>$row){ ?>
             <div id="content" role="main">
                 <div id="content" role="main">
                     <div class="carousel">
@@ -101,10 +102,31 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                             <div class="grid_10">
                                 <h2><?php echo $row; ?></h2>
                             </div><!-- .grid_10 -->
+                            <div style="clear:both"></div>
+                            <div class="destacado">
+                            <?php 
+                                if(isset($$key)){
+                                    foreach($$key as $k=>$r){ ?>
+                                <div class="destacado_container">
+                                    <div style="" class="thumb">
+                                        <a title="<?php echo $r->titulo;?>" href="/<?php echo $k;?>/<?php echo $r->id;?>">
+                                            <img alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$r->foto_1; ?>">
+                                        </a>
+                                    </div>
+                                    <div class="title">
+                                        <?php echo $r->titulo; ?>
+                                    </div>
+                                </div>
+                                <?php }} ?>
+                            </div>
+                            <div style="clear:both"></div>
+                            <!--
                             <div class="grid_2">
                                 <a id="next_c" class="next arows" href="#"><span>Next</span></a>
                                 <a id="prev_c" class="prev arows" href="#"><span>Prev</span></a>
-                            </div><!-- .grid_2 -->
+                                
+                            </div>
+                            -->
                         </div><!-- .c_header -->
                         <div class="list_carousel grid">
                         </div><!-- .list_carousel -->

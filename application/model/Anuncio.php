@@ -42,4 +42,23 @@ class Anuncio extends Model{
         return $rows[0];
     }
     
+    function getAllWhere($where_stmt,$where_vals){
+        $sql = "SELECT * FROM anuncio ".$where_stmt;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($where_vals);
+        $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        return $rows;
+    }
+    
+    
+    
+    
+    function updateStatus($status){
+        $sql =  "UPDATE anuncio set status=? WHERE id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($status,$_POST['id']));
+        $affected_rows = $stmt->rowCount();
+        return $affected_rows;
+    }
+    
 }

@@ -129,4 +129,29 @@ class PublicarController extends \pluralpet\Controller{
         $producto->add($image_name,$org_name);
         header('Location: /'.$_POST['tab'].'/'.$_POST['animal']);     
     }
+    
+    
+    
+    
+    
+    
+    //http://localhost/account/publicados/?status=activo
+    function modify(){
+        switch($_POST['event']){
+            case 'editar':
+                header('Location: /'.$_POST['table'].'/'.$_POST['id']);
+            break;
+            case 'borrar':
+                $this->delete();
+            break;
+            default:
+                $table = '\pluralpet\\'.ucfirst($_POST['table']);
+                $model = new $table();
+                $model->updateStatus($_POST['event']);
+                header('Location: /account');    
+            break;
+            
+        }
+    }
+    
 }

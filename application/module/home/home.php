@@ -93,6 +93,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         <div id="primary">
             
             <?php 
+            $paneles_to_table = array('perro'=>'mascota','gato'=>'mascota','servicio'=>'anuncio');
             $paneles = array('oferta'=>'Ofertas del d&iacute;a','producto'=>'Productos destacados','perro'=>'Perros destacados','gato'=>'Gatos destacados', 'servicio'=>'Servicios destacados');
             foreach($paneles as $key=>$row){ ?>
             <div id="content" role="main">
@@ -109,7 +110,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                     foreach($$key as $k=>$r){ ?>
                                 <div class="destacado_container">
                                     <div style="" class="thumb">
-                                        <a title="<?php echo $r->titulo;?>" href="/<?php echo $k;?>/<?php echo $r->id;?>">
+                                        <a title="<?php echo $r->titulo;?>" href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
                                             <img alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$r->foto_1; ?>">
                                         </a>
                                     </div>

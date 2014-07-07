@@ -62,7 +62,7 @@ class PublicarController extends \pluralpet\Controller{
         }
         $mascota = new \pluralpet\Anuncio();
         $mascota->add($image_name,$org_name);
-        header('Location: /anuncios/'.$_POST['tipo']);
+        header('Location: /anuncio/'.$_POST['tipo']);
     }
     
     function addMascota(){

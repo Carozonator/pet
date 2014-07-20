@@ -79,7 +79,13 @@ $GLOBALS['departamento'] = array('Artigas'=>array('Artigas','Bella Union'),
                      'Florida'=>array('Florida'),
                      'Lavalleja'=>array('Minas'),
                      'Maldonado'=>array('Maldonado','San Carlos','Punta Del Este'),
-                     'Montevideo'=>array(''),
+                     'Montevideo'=>array("Aguada","Aires Puros","Arroyo Seco","Atahualpa","Barra de Carrasco","Bella Vista","Belvedere","Bolivar","Brazo Oriental","Buceo",
+        "Capurro","Carrasco","Casabo","Centro","Cerrito","Cerro","Ciudad Vieja","Cno. Carrasco","Cno. Maldonado","Col&oacute;n","Cord&oacute;n","Goes","Golf","Ituzaing&oacute;",
+        "Jacinto Vera","Jardines Hip&oacute;dromo","La Blanqueada","La Colorada","La Comercial","La Figurita","La Teja","Las Acacias","Lezica","Malvin",
+	"Malvin Norte","Manga","Marconi","Maro&ntilde;as","Maro&ntilde;as, Curva","Melilla","Montevideo","Nuevo Par&iacute;s","Otras","Pajas Blancas","Palermo","Parque Batlle",
+        "Parque Rod&oacute;","Paso Molino","Paso de la Arena","Pe&ntilde;arol","Piedras Blancas","Pocitos","Pocitos Nuevo","Prado","Puerto Buceo","Punta Carretas","Punta Gorda",
+        "Punta Rieles","Reducto","Santiago V&aacutezquez","Sayago","Toledo Chico","Tres Cruces","Uni&oacute;n","Villa Biarritz","Villa Col&oacute;n","Villa Dolores","Villa Espa&ntilde;ola",
+	"Villa Garc&iacute;a","Villa Mu&ntilde;oz","Villa del Cerro"),
                      'Paysandu'=>array('Paysandu'),
                      'Rio Negro'=>array('Fray Bentos','Young'),
                      'Rivera'=>array('Rivera'),
@@ -88,11 +94,10 @@ $GLOBALS['departamento'] = array('Artigas'=>array('Artigas','Bella Union'),
                      'San Jose'=>array('San Jose de Mayo','Ciudad del Plata','Libertad'),
                      'Soriano'=>array('Mercedes','Dolores'),
                      'Tacuarembo'=>array('Tacuarembo','Paso de los Toros'),
-                     'Treinta y Tres'=>array('Treinta y Trest'),
-                         
-    );
+                     'Treinta y Tres'=>array('Treinta y Trest')
+                     );
 
-
+	
 
 
 

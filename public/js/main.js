@@ -21,7 +21,7 @@ var Ready = {
         });
 
         $("select.animal_detail").select2({
-            placeholder: "Eligue Raza",
+            placeholder: "Eligue Animal/Raza",
             allowClear: false
         });
         $('select').on('change',function(){Filter.submit()});

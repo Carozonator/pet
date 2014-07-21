@@ -145,6 +145,20 @@ $raza['pez'] = array('','Calico','Burbuja','Carpa','Cometa','Telescopico','Fanta
 $raza['otro'] = array('','Caballo');
 
 
+$raza['otro_todos'] = array('','Conejo Enano','Cobaya','Ardilla de Corea','Chinchilla','Ardilla Richardson','Rata Canguro','H&aacute;mster Com&uacute;n',
+    'H&aacute;mster Ruso','H&aacute;mster Ruso Albino','H&aacute;mster Ruso Blanco','H&aacute;mster Campbelli','H&aacute;mster Roborowski','Hur&oacute;n',
+    'Erizo Enano','Jerbo','Agapornis','Amazonas','Cacat&uacute;as','Caiques','Conuros','Eclectus','Forpus','Guacamayo','Loris','Ninfas','Periquitos',
+    'Pionus','Poicephalus','Yacos','Canario','Diamante Mandarín','Loro Gris Africano','Ninfa','Periquito',
+    'Tortuga','Musurana Marr&oacute;n','Serpiente del ma&iacute;z','Serpiente Rey de California','Pit&oacute;n Birmana','Culebra',
+    'Iguana','Musurana Marr&oacute;n','Gecko',
+    'Calico','Burbuja','Carpa','Cometa','Telescopico','Fantail','Carasius','Ramiretzi','Besador','Betta','Gourami enano','Gourami Azul',
+    'Oscar','Locha Payaso','Arlequ&iacute;n','Boca de Fuego','Espadas','Escalar','Discus','Corydora','Vieja del agua','Ne&oacute;n','Pez Hacha','Molly negro',
+    'Labeo de cola roja','Barbo Tigre','Danio Zebra','Ballesta Payaso','Ballesta','Angel Rey','Angel Coral','Angel Zanclus','Leopardo','Escorpi&oacute;n','Cirujano',
+    'Damicela','Payaso','Puffer','Mariposa','Labroides','Morena','Cangrejo Ermitaño','Hippocampo','Hippocampo Kuda',
+    'Caballo');
+
+sort($raza['otro_todos']);
+
 $GLOBALS['raza']=$raza;
 $GLOBALS['raza_o_animal']= array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'=>'Animal','mamifero'=>'Animal','ave'=>'Animal','reptil'=>'Animal','otro'=>'Animal');
 

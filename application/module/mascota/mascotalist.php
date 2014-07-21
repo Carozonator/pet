@@ -29,14 +29,14 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
                 <input onclick="Filter.submit()" <?php if($_REQUEST['sexo']=='macho'){echo 'checked';}?> type="radio" value="macho" name="sexo"/> Macho<br/>
                 <input onclick="Filter.submit()" <?php if($_REQUEST['sexo']=='hembra'){echo 'checked';}?> type="radio" value="hembra" name="sexo"/> Hembra<br/>
             </div>
-            <?php if(($animal=='perro' || $animal=='gato') && $tab=='comprar'){?>
+            <?php if(($animal=='perro' || $animal=='gato') && ($tab=='comprar' || $tab=='cruzar')){?>
             <div class="filter_title"><div class="publicar_item_header">Con Pedigree<span onclick="Filter.unfilter('pedigree')">x</span></div></div>
             <div class="filter_desc">
                 <input onclick="Filter.submit()" <?php if($_REQUEST['pedigree']=='si'){echo 'checked';}?> type="radio" value="si" name="pedigree"/> Si<br/>
                 <input onclick="Filter.submit()" <?php if($_REQUEST['pedigree']=='no'){echo 'checked';}?> type="radio" value="no" name="pedigree"/> No<br/>
             </div>
             <?php } ?>
-            <?php if(($animal=='perro' || $animal=='gato') && $tab=='comprar') { ?>
+            <?php if($tab=='comprar') { ?>
             <div class="filter_title"><div class="publicar_item_header">De Criadero<span onclick="Filter.unfilter('criadero')">x</span></div></div>
             <div class="filter_desc">
                 <input onclick="Filter.submit()" <?php if($_REQUEST['criadero']=='si'){echo 'checked';}?> type="radio" value="si" name="criadero"/> Si<br/>
@@ -47,6 +47,9 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
             <div class="filter_desc">
                 <select class="animal_detail" name="animal_detail" style="width:100%;">
                     <?php
+                        if($tab!='comprar' && $animal=='otro'){
+                            $animal='otro_todos';
+                        }
                         foreach($GLOBALS['raza'][$animal] as $r){
                             if($_REQUEST['animal_detail']==$r){
                                 echo '<option selected>'.$r.'</option>';

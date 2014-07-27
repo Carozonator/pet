@@ -2,7 +2,7 @@
 <div class="main-content_container" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
         <div style="float:left;margin-right:30px;" class="img_box_large">
-            <img onclick="" alt="<?php echo $anuncio['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$anuncio['foto_1']; ?>">
+            <img style="height:100%" alt="<?php echo $anuncio['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$anuncio['foto_1']; ?>">
         </div>
         <div class="single_item">
             <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->

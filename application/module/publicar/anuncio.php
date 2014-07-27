@@ -60,14 +60,8 @@
                                 </select><br/>
                             </div>
                             <div style="height:45px;width:100%">
-                                <label>Ciudad </label>
-                                <select class="ciudad" name="ciudad" style="display:none;margin-left:-4px;width:300px;">
-                                    <option></option>
-                                </select><br/>
-                            </div>
-                            <div style="height:45px;width:100%">
-                                <label>Barrio </label>
-                                <select class="barrio" name="barrio" style="display:none;margin-left:-4px;width:300px;">
+                                <label>Ciudad/Barrio</label>
+                                <select class="ciudad_barrio" name="ciudad_barrio" style="display:none;margin-left:-4px;width:300px;">
                                     <option></option>
                                 </select><br/>
                             </div>
@@ -127,49 +121,5 @@
 </div>
 <div style="clear:both"></div>
 <script>
-    $(document).ready(function(){
-        nicEditors.allTextAreas();
-        
-        $("select.departamento").select2({
-            placeholder: "Eligue Departamento",
-            allowClear: false,
-            
-        });
-        
-        
-        
-        $("select.ciudad").select2({
-            placeholder: "Eligue Ciudad",
-            allowClear: false,
-            enable:false,
-            readonly:true
-        });
-        
-        
-        
-        $("select.departamento").select2().on('change', function(e){
-            var type;
-            if(e.val=='Montevideo'){
-                $('.barrio').show();
-                $('.ciudad').hide();
-                type='barrio';
-            }else{
-                $('.barrio').hide();
-                $('.ciudad').show();
-                type='ciudad';
-            }
-            $('select.'+type).html('');
-            var data = Publicar.departamento[e.val]
-            for(var i in data){
-                    $('.'+type).append('<option value="' + data[i]+ '">'+data[i]+'</option>');
-            }
-        });
-        
-        
-        $("select.barrio").select2({
-            placeholder: "Eligue Barrio",
-            allowClear: false
-        });
-        
-    });
+    
 </script>

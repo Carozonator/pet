@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 var Ready = {
     init: function(){
         $("select.ciudad_barrio").select2({
@@ -46,7 +54,13 @@ var Publicar = {
         'Florida':['Florida'],
         'Lavalleja':['Minas'],
         'Maldonado':['Maldonado','San Carlos','Punta Del Este'],
-        'Montevideo':['Aguada','Barrio Sur','Buceo','Carrasco','Centro','Cerro','Cordon','Parque Rodo','Pocitos','Prado','Punta Carretas','Punta Gorda'],
+        'Montevideo':["Aguada","Aires Puros","Arroyo Seco","Atahualpa","Barra de Carrasco","Bella Vista","Belvedere","Bolivar","Brazo Oriental","Buceo",
+        "Capurro","Carrasco","Casabo","Centro","Cerrito","Cerro","Ciudad Vieja","Cno. Carrasco","Cno. Maldonado","Col&oacute;n","Cord&oacute;n","Goes","Golf","Ituzaing&oacute;",
+        "Jacinto Vera","Jardines Hip&oacute;dromo","La Blanqueada","La Colorada","La Comercial","La Figurita","La Teja","Las Acacias","Lezica","Malvin",
+	"Malvin Norte","Manga","Marconi","Maro&ntilde;as","Maro&ntilde;as, Curva","Melilla","Montevideo","Nuevo Par&iacute;s","Otras","Pajas Blancas","Palermo","Parque Batlle",
+        "Parque Rod&oacute;","Paso Molino","Paso de la Arena","Pe&ntilde;arol","Piedras Blancas","Pocitos","Pocitos Nuevo","Prado","Puerto Buceo","Punta Carretas","Punta Gorda",
+        "Punta Rieles","Reducto","Santiago V&aacutezquez","Sayago","Toledo Chico","Tres Cruces","Uni&oacute;n","Villa Biarritz","Villa Col&oacute;n","Villa Dolores","Villa Espa&ntilde;ola",
+	"Villa Garc&iacute;a","Villa Mu&ntilde;oz","Villa del Cerro"],
         'Paysandu':['Paysandu'],
         'Rio Negro':['Fray Bentos','Young'],
         'Rivera':['Rivera'],

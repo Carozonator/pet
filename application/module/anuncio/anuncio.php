@@ -9,7 +9,7 @@
             <h3>
                 <a class="bigtxt" href="#"><?php echo $anuncio['titulo'];?></a>
             </h3>
-            <p class="gristxt">Localizacion: <?php echo ucfirst($anuncio['ciudad']);?>, <?php echo ucfirst($anuncio['departamento']);?></p><br/>
+            <p class="gristxt">Localizacion: <?php echo ucfirst($anuncio['ciudad']);?>, <?php echo ucfirst($anuncio['departamento']);?></p>
             
             <?php 
             if($anuncio['horario']){

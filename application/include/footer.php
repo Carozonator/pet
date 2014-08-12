@@ -1,5 +1,14 @@
 </div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <footer>
+    
     <div class="f_navigation_container">
     <div class="f_navigation">
         <div class="container_12">
@@ -21,8 +30,9 @@
                             <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="http://#">Secure payment</a></li>
                         </ul>
                     </div>                
-                </nav><!-- .f_menu -->
-            </div><!-- .grid_3 -->
+                </nav>
+            </div>
+            <!--
             <div class="grid_3">
                 <nav class="f_menu">
                     <h3>Costumer Servise</h3>
@@ -34,8 +44,9 @@
                             <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://#">Site Map</a></li>
                         </ul>
                     </div>                
-                </nav><!-- .f_menu -->
-            </div><!-- .grid_3 -->
+                </nav>
+            </div>
+            -->
             <div class="grid_3">
                 <nav class="f_menu">
                     <h3>My Account</h3>
@@ -48,6 +59,9 @@
                     </div>                
                 </nav><!-- .f_menu -->
             </div><!-- .grid_3 -->
+            <div class="grid_3">
+                <div data-colorscheme="dark" style="padding:10px;" class="fb-like" data-href="https://www.facebook.com/HowIMetYourMotherCBS" data-width="300" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+            </div>
             <div class="clear"></div>
         </div><!-- .container_12 -->
     </div><!-- .f_navigation -->

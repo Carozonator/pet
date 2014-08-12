@@ -117,6 +117,31 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                             <div class="title">
                                                 <?php echo $r->titulo; ?>
                                             </div>
+                                            <div class="type">
+                                                <?php 
+                                                if($key=='servicio'){
+                                                    echo $r->tipo;
+                                                }else{
+                                                    echo $r->animal_detail;
+                                                }
+                                                ?>
+                                            </div>
+                                            <div class="description">
+                                                <a style="color:black;" title="<?php echo $r->titulo;?>" href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
+                                                    <?php echo substr($r->descripcion,0,40).'...'; ?>
+                                                </a>
+                                            </div>
+                                            <div class="details">
+                                                    <?php 
+                                                        if($key=='servicio'){
+                                                            echo '<span style="font-size:14px;">'.$r->ciudad.', '.$r->departamento.'</span>';
+                                                        }else{
+                                                            echo '<span>'.$r->precio.'</span>'; 
+                                                        }
+                                                    ?>
+                                                <span style="text-align:right;float:right"><button onclick="window.location='/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>'" class="button">VER</button></span>
+                                                <div style="clear:both"></div>
+                                            </div>
                                         </div>
                             <?php }} ?>
                             </div>

@@ -649,7 +649,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .destacado .details{
     border-top:1px solid grey;
     margin:0px -8px -8px -8px;
-    background-color:whitesmoke;
+    background: #e5ebee; /* Old browsers */
+background: -moz-linear-gradient(top,  #e5ebee 0%, #e5ebee 51%, #e5ebee 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5ebee), color-stop(51%,#e5ebee), color-stop(100%,#e5ebee)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #e5ebee 0%,#e5ebee 51%,#e5ebee 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #e5ebee 0%,#e5ebee 51%,#e5ebee 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #e5ebee 0%,#e5ebee 51%,#e5ebee 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #e5ebee 0%,#e5ebee 51%,#e5ebee 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ebee', endColorstr='#e5ebee',GradientType=0 ); /* IE6-9 */
+
     padding:10px;
     font-size:15px;
 }

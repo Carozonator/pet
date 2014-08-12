@@ -59,8 +59,8 @@
                     </div>                
                 </nav><!-- .f_menu -->
             </div><!-- .grid_3 -->
-            <div class="grid_3">
-                <div data-colorscheme="dark" style="padding:10px;" class="fb-like" data-href="https://www.facebook.com/HowIMetYourMotherCBS" data-width="300" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+            <div class="grid_3" style="margin-top:-42px;">
+                <div data-colorscheme="dark" class="fb-like-box" data-href="https://www.facebook.com/HowIMetYourMotherCBS" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
             </div>
             <div class="clear"></div>
         </div><!-- .container_12 -->

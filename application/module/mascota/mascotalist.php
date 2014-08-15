@@ -139,7 +139,7 @@ foreach($data as $row){
             <div style="position:absolute;right:0px;top:0px;">
                  <form style="display:inline;" method="POST" action="/comprar/delete/">
                     <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
-                    <button style="margin-left:10px;">Borrar</button>
+                    <!--<button style="margin-left:10px;">Borrar</button>-->
                 </form>
             </div>
         </div>

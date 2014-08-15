@@ -275,7 +275,11 @@ Contactar = {
         });
     },
     fillInfo: function(obj){
-        var clone = $('.overlay_box').clone();
+        $('#empty_box .overlay_box_inner').html('<p>Nombre: '+obj.firstname+' '+obj.lastname+'</p><p>Email: '+obj.email+'</p><p>Telefono: '+obj.telefono);
+        $('#empty_box').css({display:'block',left:$('body').width()/2,top:300});
+        return;
+        $('#contactar').remove();
+        var clone = $('#empty_box').clone();
         clone.attr('id','contactar');
         clone.find('.publicar').html('<p>Nombre: '+obj.firstname+' '+obj.lastname+'</p><p>Email: '+obj.email+'</p><p>Telefono: '+obj.telefono);
         clone.css({display:'block',left:$('body').width()/2,top:300});

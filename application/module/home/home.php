@@ -109,27 +109,29 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                 if(isset($$key)){
                                     foreach($$key as $k=>$r){ ?>
                                         <div class="destacado_container">
-                                            <div style="" class="thumb">
-                                                <a title="<?php echo $r->titulo;?>" href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
-                                                    <img alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$r->foto_1; ?>">
-                                                </a>
-                                            </div>
-                                            <div class="title">
-                                                <?php echo $r->titulo; ?>
-                                            </div>
-                                            <div class="type">
-                                                <?php 
-                                                if($key=='servicio'){
-                                                    echo $r->tipo;
-                                                }else{
-                                                    echo $r->animal_detail;
-                                                }
-                                                ?>
-                                            </div>
-                                            <div class="description">
-                                                <a style="color:black;" title="<?php echo $r->titulo;?>" href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
-                                                    <?php echo substr($r->descripcion,0,40).'...'; ?>
-                                                </a>
+                                            <div>
+                                                <div style="" class="thumb">
+                                                    <a title="<?php echo $r->titulo;?>" href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
+                                                        <img alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$r->foto_1; ?>">
+                                                    </a>
+                                                </div>
+                                                <div class="title">
+                                                    <?php echo $r->titulo; ?>
+                                                </div>
+                                                <div class="type">
+                                                    <?php 
+                                                    if($key=='servicio'){
+                                                        echo $r->tipo;
+                                                    }else{
+                                                        echo $r->animal_detail;
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <div class="description">
+                                                    <a style="color:black;" title="<?php echo $r->titulo;?>" href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
+                                                        <?php echo substr($r->descripcion,0,40).'...'; ?>
+                                                    </a>
+                                                </div>
                                             </div>
                                             <div class="details">
                                                     <?php 

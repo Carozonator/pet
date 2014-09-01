@@ -58,9 +58,7 @@
                     <?php } ?>
             
                         
-                    <div style="" class="dropdown-menu" tabindex="1"><i class="icon-shopping-cart"></i> Carrito
-                       
-                    </div>
+                    <!--<div style="" class="dropdown-menu" tabindex="1"><i class="icon-shopping-cart"></i> Carrito</div>-->
                     <div style="float:right">
                         <input style="background-color:none;height:22px;" type="text" value="" name="s"  placeholder="Buscar por productos">
                         <i class="icon-search"></i>

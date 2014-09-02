@@ -55,6 +55,18 @@ class MascotaController extends Controller{
         
     }
     
+    function editar(){
+        $args = $this->request->getArgs();
+        $id = $args[0];
+        $mascota = new \pluralpet\Mascota();
+        $result = $mascota->get($id);
+        $this->view->assign(array('mascota'=>$result));
+        //echo '<pre>';print_r($result);die;
+        
+        $this->view->setFile('mascotaedit');
+        $this->view->render();
+    }
+    
     function delete(){
         $anuncio = new \pluralpet\Mascota();
         $anuncio->delete();

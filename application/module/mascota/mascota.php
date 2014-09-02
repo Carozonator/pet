@@ -14,7 +14,14 @@
                 <h2 style="padding-bottom:20px;"><?php echo strtoupper($mascota['tab']);?></h2>
                 <h5 >Direcc&iacute;on:</h5>
                 <p class="gristxt"><?php echo ucfirst($mascota['ciudad_barrio']);?>, <?php echo ucfirst($mascota['departamento']);?></p><br/>
-                <button onclick="Contactar.show(<?php echo $mascota['usuario']; ?>)" style="float:right">Contactar</button>
+                <button onclick="Contactar.show(<?php echo $mascota['usuario']; ?>)">Contactar</button>
+                <?php if($_SESSION['user']->id==$mascota['usuario']){ ?>
+                <form style="margin-top:20px;"method="GET" action="/mascota/editar/<?php echo $mascota['id'];?>">
+                    <input type="hidden" value="<?php echo $mascota['tab'];?>" name="tab"/>
+                   
+                    <input type="submit" value="Editar"/>
+                </form>
+                <?php } ?>
                 <!--
                 <div style="position:absolute;right:0px;top:0px;">
                      <form style="display:inline;" method="POST" action="/comprar/delete/">

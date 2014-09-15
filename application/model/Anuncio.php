@@ -61,4 +61,20 @@ class Anuncio extends Model{
         return $affected_rows;
     }
     
+    
+    
+    
+    
+    function filter($vals){
+        foreach($vals as $rows){
+            $vals_decoded[]=urldecode($rows);
+        }
+        $stmt = implode("=? and ",array_keys($vals))."=? ";
+        $sql = "SELECT * FROM anuncio WHERE ".$stmt;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($vals_decoded);
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $rows;
+    }
+    
 }

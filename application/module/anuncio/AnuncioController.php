@@ -13,6 +13,7 @@ class AnuncioController extends Controller{
         $result = $mascota->get(strtolower($this->request->getMethod()));
         $this->view->assign(array('data'=>$result));
         $this->view->setFile('anunciolist');
+        $this->view->assign(array('anuncio_type'=>strtolower($this->request->getMethod())));
         $this->view->render();
     }
     
@@ -26,6 +27,29 @@ class AnuncioController extends Controller{
     
     function criador(){
         echo 'here';
+    }
+    
+    
+    function filtro(){
+        $filters = $this->request->getArgs();
+        $filters = explode('&',substr($filters[0],1));
+        
+        foreach($filters as $row){
+            $temp = explode('=',$row);
+            if(!empty($temp[1])){
+                $fill[$temp[0]]=$temp[1];
+            }
+        }
+        $mascota = new \pluralpet\Anuncio();
+        $result = $mascota->filter($fill);
+        $animal = strtolower($_REQUEST['animal']);
+        $tab = strtolower($_REQUEST['tab']);
+        $this->view->assign(array('data'=>$result));
+        $this->view->assign(array('animal'=>$animal));
+        $this->view->assign(array('tab'=>$tab));
+        $this->view->setFile('anuncioList');
+        $this->view->render();
+        
     }
     
 }

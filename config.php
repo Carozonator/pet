@@ -53,7 +53,6 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('adiestrador'=> 'Adiestradores'),
                                                             array('pensionado'=> 'pensionado'),
                                                             array('peluqueria'=> 'peluqueria'),
-                                                            array('alimento'=> 'alimento'),
                                                             array('servicio-medico-adicionales'=> 'Servicios m&eacute;dicos adicionales'),
                                                             array('otros'=> 'otros')
                                 ),'consejos'=> array(

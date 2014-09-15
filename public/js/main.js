@@ -94,6 +94,11 @@ var Publicar = {
             }
             if(Publicar.animal=='ave'){
                 $('.tab_perdido').hide();
+                $('.tab_encontrado').hide();
+            }
+            if(Publicar.animal=='reptil'){
+                $('.tab_perdido').hide();
+                $('.tab_encontrado').hide();
             }
             this.sliderHeight(cur,x);
         }else{
@@ -200,7 +205,7 @@ var Carussel = {
     autoSlide: function(){
         this.timeout = setTimeout(function(){
             Carussel.slide(1);
-        },5000);
+        },7000);
     }
 }
 

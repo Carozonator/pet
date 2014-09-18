@@ -63,8 +63,8 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('peces'=>'Peces'),
                                                             array('mamiferos'=>'Peque&ntilde;os mamiferos'),
                                                             array('otros'=>'Otros')
-                                ),'blog'=> array()
-                                
+                                )/*,'blog'=> array()
+                                */
                                 );
 
 

@@ -67,9 +67,10 @@
     </div>
     <div id="top" style="width:100%;z-index:1">
   
-        <div class="container_12" style="">
-            <nav class="primary" style="margin-left:40px;">
+        <div class="container_12">
+            <nav class="primary">
                 <a class="menu-select" href="#">Catalog</a>
+                <!--
                 <ul id="menu-main" class="menu">
                     <?php 
                     foreach($GLOBALS['nav_menu'] as $k1 => $r1){
@@ -84,6 +85,27 @@
                         foreach($r1 as $k2 => $r2){
                             foreach($r2 as $k3=>$r3){
                                 echo "<li><a href='/$k1/$k3/'>".$r3."</a></li>";
+                            }
+                        }
+                        echo '</ul></li>';
+                    }
+                    ?>
+                </ul> -->
+                <ul id="menu-main" class="menu" style="text-align:center;">
+                    <?php 
+                    foreach($GLOBALS['nav_menu'] as $k1 => $r1){
+                        $class = (strcasecmp($tab,$k1)===0?'nav-current-module':'');
+                        if(count($r1)==0){
+                            echo "<li style='display:inline-block;float:none;' class='$class'><a href='/$k1'>".ucfirst($k1)."</a></li>";
+                            continue;
+                        }
+                        echo "<li style='display:inline-block;float:none;' class='$class'><a href='#'>".ucfirst($k1)."</a>";
+                        $k1=  str_replace(' ', '-', $k1);
+                        //echo '<div style="display:inline-block;margin-left:50%;">';
+                        echo '<ul class="sub-menu">';
+                        foreach($r1 as $k2 => $r2){
+                            foreach($r2 as $k3=>$r3){
+                                echo "<li style='margin-left:-112px'><a href='/$k1/$k3/'>".$r3."</a></li>";
                             }
                         }
                         echo '</ul></li>';

@@ -658,7 +658,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 .destacado_container{
     display:inline-block;
-    border:2px solid #e209c9; 
+    border:1px solid #e209c9; 
     -webkit-border-radius: 0px 0px 5px 5x;
     -moz-border-radius: 0px 0px 5px 5px;
     border-radius: 0px 0px 5px 5px;
@@ -680,12 +680,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     width:200px;
 }
 .destacado .details{
-    border-top:2px solid #e209c9;
+    border-top:1px solid #e209c9;
     margin:0px -8px -8px -8px;
     background: #F7F7F7; 
-    -webkit-border-radius: 0px 0px 2px 2px;
-    -moz-border-radius: 0px 0px 2px 2px;
-    border-radius: 0px 0px 2px 2px;
+    -webkit-border-radius: 0px 0px 5px 5x;
+    -moz-border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 5px 5px;
     padding:10px;
     font-size:15px;
 }
@@ -716,3 +716,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .item_datos{
     font-size:14px;
 }
+
+
+
+
+
+

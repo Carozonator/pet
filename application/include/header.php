@@ -8,12 +8,14 @@
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/vendor/select2/select2.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/CustomDropDown/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/jquery_ui/css/custom-theme/jquery_ui.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/dropzone/css/dropzone.css"/>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/CustomDropDown/js/modernizr.custom.79639.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/nicEdit/nicEdit.js"></script> 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/jquery_ui/js/jquery_ui.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/select2/select2.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/select2/select2_locale_es.js"></script> 
+    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/dropzone/dropzone.js"></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>js/main.js"/></script>
     <script type="text/javascript">
             $(document).ready(function(){
@@ -28,6 +30,7 @@
 </head>
 <body>
 <div>
+    
     <div class="container_12">
         <a href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
         <div class="wrapper-dropdown-5 user_controls" style="">

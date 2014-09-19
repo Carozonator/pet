@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/rarcieri/Sites/pet/application/module/mascota/mascotalist.php</file>
-            <file>file:/Users/rarcieri/Sites/pet/application/module/anuncio/anunciolist.php</file>
-            <file>file:/Users/rarcieri/Sites/pet/application/module/anuncio/AnuncioController.php</file>
-            <file>file:/Users/rarcieri/Sites/pet/application/module/mascota/MascotaController.php</file>
-            <file>file:/Users/rarcieri/Sites/pet/application/model/Anuncio.php</file>
-            <file>file:/Users/rarcieri/Sites/pet/application/model/Mascota.php</file>
+            <file>file:/Users/rarcieri/Sites/pet/config.php</file>
+            <file>file:/Users/rarcieri/Sites/pet/application/include/header.php</file>
+            <file>file:/Users/rarcieri/Sites/pet/public/css/main.css</file>
+            <file>file:/Users/rarcieri/Sites/pet/public/css/breeze.css</file>
         </group>
     </open-files>
 </project-private>

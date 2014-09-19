@@ -20,6 +20,12 @@ if(in_array($_POST['tab'],$check1)){
 //var_dump($_POST);die;
 ?>
 
+<form style="width:100px;height:100px;" action="/file-upload" class="dropzone" id="dropzone" enctype="multipart/form-data">
+    <input type="file" name="file" />
+</form>
+<script>
+    $("#dropzone").dropzone();
+</script>
 
 <form action="/publicar/addMascota/" method="post" enctype="multipart/form-data">
     <!--<input type="hidden" value="addMascota" name="action"/>-->

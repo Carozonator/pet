@@ -1,4 +1,12 @@
 
+<?php 
+                    $dir = MEDIA.'upload/'.$mascota['usuario'].'/'.$mascota['id'];
+                    $files = scandir($dir, 1);
+                    echo $dir;
+                    print_r($files);
+                ?>
+
+
 <div class="main-content_container" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
         <h2 style="border-bottom: 1px solid grey;padding:5px;">

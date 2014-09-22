@@ -7,7 +7,7 @@
         <div style="padding-top:20px;">
             <div class="img_box_xl" style="margin-right:20px;">
                 <?php 
-                    $dir = $mascota['usuario'].'/'.$mascota['id'];
+                    $dir = MEDIA.'upload/'.$mascota['usuario'].'/'.$mascota['id'];
                     $files = scandir($dir, 1);
                 ?>
                 <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$files[0]; ?>">

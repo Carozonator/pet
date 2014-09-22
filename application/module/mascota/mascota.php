@@ -11,9 +11,15 @@
             <div class="img_box_xl" style="margin-right:20px;">
                 <?php 
                     $dir = MEDIA.'upload/'.$mascota['usuario'].'/'.$mascota['id'];
-                    $files = scandir($dir, 1);
+                    
+                    $dh  = opendir($dir);
+                    while (false !== ($filename = readdir($dh))) {
+                        $files[] = $filename;
+                    }
+                    
+                    //$files = scandir($dir, 1);
                 ?>
-                <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo $dir.'/chiguagua.jpg'; ?>">
+                <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo $dir.'/'.$files[2]; ?>">
             </div>
 
             <div style="display:inline-block" class="single_item">

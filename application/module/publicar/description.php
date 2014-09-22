@@ -19,29 +19,26 @@ if(in_array($_POST['tab'],$check1)){
 
 //var_dump($_POST);die;
 ?>
-
-<form style="width:100px;height:100px;" action="/file-upload" class="dropzone" id="dropzone" enctype="multipart/form-data">
-    <input type="file" name="file" />
+<!--
+<form style="min-height:260px;" action="/file-upload" class="dropzone" id="dropzone" enctype="multipart/form-data">
+   <div class="fallback">
+    <input name="file" type="file" multiple />
+  </div>
 </form>
-<script>
-    $("#dropzone").dropzone();
-</script>
-
-<form action="/publicar/addMascota/" method="post" enctype="multipart/form-data">
-    <!--<input type="hidden" value="addMascota" name="action"/>-->
+-->
+<form action="/publicar/addMascota/" id="form_description" method="post" enctype="multipart/form-data">
     <div style="position:relative;padding:40px">
         <input type="hidden" name="animal" value="<?php echo $animal;?>"/>
         <input type="hidden" name="tab" value="<?php echo $_POST['tab'];?>"/>
+        <!--
         <div class="publicar_item">
             <div class="publicar_item_header">Fotos</div>
             <div class="publicar_sub_item">
                     <label for="file">Elegir foto(s)</label>
                     <input type="file" name="file[]" multiple="multiple" id="selectFile"><br>
-                <!--    <input type="submit" value="submit"/>
-                <label>Elegir foto</label><button>Add Foto</button>-->
             </div>
         </div>
-
+        -->
         <div class="publicar_item">
             <div class="publicar_item_header"><?php echo $GLOBALS['raza_o_animal'][$animal]; ?></div>
             <div class="publicar_sub_item">
@@ -164,12 +161,14 @@ if(in_array($_POST['tab'],$check1)){
             </div>
         </div>
         <div style="text-align:center;">
-            <button onclick="Publicar.submit(this);return false;">Publicar</button>
+            <button onclick="Publicar.slideRight(this,'-3000');return false;/*Publicar.submit(this);return false;*/">Siguiente</button>
         </div>
     </div>
     <div style="clear:both"></div>
 </form>
 <script>
+    
+    
     $('.datepicker').datepicker({ 
         changeYear: true, 
         yearRange: "1990:2014",

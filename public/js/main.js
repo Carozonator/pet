@@ -84,6 +84,7 @@ var Publicar = {
     },
     
     slideRight: function(elem,x){
+        //$(document).scrollTop('0');
         var cur = $(elem).closest('.slides');
         if(cur.next().hasClass('description')){
             this.loadDescription(cur,x);
@@ -118,10 +119,12 @@ var Publicar = {
     },
     
     submit: function(elem){
+        $('form#fotos').submit();
+        return;
         $('.input_error').html('');
         var nicE = new nicEditors.findEditor('nicedit_text');
         var description = nicE.getContent();
-        var form =$(elem).closest('form');
+        var form =$('#form_description');
         var submit_ok = true;
         form.append('<input type="hidden" name="descripcion" value="'+description+'"/>');
         form.append('<input type="hidden" name="tipo" value="'+Publicar.type+'"/>');
@@ -140,6 +143,7 @@ var Publicar = {
                 $('#nicedit_text').next().html('* dato obligatorio');
             }
         }*/
+        /*
         console.log("----hola----");
         if(submit_ok){
             form.submit();
@@ -147,12 +151,16 @@ var Publicar = {
         return;
         console.log("----hola----");
         var url ='/publicar/anuncios/';
+        */
+        var url = '/publicar/addMascota/';
+        console.log(form.serialize());
         $.ajax({
             type: "POST",
             url: url,
             data: form.serialize(), // serializes the form's elements.
             success: function(data){
-                alert(data); // show response from the php script.
+                console.log(data); // show response from the php script.
+                $('form#fotos').submit();
             }
          });
     },

@@ -7,13 +7,13 @@ class Mascota extends Model{
         
     }
     
-    function add($image_name,$nombre_original){
-        $sql =  "INSERT INTO mascota (animal,animal_detail,sexo,edad,tamano,pedigree,criadero,precio,titulo,descripcion,foto_1,tab,fecha,departamento,ciudad_barrio,usuario,status)"
-                . " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'activo')";
+    function add(){
+        $sql =  "INSERT INTO mascota (animal,animal_detail,sexo,edad,tamano,pedigree,criadero,precio,titulo,descripcion,tab,fecha,departamento,ciudad_barrio,usuario,status)"
+                . " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'activo')";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['animal'],$_POST['animal_detail'],$_POST['sexo'],$_POST['edad'],
             $_POST['tamano'],$_POST['pedigree'],$_POST['criadero'],$_POST['precio'],$_POST['titulo'],
-            $_POST['descripcion'],$image_name,$_POST['tab'],$_POST['fecha'],$_POST['departamento'],$_POST['ciudad_barrio'],$_SESSION['user']->id));
+            $_POST['descripcion'],$_POST['tab'],$_POST['fecha'],$_POST['departamento'],$_POST['ciudad_barrio'],$_SESSION['user']->id));
         $affected_rows = $stmt->rowCount();
         return $affected_rows;
     }

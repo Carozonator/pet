@@ -65,8 +65,34 @@ class PublicarController extends \pluralpet\Controller{
         header('Location: /anuncio/'.$_POST['tipo']);
     }
     
+    
+    
+    function addPhoto(){
+        //echo '<pre>';print_r($_FILES);die;
+        if ($_FILES["file"][0]["error"] > 0)
+        {
+            echo "Error:<br/>";
+            echo "<pre>";
+            print_r($_FILES["file"]["error"]);
+            die;
+        }
+        else
+        {
+            if (file_exists($_FILES['file']['tmp_name']) || is_uploaded_file($_FILES['file']['tmp_name'])){
+            $ext = substr($_FILES["file"]['name'], strrpos($_FILES["file"]['name'], '.')+1);
+            //$image_name = time().'.'.$ext;
+            $uploaddir = '/var/www/';
+            $file_name = basename($_FILES['file']['name']);
+            move_uploaded_file($_FILES["file"]['tmp_name'],UPLOAD.$file_name);
+            }
+        }
+        echo 'here';die;
+    }
+    
+    
+    
     function addMascota(){
-        
+        /*
         if ($_FILES["file"][0]["error"] > 0)
         {
             echo "Error:<br/>";
@@ -92,9 +118,13 @@ class PublicarController extends \pluralpet\Controller{
                 }
             }
         }
+         * 
+         */
         $mascota = new \pluralpet\Mascota();
-        $mascota->add($image_name,$org_name);
-        header('Location: /'.$_POST['tab'].'/'.$_POST['animal']);
+        //$mascota->add($image_name,$org_name);
+        echo $mascota->add();
+        
+        //header('Location: /'.$_POST['tab'].'/'.$_POST['animal']);
         
     }
     

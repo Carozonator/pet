@@ -1,10 +1,5 @@
 
-<?php 
-                    $dir = MEDIA.'upload/'.$mascota['usuario'].'/'.$mascota['id'];
-                    $files = scandir($dir, 1);
-                    echo $dir;
-                    print_r($files);
-                ?>
+
 
 
 <div class="main-content_container" style="padding:30px">
@@ -18,7 +13,7 @@
                     $dir = MEDIA.'upload/'.$mascota['usuario'].'/'.$mascota['id'];
                     $files = scandir($dir, 1);
                 ?>
-                <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$files[0]; ?>">
+                <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo $dir.'/'.$files[0]; ?>">
             </div>
 
             <div style="display:inline-block" class="single_item">

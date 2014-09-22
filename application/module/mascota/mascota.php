@@ -6,7 +6,11 @@
         </h2>
         <div style="padding-top:20px;">
             <div class="img_box_xl" style="margin-right:20px;">
-                <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$mascota['foto_1']; ?>">
+                <?php 
+                    $dir = $mascota['usuario'].'/'.$mascota['id'];
+                    $files = scandir($dir, 1);
+                ?>
+                <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$files[0]; ?>">
             </div>
 
             <div style="display:inline-block" class="single_item">

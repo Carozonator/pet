@@ -68,6 +68,15 @@ class PublicarController extends \pluralpet\Controller{
     
     
     function addPhoto(){
+        $upload_dir = UPLOAD.$_SESSION['user']->id;
+        if (!file_exists($upload_dir)) {
+            mkdir($upload_dir, 0777, true);
+        }
+        
+        $upload_entry_dir = $upload_dir.'/'.$_POST['publication_id'];
+        if (!file_exists($upload_entry_dir)) {
+            mkdir($upload_entry_dir, 0777, true);
+        }
         //echo '<pre>';print_r($_FILES);die;
         if ($_FILES["file"][0]["error"] > 0)
         {
@@ -79,11 +88,11 @@ class PublicarController extends \pluralpet\Controller{
         else
         {
             if (file_exists($_FILES['file']['tmp_name']) || is_uploaded_file($_FILES['file']['tmp_name'])){
-            $ext = substr($_FILES["file"]['name'], strrpos($_FILES["file"]['name'], '.')+1);
-            //$image_name = time().'.'.$ext;
-            $uploaddir = '/var/www/';
-            $file_name = basename($_FILES['file']['name']);
-            move_uploaded_file($_FILES["file"]['tmp_name'],UPLOAD.$file_name);
+                $ext = substr($_FILES["file"]['name'], strrpos($_FILES["file"]['name'], '.')+1);
+                
+                //$image_name = time().'.'.$ext;
+                $file_name = basename($_FILES['file']['name']);
+                move_uploaded_file($_FILES["file"]['tmp_name'],$upload_entry_dir.'/'.$file_name);
             }
         }
         echo 'here';die;

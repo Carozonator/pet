@@ -119,8 +119,7 @@ var Publicar = {
     },
     
     submit: function(elem){
-        $('form#fotos').submit();
-        return;
+        
         $('.input_error').html('');
         var nicE = new nicEditors.findEditor('nicedit_text');
         var description = nicE.getContent();
@@ -160,7 +159,9 @@ var Publicar = {
             data: form.serialize(), // serializes the form's elements.
             success: function(data){
                 console.log(data); // show response from the php script.
-                $('form#fotos').submit();
+                Publicar.lastinsert = data;
+                $('#publication_id').val(data); 
+                //$('form#fotos').submit();
             }
          });
     },
@@ -174,6 +175,10 @@ var Publicar = {
         $('.'+type).show();
         Publicar.type=type;
         Publicar.slideRight(elem,'-1000');
+    },
+    
+    gotoMascota: function(){
+        window.location = '/mascota/'+Publicar.lastinsert;
     }
 }
 

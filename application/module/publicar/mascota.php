@@ -55,9 +55,10 @@ $opcion = array('Vender'=>'comprar',
                 <div class="fallback">
                     <input name="file" type="file" multiple />
                 </div>
+                <input type="hidden" name="publication_id" value="" id="publication_id"/>
             </form>
             <div style="text-align:center;margin-left:-50px;position:absolute;top:350px;left:50%;">
-                <button onclick="Publicar.submit(this);return false;">Publicar</button>
+                <button onclick="Publicar.gotoMascota()">Publicar</button>
             </div>
             <div style="clear:both"></div>
         </div>

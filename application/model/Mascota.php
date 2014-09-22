@@ -14,8 +14,9 @@ class Mascota extends Model{
         $stmt->execute(array($_POST['animal'],$_POST['animal_detail'],$_POST['sexo'],$_POST['edad'],
             $_POST['tamano'],$_POST['pedigree'],$_POST['criadero'],$_POST['precio'],$_POST['titulo'],
             $_POST['descripcion'],$_POST['tab'],$_POST['fecha'],$_POST['departamento'],$_POST['ciudad_barrio'],$_SESSION['user']->id));
-        $affected_rows = $stmt->rowCount();
-        return $affected_rows;
+        $insert_id = $this->pdo->lastInsertId(); 
+        //$affected_rows = $stmt->rowCount();
+        return $insert_id;
     }
     
     function delete(){

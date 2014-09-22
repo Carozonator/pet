@@ -13,7 +13,7 @@
                     $dir = MEDIA.'upload/'.$mascota['usuario'].'/'.$mascota['id'];
                     $files = scandir($dir, 1);
                 ?>
-                <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo $dir.'/'.$files[0]; ?>">
+                <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo $dir.'/chiguagua.jpg'; ?>">
             </div>
 
             <div style="display:inline-block" class="single_item">

@@ -1,7 +1,7 @@
-
-
-
-
+<?php 
+                    $dir = MEDIA.'upload/'.$mascota['usuario'].'/'.$mascota['id'];
+                    $files = scandir($dir, 1);
+                ?>
 <div class="main-content_container" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
         <h2 style="border-bottom: 1px solid grey;padding:5px;">
@@ -9,17 +9,7 @@
         </h2>
         <div style="padding-top:20px;">
             <div class="img_box_xl" style="margin-right:20px;">
-                <?php 
-                    $dir = MEDIA.'upload/'.$mascota['usuario'].'/'.$mascota['id'];
-                    
-                    $dh  = opendir($dir);
-                    while (false !== ($filename = readdir($dh))) {
-                        $files[] = $filename;
-                    }
-                    
-                    //$files = scandir($dir, 1);
-                ?>
-                <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo $dir.'/'.$files[2]; ?>">
+                <img onclick="" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$mascota['foto_1']; ?>">
             </div>
 
             <div style="display:inline-block" class="single_item">

@@ -4,6 +4,8 @@
  */
 $animal = $_POST['animal'];
 
+$publication_hash = substr( md5(rand()), 0, 10); 
+
 $check1 = array('adoptar','encontrado','perdidos');
 $check2 = array('cruzar');
 $precio = true;
@@ -26,10 +28,21 @@ if(in_array($_POST['tab'],$check1)){
   </div>
 </form>
 -->
+<div style="margin:40px 40px 0px 40px;">
+    <div class="publicar_item_header">Fotos</div>
+    <form action="/publicar/addPhoto/" method="post" class="dropzone" id="fotos" enctype="multipart/form-data">
+        <div class="fallback">
+            <input name="file" type="file" multiple />
+        </div>
+        <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>" id="publication_id"/>
+    </form>
+    <div style="clear:both"></div>
+</div>
 <form action="/publicar/addMascota/" id="form_description" method="post" enctype="multipart/form-data">
     <div style="position:relative;padding:40px">
         <input type="hidden" name="animal" value="<?php echo $animal;?>"/>
         <input type="hidden" name="tab" value="<?php echo $_POST['tab'];?>"/>
+        <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>" id="publication_id"/>
         <!--
         <div class="publicar_item">
             <div class="publicar_item_header">Fotos</div>
@@ -168,7 +181,7 @@ if(in_array($_POST['tab'],$check1)){
 </form>
 <script>
     
-    
+    $("#fotos").dropzone({addRemoveLinks:true,maxFiles:6});
     $('.datepicker').datepicker({ 
         changeYear: true, 
         yearRange: "1990:2014",

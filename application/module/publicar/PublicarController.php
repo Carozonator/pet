@@ -73,11 +73,8 @@ class PublicarController extends \pluralpet\Controller{
             mkdir($upload_dir, 0777, true);
         }
         
-        $upload_entry_dir = $upload_dir.'/'.$_POST['publication_id'];
-        if (!file_exists($upload_entry_dir)) {
-            mkdir($upload_entry_dir, 0777, true);
-        }
-        //echo '<pre>';print_r($_FILES);die;
+        $upload_entry_dir = $upload_dir;//.'/'.$_POST['publication_id'];
+
         if ($_FILES["file"][0]["error"] > 0)
         {
             echo "Error:<br/>";
@@ -88,11 +85,14 @@ class PublicarController extends \pluralpet\Controller{
         else
         {
             if (file_exists($_FILES['file']['tmp_name']) || is_uploaded_file($_FILES['file']['tmp_name'])){
-                $ext = substr($_FILES["file"]['name'], strrpos($_FILES["file"]['name'], '.')+1);
-                
-                //$image_name = time().'.'.$ext;
                 $file_name = basename($_FILES['file']['name']);
-                move_uploaded_file($_FILES["file"]['tmp_name'],$upload_entry_dir.'/'.$file_name);
+                $ext = substr($_FILES["file"]['name'], strrpos($_FILES["file"]['name'], '.')+1);
+                $image_name = time().'_'.substr(rand(),0,5).'.'.$ext;
+                
+                $foto = new \pluralpet\Foto();
+                $foto->add($image_name,$file_name,$_POST['publication_hash'],'mascota');
+                
+                move_uploaded_file($_FILES["file"]['tmp_name'],$upload_entry_dir.'/'.$image_name);
             }
         }
         echo 'here';die;
@@ -101,38 +101,9 @@ class PublicarController extends \pluralpet\Controller{
     
     
     function addMascota(){
-        /*
-        if ($_FILES["file"][0]["error"] > 0)
-        {
-            echo "Error:<br/>";
-            echo "<pre>";
-            print_r($_FILES["file"]["error"]);
-            die;
-        }
-        else
-        {
-            $counter=0;
-            foreach($_FILES['file'] as $k=>$file){
-                foreach($file as $key=>$row){
-                    if(strcmp($k,'name')==0){
-                        $name = $row;
-                        $org_name = $name;
-                    }
-                    if(strcmp($k,'tmp_name')==0){
-                        $ext = substr($name, strrpos($name, '.')+1);
-                        $image_name = time().'.'.$ext;
-                        move_uploaded_file($row, UPLOAD.time().'.'.$ext);
-                    }
-                    //echo "$k: " . $row . "<br>";
-                }
-            }
-        }
-         * 
-         */
-        $mascota = new \pluralpet\Mascota();
-        //$mascota->add($image_name,$org_name);
-        echo $mascota->add();
         
+        $mascota = new \pluralpet\Mascota();
+        echo $mascota->add();
         //header('Location: /'.$_POST['tab'].'/'.$_POST['animal']);
         
     }

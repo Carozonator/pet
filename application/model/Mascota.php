@@ -8,6 +8,9 @@ class Mascota extends Model{
     }
     
     function add(){
+        
+        
+        
         $sql =  "INSERT INTO mascota (animal,animal_detail,sexo,edad,tamano,pedigree,criadero,precio,titulo,descripcion,tab,fecha,departamento,ciudad_barrio,usuario,status)"
                 . " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'activo')";
         $stmt = $this->pdo->prepare($sql);
@@ -15,6 +18,13 @@ class Mascota extends Model{
             $_POST['tamano'],$_POST['pedigree'],$_POST['criadero'],$_POST['precio'],$_POST['titulo'],
             $_POST['descripcion'],$_POST['tab'],$_POST['fecha'],$_POST['departamento'],$_POST['ciudad_barrio'],$_SESSION['user']->id));
         $insert_id = $this->pdo->lastInsertId(); 
+        
+        // Update foto with the new added publication id
+        $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array('1'.$insert_id,$_POST['publication_hash']));
+        
+        
         //$affected_rows = $stmt->rowCount();
         return $insert_id;
     }
@@ -36,7 +46,12 @@ class Mascota extends Model{
     
     function getAll($type,$animal){
         
-        $sql = "SELECT * FROM mascota WHERE tab=? and animal=?";
+        $sql = "SELECT mascota.*, foto.name as foto_name, foto.usuario as foto_usuario  FROM mascota LEFT OUTER JOIN foto on foto.publication_id=mascota.id "
+                . "WHERE tab=? and animal=? group by mascota.id";
+        
+        
+        
+        //$sql = "SELECT * FROM mascota WHERE tab=? and animal=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($type,$animal));
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -45,7 +60,7 @@ class Mascota extends Model{
     
     function getAllWhere($where_stmt,$where_vals){
         
-        $sql = "SELECT * FROM mascota ".$where_stmt;
+        $sql = "SELECT mascota.*,foto.name as foto_name, foto.usuario as foto_usuario FROM mascota ".$where_stmt;
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($where_vals);
         $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
@@ -53,7 +68,7 @@ class Mascota extends Model{
     }
     
     function get($id){
-        $sql = "SELECT * FROM mascota WHERE id=?";
+        $sql = "SELECT * FROM mascota WHERE mascota.id=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($id));
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -74,7 +89,7 @@ class Mascota extends Model{
             $vals_decoded[]=urldecode($rows);
         }
         $stmt = implode("=? and ",array_keys($vals))."=? ";
-        $sql = "SELECT * FROM mascota WHERE ".$stmt;
+        $sql = "SELECT mascota.*, foto.name as foto_name, foto.usuario as foto_usuario  FROM mascota LEFT OUTER JOIN foto on foto.publication_id=mascota.id WHERE ".$stmt." group by mascota.id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($vals_decoded);
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);

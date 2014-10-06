@@ -15,7 +15,10 @@ class MascotaController extends Controller{
         
         $mascota = new \pluralpet\Mascota();
         $result = $mascota->getAll(strtolower($this->request->getTab()),strtolower($this->request->getMethod()));
+        
         $animal = strtolower($this->request->getMethod());
+        
+        
         $tab = strtolower($this->request->getTab());
         $this->view->assign(array('data'=>$result));
         $this->view->assign(array('animal'=>$animal));
@@ -28,6 +31,10 @@ class MascotaController extends Controller{
         $mascota = new \pluralpet\Mascota();
         $result = $mascota->get($this->request->getMethod());
         
+        $foto = new \pluralpet\Foto();
+        $fotos = $foto->get($this->request->getMethod());
+        
+        $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('mascota'=>$result));
         $this->view->setFile('mascota');
         $this->view->render();

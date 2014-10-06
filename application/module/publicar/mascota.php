@@ -50,18 +50,7 @@ $opcion = array('Vender'=>'comprar',
         <div class="slides description" style="position:absolute;left:2000px;width:100%;">
            
         </div>
-        <div class="slides fotos" style="position:absolute;left:3000px;width:100%;">
-            <form style="min-height:420px;" action="/publicar/addPhoto/" method="post" class="dropzone" id="fotos" enctype="multipart/form-data">
-                <div class="fallback">
-                    <input name="file" type="file" multiple />
-                </div>
-                <input type="hidden" name="publication_id" value="" id="publication_id"/>
-            </form>
-            <div style="text-align:center;margin-left:-50px;position:absolute;top:350px;left:50%;">
-                <button onclick="Publicar.gotoMascota()">Publicar</button>
-            </div>
-            <div style="clear:both"></div>
-        </div>
+        
         <div style="clear:both"></div>
     </div>
     <div style="clear:both"></div>
@@ -69,7 +58,7 @@ $opcion = array('Vender'=>'comprar',
 <div style="clear:both"></div>
 <script>
     //Mascota = <?php echo mascota_json; ?>;
-    $("#fotos").dropzone({addRemoveLinks:true,maxFiles:6});
+    
     //$(".dz-message").append('<div>&#8677; Drop fotos o aprete aqui</div>');
     //$(".dropzone .dz-default.dz-message").css('background-image','');
 </script>

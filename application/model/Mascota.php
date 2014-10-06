@@ -22,7 +22,7 @@ class Mascota extends Model{
         // Update foto with the new added publication id
         $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array('1'.$insert_id,$_POST['publication_hash']));
+        $stmt->execute(array($insert_id,$_POST['publication_hash']));
         
         
         //$affected_rows = $stmt->rowCount();

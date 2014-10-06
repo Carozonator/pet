@@ -174,7 +174,7 @@ if(in_array($_POST['tab'],$check1)){
             </div>
         </div>
         <div style="text-align:center;">
-            <button onclick="Publicar.submit(this);Publicar.slideRight(this,'-3000');return false;/*Publicar.submit(this);return false;*/">Siguiente</button>
+            <button onclick="Publicar.submit(this);return false;/*Publicar.submit(this);return false;*/">Siguiente</button>
         </div>
     </div>
     <div style="clear:both"></div>

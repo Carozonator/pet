@@ -112,7 +112,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                             <div>
                                                 <div style="" class="thumb">
                                                     <a title="<?php echo $r->titulo;?>" href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
-                                                        <img alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$r->foto_usuario.'/'.$r->foto_name; ?>">
+                                                        <img alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$r->foto_usuario.'/thumb_'.$r->foto_name; ?>">
                                                     </a>
                                                 </div>
                                                 <div class="title">
@@ -136,7 +136,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                             <div class="details">
                                                     <?php 
                                                         if($key=='servicio'){
-                                                            echo '<span style="font-size:14px;">'.$r->ciudad.', '.$r->departamento.'</span>';
+                                                            echo '<span style="font-size:14px;">'.$r->ciudad_barrio.', '.$r->departamento.'</span>';
                                                         }else{
                                                             echo '<span>'.$r->precio.'</span>'; 
                                                         }

@@ -1,3 +1,6 @@
+
+<?php $publication_hash = substr( md5(rand()), 0, 10);  ?>
+
 <div class="publicar" style="overflow-x:hidden;overflow-y:hidden">
     <div class="publicar_header">
         <ol>
@@ -19,18 +22,22 @@
             </div>
         </div>
         <div class="slides" style="position:absolute;left:1000px;width:100%;">
-            <form action="/publicar/addAnuncio/" method="post" enctype="multipart/form-data">
-                <input type="hidden" value="publish" name="action"/>
-                <div style="position:relative;padding:40px">
-                    <div class="publicar_item">
-                        <div class="publicar_item_header">Fotos</div>
-                        <div class="publicar_sub_item">
-                                <label for="file">Elegir foto(s)</label>
-                                <input type="file" name="file[]" multiple="multiple" id="selectFile"><br>
-                            <!--    <input type="submit" value="submit"/>
-                            <label>Elegir foto</label><button>Add Foto</button>-->
-                        </div>
+            <div style="margin:40px 40px 0px 40px;">
+                <div class="publicar_item_header">Fotos</div>
+                <form action="/publicar/addPhoto/" method="post" class="dropzone" id="fotos" enctype="multipart/form-data">
+                    <div class="fallback">
+                        <input name="file" type="file" multiple />
                     </div>
+                    <input type="hidden" name="table" value="anuncio"/>
+                    <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>
+                </form>
+                <div style="clear:both"></div>
+            </div>
+            <form id="form_description" action="/publicar/addAnuncio/" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="publish" name="action"/>
+                <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>
+                <div style="position:relative;padding:40px">
+                    
                     <div class="publicar_item">
                         <div class="publicar_item_header">Ingresa un video</div>
                         <div class="publicar_sub_item">
@@ -121,5 +128,5 @@
 </div>
 <div style="clear:both"></div>
 <script>
-    
+    nicEditors.allTextAreas();
 </script>

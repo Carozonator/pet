@@ -123,10 +123,13 @@ var Publicar = {
         $('.input_error').html('');
         var nicE = new nicEditors.findEditor('nicedit_text');
         var description = nicE.getContent();
+        
         var form =$('#form_description');
         var submit_ok = true;
         form.append('<input type="hidden" name="descripcion" value="'+description+'"/>');
         form.append('<input type="hidden" name="tipo" value="'+Publicar.type+'"/>');
+        form.submit();
+        return;
         /*
         if(Publicar.type=='mascota'){
             form.find('input').each(function(){
@@ -152,7 +155,8 @@ var Publicar = {
         var url ='/publicar/anuncios/';
         */
         var url = '/publicar/addMascota/';
-        console.log(form.serialize());
+        //console.log(form.serialize());
+        
         $.ajax({
             type: "POST",
             url: url,

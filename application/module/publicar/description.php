@@ -34,6 +34,7 @@ if(in_array($_POST['tab'],$check1)){
         <div class="fallback">
             <input name="file" type="file" multiple />
         </div>
+        <input type="hidden" name="table" value="mascota"/>
         <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>" id="publication_id"/>
     </form>
     <div style="clear:both"></div>

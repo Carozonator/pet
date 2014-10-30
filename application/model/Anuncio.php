@@ -7,13 +7,19 @@ class Anuncio extends Model{
         
     }
     
-    function add($image_name,$nombre_original){
-        $sql =  "INSERT INTO anuncio (titulo,link,departamento,nombre_original,ciudad,barrio,direccion,foto_1,tipo,descripcion,horario,telefono,usuario,status)"
-                . " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    function add(){
+        $sql =  "INSERT INTO anuncio (sub_tab,titulo,link,departamento,ciudad_barrio,direccion,descripcion,horario,telefono,usuario,status)"
+                . " VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array($_POST['titulo'],$_POST['link'],$_POST['departamento'],$nombre_original,
-            $_POST['ciudad'],$_POST['barrio'],$_POST['direccion'],$image_name,$_POST['tipo'],$_POST['descripcion'],
+        $stmt->execute(array($_POST['tipo'],$_POST['titulo'],$_POST['link'],$_POST['departamento'],
+            $_POST['ciudad_barrio'],$_POST['direccion'],$_POST['descripcion'],
             $_POST['horario'],$_POST['telefono'],$_SESSION['user']->id,'activo'));
+        $insert_id = $this->pdo->lastInsertId(); 
+        
+        $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($insert_id,$_POST['publication_hash']));
+        
         $affected_rows = $stmt->rowCount();
         return $affected_rows;
     }

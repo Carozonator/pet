@@ -8,13 +8,13 @@
         <?php 
             foreach($foto as $f){ ?>
                 <div class="img_box_small" style="margin-right:10px;">
-                    <img onclick="enlargeImage(this)"  alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$_SESSION['user']->id.'/'.$f['name']; ?>">
+                    <img onclick="enlargeImage(this)"  alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>">
                 </div>
             <?php } ?>
         </div>
         <div style="padding-top:20px;">
             <div class="img_box_xl" style="margin-right:20px;">
-                <img alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$_SESSION['user']->id.'/'.$foto[0]['name']; ?>">
+                <img alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$foto[0]['name']; ?>">
             </div>
             <div style="display:inline-block">
                 <h2 style="padding-bottom:20px;"><?php echo strtoupper($mascota['tab']);?></h2>

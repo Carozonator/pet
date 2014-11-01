@@ -8,6 +8,8 @@ class Anuncio extends Model{
     }
     
     function add(){
+        //header("Content-type: text/plain");
+        //print_r($_POST);die;
         $sql =  "INSERT INTO anuncio (sub_tab,titulo,link,departamento,ciudad_barrio,direccion,descripcion,horario,telefono,usuario,status)"
                 . " VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $this->pdo->prepare($sql);
@@ -21,7 +23,7 @@ class Anuncio extends Model{
         $stmt->execute(array($insert_id,$_POST['publication_hash']));
         
         $affected_rows = $stmt->rowCount();
-        return $affected_rows;
+        return $insert_id;
     }
     
     function delete(){
@@ -50,6 +52,14 @@ class Anuncio extends Model{
     
     function getAllWhere($where_stmt,$where_vals){
         $sql = "SELECT * FROM anuncio ".$where_stmt;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($where_vals);
+        $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        return $rows;
+    }
+    
+    function getAllJoinPhoto($where_stmt,$where_vals){
+        $sql = "SELECT anuncio.*,foto.name as foto_name, foto.usuario as foto_usuario FROM anuncio LEFT OUTER JOIN foto on anuncio.id=foto.publication_id ".$where_stmt;
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($where_vals);
         $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);

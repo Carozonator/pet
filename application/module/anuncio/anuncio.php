@@ -5,13 +5,21 @@
             <?php echo $anuncio['titulo'];?>
         </h2>
         <div style="padding-top:20px;">
+            <div style="float:right;">
+            <?php 
+                foreach($foto as $f){ ?>
+                    <div class="img_box_small" style="margin-right:10px;">
+                        <img onclick="enlargeImage(this)"  alt="<?php echo $anuncio['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>">
+                    </div>
+            <?php } ?>
+            </div>
             <div class="img_box_xl" style="margin-right:20px;">
-                <img onclick="" alt="<?php echo $anuncio['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$anuncio['foto_1']; ?>">
+                <img onclick="" alt="<?php echo $anuncio['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$foto[0]['usuario'].'/'.$foto[0]['name']; ?>">
             </div>
             <div style="display:inline-block" class="single_item">
                 <h2 style="padding-bottom:20px;"><?php echo strtoupper($anuncio['tab']);?></h2>
                 <h5>Direcc&iacute;on:</h5>
-                <p class="gristxt"><?php echo ucfirst($anuncio['direccion']);?><br/><?php echo ucfirst($anuncio['ciudad']);?>, <?php echo ucfirst($anuncio['departamento']);?></p><br/>
+                <p class="gristxt"><?php echo ucfirst($anuncio['direccion']);?><br/><?php echo ucfirst($anuncio['ciudad_barrio']);?>, <?php echo ucfirst($anuncio['departamento']);?></p><br/>
                 <h5>Telefono:</h5>
                 <p class="gristxt"><?php echo ucfirst($anuncio['telefono']);?></p><br/>
                 <button onclick="Contactar.show(<?php echo $anuncio['usuario']; ?>)" style="">Contactar</button>

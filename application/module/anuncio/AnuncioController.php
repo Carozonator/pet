@@ -20,6 +20,11 @@ class AnuncioController extends Controller{
     function singleItem(){
         $anuncio = new \pluralpet\Anuncio();
         $result = $anuncio->getByID($this->request->getMethod());
+        
+        $foto = new \pluralpet\Foto();
+        $fotos = $foto->get($this->request->getMethod());
+        
+        $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('anuncio'=>$result));
         $this->view->setFile('anuncio');
         $this->view->render();

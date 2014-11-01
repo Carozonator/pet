@@ -67,7 +67,8 @@ class PublicarController extends \pluralpet\Controller{
         
         $anuncio = new \pluralpet\Anuncio();
         $id =  $anuncio->add();
-        header('Location: /anuncio/'.$id);
+        echo '/anuncio/'.$id;
+        //header('Location: /anuncio/'.$id);
     }
     
     

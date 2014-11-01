@@ -118,6 +118,20 @@ var Publicar = {
         });
     },
     
+    
+    
+    addslashes: function(string) {
+        return string.replace(/\\/g, '\\\\').
+            replace(/\u0008/g, '\\b').
+            replace(/\t/g, '\\t').
+            replace(/\n/g, '\\n').
+            replace(/\f/g, '\\f').
+            replace(/\r/g, '\\r').
+            replace(/'/g, '\\\'').
+            replace(/"/g, '\\\\"');
+    },
+    
+    
     submit: function(elem){
         
         $('.input_error').html('');
@@ -126,9 +140,29 @@ var Publicar = {
         
         var form =$('#form_description');
         var submit_ok = true;
-        form.append('<input type="hidden" name="descripcion" value="'+description+'"/>');
+        //form.append('<input id="testing_desc" type="hidden" name="descripcion" value="'+(description)+'"/>');
         form.append('<input type="hidden" name="tipo" value="'+Publicar.type+'"/>');
-        form.submit();
+        //alert($('#testing_desc').val());
+        var form_var = form.serializeArray();
+        var submit_var = {};
+        for(var i in form_var){
+            var key = form_var[i].name;
+            var obj = {};
+            submit_var[key]=form_var[i].value;
+        }
+        submit_var.descripcion=description;
+        
+        console.log(submit_var);
+        
+        $.ajax({
+            url:'/publicar/addAnuncio/',
+            type:'POST',
+            data:submit_var,
+            success:function(response){
+                window.location=response;
+            }
+        });
+        //form.submit();
         return;
         /*
         if(Publicar.type=='mascota'){

@@ -1,5 +1,6 @@
 <?php 
 
+//print_r($servicio);die;
 $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','loc'=>'top:20px;left:600px;','img'=>'comprar.jpg'),*/
                      array('title'=>'','text'=>'Conoce los mejores consejos para disfrutar al maximo de tu mejor amigo','loc'=>'top:20px;left:600px;','img'=>'consejos.jpg'),
                      array('title'=>'','text'=>'Encuentra un mundo de posibilidades para cruzar a tu mascota','loc'=>'top:40px;left:0px;','img'=>'cruzar.jpg'),
@@ -90,11 +91,16 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
             <div class="clear"></div>
         </div>
         -->
-        <div id="primary">
+        <div style="margin-top:150px;" id="primary">
             
             <?php 
             $paneles_to_table = array('perro'=>'mascota','gato'=>'mascota','servicio'=>'anuncio');
-            $paneles = array('oferta'=>'Ofertas del d&iacute;a','producto'=>'Productos destacados','perro'=>'Perros destacados','gato'=>'Gatos destacados', 'servicio'=>'Servicios destacados');
+            $paneles = array(
+                //'oferta'=>'Ofertas del d&iacute;a',
+                //'producto'=>'Productos destacados',
+                'perro'=>'Perros destacados',
+                'gato'=>'Gatos destacados', 
+                'servicio'=>'Servicios destacados');
             foreach($paneles as $key=>$row){ ?>
             <div id="content" role="main">
                 <div id="content" role="main">

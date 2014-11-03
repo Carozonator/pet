@@ -78,8 +78,9 @@ class User extends Model{
         
         $results=array();
         foreach($tables as $table){
-            $sql =    "SELECT $table.* FROM user "
+            $sql =    "SELECT $table.*, foto.name as foto_name, foto.usuario as foto_usuario FROM user "
                     . "INNER JOIN $table on user.id=$table.usuario "
+                    . "LEFT OUTER JOIN foto on foto.publication_id= $table.id "
                     . "WHERE user.id=?";
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute(array($_SESSION['user']->id));

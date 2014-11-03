@@ -19,7 +19,7 @@
         <li style="position:relative;padding-bottom:5px;">
             <div style="width:100px;height:100px" class="thumb">
                 <a title="<?php echo $row->titulo;?>" href="/<?php echo $key;?>/<?php echo $row->id;?>">
-                    <img alt="<?php echo $row->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row->foto_1; ?>">
+                    <img alt="<?php echo $row->nombre_original;?>" src="<?php echo MEDIA.'upload/'.$row->usuario.'/thumb_'.$row->foto_name; ?>" style="width:100%;height:100%;" >
                 </a>
             </div>
             <div style="margin:10px;display:inline-block;position:absolute;top:0px;font-size:15px;">

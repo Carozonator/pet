@@ -14,13 +14,17 @@ $opcion = array('Vender'=>'comprar',
 <div class="publicar" style="overflow-x:hidden;overflow-y:hidden">
     <div class="publicar_header">
         <ol>
-            <li><a href="">Elige qu&eacute; publicar</a></li><li class="publicar_header_arrow">&#10095</li>
-            <li class="ch-wizard-current">Describe tu servicio</li><li class="publicar_header_arrow">&#10095;</li>
-            <li class="ch-wizard-step" style="border-right:0;">Publicar</li>
+            <li class="step highlight"><a href="">Elige qu&eacute; publicar</a></li>
+            <li class="publicar_header_arrow">&nbsp;</li>
+            <li class="step"><a href="" onclick="Publicar.slideRight($('.donde'),'-1000');return false;">Eligue donde</a></li>
+            <li class="publicar_header_arrow">&nbsp;</li>
+            <li class="step"><a href="">Describe tu servicio</a></li>
+            <li class="publicar_header_arrow">&nbsp;</li>
+            <li class="step" style="border-right:0;"><a href="">Publicar</a></li>
         </ol>
     </div>
     <div  id="publicar_slider" style="position:relative;width:100%;">
-        <div class="slides" style="text-align: center;">
+        <div class="slides donde" style="text-align: center;">
             <div  style="position:relative;padding:40px">
                 <img onclick="Publicar.animal='perro';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>mascota_perro.jpg"/>
                 <img onclick="Publicar.animal='gato';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>mascota_gato.jpg"/>

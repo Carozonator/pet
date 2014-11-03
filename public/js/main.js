@@ -86,9 +86,24 @@ var Publicar = {
     slideRight: function(elem,x){
         //$(document).scrollTop('0');
         var cur = $(elem).closest('.slides');
+        
+        if(typeof Publicar.animal==='undefined'){
+            return;
+        }
+        
+        $('.step').attr('class','step');
+        $('.step:eq('+(x/-1000)+')').addClass('highlight');
+        $('.publicar_header_arrow').removeClass('highlight_pink');
+        $('.publicar_header_arrow:eq('+(x/-1000-1)+')').addClass('highlight_pink');
+        
+        
+        
+        
         if(cur.next().hasClass('description')){
             this.loadDescription(cur,x);
         }else if(cur.next().hasClass('tab')){
+            
+            
             if(Publicar.animal=='pez'){
                 $('.tab_option').hide();
                 $('.tab_comprar').show();
@@ -101,8 +116,11 @@ var Publicar = {
                 $('.tab_perdido').hide();
                 $('.tab_encontrado').hide();
             }
+            
+            
             this.sliderHeight(cur,x);
         }else{
+            
             this.sliderHeight(cur,x);
         }
         

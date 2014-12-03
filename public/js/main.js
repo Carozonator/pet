@@ -45,6 +45,7 @@ $(document).ready(function(){Ready.init();});
 
 
 var Publicar = {
+    group:'',
     departamento:{'Artigas':['Artigas','Bella Union'],
         'Canelones':['Ciudad de la Costa','Las Piedras','Barros Blancos','Pando','La Paz','Canelones','Santa Lucia','Progreso'],
         'Cerro Largo':['Melo','Rio Branco'],
@@ -85,6 +86,7 @@ var Publicar = {
     
     slideRight: function(elem,x){
         //$(document).scrollTop('0');
+        
         var cur = $(elem).closest('.slides');
         
         if(typeof Publicar.animal==='undefined'){
@@ -171,13 +173,14 @@ var Publicar = {
         submit_var.descripcion=description;
         
         console.log(submit_var);
-        
+        //***fix url
         $.ajax({
-            url:'/publicar/addAnuncio/',
+            url:'/publicar/addMascota/',
             type:'POST',
             data:submit_var,
             success:function(response){
                 window.location=response;
+                //window.location=response;
             }
         });
         //form.submit();

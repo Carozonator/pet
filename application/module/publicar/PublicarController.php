@@ -73,9 +73,11 @@ class PublicarController extends \pluralpet\Controller{
     
     
     function addMascota(){
-        
+        //echo 'here';die;
         $mascota = new \pluralpet\Mascota();
         $id =  $mascota->add();
+        echo '/mascota/'.$id;
+        die;
         header('Location: /'.$_POST['tab'].'/'.$id);
         
     }

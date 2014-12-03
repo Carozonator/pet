@@ -62,7 +62,7 @@ $opcion = array('Vender'=>'comprar',
 <div style="clear:both"></div>
 <script>
     //Mascota = <?php echo mascota_json; ?>;
-    
+    Publicar.group="mascota";
     //$(".dz-message").append('<div>&#8677; Drop fotos o aprete aqui</div>');
     //$(".dropzone .dz-default.dz-message").css('background-image','');
 </script>

@@ -12,13 +12,13 @@
     <div  id="publicar_slider" style="position:relative;width:100%;">
         <div class="slides" style="text-align: center;">
             <div  style="position:relative;padding:40px">
-                <img onclick="Publicar.type='veterinaria';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncio_veterinaria.jpg"/>
-                <img onclick="Publicar.type='paseador';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncio_paseador.jpg"/>
-                <img onclick="Publicar.type='adiestrador';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncio_adiestrador.jpg"/>
-                <img onclick="Publicar.type='pensionado';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncio_pensionado.jpg"/><br/>
-                <img onclick="Publicar.type='peluqueria';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncio_peluqueria.jpg"/>
-                <img onclick="Publicar.type='servicio_medico';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncio_serv_medico.jpg"/>
-                <img onclick="Publicar.type='otros';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncio_otros.jpg"/>
+                <img onclick="Publicar.type='veterinaria';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/veterinaria.jpg"/>
+                <img onclick="Publicar.type='paseador';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/paseador.jpg"/>
+                <img onclick="Publicar.type='adiestrador';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/adiestrador.jpg"/>
+                <img onclick="Publicar.type='pensionado';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/pensionado.jpg"/><br/>
+                <img onclick="Publicar.type='peluqueria';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/peluqueria.jpg"/>
+                <img onclick="Publicar.type='servicio_medico';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/servicios_medicos_adicionales.jpg"/>
+                <img onclick="Publicar.type='otros';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/otros.jpg"/>
             </div>
         </div>
         <div class="slides" style="position:absolute;left:1000px;width:100%;">

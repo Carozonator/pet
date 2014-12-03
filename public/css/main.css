@@ -702,6 +702,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     float:left;
 }
 .destacado_container{
+    width:154px;
     display:inline-block;
     border:1px solid #e209c9; 
     -webkit-border-radius: 0px 0px 5px 5x;
@@ -743,7 +744,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .destacado .thumb {
     text-decoration: none; 
     overflow:hidden;
-    width:200px;height:200px;
+    width:150;height:150px;
     line-height:0;
     border:1px solid #cacaca; -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;  
     margin:0px auto;

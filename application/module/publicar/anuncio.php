@@ -1,24 +1,33 @@
 
 <?php $publication_hash = substr( md5(rand()), 0, 10);  ?>
 
+
+<style>
+    .publicar_header > ol > li{
+        width:33%;
+    }
+    
+</style>
 <div class="publicar" style="overflow-x:hidden;overflow-y:hidden">
     <div class="publicar_header">
         <ol>
-            <li><a href="">Elige qu&eacute; publicar</a></li><li class="publicar_header_arrow">&#10095;</li>
-            <li class="ch-wizard-current">Describe tu servicio</li><li class="publicar_header_arrow">&#10095;</li>
-            <li class="ch-wizard-step" style="border-right:0;">Publicar</li>
+            <li class="step highlight"><a href="#" onclick="Publicar.slideRight(0,false);">Elige qu&eacute; publicar</a></li>
+            <li class="publicar_header_arrow">&nbsp;</li>
+            <li class="step"><a href="#" onclick="Publicar.slideRight(1,false);return false;">Describe tu servicio</a></li>
+            <li class="publicar_header_arrow">&nbsp;</li>
+            <li class="step" style="border-right:0;"><a href="#">Publicar</a></li>
         </ol>
     </div>
     <div  id="publicar_slider" style="position:relative;width:100%;">
         <div class="slides" style="text-align: center;">
             <div  style="position:relative;padding:40px">
-                <img onclick="Publicar.type='veterinaria';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/veterinaria.jpg"/>
-                <img onclick="Publicar.type='paseador';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/paseador.jpg"/>
-                <img onclick="Publicar.type='adiestrador';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/adiestrador.jpg"/>
-                <img onclick="Publicar.type='pensionado';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/pensionado.jpg"/><br/>
-                <img onclick="Publicar.type='peluqueria';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/peluqueria.jpg"/>
-                <img onclick="Publicar.type='servicio_medico';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/servicios_medicos_adicionales.jpg"/>
-                <img onclick="Publicar.type='otros';Publicar.slideRight(this,'-1000');" src="<?php echo MEDIA; ?>anuncios/otros.jpg"/>
+                <img onclick="Publicar.type='veterinaria';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/veterinaria.jpg"/>
+                <img onclick="Publicar.type='paseador';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/paseador.jpg"/>
+                <img onclick="Publicar.type='adiestrador';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/adiestrador.jpg"/>
+                <img onclick="Publicar.type='pensionado';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/pensionado.jpg"/><br/>
+                <img onclick="Publicar.type='peluqueria';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/peluqueria.jpg"/>
+                <img onclick="Publicar.type='servicio_medico';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/servicios_medicos_adicionales.jpg"/>
+                <img onclick="Publicar.type='otros';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/otros.jpg"/>
             </div>
         </div>
         <div class="slides" style="position:absolute;left:1000px;width:100%;">
@@ -34,7 +43,7 @@
                 <div style="clear:both"></div>
             </div>
             <form id="form_description" action="/publicar/addAnuncio/" method="post" enctype="multipart/form-data">
-                <input type="hidden" value="publish" name="action"/>
+                <!--<input type="hidden" value="publish" name="action"/>-->
                 <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>
                 <div style="position:relative;padding:40px">
                     
@@ -92,7 +101,7 @@
                         </div>
                     </div>
                     <div style="text-align:center;">
-                        <button onclick="Publicar.submit(this);return false;">Publicar</button>
+                        <button onclick="Publicar.submit(this,'addAnuncio');return false;">Publicar</button>
                     </div>
                 </div>
                 <div style="clear:both"></div>

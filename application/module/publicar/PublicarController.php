@@ -64,7 +64,6 @@ class PublicarController extends \pluralpet\Controller{
         $mascota = new \pluralpet\Anuncio();
         $mascota->add($image_name,$org_name);
          */
-        
         $anuncio = new \pluralpet\Anuncio();
         $id =  $anuncio->add();
         echo '/anuncio/'.$id;

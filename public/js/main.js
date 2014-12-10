@@ -83,28 +83,68 @@ var Publicar = {
             }
         });
     },
+    cur_pos:0,
     
-    slideRight: function(elem,x){
+    
+    slideRight: function(next_pos,forward_move){
         //$(document).scrollTop('0');
+        //alert(elem);
+        /*
+        if(typeof Publicar.animal === 'undefined'){
+            return;
+        }
+        */
+        if(!forward_move && this.cur_pos < next_pos){
+            return;
+        }
+        this.cur_pos=next_pos;
         
+        var next_box = $($('.slides:eq('+(next_pos)+')'));
+        
+        //var next_box = cur_box.next();
+        $('.slides').css('position','absolute');  
+        $('.slides').css({left:'-1000px'});
+        next_box.css({position:'relative',left:0});
+        
+        
+        
+        $('.step').attr('class','step');
+        $('.step:eq('+(next_pos)+')').addClass('highlight');
+        $('.publicar_header_arrow').removeClass('highlight_pink');
+        //$('.publicar_header_arrow:eq('+(next_pos-1)+')').addClass('highlight_pink');
+        
+        
+        
+        if(next_box.hasClass('description')){
+            $.ajax({
+                url:'/publicar/description',
+                type:'post',
+                data:{animal:Publicar.animal,tab:Publicar.tab},
+                success:function(response){
+                    next_box.html(response);
+                }
+            });
+        }
+        
+        
+        /*
         var cur = $(elem).closest('.slides');
         
         if(typeof Publicar.animal==='undefined'){
             return;
         }
         
+        
+        
+        
         $('.step').attr('class','step');
         $('.step:eq('+(x/-1000)+')').addClass('highlight');
         $('.publicar_header_arrow').removeClass('highlight_pink');
         $('.publicar_header_arrow:eq('+(x/-1000-1)+')').addClass('highlight_pink');
         
-        
-        
-        
         if(cur.next().hasClass('description')){
             this.loadDescription(cur,x);
         }else if(cur.next().hasClass('tab')){
-            
             
             if(Publicar.animal=='pez'){
                 $('.tab_option').hide();
@@ -125,6 +165,7 @@ var Publicar = {
             
             this.sliderHeight(cur,x);
         }
+        */
         
     },
     
@@ -152,7 +193,7 @@ var Publicar = {
     },
     
     
-    submit: function(elem){
+    submit: function(elem,test){
         
         $('.input_error').html('');
         var nicE = new nicEditors.findEditor('nicedit_text');
@@ -171,11 +212,11 @@ var Publicar = {
             submit_var[key]=form_var[i].value;
         }
         submit_var.descripcion=description;
-        
-        console.log(submit_var);
+
         //***fix url
+        url = '/publicar/'+test+'/';
         $.ajax({
-            url:'/publicar/addMascota/',
+            url:url,
             type:'POST',
             data:submit_var,
             success:function(response){

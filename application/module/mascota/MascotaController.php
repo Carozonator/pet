@@ -32,7 +32,7 @@ class MascotaController extends Controller{
         $result = $mascota->get($this->request->getMethod());
         
         $foto = new \pluralpet\Foto();
-        $fotos = $foto->get($this->request->getMethod());
+        $fotos = $foto->get($this->request->getMethod(),'mascota');
         
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('mascota'=>$result));

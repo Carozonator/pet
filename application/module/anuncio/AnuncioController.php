@@ -22,7 +22,7 @@ class AnuncioController extends Controller{
         $result = $anuncio->getByID($this->request->getMethod());
         
         $foto = new \pluralpet\Foto();
-        $fotos = $foto->get($this->request->getMethod());
+        $fotos = $foto->get($this->request->getMethod(),'anuncio');
         
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('anuncio'=>$result));

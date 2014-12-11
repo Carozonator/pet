@@ -45,7 +45,7 @@ $(document).ready(function(){Ready.init();});
 
 
 var Publicar = {
-    group:'',
+    group:'',/* mascota,producto,anuncio */
     departamento:{'Artigas':['Artigas','Bella Union'],
         'Canelones':['Ciudad de la Costa','Las Piedras','Barros Blancos','Pando','La Paz','Canelones','Santa Lucia','Progreso'],
         'Cerro Largo':['Melo','Rio Branco'],
@@ -87,13 +87,8 @@ var Publicar = {
     
     
     slideRight: function(next_pos,forward_move){
-        //$(document).scrollTop('0');
-        //alert(elem);
-        /*
-        if(typeof Publicar.animal === 'undefined'){
-            return;
-        }
-        */
+        
+        console.log('here');
         if(!forward_move && this.cur_pos < next_pos){
             return;
         }
@@ -106,7 +101,10 @@ var Publicar = {
         $('.slides').css({left:'-1000px'});
         next_box.css({position:'relative',left:0});
         
-        
+        if(this.group=='producto'){
+            $('.tienda').hide();
+            $('.'+Publicar.animal).show();
+        }
         
         $('.step').attr('class','step');
         $('.step:eq('+(next_pos)+')').addClass('highlight');
@@ -201,9 +199,13 @@ var Publicar = {
         
         var form =$('#form_description');
         var submit_ok = true;
-        //form.append('<input id="testing_desc" type="hidden" name="descripcion" value="'+(description)+'"/>');
+        
         form.append('<input type="hidden" name="tipo" value="'+Publicar.type+'"/>');
-        //alert($('#testing_desc').val());
+        form.append('<input type="hidden" name="tab" value="'+Publicar.tab+'"/>');
+        if(Publicar.group=='producto'){
+            form.append('<input type="hidden" name="animal" value="'+Publicar.animal+'"/>');
+        }
+        
         var form_var = form.serializeArray();
         var submit_var = {};
         for(var i in form_var){
@@ -213,69 +215,20 @@ var Publicar = {
         }
         submit_var.descripcion=description;
 
-        //***fix url
         url = '/publicar/'+test+'/';
         $.ajax({
             url:url,
             type:'POST',
             data:submit_var,
             success:function(response){
+                //console.log(response);
                 window.location=response;
-                //window.location=response;
             }
         });
-        //form.submit();
-        return;
-        /*
-        if(Publicar.type=='mascota'){
-            form.find('input').each(function(){
-                if($(this).val()==''){
-                    submit_ok=false;
-                    if($(this).next().is('span')){
-                        $(this).next().html('* dato obligatorio');
-                    }
-                }
-            });
-            if(description=='<br>'){
-                submit_ok=false;
-                $('#nicedit_text').next().html('* dato obligatorio');
-            }
-        }*/
-        /*
-        console.log("----hola----");
-        if(submit_ok){
-            form.submit();
-        }
-        return;
-        console.log("----hola----");
-        var url ='/publicar/anuncios/';
-        */
-        var url = '/publicar/addMascota/';
-        //console.log(form.serialize());
         
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: form.serialize(), // serializes the form's elements.
-            success: function(data){
-                console.log(data); // show response from the php script.
-                Publicar.lastinsert = data;
-                $('#publication_id').val(data); 
-                //$('form#fotos').submit();
-            }
-         });
     },
     
-    tiendaTwo: function(elem){
-        Publicar.slideRight(elem,'-2000');
-    },
     
-    tiendaOne: function(elem,type){
-        //$('.tienda').hide();
-        $('.'+type).show();
-        Publicar.type=type;
-        Publicar.slideRight(elem,'-1000');
-    },
     
     gotoMascota: function(){
         window.location = '/mascota/'+Publicar.lastinsert;

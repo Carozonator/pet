@@ -43,10 +43,8 @@
                 <div style="clear:both"></div>
             </div>
             <form id="form_description" action="/publicar/addAnuncio/" method="post" enctype="multipart/form-data">
-                <!--<input type="hidden" value="publish" name="action"/>-->
                 <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>
                 <div style="position:relative;padding:40px">
-                    
                     <div class="publicar_item">
                         <div class="publicar_item_header">Ingresa un video</div>
                         <div class="publicar_sub_item">
@@ -137,5 +135,6 @@
 </div>
 <div style="clear:both"></div>
 <script>
+    Publicar.group='anuncio';
     nicEditors.allTextAreas();
 </script>

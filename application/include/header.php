@@ -51,7 +51,7 @@
                     </div>
 
                     <?php }else{ ?>
-                    <div id="dd" style="" class="dropdown-menu" tabindex="1"><i class="icon-user"></i> <?php echo $_SESSION['user']->username;?>
+                    <div id="dd" style="min-width:100px;" class="dropdown-menu" tabindex="1"><i class="icon-user"></i> <?php echo $_SESSION['user']->username;?>
                         <ul class="dropdown">
                             <li><a href="/account/"><i class="icon-user"></i>Mi cuenta</a></li>
                             <!--<li><a href="#"><i class="icon-cog"></i>Settings</a></li>-->
@@ -63,8 +63,9 @@
                         
                     <!--<div style="" class="dropdown-menu" tabindex="1"><i class="icon-shopping-cart"></i> Carrito</div>-->
                     <div style="float:right">
-                        <input style="background-color:none;height:22px;" type="text" value="" name="s"  placeholder="Buscar por productos">
+                        <!--<input style="background-color:none;height:22px;" type="text" value="" name="s"  placeholder="Buscar por productos">
                         <i class="icon-search"></i>
+                        -->
                     </div>
         </div>
     </div>

@@ -12,46 +12,32 @@ foreach($files as $row){
     $images[$row] = scandir($dir);
 }
 
-$raza=array('','Akita Inu', 'Alaskan Malamute', 'Barzoi', 
-    'Basset Azul de Gascuña', 'Basset Hound', 'Beagle', 'Beagle Harrier', 'Beauceron', 'Bichón Maltés', 'Bobtail',
-    'Border Collie', 'Boxer', 'Boyero de Berna', 'Braco Alemán', 'Braco Francés', 'Briard', 'Bull Terrier Inglés', 
-    'Bulldog Francés', 'Bulldog Inglés', 'Bullmastiff', 'Cairn Terrier', 'Cane Corso', 'Caniche', 'Cavalier King Charles', 
-    'Chihuahua', 'Cimarron', 'Chow Chow', 'Cocker Spaniel Americano', 'Cocker Spaniel Inglés', 'Collie Rough', 'Collie Smooth', 
-    'Dálmata', 'Doberman', 'Dogo Argentino', 'Dogo de Burdeos', 'Epagneul Bretón', 'Epagneul Francés', 'Epagneul Japonés', 
-    'Fox Terrier', 'Galgo Español', 'Galgo Irlandés', 'Golden Retriever', 'Gordon Setter', 'Gos d\'Atura', 'Gran Danés', 
-    'Husky Siberiano', 'Komondor', 'Labrador Retriever', 'Lebrel Afgano', 'Lebrel Polaco', 'Mastiff', 'Mastín de los Pirineos', 
-    'Mastín Español', 'Mastín Napolitano', 'Montaña de los Pirineos', 'Norfolk Terrier', 'Norwich Terrier', 'Papillon', 
-    'Pastor Alemán', 'Pastor Australiano', 'Pastor Belga', 'Pastor Blanco Suizo', 'Pastor de los Pirineos', 'Pekinés', 
-    'Pequeño Azul de Gascuña', 'Pequeño Basset Griffon', 'Pequeño Brabantino', 'Pequeño Perro León', 'Pequeño Perro Ruso', 
-    'Pequeño Sabueso Suizo', 'Perdiguero de Burgos', 'Perdiguero Portugués', 'Perro de Agua Español', 'Perro Lobo de Checoslovaquia', 'Pinscher miniatura', 
-    'Pit Bull', 'Podenco Canario', 'Podenco Ibicenco', 'Pointer Inglés', 'Presa Canario', 'Pug', 'Rafeiro do Alentejo', 
-    'Rottweiler', 'Samoyedo', 'San Bernardo', 'Schnauzer gigante', 'Schnauzer mediano', 'Schnauzer miniatura', 'Scottish Terrier', 
-    'Setter Inglés', 'Setter Irlandés', 'Shar Pei', 'Shih Tzu', 'Spitz', 'Springer Spaniel Galés', 'Springer Spaniel Inglés', 
-    'Teckel', 'Terranova', 'Weimaraner', 'Westies', 'Whippet', 'Yorkshire Terrier','OTRO');
-$opcion = array('Vender'=>'comprar','Poner en adopcion'=>'adoptar','Perdido'=>'perdidos-y-encontrados','Encontrado'=>'perdidos-y-encontrados','Cruzar'=>'cruzar');
-
-
+$publication_hash = substr( md5(rand()), 0, 10);
 
 ?>
 
 <div class="publicar" style="overflow-x:hidden;overflow-y:hidden">
     <div class="publicar_header">
         <ol>
-            <li><a href="">Elige qu&eacute; publicar</a></li><li class="publicar_header_arrow">&#10095;</li>
-            <li class="ch-wizard-current">Describe tu servicio</li><li class="publicar_header_arrow">&#10095;</li>
-            <li class="ch-wizard-step" style="border-right:0;">Publicar</li>
+            <li class="step highlight"><a href="#" onclick="Publicar.slideRight(0,false);">Elige para que mascota</a></li>
+            <li class="publicar_header_arrow">&nbsp;</li>
+            <li class="step"><a href="#" onclick="Publicar.slideRight(1,false);">Elige qu&eacute; tipo de producto</a></li>
+            <li class="publicar_header_arrow">&nbsp;</li>
+            <li class="step"><a href="#" onclick="Publicar.slideRight(2,false);return false;">Describe tu producto</a></li>
+            <li class="publicar_header_arrow">&nbsp;</li>
+            <li class="step" style="border-right:0;"><a href="#">Publicar</a></li>
         </ol>
     </div>
     <div  id="publicar_slider" style="position:relative;width:100%;">
         <div class="slides" style="text-align: center;">
             <div  style="position:relative;padding:40px">
-                <img onclick="Publicar.tiendaOne(this,'perro');" src="<?php echo MEDIA; ?>mascota_perro.jpg"/>
-                <img onclick="Publicar.tiendaOne(this,'gato');" src="<?php echo MEDIA; ?>mascota_gato.jpg"/>
-                <img onclick="Publicar.tiendaOne(this,'ave');" src="<?php echo MEDIA; ?>mascota_ave.jpg"/>
-                <img onclick="Publicar.tiendaOne(this,'reptil');" src="<?php echo MEDIA; ?>mascota_reptil.jpg"/><br/>
-                <img onclick="Publicar.tiendaOne(this,'mamifero');" src="<?php echo MEDIA; ?>mascota_pequenosmamiferos.jpg"/>
-                <img onclick="Publicar.tiendaOne(this,'pez');" src="<?php echo MEDIA; ?>mascota_pez.jpg"/>
-                <img onclick="Publicar.tiendaOne(this,'otros');" src="<?php echo MEDIA; ?>mascota_otros.jpg"/>
+                <img onclick="Publicar.animal='perro';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_perro.jpg"/>
+                <img onclick="Publicar.animal='gato';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_gato.jpg"/>
+                <img onclick="Publicar.animal='ave';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_ave.jpg"/>
+                <img onclick="Publicar.animal='reptil';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_reptil.jpg"/><br/>
+                <img onclick="Publicar.animal='mamifero';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_pequenosmamiferos.jpg"/>
+                <img onclick="Publicar.animal='pez';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_pez.jpg"/>
+                <img onclick="Publicar.animal='otro';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_otros.jpg"/>
             </div>
         </div>
         <div class="slides" style="position:absolute;left:1000px;width:100%;">
@@ -63,7 +49,7 @@ $opcion = array('Vender'=>'comprar','Poner en adopcion'=>'adoptar','Perdido'=>'p
                             foreach($row as $k=>$r){
                                 $src = MEDIA.'tienda/'.$key.'/'.$r;
                                 if(substr($r,0,1)!='.'){
-                                    echo '<img onclick="Publicar.tiendaTwo(this)" style="display:none" class="'.$key.' tienda" src="'.$src.'"/>';
+                                    echo '<img onclick="Publicar.tab=\''.$r.'\';Publicar.slideRight(2,true);" style="display:none" class="'.$key.' tienda" src="'.$src.'"/>';
                                 }
                             }
                         }
@@ -72,19 +58,25 @@ $opcion = array('Vender'=>'comprar','Poner en adopcion'=>'adoptar','Perdido'=>'p
                     </div>
         </div>
         <div class="slides" style="position:absolute;left:2000px;width:100%;">
-            <form action="/publicar/addProducto/" method="post" enctype="multipart/form-data">
-                <input type="hidden" value="addProduct" name="action"/>
-                <div style="position:relative;padding:40px">
-                    <div class="publicar_item">
-                        <div class="publicar_item_header">Fotos</div>
-                        <div class="publicar_sub_item">
-                                <label for="file">Elegir foto(s)</label>
-                                <input type="file" name="file[]" multiple="multiple" id="selectFile"><br>
-                            <!--    <input type="submit" value="submit"/>
-                            <label>Elegir foto</label><button>Add Foto</button>-->
-                        </div>
+            
+            
+            <div style="margin:40px 40px 0px 40px;">
+                <div class="publicar_item_header">Fotos</div>
+                <form action="/publicar/addPhoto/" method="post" class="dropzone" id="fotos" enctype="multipart/form-data">
+                    <div class="fallback">
+                        <input name="file" type="file" multiple />
                     </div>
-                    
+                    <input type="hidden" name="table" value="producto"/>
+                    <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>
+                </form>
+                <div style="clear:both"></div>
+            </div>
+            
+            
+            
+            <form id="form_description" action="/publicar/addProducto/" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>
+                <div style="position:relative;padding:40px">
                     
                     <div class="publicar_item">
                         <div class="publicar_item_header">Ubicacion y Contacto</div>
@@ -103,18 +95,11 @@ $opcion = array('Vender'=>'comprar','Poner en adopcion'=>'adoptar','Perdido'=>'p
                                 </select><br/>
                             </div>
                             <div style="height:45px;width:100%">
-                                <label>Ciudad </label>
-                                <select class="ciudad" name="ciudad" style="display:none;margin-left:-4px;width:300px;">
+                                <label>Ciudad/Barrio</label>
+                                <select class="ciudad_barrio" name="ciudad_barrio" style="display:none;margin-left:-4px;width:300px;">
                                     <option></option>
                                 </select><br/>
                             </div>
-                            <div style="height:45px;width:100%">
-                                <label>Barrio </label>
-                                <select class="barrio" name="barrio" style="display:none;margin-left:-4px;width:300px;">
-                                    <option></option>
-                                </select><br/>
-                            </div>
-                            
                         </div>
                     </div>
                    
@@ -137,7 +122,7 @@ $opcion = array('Vender'=>'comprar','Poner en adopcion'=>'adoptar','Perdido'=>'p
                         </div>
                     </div>
                     <div style="text-align:center;">
-                        <button onclick="Publicar.submit(this);return false;">Publicar</button>
+                        <button onclick="Publicar.submit(this,'addProducto');return false;">Publicar</button>
                     </div>
                 </div>
                 <div style="clear:both"></div>
@@ -149,6 +134,10 @@ $opcion = array('Vender'=>'comprar','Poner en adopcion'=>'adoptar','Perdido'=>'p
 </div>
 <div style="clear:both"></div>
 <script>
+    
+    Publicar.group = 'producto';
+    nicEditors.allTextAreas();
+    /*
     $(document).ready(function(){
         $("select.raza").select2({
             placeholder: "Eligue Raza",
@@ -200,5 +189,6 @@ $opcion = array('Vender'=>'comprar','Poner en adopcion'=>'adoptar','Perdido'=>'p
         
     });
     })
+    */
 </script>
 

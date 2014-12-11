@@ -94,10 +94,10 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         <div style="margin-top:150px;" id="primary">
             
             <?php 
-            $paneles_to_table = array('perro'=>'mascota','gato'=>'mascota','servicio'=>'anuncio');
+            $paneles_to_table = array('perro'=>'mascota','gato'=>'mascota','servicio'=>'anuncio','producto'=>'producto');
             $paneles = array(
                 //'oferta'=>'Ofertas del d&iacute;a',
-                //'producto'=>'Productos destacados',
+                'producto'=>'Productos destacados',
                 'perro'=>'Perros destacados',
                 'gato'=>'Gatos destacados', 
                 'servicio'=>'Servicios destacados');

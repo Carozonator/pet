@@ -6,7 +6,34 @@ class Producto extends Model{
         parent::__construct();        
     }
     
-    function add($image_name,$nombre_original){
+    
+    
+    
+    function add(){
+        
+        $sql =  "INSERT INTO producto (animal,tab,precio,titulo,descripcion,departamento,ciudad_barrio,usuario,status)"
+                . " VALUES(?,?,?,?,?,?,?,?,'activo')";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($_POST['animal'],$_POST['tab'],$_POST['precio'],$_POST['titulo'],
+            $_POST['descripcion'],$_POST['departamento'],$_POST['ciudad_barrio'],$_SESSION['user']->id));
+        $insert_id = $this->pdo->lastInsertId(); 
+        
+        // Update foto with the new added publication id
+        $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($insert_id,$_POST['publication_hash']));
+        
+        return $insert_id;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    function addOld($image_name,$nombre_original){
         $sql =  "INSERT INTO producto "
                 . "(`category`, `subcategory`, `departamento`, `ciudad_barrio`, "
                 . "`usuario`, `foto_1`, `precio`, `titulo`,"
@@ -54,6 +81,21 @@ class Producto extends Model{
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
     }
+    
+    
+    
+    function getAllJoinPhoto($where_stmt,$where_vals){
+        $sql = "SELECT producto.*,foto.name as foto_name, foto.usuario as foto_usuario FROM producto LEFT OUTER JOIN foto on producto.id=foto.publication_id ".$where_stmt;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($where_vals);
+        $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        return $rows;
+    }
+    
+    
+    
+    
+    
     
     function get($id){
         $sql = "SELECT * FROM producto WHERE id=?";

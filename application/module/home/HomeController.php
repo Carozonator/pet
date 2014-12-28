@@ -12,7 +12,7 @@ class HomeController extends Controller{
         $servicio = $anuncio->getAllJoinPhoto("where _table='anuncio' order by id desc",null);
         
         $p = new \pluralpet\Producto();
-        $producto = $p->getAllJoinPhoto("where _table='producto' order by id desc",null);
+        $producto = $p->getAllJoinPhotoObj("where _table='producto' order by id desc",null);
         
         $this->view->assign(array('perro'=>$perro,'servicio'=>$servicio,'gato'=>$gato,'producto'=>$producto));
         $this->view->setFile('home');

@@ -107,7 +107,7 @@ foreach($data as $row){
 
         <div style="margin-bottom: 30px;position:relative;min-height:160px;">
         <div style="float:left;margin-right:10px;" class="thumb">
-            <a title="<?php echo $row['titulo'];?>" href="/tienda/<?php echo $row['id'];?>" >
+            <a title="<?php echo $row['titulo'];?>" href="/producto/<?php echo $row['id'];?>" >
                 <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">
             </a>
         </div>

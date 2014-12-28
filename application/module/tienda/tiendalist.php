@@ -99,7 +99,7 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
 
 <?php
 if(empty($data)){
-    echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay mascotas en esta categoria</div>';
+    echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay productos en esta categoria</div>';
 }
 else{
 foreach($data as $row){
@@ -107,14 +107,14 @@ foreach($data as $row){
 
         <div style="margin-bottom: 30px;position:relative;min-height:160px;">
         <div style="float:left;margin-right:10px;" class="thumb">
-            <a title="<?php echo $row['titulo'];?>" href="/mascota/<?php echo $row['id'];?>" >
+            <a title="<?php echo $row['titulo'];?>" href="/tienda/<?php echo $row['id'];?>" >
                 <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">
             </a>
         </div>
         <div class="overflow mbottom">
             <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
             <h3>
-                <a class="bigtxt" href="/mascota/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
+                <a class="bigtxt" href="/tienda/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
             </h3>
             <p class="gristxt">Precio: <?php echo ucfirst($row['precio']);?></p>
             <p class="gristxt">Localizacion: <?php echo ucfirst($row['ciudad_barrio']);?>, <?php echo ucfirst($row['departamento']);?></p>
@@ -129,7 +129,7 @@ foreach($data as $row){
             ?>
             <p class="descripcion"><?php echo $row['descripcion'];?></p>
             <div style="position:absolute;right:0px;top:0px;">
-                 <form style="display:inline;" method="POST" action="/comprar/delete/">
+                 <form style="display:inline;" method="POST" action="/tienda/delete/">
                     <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
                     <!--<button style="margin-left:10px;">Borrar</button>-->
                 </form>

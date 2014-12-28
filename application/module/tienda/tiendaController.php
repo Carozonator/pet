@@ -4,7 +4,7 @@ namespace pluralpet;
 class TiendaController extends Controller{
     
     function index(){
-        
+        echo 'here';die;
         $producto = new \pluralpet\Producto();
         $result = $producto->getAllJoinPhoto(NULL,NULL);
         

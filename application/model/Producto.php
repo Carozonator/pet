@@ -67,7 +67,7 @@ class Producto extends Model{
     }
     
     function delete(){
-        $sql =  "DELETE FROM product WHERE id=?";
+        $sql =  "DELETE FROM producto WHERE id=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['id']));
         $affected_rows = $stmt->rowCount();

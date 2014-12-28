@@ -114,7 +114,7 @@ foreach($data as $row){
         <div class="overflow mbottom">
             <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
             <h3>
-                <a class="bigtxt" href="/tienda/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
+                <a class="bigtxt" href="/producto/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
             </h3>
             <p class="gristxt">Precio: <?php echo ucfirst($row['precio']);?></p>
             <p class="gristxt">Localizacion: <?php echo ucfirst($row['ciudad_barrio']);?>, <?php echo ucfirst($row['departamento']);?></p>
@@ -129,7 +129,7 @@ foreach($data as $row){
             ?>
             <p class="descripcion"><?php echo $row['descripcion'];?></p>
             <div style="position:absolute;right:0px;top:0px;">
-                 <form style="display:inline;" method="POST" action="/tienda/delete/">
+                 <form style="display:inline;" method="POST" action="/producto/delete/">
                     <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
                     <!--<button style="margin-left:10px;">Borrar</button>-->
                 </form>

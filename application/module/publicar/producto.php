@@ -49,7 +49,7 @@ $publication_hash = substr( md5(rand()), 0, 10);
                             foreach($row as $k=>$r){
                                 $src = MEDIA.'tienda/'.$key.'/'.$r;
                                 if(substr($r,0,1)!='.'){
-                                    echo '<img onclick="Publicar.tab=\''.$r.'\';Publicar.slideRight(2,true);" style="display:none" class="'.$key.' tienda" src="'.$src.'"/>';
+                                    echo '<img onclick="Publicar.tab=\''.array_shift(explode('.', $r)).'\';Publicar.slideRight(2,true);" style="display:none" class="'.$key.' tienda" src="'.$src.'"/>';
                                 }
                             }
                         }

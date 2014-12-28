@@ -4,40 +4,59 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
 
 
 
+
+
+
+
 ?>
-<!--
 <div style="margin-top:40px">
     <div class="publicar" style='margin:0px 20px 0px 0px;width:20%;float:left;'>
-        <form action="/comprar/filtro/" method="GET" id="filter">
-            <input type="hidden" value="<?php echo $animal; ?>" name="animal"/>
-            <input type="hidden" value="<?php echo $tab; ?>" name="tab"/>
-            <div class="filter_title" style="border:0px"><div class="publicar_item_header">Tama&ntilde;o<span onclick="Filter.unfilter('tamano')">x</span></div></div>
+        <form action="/tienda/filtro/" method="GET" id="filter">
+            <!--<input type="hidden" value="<?php echo $animal; ?>" name="animal"/>
+            <input type="hidden" value="<?php echo $tab; ?>" name="tab"/>-->
+            <div class="filter_title"><div class="publicar_item_header"><?php echo 'Animal'; ?><!--<span onclick="Filter.unfilter('animal')">x</span>--></div></div>
             <div class="filter_desc">
-                <input onclick="Filter.submit()" <?php if($_REQUEST['tamano']=='pequeno'){echo 'checked';}?> type="radio" value="pequeno" name="tamano"/> Peque&ntilde;o<br/>
-                <input onclick="Filter.submit()" <?php if($_REQUEST['tamano']=='mediano'){echo 'checked';}?> type="radio" value="mediano" name="tamano"/> Mediano<br/>
-                <input onclick="Filter.submit()" <?php if($_REQUEST['tamano']=='grande'){echo 'checked';}?> type="radio" value="grande" name="tamano"/> Grande<br/>
-            </div>
-            <div class="filter_title" style=""><div class="publicar_item_header">Edad<span onclick="Filter.unfilter('edad')">x</span></div></div>
-            <div class="filter_desc">
-                <input onclick="Filter.submit()" <?php if($_REQUEST['edad']=='junior'){echo 'checked';}?> type="radio" value="junior" name="edad"/> Junior<br/>
-                <input onclick="Filter.submit()" <?php if($_REQUEST['edad']=='adulto'){echo 'checked';}?> type="radio" value="adulto" name="edad"/> Adulto<br/>
-                <input onclick="Filter.submit()" <?php if($_REQUEST['edad']=='senior'){echo 'checked';}?> type="radio" value="senior" name="edad"/> Senior<br/>
-            </div>
-            <div class="filter_title"><div class="publicar_item_header"><?php echo 'Raza'; ?><span onclick="Filter.unfilter('animal_detail')">x</span></div></div>
-            <div class="filter_desc">
-                <select class="animal_detail" name="animal_detail" style="width:100%;">
+                <select class="animal" name="animal" style="width:100%;">
+                    <option></option>
                     <?php
-                        foreach($GLOBALS['raza']['perro'] as $r){
-                            if($_REQUEST['animal_detail']==$r){
-                                echo '<option selected>'.$r.'</option>';
-                            }
-                            else{
-                                echo '<option>'.$r.'</option>';
+                        foreach($GLOBALS['nav_menu']['comprar'] as $r){
+                            foreach($r as $key=>$other){
+                                if($_REQUEST['animal']==$key){
+                                    echo '<option value="'.$key.'" selected>'.ucfirst($key).'</option>';
+                                }
+                                else{
+                                    echo '<option value="'.$key.'">'.ucfirst($key).'</option>';
+                                }
                             }
                         }
                     ?>
                 </select>
             </div>
+            <div class="filter_title" style="<?php if(empty($_REQUEST['animal'])){echo 'display:none;';}?>">
+                <div class="publicar_item_header producto"><?php echo 'Producto'; ?><!--<span onclick="Filter.unfilter('tab')">x</span>--></div>
+            </div>
+            <div class="filter_desc producto" style="<?php if(empty($_REQUEST['animal'])){echo 'display:none;';}?>">
+                <select class="tab" name="tab" style="width:100%;">
+                    <option></option>
+                    <?php
+                        foreach($GLOBALS['producto'][$_REQUEST['animal']] as $key=>$r){
+                            if($_REQUEST['tab']==$r){
+                                echo '<option value="'.$r.'" selected>'.ucfirst($r).'</option>';
+                            }
+                            else{
+                                echo '<option value="'.$r.'">'.ucfirst($r).'</option>';
+                            }
+                        }
+                    ?>
+                </select>
+            </div>
+            
+            
+            
+            
+            
+            
+            
             <div class="filter_title"><div class="publicar_item_header">Localizaci&oacute;n<span onclick="Filter.unfilter('departamento')">x</span></div></div>
             <div class="filter_desc">
                 <select class="departamento" name="departamento" style="width:100%;">
@@ -86,22 +105,19 @@ else{
 foreach($data as $row){
 ?>
 
-        <div style="margin-bottom: 30px;position:relative;">
+        <div style="margin-bottom: 30px;position:relative;min-height:160px;">
         <div style="float:left;margin-right:10px;" class="thumb">
             <a title="<?php echo $row['titulo'];?>" href="/mascota/<?php echo $row['id'];?>" >
-                <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_1']; ?>">
+                <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">
             </a>
         </div>
         <div class="overflow mbottom">
+            <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
             <h3>
                 <a class="bigtxt" href="/mascota/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
             </h3>
-            <p class="gristxt"><?php echo $raza_o_animal[$row['animal']]; ?>: <?php echo ucfirst($row['animal_detail']);?></p>
+            <p class="gristxt">Precio: <?php echo ucfirst($row['precio']);?></p>
             <p class="gristxt">Localizacion: <?php echo ucfirst($row['ciudad_barrio']);?>, <?php echo ucfirst($row['departamento']);?></p>
-            <p class="gristxt">Tama&ntilde;o: <?php echo ucfirst($row['tamano']);?></p>
-            <p class="gristxt">Edad: <?php echo ucfirst($row['edad']);?></p>
-            <p class="gristxt">Sexo: <?php echo ucfirst($row['sexo']);?></p>
-            <p class="gristxt">Pedigree: <?php echo ucfirst($row['pedigree']);?> - Criadero: <?php echo ucfirst($row['criadero']);?></p>
             <?php 
             
             if($row['horario']){
@@ -115,12 +131,11 @@ foreach($data as $row){
             <div style="position:absolute;right:0px;top:0px;">
                  <form style="display:inline;" method="POST" action="/comprar/delete/">
                     <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
-                    <button style="margin-left:10px;">Borrar</button>
+                    <!--<button style="margin-left:10px;">Borrar</button>-->
                 </form>
             </div>
         </div>
         </div>
-
 
 <?php
 }
@@ -129,4 +144,3 @@ echo '</div>';
 echo '<div style="clear:both"></div>';
 echo '</div>';
 ?>
--->

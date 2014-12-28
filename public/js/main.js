@@ -28,10 +28,46 @@ var Ready = {
             $('.ciudad_barrio').show();
         });
 
+
+
+
+
+
         $("select.animal_detail").select2({
             placeholder: "Eligue Animal/Raza",
             allowClear: false
         });
+        
+        
+        
+        
+        
+        
+        
+        $("select.animal").select2({
+            placeholder: "Eligue Animal",
+            allowClear: true
+        }).on('change', function(e){
+            $('select.tab').html('');
+            var data = Publicar.producto[e.val];
+            $('select.tab').append('<option></option>');
+            for(var i in data){
+                    $('select.tab').append('<option value="' + data[i]+ '">'+data[i]+'</option>');
+            }
+            $('select.tab').show();
+        });
+        $("select.tab").select2({
+            placeholder: "Eligue Producto",
+            allowClear: true,
+            enable:false,
+            readonly:true
+        });
+        
+        
+        
+        
+        
+        
         $('select').on('change',function(){Filter.submit()});
     }
 }
@@ -46,6 +82,12 @@ $(document).ready(function(){Ready.init();});
 
 var Publicar = {
     group:'',/* mascota,producto,anuncio */
+    producto:{'perro':["accesorios","transporte","alimentos","camas","casillas","collarez","comederos","correas","jaulas","juguetes","ropa"],
+                'gato':["accesorios","transporte","alimentos","camas","casillas","collarez","comederos","juguetes"],
+                'ave':["accesorios","alimentos","jaulas","salud"],
+                'repitl':["accesorios","alimentos","salud","terrarios","transporte"],
+                'mamifero':["accesorios","alimentos","jaulas","juguetes","salud","transporte"],
+                'pez':["accesorios","alimentos","parideras","peceras","salud"]},
     departamento:{'Artigas':['Artigas','Bella Union'],
         'Canelones':['Ciudad de la Costa','Las Piedras','Barros Blancos','Pando','La Paz','Canelones','Santa Lucia','Progreso'],
         'Cerro Largo':['Melo','Rio Branco'],

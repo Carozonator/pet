@@ -163,6 +163,25 @@ $GLOBALS['raza_o_animal']= array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Ani
 
 
 
+
+
+
+
+
+
+$GLOBALS['producto'] = array(
+                'perro'=>array("accesorios","transporte","alimentos","camas","casillas","collarez","comederos","correas","jaulas","juguetes","ropa"),
+                'gato'=>array("accesorios","transporte","alimentos","camas","casillas","collarez","comederos","juguetes"),
+                'ave' => array("accesorios","alimentos","jaulas","salud"),
+                'repitl' => array("accesorios","alimentos","salud","terrarios","transporte"),
+                'mamifero' =>  array("accesorios","alimentos","jaulas","juguetes","salud","transporte"),
+                'pez' => array("accesorios","alimentos","parideras","peceras","salud"));
+
+
+
+
+
+
 // Define constants
 foreach($constant as $key => $row){
     define($key,$row);

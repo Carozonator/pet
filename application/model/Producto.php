@@ -75,9 +75,9 @@ class Producto extends Model{
     }
     
     function getAll($type,$animal){
-        $sql = "SELECT * FROM producto WHERE category=?";
+        $sql = "SELECT * FROM producto ";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array($type,$animal));
+        $stmt->execute();//array($type,$animal)
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
     }
@@ -87,8 +87,8 @@ class Producto extends Model{
     function getAllJoinPhoto($where_stmt,$where_vals){
         $sql = "SELECT producto.*,foto.name as foto_name, foto.usuario as foto_usuario FROM producto LEFT OUTER JOIN foto on producto.id=foto.publication_id ".$where_stmt;
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute($where_vals);
-        $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        $stmt->execute();//$where_vals);
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
     }
     
@@ -110,7 +110,7 @@ class Producto extends Model{
             $vals_decoded[]=urldecode($rows);
         }
         $stmt = implode("=? and ",array_keys($vals))."=? ";
-        $sql = "SELECT * FROM product WHERE ".$stmt;
+        $sql = "SELECT producto.*,foto.name as foto_name, foto.usuario as foto_usuario FROM producto LEFT OUTER JOIN foto on producto.id=foto.publication_id WHERE ".$stmt;
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($vals_decoded);
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);

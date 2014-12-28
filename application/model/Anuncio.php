@@ -35,7 +35,7 @@ class Anuncio extends Model{
     }
     
     function get($type){
-        $sql = "SELECT * FROM anuncio WHERE tipo=?";
+        $sql = "SELECT * FROM anuncio WHERE sub_tab=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($type));
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);

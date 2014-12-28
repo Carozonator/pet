@@ -10,9 +10,7 @@ class FactoryController{
         $view = self::buildView($request);
         
         $controller_name = __NAMESPACE__.'\\'.$controller_name;
-        echo ROOT.'application/module/'.strtolower($request->getController()).'/'.ucfirst($request->getController()).'Controller.php';
         require_once ROOT.'application/module/'.strtolower($request->getController()).'/'.ucfirst($request->getController()).'Controller.php';
-        echo 'after error';
         /*
         if(! class_exists($controller_name)){
             $error = FactoryController::build('ErrorController');

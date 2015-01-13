@@ -71,7 +71,9 @@ if(in_array($_POST['tab'],$check1)){
             <div class="publicar_item_header">Refugio</div>
             <div class="publicar_sub_item">
                 <select class="" name="refugio" style="width:200px;">
-                    <option></option>
+                    <?php foreach($GLOBALS['refugio'] as $ref){ 
+                        echo '<option>'.$ref.'</option>';
+                    } ?>
                 </select>
             </div>
         </div>

@@ -39,7 +39,11 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('perro'=> 'Perros'),
                                                             array('gato'=> 'Gatos'),
                                                             array('otro'=> 'Otros')
-                                ),'perdidos y encontrados'=> array(
+                                ),'perdido'=> array(
+                                                            array('perro'=> 'Perros'),
+                                                            array('gato'=> 'Gatos'),
+                                                            array('otro'=> 'Otros')
+                                ),'encontrado'=> array(
                                                             array('perro'=> 'Perros'),
                                                             array('gato'=> 'Gatos'),
                                                             array('otro'=> 'Otros')
@@ -67,7 +71,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                 */
                                 );
 
-
+$GLOBALS['refugio']= array('','Animales Sin Hogar','Animal Help','A.P.A el Refugio');
 
 $GLOBALS['departamento'] = array('Artigas'=>array('Artigas','Bella Union'),
                      'Canelones'=>array('Ciudad de la Costa','Las Piedras','Barros Blancos','Pando','La Paz','Canelones','Santa Lucia','Progreso'),

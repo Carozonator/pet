@@ -1,7 +1,7 @@
 
 <div class="main-content_container" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
-        <h2 style="border-bottom: 1px solid grey;padding:5px;">
+        <h2 style="border-bottom: 1px solid grey;padding:5px;color:#9C2490">
             <?php echo $mascota['titulo'];?>
         </h2>
         <div style="float:right;">
@@ -17,7 +17,9 @@
                 <img alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$foto[0]['usuario'].'/'.$foto[0]['name']; ?>">
             </div>
             <div style="display:inline-block">
-                <h2 style="padding-bottom:20px;"><?php echo strtoupper($mascota['tab']);?></h2>
+                <h2 style="padding-bottom:20px;">
+                    <!--<?php echo strtoupper($mascota['tab']);?>-->
+                </h2>
                 <h5 >Direcc&iacute;on:</h5>
                 <p class="gristxt"><?php echo ucfirst($mascota['ciudad_barrio']);?>, <?php echo ucfirst($mascota['departamento']);?></p><br/>
                 <button onclick="Contactar.show(<?php echo $mascota['usuario']; ?>)">Contactar</button>
@@ -34,14 +36,14 @@
         
 
         <div class="item_datos" style="margin-top:20px;">
-            <h4>Datos</h4>
-            <?php echo $GLOBALS['raza_o_animal'][$mascota['animal']]; ?>: <?php echo ucfirst($mascota['animal_detail']);?><br/>
-            Precio: $<?php echo ucfirst($mascota['precio']);?><br/>
-            Tama&ntilde;o: <?php echo ucfirst($mascota['tamano']);?><br/>
-            Edad: <?php echo ucfirst($mascota['edad']);?><br/>
-            Sexo: <?php echo ucfirst($mascota['sexo']);?><br/>
-            Pedigree: <?php echo ucfirst($mascota['pedigree']);?><br/>
-            Criadero: <?php echo ucfirst($mascota['criadero']);?><br/>
+            <h4 style="color:#9C2490">Datos</h4>
+            <span class="gristxt_1"><?php echo $GLOBALS['raza_o_animal'][$mascota['animal']]; ?>:</span> <?php echo ucfirst($mascota['animal_detail']);?><br/>
+            <span class="gristxt_1">Precio:</span> $<?php echo ucfirst($mascota['precio']);?><br/>
+            <span class="gristxt_1">Tama&ntilde;o:</span>  <?php echo ucfirst($mascota['tamano']);?><br/>
+            <span class="gristxt_1">Edad:</span> <?php echo ucfirst($mascota['edad']);?><br/>
+            <span class="gristxt_1">Sexo:</span> <?php echo ucfirst($mascota['sexo']);?><br/>
+            <span class="gristxt_1">Pedigree:</span> <?php echo ucfirst($mascota['pedigree']);?><br/>
+            <span class="gristxt_1">Criadero:</span> <?php echo ucfirst($mascota['criadero']);?><br/>
             <?php 
             if($mascota['horario']){
                 echo 'Horario: '.$mascota['horario'].'';

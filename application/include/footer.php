@@ -13,21 +13,20 @@
     <div class="f_navigation">
         <div class="container_12">
             <div class="grid_3">
-                <h3>Contact Us</h3>
-                <ul class="f_contact">
-                    <li>10 Lincoln Center Plaza, New York, NY 10023, USA</li>
-                    <li>+777 (111) 1234</li>
-                    <li>pets@gmail.com</li>
+                <h3>Contacto</h3>
+                <ul class="">
+                    <li>Contacto</li>
+                    <li>Sugerencia</li>
                 </ul><!-- .f_contact -->
             </div><!-- .grid_3 -->
             <div class="grid_3">
                 <nav class="f_menu">
-                    <h3>Information</h3><div class="menu-information-container">
+                    <h3>Informacion</h3><div class="menu-information-container">
                         <ul id="menu-information" class="menu">
-                            <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="http://#">About Us</a></li>
-                            <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="http://#">Privacy Policy</a></li>
-                            <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="http://#">Terms &amp; Conditions</a></li>
-                            <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="http://#">Secure payment</a></li>
+                            <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="http://#">Sobre Nosotros</a></li>
+                            <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="http://#">Terminos y Condiciones</a></li>
+                            <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="http://#">Politicas de privacidad</a></li>
+                            <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="http://#">Ayuda</a></li>
                         </ul>
                     </div>                
                 </nav>
@@ -49,18 +48,21 @@
             -->
             <div class="grid_3">
                 <nav class="f_menu">
-                    <h3>My Account</h3>
+                    <h3>Mi Cuenta</h3>
                     <div class="menu-my-account-container">
                         <ul id="menu-my-account" class="menu">
                             <li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="http://puntopets.com/my-account/">Mi cuenta</a></li>
                             <li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://puntopets.com/wishlist/">Favoritos</a></li>
-                            <li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="http://#">Newsletter</a></li>
                         </ul>
                     </div>                
                 </nav><!-- .f_menu -->
             </div><!-- .grid_3 -->
-            <div class="grid_3" style="margin-top:-50px;">
-                <div data-width="240" data-colorscheme="dark" class="fb-like-box" data-href="https://www.facebook.com/HowIMetYourMotherCBS" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+            <div class="grid_3" style="margin-top:-42px;">
+                
+                <div class="fb-like-box" data-width="235" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+                
+                
+                <!--<div data-width="240" data-colorscheme="dark" class="fb-like-box" data-href="https://www.facebook.com/HowIMetYourMotherCBS" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>-->
             </div>
             <div class="clear"></div>
         </div><!-- .container_12 -->

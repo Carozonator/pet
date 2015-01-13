@@ -39,9 +39,15 @@
                         <ul style=""class="dropdown">
                             <form style="margin-top:10px;" method="POST" action="/account/login/">
                                 <input type="hidden" name="action" value="login"/>
-                                <li><i class="icon-envelope"></i><input name="user" placeholder="Email o Usuario" type="text"/>
-                                <i class="icon-lock"></i><input name="password" placeholder="Password" type="password"/>
-                                <div onclick="$(this).closest('form').submit();" class="icon-circle-arrow-right"></div></li>
+                                <li>
+                                    <i class="icon-envelope"></i>
+                                    <input name="user" placeholder="Email o Usuario" type="text"/>
+                                </li>
+                                <li>
+                                    <i class="icon-lock"></i>
+                                    <input name="password" placeholder="Password" type="password"/>
+                                <div onclick="$(this).closest('form').submit();" class="icon-circle-arrow-right"></div>
+                                </li>
                                 <input type="submit" style="position: absolute; left: -9999px"/>
                             </form>
                             <li><a href="#"></i>Has olvidado tu contrase&ntilde;a?</a></li>
@@ -51,12 +57,15 @@
                     </div>
 
                     <?php }else{ ?>
-                    <div id="dd" style="min-width:100px;" class="dropdown-menu" tabindex="1"><i class="icon-user"></i> <?php echo $_SESSION['user']->username;?>
+                    <div id="dd" style="min-width:50px;max-width:120px;" class="dropdown-menu" tabindex="1">
+                        <a href="/account/"><i class="icon-user"></i> <?php echo $_SESSION['user']->username;?></a>
+                        <a style="padding-left:20px;" href="/account/logout"><i style="padding-right:5px;" class="icon-eject"></i>Salir</a>
+                        <!--
                         <ul class="dropdown">
                             <li><a href="/account/"><i class="icon-user"></i>Mi cuenta</a></li>
-                            <!--<li><a href="#"><i class="icon-cog"></i>Settings</a></li>-->
                             <li><a href="/account/logout"><i class="icon-remove"></i>Salir</a></li>
                         </ul>
+                        -->
                     </div>
                     <?php } ?>
             

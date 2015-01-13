@@ -2,11 +2,12 @@
 
 //print_r($servicio);die;
 $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','loc'=>'top:20px;left:600px;','img'=>'comprar.jpg'),*/
-                     array('title'=>'','text'=>'Conoce los mejores consejos para disfrutar al maximo de tu mejor amigo','loc'=>'top:20px;left:600px;','img'=>'consejos.jpg'),
-                     array('title'=>'','text'=>'Encuentra un mundo de posibilidades para cruzar a tu mascota','loc'=>'top:40px;left:0px;','img'=>'cruzar.jpg'),
-                     array('title'=>'','text'=>'Se parte de la solucion ayudandonos a unir mascotas con sus familias','loc'=>'top:20px;left:0px;','img'=>'encontrado.jpg'),
-                     array('title'=>'','text'=>'Visita nuestra tienda y descubre los mejores productos','loc'=>'top:20px;left:600px;','img'=>'tienda.jpg'),
-                     array('title'=>'','text'=>'Visita nuestra seccion dedicada especificamente a refuigios','loc'=>'top:20px;left:600px;','img'=>'adoptar.jpg')
+                     array('title'=>'','text'=>'Conoce los mejores consejos para disfrutar al maximo de tu mejor amigo','loc'=>'left:200px;','img'=>'consejos.jpg','link'=>'/consejos/perro/'),
+                     array('title'=>'','text'=>'Encuentra un mundo de posibilidades para cruzar a tu mascota','loc'=>'left:0px;','img'=>'cruzar.jpg','link'=>'/cruzar/perro/'),
+                     array('title'=>'','text'=>'Se parte de la solucion ayudandonos a unir mascotas con sus familias','loc'=>'left:0px;','img'=>'encontrado.jpg','link'=>'/perdidos-y-encontrados/perro/'),
+                     array('title'=>'','text'=>'Visita nuestra tienda y descubre los mejores productos','loc'=>'left:600px;','img'=>'tienda.jpg','link'=>''),
+                     array('title'=>'','text'=>'Visita nuestra seccion dedicada especificamente a refuigios','loc'=>'left:600px;','img'=>'adoptar.jpg','link'=>''),
+                     array('title'=>'','text'=>'','loc'=>'left:200px;','img'=>'comprar.jpg','link'=>'/comprar/perro/')
     );
 //echo '<pre>';
 //print_r($perro[0]);die;
@@ -117,12 +118,14 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                         <div class="destacado_container">
                                             <div>
                                                 <div style="" class="thumb">
-                                                    <a title="<?php echo $r->titulo;?>" href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
+                                                    <a title="<?php echo $r->titulo;?>">
                                                         <img alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$r->foto_usuario.'/thumb_'.$r->foto_name; ?>">
                                                     </a>
                                                 </div>
                                                 <div class="title">
+                                                    <a href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
                                                     <?php echo $r->titulo; ?>
+                                                    </a>
                                                 </div>
                                                 <div class="type">
                                                     <?php 
@@ -135,7 +138,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                                 </div>
                                                 <div class="description">
                                                     <a style="color:black;" title="<?php echo $r->titulo;?>" href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
-                                                        <?php echo substr($r->descripcion,0,40).'...'; ?>
+                                                        <?php echo substr(addslashes($r->descripcion),0,40).'...'; ?>
                                                     </a>
                                                 </div>
                                             </div>

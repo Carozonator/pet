@@ -37,6 +37,10 @@ var Ready = {
             placeholder: "Eligue Animal/Raza",
             allowClear: false
         });
+        $("select.refugio").select2({
+            placeholder: "Eligue Refugio",
+            allowClear: false
+        });
         
         
         
@@ -130,7 +134,6 @@ var Publicar = {
     
     slideRight: function(next_pos,forward_move){
         
-        console.log('here');
         if(!forward_move && this.cur_pos < next_pos){
             return;
         }
@@ -152,7 +155,16 @@ var Publicar = {
         $('.step:eq('+(next_pos)+')').addClass('highlight');
         $('.publicar_header_arrow').removeClass('highlight_pink');
         //$('.publicar_header_arrow:eq('+(next_pos-1)+')').addClass('highlight_pink');
-        
+        if(next_box.has('tab')){
+            if(Publicar.animal=="ave" ||Publicar.animal=="reptil" ||Publicar.animal=="pez"){
+                $('.tab_perdido').hide();
+                $('.tab_encontrado').hide();
+            }
+            if(Publicar.animal=="pez"){
+                $('.tab_adoptar').hide();
+            }
+            //alert(Publicar.animal);
+        }
         
         
         if(next_box.hasClass('description')){
@@ -341,6 +353,9 @@ Filter = {
             $("select").select2("val", '');
         }
         if(name=='animal_detail'){
+            $("select").select2("val", '');
+        }
+        if(name=='refugio'){
             $("select").select2("val", '');
         }
         $('form#filter').submit();

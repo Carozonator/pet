@@ -17,7 +17,7 @@ class Request{
         array_shift($parts);
         //$this->_module = array_shift($parts);
         $this->_controller = ($c = array_shift($parts))? ucfirst($c): 'home';
-        $mascota = array('Comprar'=>true,'Adoptar'=>true,'Perdidos-y-encontrados'=>true,'Cruzar'=>true);
+        $mascota = array('Comprar'=>true,'Adoptar'=>true,'Perdido'=>true,'Cruzar'=>true,'Encontrado'=>true);
         if($mascota[$this->_controller]){
             $this->_tab=$this->_controller;
             $this->_controller='Mascota';

@@ -16,7 +16,7 @@ class Mascota extends Model{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['animal'],$_POST['animal_detail'],$_POST['sexo'],$_POST['edad'],
             $_POST['tamano'],$_POST['pedigree'],$_POST['criadero'],$_POST['precio'],$_POST['titulo'],
-            $_POST['descripcion'],$_POST['tab'],$_POST['fecha'],$_POST['departamento'],$_POST['ciudad_barrio'],$_SESSION['user']->id));
+            htmlentities(strip_tags($_POST['descripcion'])),$_POST['tab'],$_POST['fecha'],$_POST['departamento'],$_POST['ciudad_barrio'],$_SESSION['user']->id));
         $insert_id = $this->pdo->lastInsertId(); 
         
         // Update foto with the new added publication id

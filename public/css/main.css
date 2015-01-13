@@ -67,6 +67,10 @@ a.bigtxt {color:#333; /*color:#cc0033;*/ }
 .gristxt{
     color:#939393;
 }
+.gristxt_1{
+    font-size:15px;
+    font-weight:bold;
+}
 div.img150 {
     min-height:150px;
     height:auto !important;
@@ -205,7 +209,15 @@ div.img150 div.thumb {
 .primary > ul > li > a{
     background:none !important;
     color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:14px;
+    font-weight:bold;
 }
+
+.primary ul ul.sub-menu li a{
+    font-family:Verdana, Geneva, sans-serif;
+}
+
 
 ul.dropdown > li{
     margin:10px 0px;
@@ -379,7 +391,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     border-bottom: 1px solid #e6e8ea;
 }
 .wrapper-dropdown-5 .dropdown li input{
-    width:37%;
+    width:60%;
     background-color:#E6E8EB;
 }
 .wrapper-dropdown-5 .icon-circle-arrow-right{
@@ -489,7 +501,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 /* Carusel */
 .slid_text div{
     padding: 5px 10px;
-    font-size: 16px;
+    font-size: 22px;
+    background: #fff;
+    opacity: 0.7;
+    color: #222;
+}
+.slid_text{
+    position: absolute;
+    bottom: 0px;
+    left: 495px;
+    color: #131313;
+    font-size:30px;
+}
+.slid_text .slid_title{
+    line-height: 1.5;
+    margin: 0 0 18px 0;
+    padding: 5px 0;
+}
+.slid_text .slid_title span{
+    padding: 5px 10px;
+    font-size: 36px;
+    background: #fff;
+    opacity: 0.7;
+    color: #222;
+}
+.slid_text p{
+    padding: 5px 0;
+    margin: 0 0 2px 0;}
+.slid_text p span{
+    padding: 5px 10px;
     background: #fff;
     opacity: 0.7;
     color: #222;
@@ -740,7 +780,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     width:48%;
 }
 
-
+.destacado a{
+    color:black;
+}
 .destacado .thumb {
     text-decoration: none; 
     overflow:hidden;
@@ -748,6 +790,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     line-height:0;
     border:1px solid #cacaca; -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;  
     margin:0px auto;
+}
+
+.destacado .title a:hover{
+    color:#e209c9;
 }
 
 

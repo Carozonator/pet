@@ -16,14 +16,7 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
                 <input onclick="Filter.submit()" <?php if($_REQUEST['edad']=='adulto'){echo 'checked';}?> type="radio" value="adulto" name="edad"/> Adulto<br/>
                 <input onclick="Filter.submit()" <?php if($_REQUEST['edad']=='senior'){echo 'checked';}?> type="radio" value="senior" name="edad"/> Senior<br/>
             </div>
-            <?php if($animal=='perro'){?>
-            <div class="filter_title"><div class="publicar_item_header">Tama&ntilde;o<span onclick="Filter.unfilter('tamano')">x</span></div></div>
-            <div class="filter_desc">
-                <input onclick="Filter.submit()" <?php if($_REQUEST['tamano']=='pequeno'){echo 'checked';}?> type="radio" value="pequeno" name="tamano"/> Peque&ntilde;o<br/>
-                <input onclick="Filter.submit()" <?php if($_REQUEST['tamano']=='mediano'){echo 'checked';}?> type="radio" value="mediano" name="tamano"/> Mediano<br/>
-                <input onclick="Filter.submit()" <?php if($_REQUEST['tamano']=='grande'){echo 'checked';}?> type="radio" value="grande" name="tamano"/> Grande<br/>
-            </div>
-            <?php } ?>
+            
             <div class="filter_title"><div class="publicar_item_header">Sexo<span onclick="Filter.unfilter('sexo')">x</span></div></div>
             <div class="filter_desc">
                 <input onclick="Filter.submit()" <?php if($_REQUEST['sexo']=='macho'){echo 'checked';}?> type="radio" value="macho" name="sexo"/> Macho<br/>
@@ -61,6 +54,31 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
                     ?>
                 </select>
             </div>
+            
+            
+            
+            <?php if(strcmp($tab,'adoptar')===0){?>
+            <div class="filter_title"><div class="publicar_item_header">Refugio<span onclick="Filter.unfilter('refugio')">x</span></div></div>
+            <div class="filter_desc">
+                <select class="refugio" name="refugio" style="width:100%;">
+                    <?php
+                        if($tab!='comprar' && $animal=='otro'){
+                            $animal='otro_todos';
+                        }
+                        foreach($GLOBALS['refugio'] as $r){
+                            if($_REQUEST['refugio']==$r){
+                                echo '<option selected>'.$r.'</option>';
+                            }
+                            else{
+                                echo '<option>'.$r.'</option>';
+                            }
+                        }
+                    ?>
+                </select>
+            </div>
+            <?php } ?>
+            
+            
             <div class="filter_title"><div class="publicar_item_header">Localizaci&oacute;n<span onclick="Filter.unfilter('departamento')">x</span></div></div>
             <div class="filter_desc">
                 <select class="departamento" name="departamento" style="width:100%;">
@@ -109,40 +127,42 @@ else{
 foreach($data as $row){
 ?>
 
-        <div style="margin-bottom: 30px;position:relative;">
-        <div style="float:left;margin-right:10px;" class="thumb">
-            <a title="<?php echo $row['titulo'];?>" href="/mascota/<?php echo $row['id'];?>" >
-                <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">
-            </a>
-        </div>
-        <div class="overflow mbottom">
-            <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
-            <h3>
-                <a class="bigtxt" href="/mascota/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
-            </h3>
-            <p class="gristxt"><?php echo $raza_o_animal[$row['animal']]; ?>: <?php echo ucfirst($row['animal_detail']);?></p>
-            <p class="gristxt">Localizacion: <?php echo ucfirst($row['ciudad_barrio']);?>, <?php echo ucfirst($row['departamento']);?></p>
-            <p class="gristxt">Tama&ntilde;o: <?php echo ucfirst($row['tamano']);?></p>
-            <p class="gristxt">Edad: <?php echo ucfirst($row['edad']);?></p>
-            <p class="gristxt">Sexo: <?php echo ucfirst($row['sexo']);?></p>
-            <p class="gristxt">Pedigree: <?php echo ucfirst($row['pedigree']);?> - Criadero: <?php echo ucfirst($row['criadero']);?></p>
-            <?php 
-            
-            if($row['horario']){
-                echo '<p class="gristxt nolink" title="" href="#">Horario: '.$row['horario'].'</p>';
-            }
-            if($row['link']){
-                echo '<a class="gristxt" title="" href="'.$row['link'].'">'.$row['link'].'</a>';
-            }
-            ?>
-            <p class="descripcion"><?php echo $row['descripcion'];?></p>
-            <div style="position:absolute;right:0px;top:0px;">
-                 <form style="display:inline;" method="POST" action="/comprar/delete/">
-                    <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
-                    <!--<button style="margin-left:10px;">Borrar</button>-->
-                </form>
+        <div style="margin-bottom: 30px;position:relative;border:1px solid lightgrey;padding:10px;background-color:white;">
+            <div style="float:left;margin-right:10px;" class="thumb">
+                <a title="<?php echo $row['titulo'];?>" href="/mascota/<?php echo $row['id'];?>" >
+                    <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">
+                </a>
             </div>
-        </div>
+            <div class="overflow mbottom">
+                <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
+                <h3>
+                    <a class="bigtxt" style="color:#9C2490" href="/mascota/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
+                </h3>
+                <p><span class="gristxt_1"><?php echo $raza_o_animal[$row['animal']]; ?>:</span> <?php echo ucfirst($row['animal_detail']);?></p>
+                <p><span class="gristxt_1">Localizacion:</span> <?php echo ucfirst($row['ciudad_barrio']);?>, <?php echo ucfirst($row['departamento']);?></p>
+                <p><span class="gristxt_1">Tama&ntilde;o:</span> <?php echo ucfirst($row['tamano']);?></p>
+                <p><span class="gristxt_1">Edad:</span> <?php echo ucfirst($row['edad']);?></p>
+                <p><span class="gristxt_1">Sexo:</span> <?php echo ucfirst($row['sexo']);?></p>
+                <p><span class="gristxt_1">Pedigree:</span> <?php echo ucfirst($row['pedigree']);?> - Criadero: <?php echo ucfirst($row['criadero']);?></p>
+                <?php 
+
+                if($row['horario']){
+                    echo '<p class="gristxt nolink" title="" href="#">Horario: '.$row['horario'].'</p>';
+                }
+                if($row['link']){
+                    echo '<a class="gristxt" title="" href="'.$row['link'].'">'.$row['link'].'</a>';
+                }
+                ?>
+                <!--
+                <p class="descripcion"><?php echo $row['descripcion'];?></p>
+                -->
+                <div style="position:absolute;right:0px;top:0px;">
+                     <form style="display:inline;" method="POST" action="/comprar/delete/">
+                        <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
+                        <!--<button style="margin-left:10px;">Borrar</button>-->
+                    </form>
+                </div>
+            </div>
         </div>
 
 

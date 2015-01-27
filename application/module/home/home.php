@@ -7,7 +7,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                      array('title'=>'','text'=>'Se parte de la solucion ayudandonos a unir mascotas con sus familias','loc'=>'left:0px;','img'=>'encontrado.jpg','link'=>'/perdidos-y-encontrados/perro/'),
                      array('title'=>'','text'=>'Visita nuestra tienda y descubre los mejores productos','loc'=>'left:600px;','img'=>'tienda.jpg','link'=>''),
                      array('title'=>'','text'=>'Visita nuestra seccion dedicada especificamente a refuigios','loc'=>'left:600px;','img'=>'adoptar.jpg','link'=>''),
-                     array('title'=>'','text'=>'Agrega un nuveo miembro a tu familia','loc'=>'left:200px;','img'=>'comprar.jpg','link'=>'/comprar/perro/')
+                     array('title'=>'','text'=>'Agrega un nuveo miembro a tu familia','loc'=>'right:0px;','img'=>'comprar.jpg','link'=>'/comprar/perro/')
     );
 //echo '<pre>';
 //print_r($perro[0]);die;

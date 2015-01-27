@@ -13,20 +13,25 @@
     <div class="f_navigation">
         <div class="container_12">
             <div class="grid_3">
-                <h3>Contacto</h3>
-                <ul class="">
-                    <li>Contacto</li>
-                    <li>Sugerencia</li>
-                </ul><!-- .f_contact -->
+                <nav class="f_menu">
+                    <h3>Contacto</h3>
+                    <div class="menu-information-container">
+                        <ul class="">
+                            <li><a>Contacto</a></li>
+                            <li><a href="/informacion/sugerencias/">Sugerencia</a></li>
+                        </ul><!-- .f_contact -->
+                    </div>
+                </nav>
             </div><!-- .grid_3 -->
             <div class="grid_3">
                 <nav class="f_menu">
-                    <h3>Informacion</h3><div class="menu-information-container">
+                    <h3>Informacion</h3>
+                    <div class="menu-information-container">
                         <ul id="menu-information" class="menu">
-                            <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="http://#">Sobre Nosotros</a></li>
-                            <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="http://#">Terminos y Condiciones</a></li>
-                            <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="http://#">Politicas de privacidad</a></li>
-                            <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="http://#">Ayuda</a></li>
+                            <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="/informacion/sobre-nosotros/">Sobre Nosotros</a></li>
+                            <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a>Terminos y Condiciones</a></li>
+                            <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a>Politicas de privacidad</a></li>
+                            <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a>Ayuda</a></li>
                         </ul>
                     </div>                
                 </nav>
@@ -51,8 +56,8 @@
                     <h3>Mi Cuenta</h3>
                     <div class="menu-my-account-container">
                         <ul id="menu-my-account" class="menu">
-                            <li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="http://puntopets.com/my-account/">Mi cuenta</a></li>
-                            <li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://puntopets.com/wishlist/">Favoritos</a></li>
+                            <li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="/account/">Mi cuenta</a></li>
+                            <li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="/account/">Favoritos</a></li>
                         </ul>
                     </div>                
                 </nav><!-- .f_menu -->

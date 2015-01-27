@@ -514,27 +514,27 @@ img.aligncenter{
 
 /*** Table ***/
 table{
-    width: 100%;
+    /*width: 100%;*/
     margin: 20px 0;
-    text-align: center;
+    /*text-align: center;*/
     border-collapse: collapse;
-    border-top: 1px solid #e0e0e0;
+    /*border-top: 1px solid #e0e0e0;*/
     font:normal 12px Segoeui, Arial, Verdana, serif;
 }
 td{
     /*height: 49px;*/
     vertical-align: middle;
-    border-bottom: 1px solid #e0e0e0;
+    /*border-bottom: 1px solid #e0e0e0;*/
     border-collapse: collapse;
 }
 th{
     height: 49px;
     vertical-align: middle;
-    border-bottom: 1px solid #a8dade;
+    /*border-bottom: 1px solid #a8dade;*/
     font:normal 13px Bitter, Myriad Pro, Verdana, serif;
 }
 td:nth-child(even){
-    background: #f7f7f7;
+    /*background: #f7f7f7;*/
 }
 
 /*************
@@ -3625,7 +3625,7 @@ list-style: none;
 }
 .f_navigation nav.f_menu ul a:hover{
     text-decoration: underline;
-    color: #444;
+    color: #e209c9;
 }
 .f_info{
     height: 70px;

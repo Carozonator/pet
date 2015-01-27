@@ -2,12 +2,12 @@
 
 //print_r($servicio);die;
 $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','loc'=>'top:20px;left:600px;','img'=>'comprar.jpg'),*/
-                     array('title'=>'','text'=>'Conoce los mejores consejos para disfrutar al maximo de tu mejor amigo','loc'=>'left:200px;','img'=>'consejos.jpg','link'=>'/consejos/perro/'),
+                     array('title'=>'','text'=>'Conoce los mejores consejos para disfrutar al maximo de tu mascota','loc'=>'left:0px;','img'=>'consejos.jpg','link'=>'/consejos/perro/'),
                      array('title'=>'','text'=>'Encuentra un mundo de posibilidades para cruzar a tu mascota','loc'=>'left:0px;','img'=>'cruzar.jpg','link'=>'/cruzar/perro/'),
                      array('title'=>'','text'=>'Se parte de la solucion ayudandonos a unir mascotas con sus familias','loc'=>'left:0px;','img'=>'encontrado.jpg','link'=>'/perdidos-y-encontrados/perro/'),
                      array('title'=>'','text'=>'Visita nuestra tienda y descubre los mejores productos','loc'=>'left:600px;','img'=>'tienda.jpg','link'=>''),
                      array('title'=>'','text'=>'Visita nuestra seccion dedicada especificamente a refuigios','loc'=>'left:600px;','img'=>'adoptar.jpg','link'=>''),
-                     array('title'=>'','text'=>'','loc'=>'left:200px;','img'=>'comprar.jpg','link'=>'/comprar/perro/')
+                     array('title'=>'','text'=>'Agrega un nuveo miembro a tu familia','loc'=>'left:200px;','img'=>'comprar.jpg','link'=>'/comprar/perro/')
     );
 //echo '<pre>';
 //print_r($perro[0]);die;
@@ -138,14 +138,14 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                                 </div>
                                                 <div class="description">
                                                     <a style="color:black;" title="<?php echo $r->titulo;?>" href="/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>">
-                                                        <?php echo substr(addslashes($r->descripcion),0,40).'...'; ?>
+                                                        <!--<?php echo substr(addslashes($r->descripcion),0,40).'...'; ?>-->
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="details">
                                                     <?php 
                                                         if($key=='servicio'){
-                                                            echo '<span style="font-size:14px;">'.$r->ciudad_barrio.', '.$r->departamento.'</span>';
+                                                            echo '<span title="'.$r->ciudad_barrio.', '.$r->departamento.'" style="font-size:14px;">'.$r->ciudad_barrio.', '.$r->departamento.'</span>';
                                                         }else{
                                                             echo '<span>'.$r->precio.'</span>'; 
                                                         }

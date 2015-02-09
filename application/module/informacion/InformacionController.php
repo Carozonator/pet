@@ -20,28 +20,22 @@ class InformacionController extends Controller{
     
     function sugerenciaPost(){
         $msg = $_POST['message'];
-        /*
-        // the message
-        $msg = $_POST['message'];
-
-        // use wordwrap() if lines are longer than 70 characters
-        $msg = wordwrap($msg,70);
-
-        // send email
-        mail("rafaelarcieri@gmail.com","My subject",$msg);
-        */
+        
+        $email_message = $_POST['email'].'<br/><br/>'.$_POST['name'].'<br/><br/>'.$msg;
         
         $to = 'rafaelarcieri@gmail.com';
         $subject = '';
         $header = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $header .= 'From: Administrator <info@pluralpet.com.uy >' . "\r\n";
+        $header .= 'From: PluralPet <support@pluralpet.com.uy >' . "\r\n";
         ini_set('SMTP', "relay-hosting.secureserver.net");
         ini_set('smtp_port', "25");
         
-        if(mail($to, $subject, $msg, $header)){
-            echo 'true';
+        if(mail($to, $subject, $email_message, $header)){
+            $this->view->setMessage("Su mensaje ha sido enviado. Gracias por contactarnos <br/><br/><a href='/'>Volver a la pagina principal</a>");
+        }else{
+            $this->view->setMessage('Su mensaje no ha sido enviado. Por favor trate de devuelta');
         }
         
-        echo 'Thank you';
+        $this->view->render();
     }
 }

@@ -107,6 +107,7 @@ div.img150 div.thumb {
 }
 
 .publicar img{
+    width:205px;
     cursor:pointer;
     padding:10px;
 }

@@ -29,24 +29,24 @@ profesionales como veterinarios, criadores, etc.");
     <h5><?php echo $subtitle1; ?></h5>
     <p><?php echo $text1; ?></p>
     <p><?php echo $text2; ?></p>
-    <form>
+    <form method="POST" action="/informacion/sugerenciaPost/">
         <table>
             <tr>
                 <td>Tu nombre</td>
                 <td>
-                    <input type="text" value=""/>
+                    <input name="name" required type="text" value=""/>
                 </td>
             </tr>
             <tr>
                 <td>Tu email</td>
                 <td>
-                    <input type="text" value=""/>
+                    <input name="email" required type="text" value=""/>
                 </td>
             </tr>
             <tr>
                 <td>Text de la consulta</td>
                 <td>
-                    <textarea></textarea>
+                    <textarea required name="message"></textarea>
                 </td>
             </tr>
             <tr>

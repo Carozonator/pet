@@ -24,7 +24,7 @@ class InformacionController extends Controller{
         $email_message = '<h3>Consulta</h3><br/><br/>email: '.$_POST['email'].'<br/><br/>nombre: '.$_POST['name'].'<br/><br/>mensaje: '.$msg;
         
         $to = 'rafaelarcieri@gmail.com,juanangel_leira@hotmail.com';
-        $subject = '';
+        $subject = $_POST['name'].' tiene una consulta';
         $header = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $header .= 'From: PluralPet Consulta <support@pluralpet.com.uy >' . "\r\n";
         ini_set('SMTP', "relay-hosting.secureserver.net");

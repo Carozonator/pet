@@ -21,7 +21,7 @@ class InformacionController extends Controller{
     function sugerenciaPost(){
         $msg = $_POST['message'];
         
-        $email_message = 'Consulta<br/><br/>email:'.$_POST['email'].'<br/><br/>nombre:'.$_POST['name'].'<br/><br/>mensaje'.$msg;
+        $email_message = '<h3>Consulta</h3><br/><br/>email: '.$_POST['email'].'<br/><br/>nombre: '.$_POST['name'].'<br/><br/>mensaje: '.$msg;
         
         $to = 'rafaelarcieri@gmail.com,juanangel_leira@hotmail.com';
         $subject = '';

@@ -21,12 +21,12 @@ class InformacionController extends Controller{
     function sugerenciaPost(){
         $msg = $_POST['message'];
         
-        $email_message = $_POST['email'].'<br/><br/>'.$_POST['name'].'<br/><br/>'.$msg;
+        $email_message = 'Consulta<br/><br/>email:'.$_POST['email'].'<br/><br/>nombre:'.$_POST['name'].'<br/><br/>mensaje'.$msg;
         
-        $to = 'rafaelarcieri@gmail.com';
+        $to = 'rafaelarcieri@gmail.com,juanangel_leira@hotmail.com';
         $subject = '';
         $header = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $header .= 'From: PluralPet <support@pluralpet.com.uy >' . "\r\n";
+        $header .= 'From: PluralPet Consulta <support@pluralpet.com.uy >' . "\r\n";
         ini_set('SMTP', "relay-hosting.secureserver.net");
         ini_set('smtp_port', "25");
         

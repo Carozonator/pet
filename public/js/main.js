@@ -256,6 +256,7 @@ var Publicar = {
         
         form.append('<input type="hidden" name="tipo" value="'+Publicar.type+'"/>');
         form.append('<input type="hidden" name="tab" value="'+Publicar.tab+'"/>');
+        form.append('<input type="hidden" name="sub_tab" value="'+Publicar.sub_tab+'"/>');
         if(Publicar.group=='producto'){
             form.append('<input type="hidden" name="animal" value="'+Publicar.animal+'"/>');
         }
@@ -275,7 +276,7 @@ var Publicar = {
             type:'POST',
             data:submit_var,
             success:function(response){
-                //console.log(response);
+                console.log(response);
                 window.location=response;
             }
         });

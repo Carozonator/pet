@@ -92,7 +92,11 @@
                             echo "<li class='$class'><a href='/$k1'>".ucfirst($k1)."</a></li>";
                             continue;
                         }
-                        echo "<li class='$class'><a href='#'>".ucfirst($k1)."</a>";
+                        if(strcmp($k1,'consejo')===0){
+                            echo "<li class='$class'><a href='/consejo'>".ucfirst($k1)."</a>";
+                        }else{
+                            echo "<li class='$class'><a href='#'>".ucfirst($k1)."</a>";
+                        }
                         $k1=  str_replace(' ', '-', $k1);
                         echo '<ul class="sub-menu">';
                         foreach($r1 as $k2 => $r2){
@@ -112,7 +116,15 @@
                             echo "<li style='display:inline-block;float:none;' class='$class'><a href='/$k1'>".ucfirst($k1)."</a></li>";
                             continue;
                         }
-                        echo "<li style='display:inline-block;float:none;' class='$class'><a href='#'>".ucfirst($k1)."</a>";
+                        
+                        
+                        if(strcmp($k1,'consejo')===0){
+                            echo "<li style='display:inline-block;float:none;' class='$class'><a href='/consejo/'>".ucfirst($k1)."</a>";
+                        }else{
+                            echo "<li style='display:inline-block;float:none;' class='$class'><a href='#'>".ucfirst($k1)."</a>";
+                        }
+                        
+                        
                         $k1=  str_replace(' ', '-', $k1);
                         //echo '<div style="display:inline-block;margin-left:50%;">';
                         echo '<ul class="sub-menu">';

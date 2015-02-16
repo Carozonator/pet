@@ -746,7 +746,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .articulo_container{
     width:440px;
     display:inline-block;
-    border:1px solid #e209c9; 
+    border:1px solid grey; 
     -webkit-border-radius: 0px 0px 5px 5x;
     -moz-border-radius: 0px 0px 5px 5px;
     border-radius: 0px 0px 5px 5px;
@@ -762,7 +762,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     line-height:0;
     border:1px solid #cacaca; -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;  
     float:left;
-    margin:0px 20px 20px 0px;
+    margin:0px 20px 0px 0px;
 }
 .articulo .title{
     font-size:16px;

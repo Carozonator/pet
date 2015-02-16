@@ -26,7 +26,8 @@ $constant['DB_PASSWORD'] = 'Andthenew12';
 $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('mascota'=>'Mascotas'),
                                                             array('producto'=>'Productos En Tienda'),
-                                                            array('anuncio'=>'Anuncios')
+                                                            array('anuncio'=>'Anuncios'),
+                                                            array('consejo'=>'Consejos')
                                 ),'comprar'=>array(
                                                             array('perro'=>'Perros'),
                                                             array('gato'=>'Gatos'),
@@ -63,7 +64,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('servicio-medico-adicionales'=> 'Servicios m&eacute;dicos adicionales'),
                                                             /*array('evento'=>'Eventos')*/
                                                             array('otros'=> 'otros')
-                                ),'consejos'=> array(
+                                ),'consejo'=> ''/*array(
                                                             array('perro'=>'Perros'),
                                                             array('gato'=>'Gatos'),
                                                             array('ave'=>'Aves'),
@@ -71,8 +72,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('peces'=>'Peces'),
                                                             array('mamiferos'=>'Peque&ntilde;os mamiferos'),
                                                             array('otros'=>'Otros')
-                                )/*,'blog'=> array()
-                                */
+                                )*/
                                 );
 
 $GLOBALS['refugio']= array('','Animales Sin Hogar','Animal Help','A.P.A el Refugio');

@@ -169,8 +169,8 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                 <div>
                     <h2 style="padding-left:15px;">
                     <?php 
-                    if(strcmp($key,'evento')===0){
-                        echo 'Anuncios y eventos';
+                    if(strcmp($key,'anuncio')===0){
+                        echo 'Eventos';
                     }else{
                         echo 'Consejos';
                     }
@@ -179,7 +179,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                 </div>
                 
                 <div class="strip">
-                    <div class="articulo_container">
+                    <div class="articulo_container" style="position:relative">
                         <div>
                             <div class="thumb">
                                 <a title="<?php echo $r->titulo;?>">
@@ -199,10 +199,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                 </span>
                             </div>
                         </div>
-                        <div class="details">
-                            <span style="text-align:right;float:right"><button onclick="window.location='/anuncio/<?php echo $r->id;?>'" class="button">Leer m&aacute;s</button></span>
-                            <div style="clear:both"></div>
-                        </div>
+                            <span style="text-align:right;position:absolute;bottom:10px;right:10px;"><button onclick="window.location='/<?php echo $key;?>/<?php echo $r->id;?>'" class="button">Leer m&aacute;s</button></span>
                     </div>
                 </div>
             </div>

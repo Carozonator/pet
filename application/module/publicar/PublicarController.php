@@ -41,20 +41,21 @@ class PublicarController extends \pluralpet\Controller{
         //header('Location: /anuncio/'.$id);
     }
     
-    
     function addMascota(){
         $mascota = new \pluralpet\Mascota();
         $id =  $mascota->add();
         echo '/mascota/'.$id;
-        //header('Location: /'.$_POST['tab'].'/'.$id);
-        
     }
     
     function addProducto(){
         $producto = new \pluralpet\Producto();
         $id =  $producto->add();
         echo '/producto/'.$id;
-        //header('Location: /'.$_POST['tab'].'/'.$_POST['animal']);     
+    }
+    function addConsejo(){
+        $producto = new \pluralpet\Consejo();
+        $id =  $producto->add();
+        echo '/consejo/'.$id;
     }
     
     

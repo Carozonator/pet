@@ -16,11 +16,14 @@ class HomeController extends Controller{
         
         
         $articulos = array();
-        $p = new \pluralpet\Anuncio();
-        $articulos['evento'] = $p->getAllJoinPhoto("where _table='anuncio' and anuncio.sub_tab='otros' order by id desc limit 1",null);
+        
+        $p = new \pluralpet\Consejo();
+        $articulos['consejo'] = $p->getAllJoinPhoto("where _table='consejo'  order by id desc limit 1",null);
+        
         
         $p = new \pluralpet\Anuncio();
-        $articulos['consejo'] = $p->getAllJoinPhoto("where _table='anuncio' and anuncio.sub_tab='otros' order by id desc limit 1",null);
+        $articulos['anuncio'] = $p->getAllJoinPhoto("where _table='anuncio' and anuncio.sub_tab='otros' order by id desc limit 1",null);
+        
         
         //$p = new \pluralpet\Consejo();
         //$anuncio_otro = $p->getAllJoinPhoto("where _table='anuncio' and anuncio.sub_tab='otros' order by id desc limit 1",null);

@@ -1,5 +1,12 @@
 <?php
+
+
+
 namespace pluralpet;
+
+
+error_reporting(E_ERROR);
+ini_set('display_errors', 1);
 
 include dirname(__FILE__).'/config.php';
 

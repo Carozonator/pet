@@ -17,6 +17,8 @@
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/select2/select2_locale_es.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/dropzone/dropzone.js"></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>js/main.js"/></script>
+    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/slider-master/js/jssor.slider.mini.js"/></script>
+    <script src=""></script>
     <script type="text/javascript">
             $(document).ready(function(){
                     $('.dropdown-menu').click(function() {

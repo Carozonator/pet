@@ -1,18 +1,124 @@
 <?php 
 
 //print_r($servicio);die;
+
+
 $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','loc'=>'top:20px;left:600px;','img'=>'comprar.jpg'),*/
-                     array('title'=>'','text'=>'Conoce los mejores consejos para disfrutar al maximo de tu mascota','loc'=>'left:0px;','img'=>'consejos.jpg','link'=>'/consejos/perro/'),
+                     array('title'=>'','text'=>'Conoce los mejores consejos para disfrutar al maximo de tu mascota','loc'=>'left:0px;','img'=>'consejos.jpg','link'=>'/consejo/perro/'),
                      array('title'=>'','text'=>'Encuentra un mundo de posibilidades para cruzar a tu mascota','loc'=>'left:0px;','img'=>'cruzar.jpg','link'=>'/cruzar/perro/'),
                      array('title'=>'','text'=>'Se parte de la solucion ayudandonos a unir mascotas con sus familias','loc'=>'left:0px;','img'=>'encontrado.jpg','link'=>'/perdidos-y-encontrados/perro/'),
-                     array('title'=>'','text'=>'Visita nuestra tienda y descubre los mejores productos','loc'=>'left:600px;','img'=>'tienda.jpg','link'=>''),
-                     array('title'=>'','text'=>'Visita nuestra seccion dedicada especificamente a refuigios','loc'=>'left:600px;','img'=>'adoptar.jpg','link'=>''),
+                     array('title'=>'','text'=>'Visita nuestra tienda y descubre los mejores productos','loc'=>'left:600px;','img'=>'tienda.jpg','link'=>'/tienda/producto/'),
+                     array('title'=>'','text'=>'Visita nuestra seccion dedicada especificamente a refuigios','loc'=>'left:600px;','img'=>'adoptar.jpg','link'=>'/adoptar/perro/'),
                      array('title'=>'','text'=>'Agrega un nuveo miembro a tu familia','loc'=>'right:0px;','img'=>'comprar.jpg','link'=>'/comprar/perro/')
     );
 //echo '<pre>';
 //print_r($perro[0]);die;
 ?>
+
+
+
         <div class="grid_12" style="margin-top:30px;">
+            <script>
+    jQuery(document).ready(function ($) {
+        
+        var _CaptionTransitions = ["here","there"];
+        //use following line instead if there is no caption plays random transition
+        //var _CaptionTransitions = [];
+        
+        //define named transitions for caption that plays specified transition
+        //_CaptionTransitions["transtion_name1"] =  "here" ;
+        //_CaptionTransitions["transtion_name2"] =  "code2" ;
+        //_CaptionTransitions["transtion_name3"] =  "code3" ;
+        //_CaptionTransitions["transtion_name4"] =  "code4" ;
+        
+        var options = { 
+                $AutoPlay: true,
+                $Duration:1000,
+                $ThumbnailNavigatorOptions: {
+                    $Class: $JssorThumbnailNavigator$,              //[Required] Class to create thumbnail navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
+                    $DisableDrag: true                              //[Optional] Disable drag or not, default value is false
+                },
+                $SlideDuration: 700,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $ArrowNavigatorOptions: {                       //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+        var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+    });
+</script>
+<div id="slider1_container" style="position: relative;margin:0px auto; width: 984px; height: 450px;">
+    <!-- Slides Container -->
+    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 984px; height: 450px;">
+        <?php 
+        foreach($carrusel as $key => $row){
+            $src = MEDIA.'carrusel/'.$row['img'];
+            echo '<div>';
+            echo '<img u="image" src="'.$src.'" />';
+            echo '<div u="thumb"><a style="color:white;cursor:pointer;" href="'.$row['link'].'">'.$row['text'].'</a></div>';
+            echo '</div>';
+        }
+        ?>
+        
+        
+        
+        <div u="thumbnavigator" class="sliderb-T" style="position: absolute; bottom: 0px; left: 0px; height:45px; width:984px;">
+            <div style="filter: alpha(opacity=40); opacity:0.4; position: absolute; display: block;
+                background-color: #000000; top: 0px; left: 0px; width: 100%; height: 100%;">
+            </div>
+            
+            <div u="slides">
+                <div u="prototype" style="POSITION: absolute; WIDTH: 984px; HEIGHT: 45px; TOP: 0; LEFT: 0;">
+                    <div u="thumbnailtemplate" style="font-family: verdana; font-weight: normal; POSITION: absolute; WIDTH: 100%; HEIGHT: 100%; TOP: 0; LEFT: 0; color:#fff; line-height: 45px; font-size:20px; padding-left:10px;"></div>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <style>
+            .jssora14l, .jssora14r, .jssora14ldn, .jssora14rdn
+            {
+            	position: absolute;
+            	cursor: pointer;
+            	display: block;
+                background: url(/public/vendor/slider-master/img/a14.png) no-repeat;
+                overflow:hidden;
+            }
+            .jssora14l { background-position: -15px -35px; }
+            .jssora14r { background-position: -75px -35px; }
+            .jssora14l:hover { background-position: -135px -35px; }
+            .jssora14r:hover { background-position: -195px -35px; }
+            .jssora14ldn { background-position: -255px -35px; }
+            .jssora14rdn { background-position: -315px -35px; }
+        </style>
+        <!-- Arrow Left -->
+        <span u="arrowleft" class="jssora14l" style="width: 30px; height: 50px; top: 123px; left: 0px;">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora14r" style="width: 30px; height: 50px; top: 123px; right: 0px">
+        </span>
+        <!-- Arrow Navigator Skin End -->
+        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+        
+        
+        
+        
+        
+        
+        
+    </div>
+</div>
+            <!--
             <div class="slidprev" style="display: block;margin-top:230px;margin-left:20px;"><span>Prev</span></div>
             <div class="slidnext" style="display: block;margin-top:230px;margin-right:24px;"><span>Next</span></div>
             <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: none; position: relative; top: auto; right: auto; bottom: auto; left: 20px; z-index: auto; width: 940px; height: 500px; margin: 0px; overflow: hidden; cursor: move;">
@@ -37,38 +143,10 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                         ?>
                         
                     
-                    <!--
-                    <div class="slide" style="width: 984px; height: 452.64000000000004px;">
-                        <img width="984" height="480" src="<?php echo MEDIA; ?>slide3.jpg" class="attachment-full wp-post-image" alt="slide2">
-                        <div class="slid_text">
-                            <h3 class="slid_title"><span>Bulldog</span></h3>
-                            <p><span>Breeze Theme is created to impress you and your customers,</span></p>
-                            <p><span>which will helps you boost sales</span></p>
-                            <p><span>and receive good feedback from your clients.</span></p>
-                        </div>
-                    </div>
                     
-                    <div class="slide" style="width: 984px; height: 452.64000000000004px;">
-                        <img width="984" height="480" src="/media/slide1.jpg" class="attachment-full wp-post-image" alt="slide1">
-                        <div class="slid_text">
-                            <h3 class="slid_title"><span>Labradores</span></h3>
-                            <p><span>Breeze Theme is created to impress you and your customers,</span></p>
-                            <p><span>which will helps you boost sales</span></p>
-                            <p><span>and receive good feedback from your clients.</span></p>
-                        </div>
-                    </div>
-                    <div class="slide" style="width: 984px; height: 452.64000000000004px;">
-                        <img width="984" height="480" src="/media/slide2.jpg" class="attachment-full wp-post-image" alt="slide3">
-                        <div class="slid_text">
-                            <h3 class="slid_title"><span>Husky siberiano</span></h3>
-                            <p><span>Breeze Theme is created to impress you and your customers,</span></p>
-                            <p><span>which will helps you boost sales</span></p>
-                            <p><span>and receive good feedback from your clients.</span></p>
-                        </div>
-                    </div>
-                    -->
                 </div>
-            </div><!-- .slider -->
+            </div>
+            -->
             <div class="clear"></div>
             <div id="myController" class="" style="display: block;">
                 <?php 
@@ -259,5 +337,5 @@ by expanding or contracting the contents of inline boxes, else aligned as for th
 
 
 <script>
-    Carussel.init();
+    //Carussel.init();
 </script>

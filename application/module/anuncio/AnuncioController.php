@@ -14,7 +14,7 @@ class AnuncioController extends Controller{
         
         $this->view->setFile('anunciolist');
         $this->view->assign(array('data'=>$result));
-        $this->view->assign(array('anuncio_type'=>strtolower($this->request->getMethod())));
+        $this->view->assign(array('sub_tab'=>strtolower($this->request->getMethod())));
         $this->view->render();
     }
     

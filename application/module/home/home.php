@@ -103,15 +103,13 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                 'gato'=>'Gatos destacados', 
                 'servicio'=>'Servicios destacados');
             foreach($paneles as $key=>$row){ ?>
-            <div id="content" role="main">
-                <div id="content" role="main">
-                    <div class="carousel">
-                        <div class="c_header">
+                
+                        <div class="destacado">
                             <div class="grid_10">
                                 <h2><?php echo $row; ?></h2>
                             </div><!-- .grid_10 -->
                             <div style="clear:both"></div>
-                            <div class="destacado">
+                            <div class="strip">
                             <?php 
                                 if(isset($$key)){
                                     foreach($$key as $k=>$r){ ?>
@@ -157,20 +155,59 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                             <?php }} ?>
                             </div>
                             <div style="clear:both"></div>
-                            <!--
-                            <div class="grid_2">
-                                <a id="next_c" class="next arows" href="#"><span>Next</span></a>
-                                <a id="prev_c" class="prev arows" href="#"><span>Prev</span></a>
-                                
-                            </div>
-                            -->
-                        </div><!-- .c_header -->
-                        <div class="list_carousel grid">
-                        </div><!-- .list_carousel -->
-                    </div><!-- .carousel -->
-                </div><!-- #content -->
-            </div>
+                        </div>
+                        
+                        <div class="list_carousel grid"></div>
             <?php } ?>
+                        
+            <?php             
+            foreach($articulos as $key=>$row){
+                foreach($row as $r){
+            ?>
+            <div class="articulo" style="float:left;">
+                
+                <div>
+                    <h2 style="padding-left:15px;">
+                    <?php 
+                    if(strcmp($key,'evento')===0){
+                        echo 'Anuncios y eventos';
+                    }else{
+                        echo 'Consejos';
+                    }
+                    ?>
+                    </h2>
+                </div>
+                
+                <div class="strip">
+                    <div class="articulo_container">
+                        <div>
+                            <div class="thumb">
+                                <a title="<?php echo $r->titulo;?>">
+                                    <img alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$r->foto_usuario.'/thumb_'.$r->foto_name; ?>">
+                                </a>
+                            </div>
+                            <div style="width:200px;overflow:hidden;">
+                                <div class="title">
+                                    <a href="/anuncio/<?php echo $r->id;?>">
+                                        <?php echo $r->titulo; ?>
+                                    </a>
+                                </div>
+                                <span class="description">
+                                    <a title="<?php echo $r->titulo;?>">
+                                        <?php echo substr(addslashes($r->descripcion),0,200).'...'; ?>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <span style="text-align:right;float:right"><button onclick="window.location='/anuncio/<?php echo $r->id;?>'" class="button">Leer m&aacute;s</button></span>
+                            <div style="clear:both"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php }} ?>
+            <div style="clear:both"></div>
             <!--
             <div id="content_bottom">
                 <div class="grid_4">

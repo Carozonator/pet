@@ -2,7 +2,8 @@
 //namespace pluralpet;
 // Directories
 
-phpinfo();die;
+//phpinfo();die;
+
 $constant['ROOT'] =  dirname(__FILE__).'/';
 
 $constant['MEDIA'] = '/media/';

@@ -4,7 +4,7 @@ namespace pluralpet;
 class ProductoController extends Controller{
     
     function index(){
-        
+        echo 'here';die;
         $producto = new \pluralpet\Producto();
         $result = $producto->get($this->request->getMethod());
         

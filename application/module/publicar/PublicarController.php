@@ -92,11 +92,6 @@ class PublicarController extends \pluralpet\Controller{
                 $this->resize_crop_image(200, 200, $upload_entry_dir.$image_name,$upload_entry_dir.'thumb_'.$image_name);
                 
                 
-                
-                
-                
-                
-                
             }
         }
         die;

@@ -50,6 +50,33 @@ class Anuncio extends Model{
         return $rows[0];
     }
     
+    
+    
+    
+    
+    
+    function getAll($type){
+        
+        $sql = "SELECT anuncio.*, foto.name as foto_name, foto.usuario as foto_usuario  FROM anuncio LEFT OUTER JOIN foto on foto.publication_id=anuncio.id "
+                . "WHERE sub_tab=? group by anuncio.id";
+        
+        
+        
+        //$sql = "SELECT * FROM mascota WHERE tab=? and animal=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($type));
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $rows;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     function getAllWhere($where_stmt,$where_vals){
         $sql = "SELECT * FROM anuncio ".$where_stmt;
         $stmt = $this->pdo->prepare($sql);

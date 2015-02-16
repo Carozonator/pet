@@ -9,10 +9,11 @@ class AnuncioController extends Controller{
             return;
         }
         
-        $mascota = new \pluralpet\Anuncio();
-        $result = $mascota->get(strtolower($this->request->getMethod()));
-        $this->view->assign(array('data'=>$result));
+        $anuncio = new \pluralpet\Anuncio();
+        $result = $anuncio->getAll(strtolower($this->request->getMethod()));
+        
         $this->view->setFile('anunciolist');
+        $this->view->assign(array('data'=>$result));
         $this->view->assign(array('anuncio_type'=>strtolower($this->request->getMethod())));
         $this->view->render();
     }

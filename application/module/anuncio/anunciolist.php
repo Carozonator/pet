@@ -7,7 +7,7 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
 <div style="margin-top:40px">
     <div class="publicar" style='min-height:0px;margin:0px 20px 0px 0px;width:20%;float:left;'>
         <form action="/anuncio/filtro/" method="GET" id="filter">
-            <input type="hidden" value="<?php echo $anuncio_type; ?>" name="titulo"/>
+            <input type="hidden" value="<?php echo $sub_tab; ?>" name="titulo"/>
             <div class="filter_title"><div class="publicar_item_header">Localizaci&oacute;n<span onclick="Filter.unfilter('departamento')">x</span></div></div>
             <div class="filter_desc">
                 <select class="departamento" name="departamento" style="width:100%;">

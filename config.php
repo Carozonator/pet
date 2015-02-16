@@ -1,6 +1,8 @@
 <?php
 //namespace pluralpet;
 // Directories
+
+phpinfo();die;
 $constant['ROOT'] =  dirname(__FILE__).'/';
 
 $constant['MEDIA'] = '/media/';
@@ -58,6 +60,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('pensionado'=> 'pensionado'),
                                                             array('peluqueria'=> 'peluqueria'),
                                                             array('servicio-medico-adicionales'=> 'Servicios m&eacute;dicos adicionales'),
+                                                            /*array('evento'=>'Eventos')*/
                                                             array('otros'=> 'otros')
                                 ),'consejos'=> array(
                                                             array('perro'=>'Perros'),

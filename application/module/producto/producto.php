@@ -7,8 +7,10 @@
         <div style="float:right;">
         <?php 
             foreach($foto as $f){ ?>
-                <div class="img_box_small" style="margin-right:10px;">
-                    <img onclick="enlargeImage(this)"  alt="<?php echo $producto['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>">
+                <div class="img_box_small" style="margin-right:10px;" class="img_box_small">
+                    <a href="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>" data-lightbox="roadtrip" >
+                        <img alt="<?php echo $producto['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>">
+                    </a>
                 </div>
             <?php } ?>
         </div>

@@ -51,9 +51,9 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         var jssor_slider1 = new $JssorSlider$('slider1_container', options);
     });
 </script>
-<div id="slider1_container" style="position: relative;margin:0px auto; width: 984px; height: 450px;">
+<div id="slider1_container" style="position: relative;margin:0px auto; width: 984px; height: 480px;">
     <!-- Slides Container -->
-    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 984px; height: 450px;">
+    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 984px; height: 480px;">
         <?php 
         foreach($carrusel as $key => $row){
             $src = MEDIA.'carrusel/'.$row['img'];

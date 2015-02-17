@@ -9,7 +9,7 @@
             foreach($foto as $f){ ?>
                 <div class="img_box_small" style="margin-right:10px;" class="img_box_small">
                     <a href="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>" data-lightbox="roadtrip" >
-                        <img alt="<?php echo $producto['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>">
+                        <img alt="<?php echo $producto['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
                     </a>
                 </div>
             <?php } ?>

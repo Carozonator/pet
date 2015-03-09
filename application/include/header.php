@@ -107,7 +107,11 @@
                         echo '<ul class="sub-menu">';
                         foreach($r1 as $k2 => $r2){
                             foreach($r2 as $k3=>$r3){
-                                echo "<li><a href='/$k1/$k3/'>".$r3."</a></li>";
+                                if(strcmp($k1,'mascota')){
+                                    echo "<li><a href='/comprar/$k3/'>".$r3."</a></li>";
+                                }else{
+                                    echo "<li><a href='/$k1/$k3/'>".$r3."</a></li>";
+                                }
                             }
                         }
                         echo '</ul></li>';
@@ -136,7 +140,11 @@
                         echo '<ul class="sub-menu">';
                         foreach($r1 as $k2 => $r2){
                             foreach($r2 as $k3=>$r3){
-                                echo "<li style='margin-left:-112px'><a href='/$k1/$k3/'>".$r3."</a></li>";
+                                if(strcmp($k1,'mascota')===0){
+                                    echo "<li style='margin-left:-112px'><a href='/comprar/$k3/'>".$r3."</a></li>";
+                                }else{
+                                    echo "<li style='margin-left:-112px'><a href='/$k1/$k3/'>".$r3."</a></li>";
+                                }
                             }
                         }
                         echo '</ul></li>';

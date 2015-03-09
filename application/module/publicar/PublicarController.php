@@ -22,6 +22,13 @@ class PublicarController extends \pluralpet\Controller{
     
     
     
+    
+    
+    
+    
+    
+    
+    
     function delete(){
         $table = '\pluralpet\\'.ucfirst($_POST['table']);
         $model = new $table();

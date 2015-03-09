@@ -5,8 +5,10 @@ class AccountController extends Controller{
     
     function index(){
         $user = new User();
+        $pregunta = new \pluralpet\Pregunta();
         $this->view->assign(array('publicaciones'=>$user->getPublicacionesStatus()));
         $this->view->assign(array('user' => $user->get($_SESSION['user']->id)));
+        $this->view->assign(array('pregunta'=>$pregunta));
         $this->view->setFile('summary');
         $this->view->render();
     }

@@ -28,7 +28,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('producto'=>'Productos En Tienda'),
                                                             array('anuncio'=>'Anuncios'),
                                                             array('consejo'=>'Consejos')
-                                ),'comprar'=>array(
+                                ),'mascota'=>array(
                                                             array('perro'=>'Perros'),
                                                             array('gato'=>'Gatos'),
                                                             array('ave'=>'Aves'),

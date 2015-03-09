@@ -56,12 +56,55 @@
             }
             ?>
         </div>
-        <div style="margin-top:20px;">
+        <div style="margin-top:20px;" >
             <h4>Descripci&oacute;n</h4>
             <p class="descripcion"><?php echo $mascota['descripcion'];?></p>
         </div>
+        <div style="margin-top:20px;" class="preguntas">
+            <h4>Preguntas</h4>
+            
+            <ol>
+                <li>
+                    <div>
+                        <form method="post" action="/pregunta/publicarPregunta">
+                            <textarea onblur="Preguntas.blur(this);" onfocus="Preguntas.focus(this);" name="question" style="width:100%;height:30px;"placeholder="Escribe tu pregunta"></textarea>
+                            <input type="hidden" value="<?php echo $mascota['id'];?>" name="publication_id"/>
+                            <input type="hidden" value="mascota" name="_table"/>
+                            <button style="display:none;margin:10px 0px;">Publicar</button>
+                        </form>
+                    </div>
+                </li>
+                <?php 
+                foreach($pregunta as $row){
+                    echo '<li><i class="icon-comment"></i><span>'.$row['question'].'<span></li>';
+                }
+                ?>
+            </ol>
+        </div>
     </div>
 </div>
+
+<style>
+    .preguntas{
+        
+    }
+    .preguntas ol{
+        list-style-type:none;
+        border:1px solid #ccc;
+        border-radius:10px;
+    }
+    .preguntas li{
+        border-bottom: 1px solid #ccc;
+        padding:10px;
+    }
+    .preguntas li i{
+        padding:10px;
+    }
+    .preguntas li:last-child{
+        border-bottom: none;
+    }
+</style>
+
 <script>
     function enlargeImage(elem){
         var src = $(elem).attr('src');

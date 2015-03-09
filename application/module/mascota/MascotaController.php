@@ -34,7 +34,11 @@ class MascotaController extends Controller{
         $foto = new \pluralpet\Foto();
         $fotos = $foto->get($this->request->getMethod(),'mascota');
         
+        $pregunta = new \pluralpet\Pregunta();
+        $preguntas = $pregunta->get($this->request->getMethod(),'mascota');
+        
         $this->view->assign(array('foto'=>$fotos));
+        $this->view->assign(array('pregunta'=>$preguntas));
         $this->view->assign(array('mascota'=>$result));
         $this->view->setFile('mascota');
         $this->view->render();

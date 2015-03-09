@@ -1,4 +1,15 @@
-
+var Preguntas = {
+    focus: function(elem){
+        $('.preguntas').find('textarea').css('height','100px');
+        $('.preguntas').find('button').show();
+    },
+    blur:function(elem){
+        if($(elem).val()==''){
+            $('.preguntas').find('textarea').css('height','30px');
+            $('.preguntas').find('button').hide();
+        }
+    }
+}
 
 
 

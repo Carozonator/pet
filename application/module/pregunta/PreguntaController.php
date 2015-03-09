@@ -17,4 +17,10 @@ class PreguntaController extends \pluralpet\Controller{
         }
         
     }
+    
+    function publicarRespuesta(){
+        $pregunta = new \pluralpet\Pregunta();
+        $pregunta->publicarRespuesta();
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    }
 }

@@ -8,18 +8,31 @@ class Pregunta extends Model{
     }
     
     function publicarPregunta(){
-        
-        $sql =  "INSERT INTO pregunta (question,publication_id,_table,asker) VALUES(?,?,?,?)";
+        $sql = "SELECT usuario FROM ".$_POST['_table']." where id=? ";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array($_POST['question'],$_POST['publication_id'],$_POST['_table'],$_SESSION['user']->id));
+        $stmt->execute(array($_POST['publication_id']));
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $respondent = $rows[0]['usuario'];
+        
+        $sql =  "INSERT INTO pregunta (question,publication_id,_table,asker,respondent) VALUES(?,?,?,?,?)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($_POST['question'],$_POST['publication_id'],$_POST['_table'],$_SESSION['user']->id,$respondent));
+        $affected_rows = $stmt->rowCount();
+        return $affected_rows;
+    }
+    
+    function publicarRespuesta(){
+        $sql =  "UPDATE pregunta set answer=?,answer_timestamp=? where id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($_POST['answer'],time(),$_POST['pregunta_id']));
         $affected_rows = $stmt->rowCount();
         return $affected_rows;
     }
     
     function getByRespondent(){
-        $sql = "SELECT * FROM mascota inner join producto on mascota.usuario=producto.usuario inner join anuncio on anuncio.usuario=mascota.usuario where id=?";
+        $sql = "SELECT * FROM pregunta where respondent=? and answer is null";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array($table,$publication_id));
+        $stmt->execute(array($_SESSION['user']->id));
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
     }

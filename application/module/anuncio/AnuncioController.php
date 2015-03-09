@@ -25,6 +25,10 @@ class AnuncioController extends Controller{
         $foto = new \pluralpet\Foto();
         $fotos = $foto->get($this->request->getMethod(),'anuncio');
         
+        $pregunta = new \pluralpet\Pregunta();
+        $preguntas = $pregunta->get($this->request->getMethod(),'anuncio');
+        
+        $this->view->assign(array('pregunta'=>$preguntas));
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('anuncio'=>$result));
         $this->view->setFile('anuncio');

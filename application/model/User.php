@@ -97,6 +97,36 @@ class User extends Model{
     
     
     
+    function getPublicacionesWithQuestions(){
+        $tables = array('mascota','anuncio','producto');
+        
+        $results=array();
+        foreach($tables as $table){
+            $sql =    "SELECT pregunta.id as pregunta_id,pregunta.question,$table.*, foto.name as foto_name, foto.usuario as foto_usuario FROM user "
+                    . "INNER JOIN $table on user.id=$table.usuario "
+                    . "LEFT OUTER JOIN foto on foto.publication_id= $table.id "
+                    . "LEFT OUTER JOIN pregunta on pregunta.publication_id= $table.id "
+                    . "WHERE user.id=? and pregunta.answer is null and pregunta.question is not null";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute(array($_SESSION['user']->id));
+            $results[$table]=$stmt->fetchAll(\PDO::FETCH_OBJ);
+            //$results = array_merge($results,);
+        }
+        //echo '<pre>';print_r($results);
+        return $results;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     function get($id){
         $sql = "SELECT * FROM user WHERE id=?";

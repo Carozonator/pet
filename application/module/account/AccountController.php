@@ -8,10 +8,19 @@ class AccountController extends Controller{
         $pregunta = new \pluralpet\Pregunta();
         $this->view->assign(array('publicaciones'=>$user->getPublicacionesStatus()));
         $this->view->assign(array('user' => $user->get($_SESSION['user']->id)));
-        $this->view->assign(array('pregunta'=>$pregunta));
+        $this->view->assign(array('preguntas'=>$pregunta->getByRespondent()));
         $this->view->setFile('summary');
         $this->view->render();
     }
+    
+    function preguntas(){
+        $user = new User();
+        $this->view->assign(array('publicados'=>$user->getPublicacionesWithQuestions($_GET)));
+        $this->view->setFile('preguntas');
+        $this->view->render();
+    }
+    
+    
     
     function publicados(){
         $user = new User();

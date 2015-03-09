@@ -10,6 +10,10 @@ class ProductoController extends Controller{
         $foto = new \pluralpet\Foto();
         $fotos = $foto->get($this->request->getMethod(),'producto');
         
+        $pregunta = new \pluralpet\Pregunta();
+        $preguntas = $pregunta->get($this->request->getMethod(),'producto');
+        
+        $this->view->assign(array('pregunta'=>$preguntas));
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('producto'=>$result));
         $this->view->setFile('producto');

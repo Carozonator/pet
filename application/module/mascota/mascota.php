@@ -62,7 +62,6 @@
         </div>
         <div style="margin-top:20px;" class="preguntas">
             <h4>Preguntas</h4>
-            
             <ol>
                 <li>
                     <div>
@@ -76,7 +75,13 @@
                 </li>
                 <?php 
                 foreach($pregunta as $row){
-                    echo '<li><i class="icon-comment"></i><span>'.$row['question'].'<span></li>';
+                    echo '<li>';
+                    echo '<i class="icon-comment"></i><span>'.$row['question'].'<span>';
+                    if(!empty($row['answer'])){
+                        $date = date("F j, g:i a",$row['answer_timestamp']);
+                        echo '<div class="answer"><i class="icon-comments"></i>'.$row['answer'].'<span class="date">'.$date.'</span></div>';
+                    }
+                    echo '</li>';
                 }
                 ?>
             </ol>
@@ -84,26 +89,6 @@
     </div>
 </div>
 
-<style>
-    .preguntas{
-        
-    }
-    .preguntas ol{
-        list-style-type:none;
-        border:1px solid #ccc;
-        border-radius:10px;
-    }
-    .preguntas li{
-        border-bottom: 1px solid #ccc;
-        padding:10px;
-    }
-    .preguntas li i{
-        padding:10px;
-    }
-    .preguntas li:last-child{
-        border-bottom: none;
-    }
-</style>
 
 <script>
     function enlargeImage(elem){

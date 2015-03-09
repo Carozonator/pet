@@ -49,6 +49,34 @@
             <h4>Descripci&oacute;n</h4>
             <p class="descripcion"><?php echo $producto['descripcion'];?></p>
         </div>
+        
+        <div style="margin-top:20px;" class="preguntas">
+            <h4>Preguntas</h4>
+            <ol>
+                <li>
+                    <div>
+                        <form method="post" action="/pregunta/publicarPregunta">
+                            <textarea onblur="Preguntas.blur(this);" onfocus="Preguntas.focus(this);" name="question" style="width:100%;height:30px;"placeholder="Escribe tu pregunta"></textarea>
+                            <input type="hidden" value="<?php echo $producto['id'];?>" name="publication_id"/>
+                            <input type="hidden" value="producto" name="_table"/>
+                            <button style="display:none;margin:10px 0px;">Publicar</button>
+                        </form>
+                    </div>
+                </li>
+                <?php 
+                foreach($pregunta as $row){
+                    echo '<li>';
+                    echo '<i class="icon-comment"></i><span>'.$row['question'].'<span>';
+                    if(!empty($row['answer'])){
+                        $date = date("F j, g:i a",$row['answer_timestamp']);
+                        echo '<div class="answer"><i class="icon-comments"></i>'.$row['answer'].'<span class="date">'.$date.'</span></div>';
+                    }
+                    echo '</li>';
+                }
+                ?>
+            </ol>
+        </div>
+        
     </div>
 </div>
 <script>

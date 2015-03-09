@@ -889,3 +889,38 @@ box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.53);
     margin:20px 0px;
     font-size:14px;
 }
+
+
+
+
+
+
+
+
+
+/* Preguntas */
+.preguntas{
+
+}
+.preguntas ol{
+    list-style-type:none;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+.preguntas li{
+    border-bottom: 1px solid #ccc;
+    padding:10px;
+}
+.preguntas li i{
+    padding:10px;
+}
+.preguntas li:last-child{
+    border-bottom: none;
+}
+.preguntas .answer{
+    padding-left:40px;
+    color:grey;
+}
+.preguntas .date{
+    padding-left:10px;
+}

@@ -1,12 +1,12 @@
 var Preguntas = {
     focus: function(elem){
-        $('.preguntas').find('textarea').css('height','100px');
-        $('.preguntas').find('button').show();
+        $(elem).closest('form').find('textarea').css('height','100px');
+        $(elem).closest('form').find('button').show();
     },
     blur:function(elem){
         if($(elem).val()==''){
-            $('.preguntas').find('textarea').css('height','30px');
-            $('.preguntas').find('button').hide();
+            $(elem).closest('form').find('textarea').css('height','30px');
+            $(elem).closest('form').find('button').hide();
         }
     }
 }

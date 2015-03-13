@@ -183,7 +183,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
             foreach($paneles as $key=>$row){ ?>
                 
                         <div class="destacado">
-                            <div class="grid_10">
+                            <div class="grid_10" style="margin-left:0px;">
                                 <h2><?php echo $row; ?></h2>
                             </div><!-- .grid_10 -->
                             <div style="clear:both"></div>
@@ -242,7 +242,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
             foreach($articulos as $key=>$row){
                 foreach($row as $r){
             ?>
-            <div class="articulo" style="float:left;">
+            <div class="articulo" style="border-bottom:0px;margin-bottom:0px;float:left;">
                 
                 <div>
                     <h2 style="padding-left:15px;">

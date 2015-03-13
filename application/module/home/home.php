@@ -170,7 +170,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
             <div class="clear"></div>
         </div>
         -->
-        <div style="margin-top:150px;" id="primary">
+        <div class="main-content-box" style="" id="primary">
             
             <?php 
             $paneles_to_table = array('perro'=>'mascota','gato'=>'mascota','servicio'=>'anuncio','producto'=>'producto');
@@ -264,7 +264,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                     <img alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$r->foto_usuario.'/thumb_'.$r->foto_name; ?>">
                                 </a>
                             </div>
-                            <div style="width:200px;overflow:hidden;">
+                            <div style="width:180px;overflow:hidden;">
                                 <div class="title">
                                     <a href="/anuncio/<?php echo $r->id;?>">
                                         <?php echo $r->titulo; ?>
@@ -272,7 +272,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                 </div>
                                 <span class="description">
                                     <a title="<?php echo $r->titulo;?>">
-                                        <?php echo substr(addslashes($r->descripcion),0,200).'...'; ?>
+                                        <?php echo substr(addslashes($r->descripcion),0,160).'...'; ?>
                                     </a>
                                 </span>
                             </div>

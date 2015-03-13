@@ -1,4 +1,3 @@
-
 <?php 
 $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'=>'Animal','mamifero'=>'Animal','ave'=>'Animal','reptil'=>'Animal','otro'=>'Animal');
 
@@ -127,7 +126,7 @@ else{
 foreach($data as $row){
 ?>
 
-        <div style="margin-bottom: 30px;position:relative;border:1px solid lightgrey;padding:10px;background-color:white;">
+        <div class="mascota-list">
             <div style="float:left;margin-right:10px;" class="thumb">
                 <a title="<?php echo $row['titulo'];?>" href="/mascota/<?php echo $row['id'];?>" >
                     <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">

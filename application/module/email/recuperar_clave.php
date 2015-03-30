@@ -10,7 +10,10 @@ $message = '<html>'
         . '<p>Recupera tu clave para usar tu cuenta</p>'
         . '<a href="'.DOMAIN.'/account/recupere_contrasena/?key='.$hash.'">Recuperar clave</a>'
         . '</body></html>';
-$headers = 'From: soporte@pluralpet.com.uy' . "\r\n" .
+
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers .= 'From: soporte@pluralpet.com.uy' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 //echo $message;
 mail($to, $subject, $message, $headers);

@@ -7,7 +7,7 @@
                 <label>Usuario o Email: </label><input style="width:200px" name="user" type="text">
             </div>
             <div style="margin:20px">
-                <label>Password: </label><input style="width:200px" name="password" type="text">
+                <label>Password: </label><input style="width:200px" name="password" type="password">
             </div>
             <div style="position:absolute;right:-20px;top:36px;" onclick="$(this).closest('form').submit();" class="icon-circle-arrow-right submit_arrow"></div>
         </div>

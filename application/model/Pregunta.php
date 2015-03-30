@@ -27,7 +27,7 @@ class Pregunta extends Model{
         $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
         $user = $rows;
         include(ROOT.'application/module/email/nueva_pregunta.php');
-        
+        die;
         
         
         return $affected_rows;

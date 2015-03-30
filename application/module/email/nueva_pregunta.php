@@ -2,7 +2,7 @@
 
 
 $to      = $user->email;
-$subject = 'Gracias por registra';
+$subject = 'Nueva Pregunta';
 $message = '<html>'
         . '<body>'
         . '<img style="width:200px;height:auto" src="'.DOMAIN.'/media/logo.png"/>'

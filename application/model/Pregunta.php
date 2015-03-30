@@ -18,6 +18,18 @@ class Pregunta extends Model{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['question'],$_POST['publication_id'],$_POST['_table'],$_SESSION['user']->id,$respondent));
         $affected_rows = $stmt->rowCount();
+        
+        
+        
+        $sql = "SELECT * FROM user where id=? ";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($respondent));
+        $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        $user = $rows;
+        include(ROOT.'application/module/email/nueva_pregunta.php');
+        
+        
+        
         return $affected_rows;
     }
     

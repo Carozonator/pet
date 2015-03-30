@@ -25,8 +25,8 @@ class Pregunta extends Model{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($respondent));
         $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
-        $user = $rows;
-        include(ROOT.'application/module/email/nueva_pregunta.php');
+        $user = $rows[0];
+        require(ROOT.'application/module/email/nueva_pregunta.php');
         die;
         
         

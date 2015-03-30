@@ -30,8 +30,6 @@
                         <ul id="menu-information" class="menu">
                             <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="/informacion/sobre-nosotros/">Sobre Nosotros</a></li>
                             <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a>Terminos y Condiciones</a></li>
-                            <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a>Politicas de privacidad</a></li>
-                            <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a>Ayuda</a></li>
                         </ul>
                     </div>                
                 </nav>

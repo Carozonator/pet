@@ -40,6 +40,28 @@ class User extends Model{
         }
     }
     
+    function checkEmail(){
+        $sql = "SELECT * FROM user WHERE email=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($_POST['email']));
+        $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        if(empty($rows)){
+            return false;
+        }else{
+            return $rows[0];
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     function addUser(){
         $this->checkUserExists();
         $sql = "INSERT INTO user (firstname,lastname,email,password,phone,username,document) VALUES(?,?,?,?,?,?,?)";
@@ -142,5 +164,61 @@ class User extends Model{
         $stmt->execute(array($_POST['value'],$_SESSION['user']->id));
         $affected_rows = $stmt->rowCount();
         return $affected_rows;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function findKey($key){
+        $sql = "SELECT * FROM user WHERE temp_hash=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($key));
+        $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        if(empty($rows)){
+            return false;
+        }else{
+            return $rows[0];
+        }
+    }
+    
+    function clearUserTempHash($temp_hash){
+        $sql = "UPDATE user SET temp_hash=null where temp_hash=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($temp_hash));
+        $affected_rows = $stmt->rowCount();
+        return $rs;
+    }
+    
+    function updatePasswordFromHash($password,$temp_hash){
+        $sql = "UPDATE user SET temp_hash=null, password=? where temp_hash=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($password,$temp_hash));
+        $affected_rows = $stmt->rowCount();
+        return $affected_rows;
+    }
+    
+    function updateUserTempHash($user_id){
+        $rs = $this->randomString(24);
+        $sql = "UPDATE user SET temp_hash=? where id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($rs,$user_id));
+        $affected_rows = $stmt->rowCount();
+        return $rs;
+    }
+    
+    function randomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 }

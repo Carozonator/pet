@@ -13,6 +13,55 @@ class AccountController extends Controller{
         $this->view->render();
     }
     
+    
+    
+    
+    
+    
+    
+    function nueva_contrasena(){
+        //$user_obj->clearUserTempHash($_GET['key']);
+        $user = new \pluralpet\User();
+        $user->updatePasswordFromHash($_POST['password'],$_POST['key']);
+        
+        $this->view->setFile('login');
+        $this->view->render();
+    }
+    
+    function recupere_contrasena(){
+        $user_obj = new User();
+        
+        if(isset($_GET['key'])){
+            $result = $user_obj->findKey($_GET['key']);
+            if($result===false){
+                $this->view->assign(array('invalid_email'=>true));
+                $this->view->setMessage('No has podido resetear to contrase&ntilde;a. Por favor trate otra ves');
+                $this->view->render();
+            }else{
+                $this->view->assign(array('invalid_email'=>true));
+                $this->view->setFile('recuperar_clave');
+                $this->view->render();
+            }
+        }else{
+            if(isset($_POST['email'])){
+                
+                $result = $user_obj->checkEmail();
+                if($result===false){
+                    $this->view->assign(array('invalid_email'=>true));
+                    $this->view->setFile('forgot_password');
+                    $this->view->render();
+                }else{
+                    $user = $result;
+                    $hash = $user_obj->updateUserTempHash($user->id);
+                    include(ROOT.'application/module/email/recuperar_clave.php');
+                }
+            }else{
+                $this->view->setFile('forgot_password');
+                $this->view->render();
+            }
+        }
+    }
+    
     function preguntas(){
         $user = new User();
         $this->view->assign(array('publicados'=>$user->getPublicacionesWithQuestions($_GET)));
@@ -33,8 +82,12 @@ class AccountController extends Controller{
         $user = new User();
         if($result = ($user->valiateUser())){
             $_SESSION['user'] = $result;
-            //header('Location: /account/');
-            header('Location: '.$_SERVER['HTTP_REFERER']);
+            $referer = (explode("/",$_SERVER['HTTP_REFERER']));
+            if(strcmp($referer[4],'nueva_contrasena')===0){
+                header('Location: /account/');
+            }else{
+                header('Location: '.$_SERVER['HTTP_REFERER']);
+            }
         }
         else{
             echo 'usuario no existe';
@@ -74,5 +127,16 @@ class AccountController extends Controller{
         //echo $response;
         header('Location: /account/');
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

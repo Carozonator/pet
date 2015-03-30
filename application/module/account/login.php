@@ -1,10 +1,10 @@
 
 <div class="main-content_container" style="margin:30px auto;width:500px;">
-    <div class="header">Ingresa para poder publicar</div>
+    <div class="header">Ingresa a tu cuenta</div>
     <form style="margin-top:10px;" method="POST" action="/account/login/">
         <div style="width:400px;text-align:right;position:relative;border-bottom:1px solid lightgrey;">
             <div style="margin:20px">
-                <label>Usuario: </label><input style="width:200px" name="user" type="text">
+                <label>Usuario o Email: </label><input style="width:200px" name="user" type="text">
             </div>
             <div style="margin:20px">
                 <label>Password: </label><input style="width:200px" name="password" type="text">

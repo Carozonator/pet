@@ -22,6 +22,14 @@ $constant['DB_USER'] = 'juan';
 
 $constant['DB_PASSWORD'] = 'Andthenew12';
 
+$constant['DOMAIN'] = 'http://'.$_SERVER['SERVER_NAME'];
+
+/*
+$constant['DB_ADD'] = 'localhost:3306';
+$constant['DB_NAME'] = 'pet';
+$constant['DB_USER'] = 'root';
+$constant['DB_PASSWORD'] = '';
+*/
 
 $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('mascota'=>'Mascotas'),
@@ -106,32 +114,65 @@ $GLOBALS['departamento'] = array('Artigas'=>array('Artigas','Bella Union'),
 
 	
 
+/*
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  */
 
 $raza=array();
-$raza['perro'] = array('','Akita Inu', 'Alaskan Malamute', 'Barzoi', 
-    'Basset Azul de Gascuña', 'Basset Hound', 'Beagle', 'Beagle Harrier', 'Beauceron', 'Bichón Maltés', 'Bobtail',
-    'Border Collie', 'Boxer', 'Boyero de Berna', 'Braco Alemán', 'Braco Francés', 'Briard', 'Bull Terrier Inglés', 
-    'Bulldog Francés', 'Bulldog Inglés', 'Bullmastiff', 'Cairn Terrier', 'Cane Corso', 'Caniche', 'Cavalier King Charles', 
-    'Chihuahua', 'Cimarron', 'Chow Chow', 'Cocker Spaniel Americano', 'Cocker Spaniel Inglés', 'Collie Rough', 'Collie Smooth', 
+$raza['perro'] = array('','Akita Inu', 'Alaskan Malamute', 'American Staffordshire Terrier','Barzoi', 'Basenji',
+    'Basset Azul de Gascuña', 'Basset Hound', 'Beagle', 'Beagle Harrier', 'Bearded Collie','Beauceron','Bedlington Terrier', 'Bichón Maltés', 'Blood Hound','Bobtail',
+    'Border Collie', 'Borzoi','Boxer','Boston Terrier', 'Boyero de Berna','Boyero de Flandes', 'Braco Alemán', 'Braco Francés', 'Briard', 'Bull Terrier Inglés', 
+    'Bulldog Francés', 'Bulldog Inglés', 'Bullmastiff', 'Cairn Terrier', 'Cane Corso','Caniche Gigante','Caniche mediano', 'Caniche Toy','Carlino','Cavalier King Charles', 
+    'Chihuahua', 'Cimarron', 'Chow Chow', 'Cocker Spaniel Americano', 'Cocker Spaniel Inglés', 'Collie Rough', 'Collie Smooth', 'Corgi Pembroke','Crestado Chino',
     'Dálmata', 'Doberman', 'Dogo Argentino', 'Dogo de Burdeos', 'Epagneul Bretón', 'Epagneul Francés', 'Epagneul Japonés', 
-    'Fox Terrier', 'Galgo Español', 'Galgo Irlandés', 'Golden Retriever', 'Gordon Setter', 'Gos d\'Atura', 'Gran Danés', 
-    'Husky Siberiano', 'Komondor', 'Labrador Retriever', 'Lebrel Afgano', 'Lebrel Polaco', 'Mastiff', 'Mastín de los Pirineos', 
-    'Mastín Español', 'Mastín Napolitano', 'Montaña de los Pirineos', 'Norfolk Terrier', 'Norwich Terrier', 'Papillon', 
-    'Pastor Alemán', 'Pastor Australiano', 'Pastor Belga', 'Pastor Blanco Suizo', 'Pastor de los Pirineos', 'Pekinés', 
+    'Fox Terrier', 'Galgo Español', 'Galgo Irlandés', 'Golden Retriever', 'Gordon Setter', 'Gos d\'Atura', 'Gran Danés', 'Grey Hound','Havanesse',
+    'Husky Siberiano', 'Irish Soft Coated Wheaten Terrier','Jack Russell Terrier','Kelpie','Komondor', 'Labrador Retriever', 'Lebrel Afgano', 'Lebrel Polaco','Leonberger', 'Mastiff', 'Mastín de los Pirineos', 
+    'Lhasa Apso','Mastín Español', 'Mastín Napolitano', 'Montaña de los Pirineos', 'Norfolk Terrier', 'Norwich Terrier', 'Papillon', 
+    'Pastor Alemán', 'Pastor Australiano', 'Pastor Belga', 'Pastor Blanco Suizo', 'Pastor de la Beauce', 'Pastor de los Pirineos','Pastor de las Shetland',
+    'Pekinés', 
     'Pequeño Azul de Gascuña', 'Pequeño Basset Griffon', 'Pequeño Brabantino', 'Pequeño Perro León', 'Pequeño Perro Ruso', 
-    'Pequeño Sabueso Suizo', 'Perdiguero de Burgos', 'Perdiguero Portugués', 'Perro de Agua Español', 'Perro Lobo de Checoslovaquia', 'Pinscher miniatura', 
-    'Pit Bull', 'Podenco Canario', 'Podenco Ibicenco', 'Pointer Inglés', 'Presa Canario', 'Pug', 'Rafeiro do Alentejo', 
-    'Rottweiler', 'Samoyedo', 'San Bernardo', 'Schnauzer gigante', 'Schnauzer mediano', 'Schnauzer miniatura', 'Scottish Terrier', 
+    'Pequeño Sabueso Suizo', 'Perdiguero de Burgos', 'Perdiguero Portugués', 'Perro del Faraon','Perro de Agua Español', 'Perro Lobo de Checoslovaquia', 'Pinscher miniatura',
+    'Pinscher Aleman',
+    'Pit Bull', 'Podenco Canario', 'Podenco Ibicenco', 'Pointer Inglés', 'Pomerania','Presa Canario', 'Pug','Puli Húngaro', 'Rafeiro do Alentejo', 'Rodesiano',
+    'Rottweiler','Saluky', 'Samoyedo', 'San Bernardo', 'Schnauzer gigante', 'Schnauzer mediano', 'Schnauzer miniatura', 'Scottish Terrier', 
     'Setter Inglés', 'Setter Irlandés', 'Shar Pei', 'Shih Tzu', 'Spitz', 'Springer Spaniel Galés', 'Springer Spaniel Inglés', 
-    'Teckel', 'Terranova', 'Weimaraner', 'Westies', 'Whippet', 'Yorkshire Terrier','OTRO');
+    'Teckel', 'Terranova', 'Weimaraner', 'Westies','West Highland White Terrier', 'Whippet', 'Yorkshire Terrier','OTRO');
 
 $raza['gato'] = array('','Abisinio','Aphrodite\'s Giants','Australian Mist','American Curl','Azul ruso','American shorthair','American wirehair',
     'Angora turco','Africano doméstico','Bengala','Bobtail japon&eacute;s','Bombay','Bosque de Noruega','Brazilian Shorthair','British Shorthair',
     'Burm&eacute;s','Burmilla','Cornish rex','California Spangled','Ceylon','Cymric','Chartreux','Deutsch Langhaar','Devon rex','Dorado africano','Don Sphynx',
     'Europeo com&uacute;n','German Rex','Habana brown','Himalayo','Korat','Khao Manee','Maine Coon','Manx','Mau egipcio','Munchkin','Ocicat','Oriental',
     'Oriental de pelo largo','Ojos azules','Persa','Peterbald','Pixi Bob','Ragdoll','Sagrado de Birmania','Scottish Fold','Selkirk rex','Serengeti',
-    'Seychellois','Siam&eacute;s','Siam&eacute;s Moderno','Siam&eacute;s Tradicional','Siberiano','Snowshoe','Sphynx','Tonkin&eacute;s','Van Turco'
+    'Seychellois','Siam&eacute;s','Siam&eacute;s Moderno','Siam&eacute;s Tradicional','Siberiano','Snowshoe','Sphynx','Tonkin&eacute;s','Van Turco','Vizsla'
 );
 
 $raza['mamifero'] = array('','Conejo Enano','Cobaya','Ardilla de Corea','Chinchilla','Ardilla Richardson','Rata Canguro','H&aacute;mster Com&uacute;n',

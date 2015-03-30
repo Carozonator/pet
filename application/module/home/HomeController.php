@@ -28,7 +28,6 @@ class HomeController extends Controller{
         //$p = new \pluralpet\Consejo();
         //$anuncio_otro = $p->getAllJoinPhoto("where _table='anuncio' and anuncio.sub_tab='otros' order by id desc limit 1",null);
         
-        
         $this->view->assign(array('perro'=>$perro,'servicio'=>$servicio,'gato'=>$gato,'producto'=>$producto,'articulos'=>$articulos));
         $this->view->setFile('home');
         $this->view->render();

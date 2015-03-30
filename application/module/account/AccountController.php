@@ -54,6 +54,9 @@ class AccountController extends Controller{
                     $user = $result;
                     $hash = $user_obj->updateUserTempHash($user->id);
                     include(ROOT.'application/module/email/recuperar_clave.php');
+                    
+                    $this->view->setMessage('Chequea tu email para recuperar tu clave');
+                    $this->view->render();
                 }
             }else{
                 $this->view->setFile('forgot_password');

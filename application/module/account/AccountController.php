@@ -35,7 +35,7 @@ class AccountController extends Controller{
             $result = $user_obj->findKey($_GET['key']);
             if($result===false){
                 $this->view->assign(array('invalid_email'=>true));
-                $this->view->setMessage('No has podido resetear to contrase&ntilde;a. Por favor trate otra ves');
+                $this->view->setMessage('No has podido resetear tu contrase&ntilde;a. Por favor intente de nuevo');
                 $this->view->render();
             }else{
                 $this->view->assign(array('invalid_email'=>true));

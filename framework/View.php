@@ -19,7 +19,9 @@ class View{
         if(isset($this->file)){
             include ($this->file);
         }else{
-            echo $this->message;
+            $message = $this->message;
+            include ROOT.'application/include/main_content.php';
+            //echo $this->message;
         }
         include ROOT.'application/include/footer.php';
     }
@@ -34,7 +36,7 @@ class View{
     }
     
     function setMessage($message){
-        $this->message='<div class="informacion">'.$message.'</div>';
+        $this->message=$message;//'<div class="informacion">'.$message.'</div>';
     }
     
     function assign($aAssign){

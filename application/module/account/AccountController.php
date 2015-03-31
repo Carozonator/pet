@@ -21,6 +21,14 @@ class AccountController extends Controller{
     
     function nueva_contrasena(){
         //$user_obj->clearUserTempHash($_GET['key']);
+        
+        if(strcmp($_POST['password'],$_POST['password_repetir'])!==0){
+            $this->view->assign(array('invalid'=>true));
+            $this->view->setFile('recuperar_clave');
+            $this->view->render();
+            die;
+        }
+        
         $user = new \pluralpet\User();
         $user->updatePasswordFromHash($_POST['password'],$_POST['key']);
         
@@ -35,7 +43,7 @@ class AccountController extends Controller{
             $result = $user_obj->findKey($_GET['key']);
             if($result===false){
                 $this->view->assign(array('invalid_email'=>true));
-                $this->view->setMessage('No has podido resetear tu contrase&ntilde;a. Por favor intente de nuevo');
+                $this->view->setMessage('No has podido resetear tu contrase&ntilde;a. Por favor intente de nuevo.');
                 $this->view->render();
             }else{
                 $this->view->assign(array('invalid_email'=>true));
@@ -46,6 +54,7 @@ class AccountController extends Controller{
             if(isset($_POST['email'])){
                 
                 $result = $user_obj->checkEmail();
+                
                 if($result===false){
                     $this->view->assign(array('invalid_email'=>true));
                     $this->view->setFile('forgot_password');
@@ -55,7 +64,7 @@ class AccountController extends Controller{
                     $hash = $user_obj->updateUserTempHash($user->id);
                     include(ROOT.'application/module/email/recuperar_clave.php');
                     
-                    $this->view->setMessage('Chequea tu email para recuperar tu clave');
+                    $this->view->setMessage('Chequea tu email para recuperar tu clave.');
                     $this->view->render();
                 }
             }else{
@@ -93,7 +102,9 @@ class AccountController extends Controller{
             }
         }
         else{
-            echo 'usuario no existe';
+            $this->view->assign(array('invalid'=>true));
+            $this->view->setFile('login');
+            $this->view->render();
         }
     } 
     

@@ -14,5 +14,8 @@
             <input type="hidden" name="key" value="<?php echo $_GET['key']; ?>"/>
             <div style="position:absolute;right:-20px;top:10px;" onclick="$(this).closest('form').submit();" class="icon-circle-arrow-right submit_arrow"></div>
         </div>
+        <?php if($invalid==true){ ?>
+        <div style="padding-top:10px;color:red;">Las contrase&ntilde;as no concuerdan, int&eacute;ntalo de nuevo.</div>
+        <?php } ?>
     </form>
 </div>

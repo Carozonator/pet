@@ -9,6 +9,9 @@
             <div style="margin:20px">
                 <label>Password: </label><input style="width:200px" name="password" type="password">
             </div>
+            <?php if($invalid==true){ ?>
+                <div style="padding-top:10px;color:red;text-align:center;">Verifica la clave y/o el usuario que ingresaste</div>
+            <?php } ?>
             <div style="position:absolute;right:-20px;top:36px;" onclick="$(this).closest('form').submit();" class="icon-circle-arrow-right submit_arrow"></div>
         </div>
     </form>

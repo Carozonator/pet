@@ -12,6 +12,9 @@ class InformacionController extends Controller{
             case 'sugerencias':
                 $this->view->setFile($file);
             break;
+            case 'terminos-y-condiciones':
+                $this->view->setFile($file);
+            break;
             
         }
         

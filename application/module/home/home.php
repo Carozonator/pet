@@ -4,12 +4,12 @@
 
 
 $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','loc'=>'top:20px;left:600px;','img'=>'comprar.jpg'),*/
-                     array('title'=>'','text'=>'Conoce los mejores consejos para disfrutar al maximo de tu mascota','loc'=>'left:0px;','img'=>'consejos.jpg','link'=>'/consejo/perro/'),
-                     array('title'=>'','text'=>'Encuentra un mundo de posibilidades para cruzar a tu mascota','loc'=>'left:0px;','img'=>'cruzar.jpg','link'=>'/cruzar/perro/'),
-                     array('title'=>'','text'=>'Se parte de la solucion ayudandonos a unir mascotas con sus familias','loc'=>'left:0px;','img'=>'encontrado.jpg','link'=>'/perdidos-y-encontrados/perro/'),
-                     array('title'=>'','text'=>'Visita nuestra tienda y descubre los mejores productos','loc'=>'left:600px;','img'=>'tienda.jpg','link'=>'/tienda/producto/'),
-                     array('title'=>'','text'=>'Visita nuestra seccion dedicada especificamente a refuigios','loc'=>'left:600px;','img'=>'adoptar.jpg','link'=>'/adoptar/perro/'),
-                     array('title'=>'','text'=>'Agrega un nuveo miembro a tu familia','loc'=>'right:0px;','img'=>'comprar.jpg','link'=>'/comprar/perro/')
+                     array('title'=>'','text'=>'Conoce los mejores consejos para disfrutar al máximo de tu mascota.','loc'=>'left:0px;','img'=>'consejos.jpg','link'=>'/consejo/perro/'),
+                     array('title'=>'','text'=>'Encuentra un mundo de posibilidades para cruzar a tu mascota.','loc'=>'left:0px;','img'=>'cruzar.jpg','link'=>'/cruzar/perro/'),
+                     array('title'=>'','text'=>'Se parte de la solución al unir mascotas perdidas con sus familias.','loc'=>'left:0px;','img'=>'encontrado.jpg','link'=>'/perdidos-y-encontrados/perro/'),
+                     array('title'=>'','text'=>'Visita nuestra tienda y descubre los mejores productos.','loc'=>'left:600px;','img'=>'tienda.jpg','link'=>'/tienda/producto/'),
+                     array('title'=>'','text'=>'Visita nuestra sección dedicada específicamente a refugios.','loc'=>'left:600px;','img'=>'adoptar.jpg','link'=>'/adoptar/perro/'),
+                     array('title'=>'','text'=>'Agrega un nuevo integrante a tu familia.','loc'=>'right:0px;','img'=>'comprar.jpg','link'=>'/comprar/perro/')
     );
 //echo '<pre>';
 //print_r($perro[0]);die;
@@ -59,7 +59,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
             $src = MEDIA.'carrusel/'.$row['img'];
             echo '<div>';
             echo '<img u="image" src="'.$src.'" />';
-            echo '<div u="thumb"><a style="color:white;cursor:pointer;" href="'.$row['link'].'">'.$row['text'].'</a></div>';
+            echo '<div u="thumb"><a style="color:white;cursor:pointer;" href="'.$row['link'].'">'.htmlentities($row['text']).'</a></div>';
             echo '</div>';
         }
         ?>

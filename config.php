@@ -85,31 +85,35 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
 
 $GLOBALS['refugio']= array('','Animales Sin Hogar','Animal Help','A.P.A el Refugio');
 
-$GLOBALS['departamento'] = array('Artigas'=>array('Artigas','Bella Union'),
-                     'Canelones'=>array('Ciudad de la Costa','Las Piedras','Barros Blancos','Pando','La Paz','Canelones','Santa Lucia','Progreso'),
-                     'Cerro Largo'=>array('Melo','Rio Branco'),
-                     'Colonia'=>array('Carmelo','Colonia del Sacramento','Juan Lacaze','Nueva Helvecia','Rosario'),
-                     'Durazno'=>array('Durazno'),
+$GLOBALS['departamento'] = array('Artigas'=>array('Artigas','Bella Union','Tom&aacute;s Gomensoro','Baltasar Brum','Sequeira'),
+                     'Canelones'=>array('Ciudad de la Costa','Las Piedras','Barros Blancos','Pando','La Paz','Canelones','Santa Lucia','Progreso','18 de Mayo',
+    'Aguas Corrientes','Atl&aacute;ntida','Colonia Nicolich','Empalme Olmos','Joaqu&iacute;n Su&aacute;rez','La Floresta','Los Cerrillos','Migues','Montes',
+    'Parque del Plata','Paso Carrasco','Salinas','San Antonio','San Bautista','San Jacinto','San Ram&oacute;n','Santa Rosa','Sauce','Soca','Tala','Toledo'),
+                     'Cerro Largo'=>array('Acegu&aacute;','Fraile Muerto','Isidoro Nobl&iacute;a','Melo','Rio Branco','Tupamba&eacute;'),
+                     'Colonia'=>array('Carmelo','Colonia del Sacramento','Florencio S&aacute;nchez','Juan Lacaze','Nueva Helvecia','Nueva Palmira','Omb&uacute;es de Lavalle','Rosario','Tarariras'),
+                     'Durazno'=>array('Blanquillo','Carmen','Centenario','Durazno','La Paloma','Santa Bernardina','Sarand&iacute; del Yi'),
                      'Flores'=>array('Trinidad'),
-                     'Florida'=>array('Florida'),
-                     'Lavalleja'=>array('Minas'),
-                     'Maldonado'=>array('Maldonado','San Carlos','Punta Del Este'),
+                     'Florida'=>array('25 de Mayo','25 de Agosto','Cardal','Casup&aacute;','Cerro Colorado','Florida','Fray Marcos','Nico P&eacute;rez','Sarand&iacute; Grande'),
+                     'Lavalleja'=>array('Jos&eacute; Pedro Varela','Sol&iacute;s de Mataojo','Jos&eacute; Batlle y Ord&oacute;&ntilde;ez','Mariscala','Minas'),
+                     'Maldonado'=>array('Maldonado','San Carlos','Punta Del Este','Aigu&aacute;','Garz&oacute;n','Pan de Az&uacute;car','Piri&aacute;polis','Sol&iacute;s Grande'),
                      'Montevideo'=>array("Aguada","Aires Puros","Arroyo Seco","Atahualpa","Barra de Carrasco","Bella Vista","Belvedere","Bolivar","Brazo Oriental","Buceo",
         "Capurro","Carrasco","Casabo","Centro","Cerrito","Cerro","Ciudad Vieja","Cno. Carrasco","Cno. Maldonado","Col&oacute;n","Cord&oacute;n","Goes","Golf","Ituzaing&oacute;",
         "Jacinto Vera","Jardines Hip&oacute;dromo","La Blanqueada","La Colorada","La Comercial","La Figurita","La Teja","Las Acacias","Lezica","Malvin",
 	"Malvin Norte","Manga","Marconi","Maro&ntilde;as","Maro&ntilde;as, Curva","Melilla","Montevideo","Nuevo Par&iacute;s","Otras","Pajas Blancas","Palermo","Parque Batlle",
         "Parque Rod&oacute;","Paso Molino","Paso de la Arena","Pe&ntilde;arol","Piedras Blancas","Pocitos","Pocitos Nuevo","Prado","Puerto Buceo","Punta Carretas","Punta Gorda",
         "Punta Rieles","Reducto","Santiago V&aacutezquez","Sayago","Toledo Chico","Tres Cruces","Uni&oacute;n","Villa Biarritz","Villa Col&oacute;n","Villa Dolores","Villa Espa&ntilde;ola",
-	"Villa Garc&iacute;a","Villa Mu&ntilde;oz","Villa del Cerro"),
-                     'Paysandu'=>array('Paysandu'),
-                     'Rio Negro'=>array('Fray Bentos','Young'),
-                     'Rivera'=>array('Rivera'),
-                     'Rocha'=>array('Rocha'),
-                     'Salto'=>array('Salto'),
-                     'San Jose'=>array('San Jose de Mayo','Ciudad del Plata','Libertad'),
-                     'Soriano'=>array('Mercedes','Dolores'),
-                     'Tacuarembo'=>array('Tacuarembo','Paso de los Toros'),
-                     'Treinta y Tres'=>array('Treinta y Trest')
+	"Villa Garc&iacute;a","Villa Mu&ntilde;oz","Villa del Cerro","Larra&ntilde;aga","Barrio Sur","Barros Blancos","Conciliaci&oacute;n","Paso de las Duranas","Las Canteras",
+        "Playa Pascual","Libertad","Casavalle"),
+                     'Paysandu'=>array('Paysandu','Nuevo Paysand&uacute;','Guich&oacute;n','Chacras de Paysand&uacute;','Quebracho','San Félix','Porvenir','Tambores','Piedras Coloradas'),
+                     'Rio Negro'=>array('Fray Bentos','Young','Nuevo Berl&iacute;n','San Javier','Nuevo Berl&iacute;n','San Javier'),
+                     'Rivera'=>array('Rivera','Tranqueras','Minas de Corrales','Vichadero'),
+                     'Rocha'=>array('Rocha','Chuy','Lascano','Castillos','La Paloma','Cebollat&iacute;','La Aguada-Costa Azul','Vel&aacute;zquez','Punta del Diablo',
+        'Aguas Dulces','Barra del Chuy','Barra de Valizas','Arachania','Cabo Polonio'),
+                     'Salto'=>array('Salto','Constituci&oacute;n','Belén'),
+                     'San Jose'=>array('San Jose de Mayo','Ciudad del Plata','Libertad','Rodr&iacute;guez','Ecilda Paullier','Puntas de Valdez','Rafael Perazza'),
+                     'Soriano'=>array('Mercedes','Dolores','Cardona','Palmitas','José Enrique Rod&oacute;','Chacras de Dolores','Villa Soriano'),
+                     'Tacuarembo'=>array('Tacuarembo','Paso de los Toros','San Gregorio de Polanco','Villa Ansina','Tambores','Las Toscas','Curtina'),
+                     'Treinta y Tres'=>array('Treinta y Tres','Vergara','Santa Clara de Olimar','Cerro Chato','Villa Sara','General Enrique Mart&iacute;nez')
                      );
 
 	
@@ -166,6 +170,11 @@ $raza['perro'] = array('','Akita Inu', 'Alaskan Malamute', 'American Staffordshi
     'Rottweiler','Saluky', 'Samoyedo', 'San Bernardo', 'Schnauzer gigante', 'Schnauzer mediano', 'Schnauzer miniatura', 'Scottish Terrier', 
     'Setter Inglés', 'Setter Irlandés', 'Shar Pei', 'Shih Tzu', 'Spitz', 'Springer Spaniel Galés', 'Springer Spaniel Inglés', 
     'Teckel', 'Terranova', 'Weimaraner', 'Westies','West Highland White Terrier', 'Whippet', 'Yorkshire Terrier','OTRO');
+
+foreach($raza['perro'] as $row){
+    $r[]=  htmlentities($row);
+}
+$raza['perro']=$r;
 
 $raza['gato'] = array('','Abisinio','Aphrodite\'s Giants','Australian Mist','American Curl','Azul ruso','American shorthair','American wirehair',
     'Angora turco','Africano doméstico','Bengala','Bobtail japon&eacute;s','Bombay','Bosque de Noruega','Brazilian Shorthair','British Shorthair',

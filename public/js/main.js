@@ -90,7 +90,36 @@ $(document).ready(function(){Ready.init();});
 
 
 
-
+var departamentos={'Artigas':['Artigas','Bella Union','Tom&aacute;s Gomensoro','Baltasar Brum','Sequeira'],
+                     'Canelones':['Ciudad de la Costa','Las Piedras','Barros Blancos','Pando','La Paz','Canelones','Santa Lucia','Progreso','18 de Mayo',
+    'Aguas Corrientes','Atl&aacute;ntida','Colonia Nicolich','Empalme Olmos','Joaqu&iacute;n Su&aacute;rez','La Floresta','Los Cerrillos','Migues','Montes',
+    'Parque del Plata','Paso Carrasco','Salinas','San Antonio','San Bautista','San Jacinto','San Ram&oacute;n','Santa Rosa','Sauce','Soca','Tala','Toledo'],
+                     'Cerro Largo':['Acegu&aacute;','Fraile Muerto','Isidoro Nobl&iacute;a','Melo','Rio Branco','Tupamba&eacute;'],
+                     'Colonia':['Carmelo','Colonia del Sacramento','Florencio S&aacute;nchez','Juan Lacaze','Nueva Helvecia','Nueva Palmira','Omb&uacute;es de Lavalle','Rosario','Tarariras'],
+                     'Durazno':['Blanquillo','Carmen','Centenario','Durazno','La Paloma','Santa Bernardina','Sarand&iacute; del Yi'],
+                     'Flores':['Trinidad'],
+                     'Florida':['25 de Mayo','25 de Agosto','Cardal','Casup&aacute;','Cerro Colorado','Florida','Fray Marcos','Nico P&eacute;rez','Sarand&iacute; Grande'],
+                     'Lavalleja':['Jos&eacute; Pedro Varela','Sol&iacute;s de Mataojo','Jos&eacute; Batlle y Ord&oacute;&ntilde;ez','Mariscala','Minas'],
+                     'Maldonado':['Maldonado','San Carlos','Punta Del Este','Aigu&aacute;','Garz&oacute;n','Pan de Az&uacute;car','Piri&aacute;polis','Sol&iacute;s Grande'],
+                     'Montevideo':["Aguada","Aires Puros","Arroyo Seco","Atahualpa","Barra de Carrasco","Bella Vista","Belvedere","Bolivar","Brazo Oriental","Buceo",
+        "Capurro","Carrasco","Casabo","Centro","Cerrito","Cerro","Ciudad Vieja","Cno. Carrasco","Cno. Maldonado","Col&oacute;n","Cord&oacute;n","Goes","Golf","Ituzaing&oacute;",
+        "Jacinto Vera","Jardines Hip&oacute;dromo","La Blanqueada","La Colorada","La Comercial","La Figurita","La Teja","Las Acacias","Lezica","Malvin",
+	"Malvin Norte","Manga","Marconi","Maro&ntilde;as","Maro&ntilde;as, Curva","Melilla","Montevideo","Nuevo Par&iacute;s","Otras","Pajas Blancas","Palermo","Parque Batlle",
+        "Parque Rod&oacute;","Paso Molino","Paso de la Arena","Pe&ntilde;arol","Piedras Blancas","Pocitos","Pocitos Nuevo","Prado","Puerto Buceo","Punta Carretas","Punta Gorda",
+        "Punta Rieles","Reducto","Santiago V&aacutezquez","Sayago","Toledo Chico","Tres Cruces","Uni&oacute;n","Villa Biarritz","Villa Col&oacute;n","Villa Dolores","Villa Espa&ntilde;ola",
+	"Villa Garc&iacute;a","Villa Mu&ntilde;oz","Villa del Cerro","Larra&ntilde;aga","Barrio Sur","Barros Blancos","Conciliaci&oacute;n","Paso de las Duranas","Las Canteras",
+        "Playa Pascual","Libertad","Casavalle"],
+                     'Paysandu':['Paysandu','Nuevo Paysand&uacute;','Guich&oacute;n','Chacras de Paysand&uacute;','Quebracho','San F&eacute;lix','Porvenir','Tambores','Piedras Coloradas'],
+                     'Rio Negro':['Fray Bentos','Young','Nuevo Berl&iacute;n','San Javier','Nuevo Berl&iacute;n','San Javier'],
+                     'Rivera':['Rivera','Tranqueras','Minas de Corrales','Vichadero'],
+                     'Rocha':['Rocha','Chuy','Lascano','Castillos','La Paloma','Cebollat&iacute;','La Aguada-Costa Azul','Vel&aacute;zquez','Punta del Diablo',
+        'Aguas Dulces','Barra del Chuy','Barra de Valizas','Arachania','Cabo Polonio'],
+                     'Salto':['Salto','Constituci&oacute;n','Bel&eacute;n'],
+                     'San Jose':['San Jose de Mayo','Ciudad del Plata','Libertad','Rodr&iacute;guez','Ecilda Paullier','Puntas de Valdez','Rafael Perazza'],
+                     'Soriano':['Mercedes','Dolores','Cardona','Palmitas','Jos&eacute; Enrique Rod&oacute;','Chacras de Dolores','Villa Soriano'],
+                     'Tacuarembo':['Tacuarembo','Paso de los Toros','San Gregorio de Polanco','Villa Ansina','Tambores','Las Toscas','Curtina'],
+                     'Treinta y Tres':['Treinta y Tres','Vergara','Santa Clara de Olimar','Cerro Chato','Villa Sara','General Enrique Mart&iacute;nez']
+                 };
 
 
 
@@ -103,31 +132,7 @@ var Publicar = {
                 'repitl':["accesorios","alimentos","salud","terrarios","transporte"],
                 'mamifero':["accesorios","alimentos","jaulas","juguetes","salud","transporte"],
                 'pez':["accesorios","alimentos","parideras","peceras","salud"]},
-    departamento:{'Artigas':['Artigas','Bella Union'],
-        'Canelones':['Ciudad de la Costa','Las Piedras','Barros Blancos','Pando','La Paz','Canelones','Santa Lucia','Progreso'],
-        'Cerro Largo':['Melo','Rio Branco'],
-        'Colonia':['Carmelo','Colonia del Sacramento','Juan Lacaze','Nueva Helvecia','Rosario'],
-        'Durazno':['Durazno'],
-        'Flores':['Trinidad'],
-        'Florida':['Florida'],
-        'Lavalleja':['Minas'],
-        'Maldonado':['Maldonado','San Carlos','Punta Del Este'],
-        'Montevideo':["Aguada","Aires Puros","Arroyo Seco","Atahualpa","Barra de Carrasco","Bella Vista","Belvedere","Bolivar","Brazo Oriental","Buceo",
-        "Capurro","Carrasco","Casabo","Centro","Cerrito","Cerro","Ciudad Vieja","Cno. Carrasco","Cno. Maldonado","Col&oacute;n","Cord&oacute;n","Goes","Golf","Ituzaing&oacute;",
-        "Jacinto Vera","Jardines Hip&oacute;dromo","La Blanqueada","La Colorada","La Comercial","La Figurita","La Teja","Las Acacias","Lezica","Malvin",
-	"Malvin Norte","Manga","Marconi","Maro&ntilde;as","Maro&ntilde;as, Curva","Melilla","Montevideo","Nuevo Par&iacute;s","Otras","Pajas Blancas","Palermo","Parque Batlle",
-        "Parque Rod&oacute;","Paso Molino","Paso de la Arena","Pe&ntilde;arol","Piedras Blancas","Pocitos","Pocitos Nuevo","Prado","Puerto Buceo","Punta Carretas","Punta Gorda",
-        "Punta Rieles","Reducto","Santiago V&aacutezquez","Sayago","Toledo Chico","Tres Cruces","Uni&oacute;n","Villa Biarritz","Villa Col&oacute;n","Villa Dolores","Villa Espa&ntilde;ola",
-	"Villa Garc&iacute;a","Villa Mu&ntilde;oz","Villa del Cerro"],
-        'Paysandu':['Paysandu'],
-        'Rio Negro':['Fray Bentos','Young'],
-        'Rivera':['Rivera'],
-        'Rocha':['Rocha'],
-        'Salto':['Salto'],
-        'San Jose':['San Jose de Mayo','Ciudad del Plata','Libertad'],
-        'Soriano':['Mercedes','Dolores'],
-        'Tacuarembo':['Tacuarembo','Paso de los Toros'],
-        'Treinta y Tres':['Treinta y Trest']},
+    departamento:departamentos,
     
     loadDescription: function(cur,x){
         $.ajax({

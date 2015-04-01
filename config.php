@@ -169,7 +169,7 @@ $raza['perro'] = array('','Akita Inu', 'Alaskan Malamute', 'American Staffordshi
     'Pit Bull', 'Podenco Canario', 'Podenco Ibicenco', 'Pointer Inglés', 'Pomerania','Presa Canario', 'Pug','Puli Húngaro', 'Rafeiro do Alentejo', 'Rodesiano',
     'Rottweiler','Saluky', 'Samoyedo', 'San Bernardo', 'Schnauzer gigante', 'Schnauzer mediano', 'Schnauzer miniatura', 'Scottish Terrier', 
     'Setter Inglés', 'Setter Irlandés', 'Shar Pei', 'Shih Tzu', 'Spitz', 'Springer Spaniel Galés', 'Springer Spaniel Inglés', 
-    'Teckel', 'Terranova', 'Weimaraner', 'Westies','West Highland White Terrier', 'Whippet', 'Yorkshire Terrier','OTRO');
+    'Teckel', 'Terranova', 'Vizsla','Weimaraner', 'Westies','West Highland White Terrier', 'Whippet', 'Yorkshire Terrier','OTRO');
 
 foreach($raza['perro'] as $row){
     $r[]=  htmlentities($row);
@@ -181,7 +181,7 @@ $raza['gato'] = array('','Abisinio','Aphrodite\'s Giants','Australian Mist','Ame
     'Burm&eacute;s','Burmilla','Cornish rex','California Spangled','Ceylon','Cymric','Chartreux','Deutsch Langhaar','Devon rex','Dorado africano','Don Sphynx',
     'Europeo com&uacute;n','German Rex','Habana brown','Himalayo','Korat','Khao Manee','Maine Coon','Manx','Mau egipcio','Munchkin','Ocicat','Oriental',
     'Oriental de pelo largo','Ojos azules','Persa','Peterbald','Pixi Bob','Ragdoll','Sagrado de Birmania','Scottish Fold','Selkirk rex','Serengeti',
-    'Seychellois','Siam&eacute;s','Siam&eacute;s Moderno','Siam&eacute;s Tradicional','Siberiano','Snowshoe','Sphynx','Tonkin&eacute;s','Van Turco','Vizsla'
+    'Seychellois','Siam&eacute;s','Siam&eacute;s Moderno','Siam&eacute;s Tradicional','Siberiano','Snowshoe','Sphynx','Tonkin&eacute;s','Van Turco'
 );
 
 $raza['mamifero'] = array('','Conejo Enano','Cobaya','Ardilla de Corea','Chinchilla','Ardilla Richardson','Rata Canguro','H&aacute;mster Com&uacute;n',

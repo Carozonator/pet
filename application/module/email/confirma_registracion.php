@@ -18,7 +18,11 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 $headers .= 'From: PluralPet <soporte@pluralpet.com.uy>' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
-mail($to, $subject, $message, $headers);
+if(!mail($to, $subject, $message, $headers)){
+    $this->view->setMessage('Su mensaje no ha sido enviado. Por favor trate de devuelta');
+    $this->view->render();
+    die;
+}
 
 
 ?>

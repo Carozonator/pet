@@ -22,7 +22,7 @@ class RegistracionController extends Controller{
     }
     
     function confirmar(){
-        $this->view->setMessage("Chequea tu email para finalizar la registraci&oacute;n");
+        $this->view->setMessage("Chequea tu email para finalizar la registraci&oacute;n.");
         $this->view->render();
         
     }

@@ -74,8 +74,9 @@ function submitUser(elem){
                if(data.error==true){
                    $('input[name='+data.location+']').parent().find('.validation').html(data.message);
                }else{
-                   alert("Registrado!");
-                   window.location=window.location;
+                   window.location = "/registracion/confirmar";
+                   //alert("Registrado!");
+                   //window.location=window.location;
                }
            }
        });

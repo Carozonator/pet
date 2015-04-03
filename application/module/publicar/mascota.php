@@ -22,7 +22,7 @@ $opcion = array('Vender'=>'comprar',
             <li class="publicar_header_arrow">&nbsp;</li>
             <li class="step"><a href="#" onclick="Publicar.slideRight(1,false);return false;">Eligue donde</a></li>
             <li class="publicar_header_arrow">&nbsp;</li>
-            <li class="step"><a href="#">Describe tu servicio</a></li>
+            <li class="step"><a href="#">Describe tu mascota</a></li>
             <li class="publicar_header_arrow">&nbsp;</li>
             <li class="step" style="border-right:0;"><a href="#">Publicar</a></li>
         </ol>

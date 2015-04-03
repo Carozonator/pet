@@ -160,13 +160,18 @@ if(in_array($_POST['tab'],$check1)){
             <div class="publicar_item_header">Describe tu mascota</div>
             <?php if($precio){?>
             <div class="publicar_sub_item">
-                <label>Precio</label><input name="precio" type="text"/><br/>
+                <label>Precio</label>
+                <select class="moneda" name="moneda" style="width:70px;margin-left:-5px;margin-top:-5px;">
+                    <option value="uy">$</option>
+                    <option value="us">US$</option>
+                </select>
+                <input style="margin-left:5px;width:222px;" name="precio" type="text"/><br/>
             </div>
             <?php } ?>
             <div class="publicar_sub_item">
                 <label>Titulo</label><input name="titulo" type="text"/><span class="input_error"></span>
             </div>
-            <div class="publicar_sub_item">
+            <div class="publicar_sub_item" style="margin-top:10px;">
                 <div>
                     <label style="margin-bottom:10px;">Descripcion</label><br/>
                     <div style="position:relative;margin-left:-3px;vertical-align: middle;display:inline-block;width:100%;">
@@ -184,13 +189,31 @@ if(in_array($_POST['tab'],$check1)){
 </form>
 <script>
     
+    function today(){
+        var d = new Date();
+
+        var month = d.getMonth()+1;
+        var day = d.getDate();
+
+        var output =  ((''+month).length<2 ? '0' : '') + month + '/' +
+            ((''+day).length<2 ? '0' : '') + day +'/'+d.getFullYear();
+    
+        return output;
+    }
+    
     $("#fotos").dropzone({addRemoveLinks:true,maxFiles:6});
     $('.datepicker').datepicker({ 
         changeYear: true, 
-        yearRange: "1990:2014",
+        gotoCurrent:true,
+        yearRange: "1990:2015",
         altFormat: "yy-mm-dd",
         altField: "#fecha"
     });
+    
+    $(".datepicker").datepicker("setDate", today());
+    
+    
+    
     
     nicEditors.allTextAreas();
 

@@ -52,7 +52,11 @@ var Ready = {
             placeholder: "Eligue Refugio",
             allowClear: false
         });
-        
+        $("select.moneda").select2({
+            placeholder: "Moneda",
+            allowClear: false,
+            minimumResultsForSearch: -1
+        });
         
         
         

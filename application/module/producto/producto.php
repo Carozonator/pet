@@ -1,4 +1,3 @@
-
 <div class="main-content_container" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
         <h2 style="border-bottom: 1px solid grey;padding:5px;">
@@ -21,7 +20,20 @@
             <div style="display:inline-block">
                 <h2 style="padding-bottom:20px;"><?php echo strtoupper($producto['tab']);?></h2>
                 <h5 >Direcc&iacute;on:</h5>
-                <p class="gristxt"><?php echo ucfirst($producto['ciudad_barrio']);?>, <?php echo ucfirst($producto['departamento']);?></p><br/>
+                <p class="gristxt"><?php echo (!empty($producto['ciudad_barrio'])?ucfirst($producto['ciudad_barrio']).", ":"");?><?php echo ucfirst($producto['departamento']);?></p>
+                <div class="precio" style="font-size:20px;">
+                    <?php 
+                    if($producto['moneda']=='uy'){
+                        $moneda = '$';
+                    }elseif($producto['moneda']=='us'){
+                        $moneda = 'U$S';
+                    }
+                    echo $moneda.$producto['precio'];?>
+                </div>
+                <br/>
+                
+                
+                
                 <button onclick="Contactar.show(<?php echo $producto['usuario']; ?>)">Contactar</button>
                 <?php if($_SESSION['user']->id==$producto['usuario']){ ?>
                     <form style="margin-top:20px;"method="GET" action="/mascota/editar/<?php echo $producto['id'];?>">
@@ -37,8 +49,6 @@
 
         <div class="item_datos" style="margin-top:20px;">
             <h4>Datos</h4>
-            
-            Precio: $<?php echo ucfirst($producto['precio']);?><br/>
             <?php 
             if($producto['link']){
                 echo '<a class="gristxt" title="" href="'.$producto['link'].'">'.$producto['link'].'</a>';

@@ -199,6 +199,9 @@ div.img150 div.thumb {
 .publicar_sub_item{
     padding-left:20px;
 }
+.publicar_sub_item input{
+    margin:10px 0px 0px 0px;
+}
 
 
 
@@ -945,4 +948,15 @@ box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.53);
 }
 .mascota-list:last-child{
     border-bottom:1px solid lightgrey;
+}
+
+
+
+
+
+
+.precio{
+    padding-top:8px;
+    font-size:17px;
+    color:#AF069C;
 }

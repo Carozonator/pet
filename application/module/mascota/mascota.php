@@ -23,8 +23,19 @@
                 <h2 style="padding-bottom:20px;">
                     <!--<?php echo strtoupper($mascota['tab']);?>-->
                 </h2>
-                <h5 >Direcc&iacute;on:</h5>
-                <p class="gristxt"><?php echo ucfirst($mascota['ciudad_barrio']);?>, <?php echo ucfirst($mascota['departamento']);?></p><br/>
+                <h5>Direcc&iacute;on:</h5>
+                
+                <p class="gristxt"><?php echo (!empty($mascota['ciudad_barrio'])?ucfirst($mascota['ciudad_barrio']).", ":"");?><?php echo ucfirst($mascota['departamento']);?></p>
+                <div class="precio" style="font-size:20px;">
+                    <?php 
+                    if($mascota['moneda']=='uy'){
+                        $moneda = '$';
+                    }elseif($mascota['moneda']=='us'){
+                        $moneda = 'U$S';
+                    }
+                    echo $moneda.ucfirst($mascota['precio']);?>
+                </div>
+                <br/>
                 <button onclick="Contactar.show(<?php echo $mascota['usuario']; ?>)">Contactar</button>
                 <?php if($_SESSION['user']->id==$mascota['usuario']){ ?>
                     <form style="margin-top:20px;"method="GET" action="/mascota/editar/<?php echo $mascota['id'];?>">
@@ -41,7 +52,7 @@
         <div class="item_datos" style="margin-top:20px;">
             <h4 style="color:#9C2490">Datos</h4>
             <span class="gristxt_1"><?php echo $GLOBALS['raza_o_animal'][$mascota['animal']]; ?>:</span> <?php echo ucfirst($mascota['animal_detail']);?><br/>
-            <span class="gristxt_1">Precio:</span> $<?php echo ucfirst($mascota['precio']);?><br/>
+            
             <span class="gristxt_1">Tama&ntilde;o:</span>  <?php echo ucfirst($mascota['tamano']);?><br/>
             <span class="gristxt_1">Edad:</span> <?php echo ucfirst($mascota['edad']);?><br/>
             <span class="gristxt_1">Sexo:</span> <?php echo ucfirst($mascota['sexo']);?><br/>

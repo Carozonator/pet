@@ -223,7 +223,12 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                                         if($key=='servicio'){
                                                             echo '<span title="'.$r->ciudad_barrio.', '.$r->departamento.'" style="font-size:14px;">'.$r->ciudad_barrio.', '.$r->departamento.'</span>';
                                                         }else{
-                                                            echo '<span>'.$r->precio.'</span>'; 
+                                                            if($r->moneda=='uy'){
+                                                                $moneda = '$';
+                                                            }elseif($r->moneda=='us'){
+                                                                $moneda = 'U$S';
+                                                            }
+                                                            echo '<span class="precio">'.$moneda.$r->precio.'</span>'; 
                                                         }
                                                     ?>
                                                 <span style="text-align:right;float:right"><button onclick="window.location='/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>'" class="button">VER</button></span>

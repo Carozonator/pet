@@ -197,10 +197,14 @@ div.img150 div.thumb {
     font-weight:bold;
 }
 .publicar_sub_item{
+    padding-top:10px;
     padding-left:20px;
 }
 .publicar_sub_item input{
     margin:10px 0px 0px 0px;
+}
+.publicar_sub_item input:first-child{
+    margin:0px 0px 0px 0px;
 }
 
 

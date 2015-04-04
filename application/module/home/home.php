@@ -170,7 +170,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
             <div class="clear"></div>
         </div>
         -->
-        <div class="main-content-box" style="" id="primary">
+        <div class="main-content-box" style="" id="">
             
             <?php 
             $paneles_to_table = array('perro'=>'mascota','gato'=>'mascota','servicio'=>'anuncio','producto'=>'producto');
@@ -242,7 +242,8 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                         
                         <div class="list_carousel grid"></div>
             <?php } ?>
-                        
+        </div>
+        <div class="main-content-box" style="margin-top:70px;margin-bottom:70px;" id="">
             <?php             
             foreach($articulos as $key=>$row){
                 foreach($row as $r){

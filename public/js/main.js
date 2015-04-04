@@ -290,14 +290,15 @@ var Publicar = {
         }
         submit_var.descripcion=description;
 
-        url = '/publicar/'+test+'/';
+
+        var url = '/publicar/'+test+'/';
         $.ajax({
             url:url,
             type:'POST',
             data:submit_var,
             success:function(response){
                 console.log(response);
-                window.location=response;
+                //window.location=response;
             }
         });
         

@@ -14,7 +14,7 @@ class Mascota extends Model{
         $sql =  "INSERT INTO mascota (animal,animal_detail,sexo,edad,tamano,pedigree,criadero,precio,titulo,descripcion,tab,fecha,departamento,ciudad_barrio,usuario,status,moneda)"
                 . " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'activo',?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array($_POST['animal'],$_POST['animal_detail'],$_POST['sexo'],$_POST['edad'],
+        $stmt->execute(array($_POST['animal'],  htmlentities($_POST['animal_detail']),$_POST['sexo'],$_POST['edad'],
             $_POST['tamano'],$_POST['pedigree'],$_POST['criadero'],$_POST['precio'],$_POST['titulo'],
             htmlentities(strip_tags($_POST['descripcion'])),$_POST['tab'],$_POST['fecha'],$_POST['departamento'],
             $_POST['ciudad_barrio'],$_SESSION['user']->id,$_POST['moneda']));
@@ -25,6 +25,7 @@ class Mascota extends Model{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($insert_id,$_POST['publication_hash']));
         
+        echo $_POST['animal_detail'];
         
         //$affected_rows = $stmt->rowCount();
         return $insert_id;

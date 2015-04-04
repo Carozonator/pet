@@ -55,7 +55,7 @@
                     <div class="menu-my-account-container">
                         <ul id="menu-my-account" class="menu">
                             <li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="/account/">Mi cuenta</a></li>
-                            <li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="/account/">Favoritos</a></li>
+                            <!--<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="/account/">Favoritos</a></li>-->
                         </ul>
                     </div>                
                 </nav><!-- .f_menu -->

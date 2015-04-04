@@ -266,4 +266,22 @@ function __autoload($class_name) {
     
 }
 
+
+
+
+
+
+function moneda($moneda){
+    if($moneda=='us'){
+        return 'U$S';
+    }elseif($moneda=='uy'){
+        return '$';
+    }else{
+        return '$';
+    }
+}
+
+
+
+
 ?>

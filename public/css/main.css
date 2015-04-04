@@ -962,5 +962,6 @@ box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.53);
 .precio{
     padding-top:8px;
     font-size:17px;
+    font-weight:bold;
     color:#AF069C;
 }

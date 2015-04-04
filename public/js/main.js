@@ -298,7 +298,7 @@ var Publicar = {
             data:submit_var,
             success:function(response){
                 console.log(response);
-                //window.location=response;
+                window.location=response;
             }
         });
         

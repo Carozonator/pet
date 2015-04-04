@@ -255,7 +255,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                     if(strcmp($key,'anuncio')===0){
                         echo 'Eventos';
                     }else{
-                        echo 'Consejos';
+                        echo '&iquest;Sab&iacute;as que?';
                     }
                     ?>
                     </h2>
@@ -266,7 +266,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                         <div>
                             <div class="thumb">
                                 <a title="<?php echo $r->titulo;?>">
-                                    <img alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$r->foto_usuario.'/thumb_'.$r->foto_name; ?>">
+                                    <img onclick="window.location='/<?php echo $key;?>/<?php echo $r->id;?>'" alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;cursor:pointer;" src="<?php echo MEDIA.'upload/'.$r->foto_usuario.'/thumb_'.$r->foto_name; ?>">
                                 </a>
                             </div>
                             <div style="width:180px;overflow:hidden;">
@@ -282,7 +282,9 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                 </span>
                             </div>
                         </div>
-                            <span style="text-align:right;position:absolute;bottom:10px;right:10px;"><button onclick="window.location='/<?php echo $key;?>/<?php echo $r->id;?>'" class="button">Leer m&aacute;s</button></span>
+                            <span style="text-align:right;position:absolute;bottom:10px;right:10px;">
+                                <button onclick="window.location='/<?php echo $key;?>/<?php echo $r->id;?>'" class="button">Ver m&aacute;s</button>
+                            </span>
                     </div>
                 </div>
             </div>

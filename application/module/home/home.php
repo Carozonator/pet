@@ -253,7 +253,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                     <h2 style="padding-left:15px;">
                     <?php 
                     if(strcmp($key,'anuncio')===0){
-                        echo 'Eventos';
+                        echo 'Anuncios y eventos';
                     }else{
                         echo '&iquest;Sab&iacute;as que?';
                     }

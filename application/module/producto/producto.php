@@ -23,12 +23,7 @@
                 <p class="gristxt"><?php echo (!empty($producto['ciudad_barrio'])?ucfirst($producto['ciudad_barrio']).", ":"");?><?php echo ucfirst($producto['departamento']);?></p>
                 <div class="precio" style="font-size:20px;">
                     <?php 
-                    if($producto['moneda']=='uy'){
-                        $moneda = '$';
-                    }elseif($producto['moneda']=='us'){
-                        $moneda = 'U$S';
-                    }
-                    echo $moneda.$producto['precio'];?>
+                    echo moneda($producto['moneda']).precio($producto['precio']);?>
                 </div>
                 <br/>
                 

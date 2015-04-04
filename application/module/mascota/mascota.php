@@ -33,7 +33,7 @@
                     }elseif($mascota['moneda']=='us'){
                         $moneda = 'U$S';
                     }
-                    echo $moneda.ucfirst($mascota['precio']);?>
+                    echo moneda($mascota['moneda']).precio($mascota['precio']);?>
                 </div>
                 <br/>
                 <button onclick="Contactar.show(<?php echo $mascota['usuario']; ?>)">Contactar</button>

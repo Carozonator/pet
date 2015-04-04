@@ -281,6 +281,10 @@ function moneda($moneda){
     }
 }
 
+function precio($precio){
+    return number_format($precio,0,',','.');
+}
+
 
 
 

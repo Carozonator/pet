@@ -67,8 +67,9 @@ class User extends Model{
         $sql = "INSERT INTO user (firstname,lastname,email,password,phone,username,document) VALUES(?,?,?,?,?,?,?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['firstname'],$_POST['lastname'],$_POST['email'],$_POST['password'],$_POST['phone'],$_POST['username'],$_POST['documento']));
-        $affected_rows = $stmt->rowCount();
-        return $affected_rows;
+        $insert_id = $this->pdo->lastInsertId(); 
+        //$affected_rows = $stmt->rowCount();
+        return $insert_id;
     }
     
     function getPublicacionesStatus(){

@@ -11,7 +11,8 @@ class RegistracionController extends Controller{
     
     function registerUser(){
         $user = new User();
-        $user->addUser();
+        $register_id = $user->addUser();
+        $user = $user->get($register_id);
         include(ROOT.'application/module/email/confirma_registracion.php');
         //$this->view->render();
         //die;

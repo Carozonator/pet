@@ -7,6 +7,7 @@ class View{
     private $file;
     private $data;
     private $message;
+    private $head_tags= array();
     
     function __construct($request) {
         $this->request = $request;
@@ -15,6 +16,8 @@ class View{
     
     function render(){
         extract($this->data);
+        $head_tags = implode(" ",$this->head_tags);
+        
         include ROOT.'application/include/header.php';
         if(isset($this->file)){
             include ($this->file);
@@ -37,6 +40,10 @@ class View{
     
     function setMessage($message){
         $this->message=$message;//'<div class="informacion">'.$message.'</div>';
+    }
+    
+    function addHeadTag($tag){
+        $this->head_tags[] = $tag;
     }
     
     function assign($aAssign){

@@ -40,6 +40,9 @@ class MascotaController extends Controller{
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('pregunta'=>$preguntas));
         $this->view->assign(array('mascota'=>$result));
+        
+        
+        $this->view->addHeadTag('<meta property="og:title" content="'.$result['titulo'].'" />');
         $this->view->setFile('mascota');
         $this->view->render();
     }

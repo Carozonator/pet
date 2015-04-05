@@ -114,7 +114,7 @@ if(in_array($_POST['tab'],$check1)){
         </div>
         <?php } ?>
         <div class="publicar_item">
-            <div class="publicar_item_header">Ubicacion y Contacto</div>
+            <div class="publicar_item_header">Ubicaci&oacute;n y Contacto</div>
             <div class="publicar_sub_item">
                 <div style="height:45px;width:100%">
                     <label>Departamento </label>
@@ -173,7 +173,7 @@ if(in_array($_POST['tab'],$check1)){
             </div>
             <div class="publicar_sub_item" style="margin-top:10px;">
                 <div>
-                    <label style="margin-bottom:10px;">Descripcion</label><br/>
+                    <label style="margin-bottom:10px;">Descripci&oacute;n</label><br/>
                     <div style="position:relative;margin-left:-3px;vertical-align: middle;display:inline-block;width:100%;">
                         <textarea id="nicedit_text" style="width:100%;height:250px;"></textarea>
                         <span style="position:absolute;top:0px;right:0px;" class="input_error"></span>

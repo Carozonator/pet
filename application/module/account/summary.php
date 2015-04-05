@@ -9,7 +9,7 @@
                 Preguntas
             </div>
             <ul class="items">
-                <li><a href="/account/preguntas/"><?php echo count($preguntas); ?> Que aun no respondiste</a></li>
+                <li><a href="/account/preguntas/"><?php echo count($preguntas); ?> Que a&uacute;n no respondiste</a></li>
             </ul>
         </div>
         <div class="wrapper">

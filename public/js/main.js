@@ -20,14 +20,14 @@ var Preguntas = {
 var Ready = {
     init: function(){
         $("select.ciudad_barrio").select2({
-            placeholder: "Eligue Ciudad/Barrio",
+            placeholder: "Elige Ciudad/Barrio",
             allowClear: false,
             enable:false,
             readonly:true
         });
 
         $("select.departamento").select2({
-            placeholder: "Eligue Departamento",
+            placeholder: "Elige Departamento",
             allowClear: false,
         }).on('change', function(e){
             $('select.ciudad_barrio').html('');
@@ -45,11 +45,11 @@ var Ready = {
 
 
         $("select.animal_detail").select2({
-            placeholder: "Eligue Animal/Raza",
+            placeholder: "Elige Animal/Raza",
             allowClear: false
         });
         $("select.refugio").select2({
-            placeholder: "Eligue Refugio",
+            placeholder: "Elige Refugio",
             allowClear: false
         });
         $("select.moneda").select2({
@@ -64,7 +64,7 @@ var Ready = {
         
         
         $("select.animal").select2({
-            placeholder: "Eligue Animal",
+            placeholder: "Elige Animal",
             allowClear: true
         }).on('change', function(e){
             $('select.tab').html('');
@@ -76,7 +76,7 @@ var Ready = {
             $('select.tab').show();
         });
         $("select.tab").select2({
-            placeholder: "Eligue Producto",
+            placeholder: "Elige Producto",
             allowClear: true,
             enable:false,
             readonly:true

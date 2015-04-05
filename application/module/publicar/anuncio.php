@@ -80,7 +80,7 @@
                                 </select><br/>
                             </div>
                             <div style="height:45px;width:100%">
-                                <label>Direccion </label><input name="direccion" type="text"/>
+                                <label>Direcci&oacute;n </label><input name="direccion" type="text"/>
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
 
 
 $opcion = array('Vender'=>'comprar',
-                'Poner en adopcion'=>'adoptar',
+                'Poner en adopci&oacute;n'=>'adoptar',
                 'Perdido'=>'perdido',
                 'Encontrado'=>'encontrado',
                 'Cruzar'=>'cruzar');
@@ -20,7 +20,7 @@ $opcion = array('Vender'=>'comprar',
         <ol>
             <li class="step highlight"><a href="#" onclick="Publicar.slideRight(0,false);">Elige qu&eacute; publicar</a></li>
             <li class="publicar_header_arrow">&nbsp;</li>
-            <li class="step"><a href="#" onclick="Publicar.slideRight(1,false);return false;">Eligue donde</a></li>
+            <li class="step"><a href="#" onclick="Publicar.slideRight(1,false);return false;">Elige donde</a></li>
             <li class="publicar_header_arrow">&nbsp;</li>
             <li class="step"><a href="#">Describe tu mascota</a></li>
             <li class="publicar_header_arrow">&nbsp;</li>

@@ -22,6 +22,8 @@
     <script src="<?php echo PUBLIC_PATH; ?>vendor/lightbox/js/lightbox.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/lightbox/css/lightbox.css"/>
     
+    <?php echo $head_tags; ?>
+    
     <script src=""></script>
     <script type="text/javascript">
             $(document).ready(function(){
@@ -59,7 +61,7 @@
                             <li><a href="/account/recupere_contrasena/"></i>Has olvidado tu contrase&ntilde;a?</a></li>
                         </ul>
                     </div>
-                    <div style="" class="dropdown-menu" tabindex="1"><a href="#" onclick="Register.open();return false;"><i class="icon-pencil"></i> Registrate</a>
+                    <div style="" class="dropdown-menu" tabindex="1"><a href="#" onclick="Register.open();return false;"><i class="icon-pencil"></i> Registrame</a>
                     </div>
 
                     <?php }else{ ?>

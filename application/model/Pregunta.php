@@ -37,6 +37,17 @@ class Pregunta extends Model{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['answer'],time(),$_POST['pregunta_id']));
         $affected_rows = $stmt->rowCount();
+        
+        
+        
+        $sql =  "SELECT user.* FROM pregunta INNER JOIN user on pregunta.asker=user.id where pregunta.id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($_POST['pregunta_id']));
+        $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        $user = $rows[0];
+        require(ROOT.'application/module/email/nueva_respuesta.php');
+        
+        
         return $affected_rows;
     }
     

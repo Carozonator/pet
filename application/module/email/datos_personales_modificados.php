@@ -19,6 +19,6 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 $headers .= 'From: PluralPet <soporte@pluralpet.com.uy>' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-
+mail($to, $subject, $message, $headers);
 
 ?>

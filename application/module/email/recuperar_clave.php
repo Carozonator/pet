@@ -2,7 +2,7 @@
 
 
 $to      =  $user->email;
-$subject = 'Recuperar Email';
+$subject = 'Recuperar Clave';
 $message = '<html>'
         . '<body>'
         . '<img style="width:200px;height:auto" src="'.DOMAIN.'/media/logo.png"/>'

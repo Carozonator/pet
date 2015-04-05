@@ -205,10 +205,23 @@ class User extends Model{
     }
     
     function updatePasswordFromHash($password,$temp_hash){
+        
+        $sql = "SELECT * FROM user where temp_hash=? ";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($temp_hash));
+        $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        $user = $rows[0];
+        
+        
         $sql = "UPDATE user SET temp_hash=null, password=? where temp_hash=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($password,$temp_hash));
         $affected_rows = $stmt->rowCount();
+        
+        $changed = "clave";
+        require(ROOT.'application/module/email/datos_personales_modificados.php');
+        
+        
         return $affected_rows;
     }
     

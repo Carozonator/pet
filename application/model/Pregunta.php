@@ -40,7 +40,7 @@ class Pregunta extends Model{
         
         
         
-        $sql =  "SELECT user.* FROM pregunta INNER JOIN user on pregunta.asker=user.id where pregunta.id=?";
+        $sql =  "SELECT user.*,pregunta._table,pregunta.publication_id FROM pregunta INNER JOIN user on pregunta.asker=user.id where pregunta.id=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['pregunta_id']));
         $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);

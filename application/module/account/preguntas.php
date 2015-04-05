@@ -35,7 +35,7 @@
         <?php }
         }
         if($total==0){
-            echo '<li style="text-align:center">No hay preguntas para contestar</li>';
+            echo '<li style="text-align:center">No hay preguntas sin responder</li>';
         }
         ?>
     </ul>

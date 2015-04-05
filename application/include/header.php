@@ -61,7 +61,7 @@
                             <li><a href="/account/recupere_contrasena/"></i>Has olvidado tu contrase&ntilde;a?</a></li>
                         </ul>
                     </div>
-                    <div style="" class="dropdown-menu" tabindex="1"><a href="#" onclick="Register.open();return false;"><i class="icon-pencil"></i> Registrame</a>
+                    <div style="" class="dropdown-menu" tabindex="1"><a href="#" onclick="Register.open();return false;"><i class="icon-pencil"></i> Registrarme</a>
                     </div>
 
                     <?php }else{ ?>

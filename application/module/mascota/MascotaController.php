@@ -43,6 +43,7 @@ class MascotaController extends Controller{
         
         
         $this->view->addHeadTag('<meta property="og:title" content="'.$result['titulo'].'" />');
+        $this->view->addHeadTag('<meta property="og:image" content="'.DOMAIN.MEDIA.'upload/'.$fotos[0]['usuario'].'/'.$fotos[0]['name'].' - '.moneda($result['moneda']).precio($result['precio']).'" />');
         $this->view->setFile('mascota');
         $this->view->render();
     }

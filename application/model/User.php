@@ -164,7 +164,7 @@ class User extends Model{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['value'],$_SESSION['user']->id));
         $affected_rows = $stmt->rowCount();
-        return $affected_rows;
+        
         
         
         
@@ -172,7 +172,7 @@ class User extends Model{
         $user = $_SESSION['user'];
         require(ROOT.'application/module/email/datos_personales_modificados.php');
         
-        
+        return $affected_rows;
     }
     
     

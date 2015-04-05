@@ -14,9 +14,9 @@ class Pregunta extends Model{
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         $respondent = $rows[0]['usuario'];
         
-        $sql =  "INSERT INTO pregunta (question,publication_id,_table,asker,respondent) VALUES(?,?,?,?,?)";
+        $sql =  "INSERT INTO pregunta (question,publication_id,_table,asker,respondent,question_timestamp) VALUES(?,?,?,?,?,?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array($_POST['question'],$_POST['publication_id'],$_POST['_table'],$_SESSION['user']->id,$respondent));
+        $stmt->execute(array($_POST['question'],$_POST['publication_id'],$_POST['_table'],$_SESSION['user']->id,$respondent,time()));
         $affected_rows = $stmt->rowCount();
         
         

@@ -4,6 +4,8 @@
 
 //phpinfo();die;
 
+
+
 $constant['ROOT'] =  dirname(__FILE__).'/';
 
 $constant['MEDIA'] = '/media/';
@@ -268,7 +270,7 @@ function __autoload($class_name) {
 
 
 
-
+date_default_timezone_set('America/Sao_Paulo');
 
 
 function moneda($moneda){
@@ -285,6 +287,25 @@ function precio($precio){
     return number_format($precio,0,',','.');
 }
 
+function fecha($uts){
+    $post_day = strtotime('today midnight',$uts);
+    $today = strtotime('today midnight',time());
+    $days_ago = ($post_day-$today)/(60*60*24);
+    
+    switch($days_ago){
+        case 0:
+           $date = "Hoy a las ".date("H:i",$uts);
+        break;
+        case 1:
+            $date = "Ayer a las ".date("H:i",$uts);
+        break;
+        default:
+            $date = "Hace ".($days_ago*-1)." dias";
+        break;
+    }
+    
+    return $date;
+}
 
 
 

@@ -87,10 +87,9 @@
                 <?php 
                 foreach($pregunta as $row){
                     echo '<li>';
-                    echo '<i class="icon-comment"></i><span>'.$row['question'].'<span>';
+                    echo '<i class="icon-comment"></i>'.$row['question'].' <span style="float:right">'.fecha($row['question_timestamp']).'</span>';
                     if(!empty($row['answer'])){
-                        $date = date("F j, g:i a",$row['answer_timestamp']);
-                        echo '<div class="answer"><i class="icon-comments"></i>'.$row['answer'].'<span class="date">'.$date.'</span></div>';
+                        echo '<div class="answer"><i class="icon-comments"></i>'.$row['answer'].' <span style="float:right">'.fecha($row['answer_timestamp']).'</span></div>';
                     }
                     echo '</li>';
                 }

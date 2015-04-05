@@ -165,6 +165,14 @@ class User extends Model{
         $stmt->execute(array($_POST['value'],$_SESSION['user']->id));
         $affected_rows = $stmt->rowCount();
         return $affected_rows;
+        
+        
+        
+        $changed = $_POST['column'];
+        $user = $_SESSION['user'];
+        require(ROOT.'application/module/email/datos_personales_modificados.php');
+        
+        
     }
     
     

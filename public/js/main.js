@@ -455,10 +455,17 @@ UpdateUser = {
         box.show();
         var box_content = box.find('.overlay_box_inner');
         box_content.html($('.update_user').html());
+        
         var name = $(elem).find('.item_user_align:first').html();
-        box_content.find('span').html(name);
-        box_content.find('input:first').val($(elem).find('.item_user_align:last').html());
-        box_content.find('input:last').val(column);
+        box_content.find('span:first').html(name);
+        box_content.find('input.value').val($(elem).find('.item_user_align:last').html());
+        box_content.find('input.column').val(column);
+        if(name=='Clave'){
+            box_content.find('input.value').val("");
+            $('.clave').show();
+        }else{
+            $('.clave').hide();
+        }
         box_content.show();
 //<p style="font-size:16px;padding-bottom:20px;">Modificar</p><span>'+$(elem).find('.item_user_align:first').html()+'</span>&nbsp;<input name="'+column+'" type="text" value="'+$(elem).find('.item_user_align:last').html()+'">&nbsp;<button class="button">Guardar</button>');
     }

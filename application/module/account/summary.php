@@ -51,10 +51,16 @@
 <div style="display:none" class="update_user">
     <form action="/account/updateUser/" method="POST">
         <div style="font-size:16px;padding-bottom:20px;">Modificar</div>
-        <span></span>&nbsp;
-        <input name="value" type="text" value=""/>&nbsp;
-        <input name="column" type="hidden" value=""/>&nbsp;
-        <button class="button">Guardar</button>
+        <span style="display:inline-block;width:100px;"></span>&nbsp;
+        <input name="value" class="value" type="text" value=""/>&nbsp;
+        <input name="column" class="column" type="hidden" value=""/>&nbsp;
+        <div style="padding-top:10px;" class="clave">
+            <span style="display:inline-block;width:100px;">Repetir clave</span>
+            <input type="text"/>
+        </div>
+        <div style="text-align:center;padding-top:10px;">
+            <button class="button">Guardar</button>
+        </div>
     </form>
 </div>
 <style>

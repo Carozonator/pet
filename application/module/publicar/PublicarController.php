@@ -9,6 +9,11 @@ class PublicarController extends \pluralpet\Controller{
             $this->view->render();
             die;
         }
+        if(strcmp($this->request->getMethod(),"Consejo")===0 && !($_SESSION['user']->id==7 || $_SESSION['user']->id==1)){
+            $this->view->setMessage("No tienes acceso a publicar consejos");
+            $this->view->render();
+            die;
+        }
         $this->view->setFile($this->request->getMethod());
         $this->view->render();
     }

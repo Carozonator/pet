@@ -28,6 +28,10 @@
                 <img onclick="Publicar.type='peluqueria';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/peluqueria.jpg"/>
                 <img onclick="Publicar.type='servicio_medico';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/servicios_medicos_adicionales.jpg"/>
                 <img onclick="Publicar.type='otros';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/otros.jpg"/>
+                
+                <?php if($_SESSION['user']->id==7){?>
+                    <img onclick="Publicar.type='evento';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/evento.png"/>
+                <?php } ?>
             </div>
         </div>
         <div class="slides" style="position:absolute;left:1000px;width:100%;">
@@ -111,21 +115,6 @@
                     <a title="Vet- Lesant | Veterinarios en Distrito Federal" href="#"><img alt="Vet- Lesant | Veterinarios en Distrito Federal" src="http://www.mundoanimalia.com/images/veterinario/b3/79/fb/5d8dc5dbd84f605017f1c835da6031d7/thumbm_foto_vetlesant_3880.jpg"></a>
                 </div>
                 <div class="overflow mbottom">
-                    <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
-                    <h3><a class="bigtxt" title="Vet- Lesant | Veterinarios en Distrito Federal" href="http://www.mundoanimalia.com/veterinario/vet__lesant/25294">Vet- Lesant</a></h3>
-                    <p class="gristxt"> Goya 20 Local A Col Insurgentes Mixcoac entre patriotismo y Eje 7</p>
-                    <a class="gristxt nolink" title="Veterinarios en Benito Juarez" href="http://www.mundoanimalia.com/veterinarios/Mexico/Distrito_Federal/Benito_Juarez/475568">Veterinarios en Benito Juarez</a> (Distrito Federal)
-                    <p class="descripcion">Somos una clinica de prevencion y diagnostico de enfermedades, por medio de la aplicacion de la medicina preventiva ayudamos a las mascotas y sus propietarios a tener una convivencia sana y feliz,...</p>
-                    <!--
-                    <ul class="calidad_servicio">
-                        <li>
-                            <div class="q_calidad">Trato con mi mascota:</div>
-                            <div class="overflow">
-                                <span class="bar-excelente left">Trato con mi mascota:</span><p class="q_legend">Muy bueno</p>
-                            </div>
-                        </li>
-                    </ul>
-                    -->
                 </div>
             </div>
         </div>

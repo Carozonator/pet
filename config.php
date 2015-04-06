@@ -36,8 +36,8 @@ $constant['DB_PASSWORD'] = '';
 $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('mascota'=>'Mascotas'),
                                                             array('producto'=>'Productos En Tienda'),
-                                                            array('anuncio'=>'Anuncios'),
-                                                            array('consejo'=>'Consejos')
+                                                            array('anuncio'=>'Anuncios')
+                                                            
                                 ),'mascota'=>array(
                                                             array('perro'=>'Perros'),
                                                             array('gato'=>'Gatos'),
@@ -84,6 +84,13 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('otros'=>'Otros')
                                 )*/
                                 );
+
+
+
+
+if($_SESSION['user']->id==7 || $_SESSION['user']->id==1){
+    $GLOBALS['nav_menu']['publicar'][]=array('consejo'=>'Consejos');
+}
 
 $GLOBALS['refugio']= array('','Animales Sin Hogar','Animal Help','A.P.A el Refugio');
 
@@ -305,6 +312,10 @@ function fecha($uts){
     }
     
     return $date;
+}
+
+function htmlEncodeText($desc){
+    return htmlspecialchars_decode(htmlentities($desc, ENT_NOQUOTES, 'UTF-8'), ENT_NOQUOTES);
 }
 
 

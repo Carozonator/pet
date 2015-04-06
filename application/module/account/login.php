@@ -15,7 +15,9 @@
             <div style="position:absolute;right:-20px;top:36px;" onclick="$(this).closest('form').submit();" class="icon-circle-arrow-right submit_arrow"></div>
         </div>
     </form>
+    
     <div style="font-size:15px;margin-top:20px;">
-        <a href="#" onclick="Register.open()">No estas registrado?</a>
+        <a href="#" onclick="Register.open()">No estas registrado?</a><br/><br/>
+        <a href="/account/recupere_contrasena/">Has olvidado tu contrase&ntilde;a?</a>
     </div>
 </div>

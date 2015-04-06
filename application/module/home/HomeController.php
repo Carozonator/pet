@@ -9,7 +9,7 @@ class HomeController extends Controller{
         $gato = $mascota->getAllWhere('LEFT OUTER JOIN foto on mascota.id=foto.publication_id WHERE animal=? group by foto.publication_id order by id desc limit 5', 
                 array('gato'));
         $anuncio = new \pluralpet\Anuncio();
-        $servicio = $anuncio->getAllJoinPhoto("where _table='anuncio' and anuncio.sub_tab!='otros' order by id desc limit 5",null);
+        $servicio = $anuncio->getAllJoinPhoto("where _table='anuncio' and anuncio.sub_tab!='evento' order by id desc limit 5",null);
         
         $p = new \pluralpet\Producto();
         $producto = $p->getAllJoinPhotoObj("where _table='producto' order by id desc limit 5",null);
@@ -22,7 +22,7 @@ class HomeController extends Controller{
         
         
         $p = new \pluralpet\Anuncio();
-        $articulos['anuncio'] = $p->getAllJoinPhoto("where _table='anuncio' and anuncio.sub_tab='otros' order by id desc limit 1",null);
+        $articulos['anuncio'] = $p->getAllJoinPhoto("where _table='anuncio' and anuncio.sub_tab='evento' order by id desc limit 1",null);
         
         
         //$p = new \pluralpet\Consejo();

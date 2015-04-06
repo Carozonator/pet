@@ -2,7 +2,7 @@
 <div class="main-content_container" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
         <h2 style="border-bottom: 1px solid grey;padding:5px;">
-            <?php echo $data['titulo'];?>
+            <?php echo htmlEncodeText($data['titulo']);?>
         </h2>
         <div style="padding-top:20px;">
             <div style="float:right;">
@@ -13,7 +13,7 @@
                 </a>
             </div>
             <div style="margin-top:20px;float:left;">
-                <?php echo $data['descripcion'];?>
+                <?php echo htmlEncodeText($data['descripcion']);?>
             </div>
         </div>
     </div>

@@ -69,7 +69,7 @@
         </div>
         <div style="margin-top:20px;" >
             <h4>Descripci&oacute;n</h4>
-            <p class="descripcion"><?php echo htmlspecialchars_decode(htmlentities($mascota['descripcion'], ENT_NOQUOTES, 'UTF-8'), ENT_NOQUOTES);?></p>
+            <p class="descripcion"><?php echo htmlEncodeText($mascota['descripcion']);?></p>
         </div>
         <div style="margin-top:20px;" class="preguntas">
             <h4>Preguntas</h4>

@@ -118,60 +118,77 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
     </div>
     <div style="width:75%;position:relative;float:right;margin-bottom:60px;min-height:700px;" class="img150 results">
 
-<?php
-if(empty($data)){
-    echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay mascotas en esta categoria</div>';
-}
-else{
-foreach($data as $row){
-?>
+        <?php
+        if(empty($data)){
+            echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay mascotas en esta categoria</div>';
+        }
+        else{
+            foreach($data as $row){
+            ?>
 
-        <div class="mascota-list">
-            <div style="float:left;margin-right:10px;" class="thumb">
-                <a title="<?php echo $row['titulo'];?>" href="/mascota/<?php echo $row['id'];?>" >
-                    <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">
-                </a>
-            </div>
-            <div class="overflow mbottom">
-                <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
-                <h3>
-                    <a class="bigtxt" style="color:#9C2490" href="/mascota/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
-                </h3>
-                <div class="precio" style="font-size:20px;position:absolute;left:600px;top:70px;" class="">
-                    <?php echo moneda($row['moneda']); ?><?php echo number_format($row['precio'],0,',','.'); ?>
-                </div>
-                <p><span class="gristxt_1"><?php echo $raza_o_animal[$row['animal']]; ?>:</span> <?php echo ucfirst($row['animal_detail']);?></p>
-                <p><span class="gristxt_1">Localizacion:</span> <?php echo ucfirst($row['ciudad_barrio']);?>, <?php echo ucfirst($row['departamento']);?></p>
-                <p><span class="gristxt_1">Tama&ntilde;o:</span> <?php echo ucfirst($row['tamano']);?></p>
-                <p><span class="gristxt_1">Edad:</span> <?php echo ucfirst($row['edad']);?></p>
-                <p><span class="gristxt_1">Sexo:</span> <?php echo ucfirst($row['sexo']);?></p>
-                <p><span class="gristxt_1">Pedigree:</span> <?php echo ucfirst($row['pedigree']);?> - Criadero: <?php echo ucfirst($row['criadero']);?></p>
-                <?php 
+                    <div class="mascota-list">
+                        <div style="float:left;margin-right:10px;" class="thumb">
+                            <a title="<?php echo $row['titulo'];?>" href="/mascota/<?php echo $row['id'];?>" >
+                                <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">
+                            </a>
+                        </div>
+                        <div class="overflow mbottom">
+                            <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
+                            <h3>
+                                <a class="bigtxt" style="color:#9C2490" href="/mascota/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
+                            </h3>
+                            <div class="precio" style="font-size:20px;position:absolute;left:600px;top:70px;" class="">
+                                <?php echo moneda($row['moneda']); ?><?php echo number_format($row['precio'],0,',','.'); ?>
+                            </div>
+                            <p><span class="gristxt_1"><?php echo $raza_o_animal[$row['animal']]; ?>:</span> <?php echo ucfirst($row['animal_detail']);?></p>
+                            <p><span class="gristxt_1">Localizacion:</span> <?php echo ucfirst($row['ciudad_barrio']);?>, <?php echo ucfirst($row['departamento']);?></p>
+                            <p><span class="gristxt_1">Tama&ntilde;o:</span> <?php echo ucfirst($row['tamano']);?></p>
+                            <p><span class="gristxt_1">Edad:</span> <?php echo ucfirst($row['edad']);?></p>
+                            <p><span class="gristxt_1">Sexo:</span> <?php echo ucfirst($row['sexo']);?></p>
+                            <p><span class="gristxt_1">Pedigree:</span> <?php echo ucfirst($row['pedigree']);?> - Criadero: <?php echo ucfirst($row['criadero']);?></p>
+                            <?php 
 
-                if($row['horario']){
-                    echo '<p class="gristxt nolink" title="" href="#">Horario: '.$row['horario'].'</p>';
+                            if($row['horario']){
+                                echo '<p class="gristxt nolink" title="" href="#">Horario: '.$row['horario'].'</p>';
+                            }
+                            if($row['link']){
+                                echo '<a class="gristxt" title="" href="'.$row['link'].'">'.$row['link'].'</a>';
+                            }
+                            ?>
+                            <!--
+                            <p class="descripcion"><?php echo $row['descripcion'];?></p>
+                            -->
+                            <div style="position:absolute;right:0px;top:0px;">
+                                 <form style="display:inline;" method="POST" action="/comprar/delete/">
+                                    <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
+                                    <!--<button style="margin-left:10px;">Borrar</button>-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+            <?php
+            }
+        } ?>
+        <div class="pagination">
+        <?php 
+        $page_set= ceil($list_count/5);
+        if($page_set>1){
+            for($i=0;$i<$page_set;$i++){
+                $class="";
+                if($_REQUEST['page']==$i){
+                    $class="button_highlight";
                 }
-                if($row['link']){
-                    echo '<a class="gristxt" title="" href="'.$row['link'].'">'.$row['link'].'</a>';
-                }
-                ?>
-                <!--
-                <p class="descripcion"><?php echo $row['descripcion'];?></p>
-                -->
-                <div style="position:absolute;right:0px;top:0px;">
-                     <form style="display:inline;" method="POST" action="/comprar/delete/">
-                        <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
-                        <!--<button style="margin-left:10px;">Borrar</button>-->
-                    </form>
-                </div>
-            </div>
+                echo '<button onclick="Filter.submit('.($i).')" class="button '.$class.'">'.($i+1).'</button>';
+            }
+        }
+        
+        ?>
         </div>
+    </div>
+    <div style="clear:both"></div>
+</div>
 
 
-<?php
-}
-}
-echo '</div>';
-echo '<div style="clear:both"></div>';
-echo '</div>';
-?>
+

@@ -59,10 +59,21 @@ class MascotaController extends Controller{
                 $fill[$temp[0]]=$temp[1];
             }
         }
+        
+        $page = $fill['page'];
+        unset($fill['page']);
+        
+        
         $mascota = new \pluralpet\Mascota();
         $result = $mascota->filter($fill);
+        
+        $list_count = count($result);
+        $result = array_slice($result, $page*5,($page+1)*5);
+        
+        
         $animal = strtolower($_REQUEST['animal']);
         $tab = strtolower($_REQUEST['tab']);
+        $this->view->assign(array('list_count'=>$list_count));
         $this->view->assign(array('data'=>$result));
         $this->view->assign(array('animal'=>$animal));
         $this->view->assign(array('tab'=>$tab));

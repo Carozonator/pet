@@ -361,7 +361,10 @@ var Validation = {
 
 
 Filter = {
-    submit: function(){
+    submit: function(page){
+        if(typeof page!=='undefined'){
+            $('form').append('<input value="'+page+'" name="page"/>');
+        }
         $('form#filter').submit();
         //var tamano = $('input:radio[name=tamano]:checked').val();
         

@@ -91,6 +91,7 @@ class Mascota extends Model{
     
     
     function filter($vals){
+        
         foreach($vals as $rows){
             $vals_decoded[]=urldecode($rows);
         }
@@ -99,6 +100,11 @@ class Mascota extends Model{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($vals_decoded);
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        
+        
+        
+        
+        
         return $rows;
     }
     

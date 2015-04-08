@@ -24,6 +24,7 @@ class ConsejoController extends Controller{
         $foto = new \pluralpet\Foto();
         $fotos = $foto->get($this->request->getMethod(),'consejo');
         
+        $this->view->addHeadTag('<meta property="og:title" content="'.$anuncio['titulo'].'" />');
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('data'=>$result));
         $this->view->setFile('consejo');

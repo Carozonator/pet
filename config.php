@@ -318,6 +318,17 @@ function htmlEncodeText($desc){
     return htmlspecialchars_decode(htmlentities($desc, ENT_NOQUOTES, 'UTF-8'), ENT_NOQUOTES);
 }
 
+function substrText($text,$len){
+    $t = strip_tags(htmlEncodeText($text));
+    $new_len=strlen($t);
+    
+    for($i=$len;$i<strlen($t);$i++){
+        if(strcmp(substr($t,$i,1)," ")===0){
+            return substr($t,0,$i).'...';
+        }
+    }
+    return substr($t,0,$new_len);
+}
 
 
 ?>

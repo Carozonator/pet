@@ -268,13 +268,11 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                             <div style="width:180px;overflow:hidden;">
                                 <div class="title">
                                     <a href="/anuncio/<?php echo $r->id;?>">
-                                        <?php echo $r->titulo; ?>
+                                        <?php echo htmlEncodeText($r->titulo); ?>
                                     </a>
                                 </div>
                                 <span class="description">
-                                    <a title="<?php echo $r->titulo;?>">
-                                        <?php echo substr(addslashes($r->descripcion),0,160).'...'; ?>
-                                    </a>
+                                    <?php echo substrText($r->descripcion,150); ?>
                                 </span>
                             </div>
                         </div>

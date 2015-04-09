@@ -1001,6 +1001,7 @@ box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.53);
 .img_large{
     width:300px;
     height:auto;
+    margin:0px auto;
 }
 .consejo .consejo_item{
     padding:20px;

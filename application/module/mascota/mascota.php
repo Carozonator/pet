@@ -25,7 +25,7 @@
                 </h2>
                 <h5>Direcc&iacute;on:</h5>
                 
-                <p class="gristxt"><?php echo (!empty($mascota['ciudad_barrio'])?ucfirst($mascota['ciudad_barrio']).", ":"");?><?php echo ucfirst($mascota['departamento']);?></p>
+                <p class="gristxt"><?php echo (!empty($mascota['ciudad_barrio'])?htmlEncodeText(ucfirst($mascota['ciudad_barrio'])).", ":"");?><?php echo htmlEncodeText(ucfirst($mascota['departamento']));?></p>
                 <div class="precio" style="font-size:20px;">
                     <?php 
                     if($mascota['moneda']=='uy'){

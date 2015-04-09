@@ -106,7 +106,12 @@ $publication_hash = substr( md5(rand()), 0, 10);
                     <div class="publicar_item">
                         <div class="publicar_item_header">Descripcion</div>
                         <div class="publicar_sub_item">
-                            <label>Precio</label><input name="precio" type="text"/><br/>
+                            <label>Precio</label>
+                            <select class="moneda" name="moneda" style="width:70px;margin-left:-5px;margin-top:-5px;">
+                                <option value="uy">$</option>
+                                <option value="us">US$</option>
+                            </select>
+                            <input style="margin-left:5px;width:222px;" name="precio" type="text"/><br/>
                         </div>
                         <div class="publicar_sub_item">
                             <label>Titulo</label><input name="titulo" type="text"/><span class="input_error"></span>

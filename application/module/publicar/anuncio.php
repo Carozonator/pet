@@ -49,12 +49,14 @@
             <form id="form_description" action="/publicar/addAnuncio/" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>
                 <div style="position:relative;padding:40px">
+                    <!--
                     <div class="publicar_item">
                         <div class="publicar_item_header">Ingresa un video</div>
                         <div class="publicar_sub_item">
                             <label>Link de youtube </label><input name="link" type="text"/><br/>
                         </div>
                     </div>
+                    -->
                     <div class="publicar_item">
                         <div class="publicar_item_header">Ubicacion y contacto</div>
                         <div class="publicar_sub_item">
@@ -83,7 +85,7 @@
                                     <option></option>
                                 </select><br/>
                             </div>
-                            <div style="height:45px;width:100%">
+                            <div class="direccion" style="height:45px;width:100%">
                                 <label>Direcci&oacute;n </label><input name="direccion" type="text"/>
                             </div>
                         </div>

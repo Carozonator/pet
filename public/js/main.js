@@ -170,6 +170,9 @@ var Publicar = {
             $('.tienda').hide();
             $('.'+Publicar.animal).show();
         }
+        if(this.group=='anuncio' && this.type=='paseador'){
+            $('.direccion').hide();
+        }
         
         $('.step').attr('class','step');
         $('.step:eq('+(next_pos)+')').addClass('highlight');

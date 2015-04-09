@@ -16,7 +16,7 @@ if(in_array($_POST['tab'],$check1)){
     $detalles = array('perro'=>array('edad','tamano','pedigree'),'gato'=>array('edad','pedigree'));
     $precio=false;
 }else{
-    $detalles = array('perro'=>array('edad','tamano','pedigree','criadero'),'gato'=>array('edad','pedigree'));
+    $detalles = array('perro'=>array('edad','tamano','pedigree','criadero'),'gato'=>array('edad','pedigree','criadero'));
 }
 
 //var_dump($_POST);die;
@@ -149,7 +149,7 @@ if(in_array($_POST['tab'],$check1)){
         <?php } ?>
         <?php if($detalles[$animal] && in_array('criadero', $detalles[$animal])){?>
         <div class="publicar_item item_criadero">
-            <div class="publicar_item_header">El perro pertenece a un criadero</div>
+            <div class="publicar_item_header">&iquest;Pertenece a un criadero?</div>
             <div class="publicar_sub_item">
                 <input type="radio" name="criadero" value="si"/> Si<br/>
                 <input type="radio" name="criadero" value="no"/> No<br/>

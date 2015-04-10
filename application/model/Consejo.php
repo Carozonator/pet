@@ -60,13 +60,13 @@ class Consejo extends Model{
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute();
         }
-        /*else{
+        else{
             $sql = "SELECT consejo.*, foto.name as foto_name, foto.usuario as foto_usuario  FROM consejo LEFT OUTER JOIN foto on foto.publication_id=consejo.id "
-                    . "WHERE sub_tab=? group by consejo.id";
+                    . "WHERE sub_tab=? and foto._table='consejo' group by consejo.id";
 
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute(array($type));
-        }*/
+        }
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
     }

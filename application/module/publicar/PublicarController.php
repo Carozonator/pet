@@ -44,30 +44,33 @@ class PublicarController extends \pluralpet\Controller{
     
     
     
-    
+    function publicado(){
+        $this->view->setFilePath(ROOT.'application/module/publicar/publicado.php');
+        $this->view->render();
+    }
     
     function addAnuncio(){
         $anuncio = new \pluralpet\Anuncio();
         $id =  $anuncio->add();
-        echo '/anuncio/'.$id;
+        echo 't=anuncio&id='.$id;
         //header('Location: /anuncio/'.$id);
     }
     
     function addMascota(){
         $mascota = new \pluralpet\Mascota();
         $id =  $mascota->add();
-        echo '/mascota/'.$id;
+        echo 't=mascota&id='.$id;
     }
     
     function addProducto(){
         $producto = new \pluralpet\Producto();
         $id =  $producto->add();
-        echo '/producto/'.$id;
+        echo 't=producto&id='.$id;
     }
     function addConsejo(){
         $producto = new \pluralpet\Consejo();
         $id =  $producto->add();
-        echo '/consejo/'.$id;
+        echo 'table=consejo&id='.$id;
     }
     
     

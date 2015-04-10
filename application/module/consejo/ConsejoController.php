@@ -8,6 +8,7 @@ class ConsejoController extends Controller{
             $this->singleItem();
             return;
         }
+        //echo strtolower($this->request->getMethod());die;
         
         $anuncio = new \pluralpet\Consejo();
         $result = $anuncio->getAll(strtolower($this->request->getMethod()));

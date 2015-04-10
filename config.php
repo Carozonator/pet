@@ -74,7 +74,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('servicio-medico-adicionales'=> 'Servicios m&eacute;dicos adicionales'),
                                                             /*array('evento'=>'Eventos')*/
                                                             array('otros'=> 'otros')
-                                ),'consejo'=> ''/*array(
+                                ),'consejo'=> array(
                                                             array('perro'=>'Perros'),
                                                             array('gato'=>'Gatos'),
                                                             array('ave'=>'Aves'),
@@ -82,7 +82,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('peces'=>'Peces'),
                                                             array('mamiferos'=>'Peque&ntilde;os mamiferos'),
                                                             array('otros'=>'Otros')
-                                )*/
+                                )
                                 );
 
 

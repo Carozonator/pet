@@ -94,7 +94,7 @@
                     <div class="publicar_item">
                         <div class="publicar_item_header">Describe tu servicio</div>
                         <div class="publicar_sub_item">
-                            <label>Titulo</label><input name="titulo" type="text"/><span class="input_error"></span><br/>
+                            <label>Titulo</label><input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
                             <div>
                                 <label style="margin-bottom:10px;">Describe tu servicio</label><br/>
                                 <div style="position:relative;margin-left:-3px;vertical-align: middle;display:inline-block;width:100%;">

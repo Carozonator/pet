@@ -83,7 +83,8 @@ if(in_array($_POST['tab'],$check1)){
             <div class="publicar_item_header">Sexo</div>
             <div class="publicar_sub_item">
                 <input type="radio" name="sexo" value="macho"/> Macho<br/>
-                <input type="radio" name="sexo" value="hembra"/> Hembra
+                <input type="radio" name="sexo" value="hembra"/> Hembra<br/>
+                <input type="radio" name="sexo" value="camada"/> Camada
             </div>
         </div>
         
@@ -169,7 +170,7 @@ if(in_array($_POST['tab'],$check1)){
             </div>
             <?php } ?>
             <div class="publicar_sub_item">
-                <label>Titulo</label><input name="titulo" type="text"/><span class="input_error"></span>
+                <label>Titulo</label><input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
             </div>
             <div class="publicar_sub_item" style="margin-top:10px;">
                 <div>
@@ -182,7 +183,7 @@ if(in_array($_POST['tab'],$check1)){
             </div>
         </div>
         <div style="text-align:center;">
-            <button onclick="Publicar.submit(this,'addMascota');return false;/*Publicar.submit(this);return false;*/">Siguiente</button>
+            <button onclick="Publicar.submit(this,'addMascota');return false;/*Publicar.submit(this);return false;*/">Publicar</button>
         </div>
     </div>
     <div style="clear:both"></div>

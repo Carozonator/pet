@@ -114,7 +114,7 @@ $publication_hash = substr( md5(rand()), 0, 10);
                             <input style="margin-left:5px;width:222px;" name="precio" type="text"/><br/>
                         </div>
                         <div class="publicar_sub_item">
-                            <label>Titulo</label><input name="titulo" type="text"/><span class="input_error"></span>
+                            <label>Titulo</label><input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
                         </div>
                         <div class="publicar_sub_item">
                             <div>

@@ -300,8 +300,8 @@ var Publicar = {
             type:'POST',
             data:submit_var,
             success:function(response){
-                console.log(response);
-                window.location=response;
+                //console.log(response);
+                window.location='/publicar/publicado/?'+response;
             }
         });
         

@@ -94,6 +94,7 @@ class Mascota extends Model{
         if(isset($vals['sexo'])){//camada
             $sexo = $vals['sexo'];
             unset($vals['sexo']);
+            $sexo_stmt = "and (sexo='camada' or sexo='".  mysql_escape_string($sexo)."')";
         }
         
         foreach($vals as $rows){
@@ -103,7 +104,7 @@ class Mascota extends Model{
         $stmt = implode("=? and ",array_keys($vals))."=? ";
         $sql =    "SELECT mascota.*, foto.name as foto_name, foto.usuario as foto_usuario  "
                 . "FROM mascota LEFT OUTER JOIN foto on foto.publication_id=mascota.id WHERE ".$stmt." "
-                . "and (sexo='camada' or sexo='".  mysql_escape_string($sexo)."') group by mascota.id";
+                . "$sexo_stmt group by mascota.id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($vals_decoded);
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);

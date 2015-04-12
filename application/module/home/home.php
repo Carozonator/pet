@@ -226,7 +226,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                                             echo '<span class="precio">'.moneda($moneda).number_format($r->precio,0,',','.').'</span>'; 
                                                         }
                                                     ?>
-                                                <span style="text-align:right;float:right"><button onclick="window.location='/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>'" class="button">VER</button></span>
+                                                <span style="text-align:right;float:right;width:50px;"><button onclick="window.location='/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>'" class="button">VER</button></span>
                                                 <div style="clear:both"></div>
                                             </div>
                                         </div>

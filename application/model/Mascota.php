@@ -96,15 +96,31 @@ class Mascota extends Model{
             unset($vals['sexo']);
             $sexo_stmt = "and (sexo='camada' or sexo='".  mysql_escape_string($sexo)."')";
         }
+        if(isset($vals['orden'])){//sort
+            $orden = $vals['orden'];
+            unset($vals['orden']);
+            switch($orden){
+                case 'barato':
+                    $order_by = "ORDER BY precio_sum";
+                break;
+                case 'caro':
+                    $order_by = "ORDER BY precio_sum DESC";
+                break;
+            }
+            
+        }
         
         foreach($vals as $rows){
             $vals_decoded[]=urldecode($rows);
         }
         
         $stmt = implode("=? and ",array_keys($vals))."=? ";
-        $sql =    "SELECT mascota.*, foto.name as foto_name, foto.usuario as foto_usuario  "
+        $sql =    "SELECT mascota.*, foto.name as foto_name, foto.usuario as foto_usuario, "
+                . "CASE WHEN mascota.moneda = 'us' THEN mascota.precio * ".CAMBIO." ELSE mascota.precio END AS `precio_sum` "
                 . "FROM mascota LEFT OUTER JOIN foto on foto.publication_id=mascota.id WHERE ".$stmt." "
-                . "$sexo_stmt group by mascota.id";
+                . "$sexo_stmt "
+                . "group by mascota.id "
+                . "$order_by ";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($vals_decoded);
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);

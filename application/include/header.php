@@ -27,11 +27,15 @@
     <script src=""></script>
     <script type="text/javascript">
             $(document).ready(function(){
-                    $('.dropdown-menu').click(function() {
+                    $('.dropdown-menu').click(function(event) {
+                        event.stopPropagation();
                         $('.dropdown').hide();
                         $(this).find('.dropdown').show();
                         $('.wrapper-dropdown-5').addClass('active');
                     });
+                    $('body').click(function(){
+                        $('.wrapper-dropdown-5').removeClass('active');
+                    })
              });
             
     </script>

@@ -1,13 +1,38 @@
 <?php 
 $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'=>'Animal','mamifero'=>'Animal','ave'=>'Animal','reptil'=>'Animal','otro'=>'Animal');
 
-
+$order = array('reciente'=>'Recientes','barato'=>'M&aacutes barato','caro'=>'M&aacutes caro','visitados'=>'M&aacutes visitados');
 
 ?>
+
+
+
+<div class="wrapper-dropdown-5 orden" style="">
+    <div class="dropdown-menu" tabindex="1" style="width:90%;"><i class="icon-sort"></i> 
+        <?php echo (!empty($_REQUEST['orden'])?$order[$_REQUEST['orden']]:'Recientes'); ?>
+        <ul style=""class="dropdown">
+                <?php foreach($order as $key=>$o){ 
+                    echo '<li><a onclick="Filter.sort(\''.$key.'\');">'.$o.'</a></li>';
+                } ?>
+        </ul>
+    </div>
+</div>
+
+
+
+<!--
+<div>
+    <span>Recientes</span>
+    <span>M&aacutes barato</span>
+    <span>M&aacutes caro</span>
+    <span>M&aacute;s visitados</span>
+</div>
+-->
 <div style="margin-top:40px">
-    <div class="publicar" style='margin:0px 20px 0px 0px;width:20%;float:left;'>
+    <div class="publicar" style='margin:30px 20px 0px 0px;width:20%;float:left;'>
         <form action="/comprar/filtro/" method="GET" id="filter">
             <input type="hidden" value="<?php echo $animal; ?>" name="animal"/>
+            <input type="hidden" value="<?php echo $_REQUEST['orden']; ?>" name="orden" class="ordenar_filtro"/>
             <input type="hidden" value="<?php echo $tab; ?>" name="tab"/>
             <div class="filter_title" style="border:0px"><div class="publicar_item_header">Edad<span onclick="Filter.unfilter('edad')">x</span></div></div>
             <div class="filter_desc">
@@ -143,8 +168,8 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
                             </div>
                             <?php }?>
                             <p><span class="gristxt_1"><?php echo $raza_o_animal[$row['animal']]; ?>:</span> <?php echo ucfirst($row['animal_detail']);?></p>
-                            <p><span class="gristxt_1">Localizacion:</span> <?php echo ucfirst($row['ciudad_barrio']);?>, <?php echo ucfirst($row['departamento']);?></p>
-                            <p><span class="gristxt_1">Tama&ntilde;o:</span> <?php echo ucfirst($row['tamano']);?></p>
+                            <p><span class="gristxt_1">Localizacion:</span> <?php echo htmlEncodeText(ucfirst($row['ciudad_barrio']));?>, <?php echo htmlEncodeText(ucfirst($row['departamento']));?></p>
+                            <p><span class="gristxt_1">Tama&ntilde;o:</span> <?php echo htmlEncodeText(ucfirst($row['tamano']));?></p>
                             <p><span class="gristxt_1">Edad:</span> <?php echo ucfirst($row['edad']);?></p>
                             <p><span class="gristxt_1">Sexo:</span> <?php echo ucfirst($row['sexo']);?></p>
                             <p><span class="gristxt_1">Pedigree:</span> <?php echo ucfirst($row['pedigree']);?> - Criadero: <?php echo ucfirst($row['criadero']);?></p>
@@ -185,7 +210,6 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
                 echo '<button onclick="Filter.submit('.($i).')" class="button '.$class.'">'.($i+1).'</button>';
             }
         }
-        
         ?>
         </div>
     </div>

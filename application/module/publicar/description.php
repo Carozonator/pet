@@ -92,7 +92,7 @@ if(in_array($_POST['tab'],$check1)){
             <div class="publicar_item_header">Edad</div>
             <?php if($detalles[$animal] && in_array('edad', $detalles[$animal])){?>
             <div class="publicar_sub_item">
-                <input type="radio" name="edad" value="cachorro"/> Junior <span class="gristxt">(0 a 12 meses)</span><br/>
+                <input type="radio" name="edad" value="junior"/> Junior <span class="gristxt">(0 a 12 meses)</span><br/>
                 <input type="radio" name="edad" value="adulto"/> Adulto <span class="gristxt">(1 a 6 a&ntilde;os)</span><br/>
                 <input type="radio" name="edad" value="senior"/> Senior <span class="gristxt">(7 a&ntilde;os en adelante)</span><br/>
             </div>

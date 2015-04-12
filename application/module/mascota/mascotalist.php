@@ -6,9 +6,9 @@ $order = array('reciente'=>'Recientes','barato'=>'M&aacutes barato','caro'=>'M&a
 ?>
 
 
-
+<div style="">
 <div class="wrapper-dropdown-5 orden" style="">
-    <div class="dropdown-menu" tabindex="1" style="width:90%;"><i class="icon-sort"></i> 
+    <div class="dropdown-menu" style="width:90%;"><i class="icon-sort"></i> 
         <?php echo (!empty($_REQUEST['orden'])?$order[$_REQUEST['orden']]:'Recientes'); ?>
         <ul style=""class="dropdown">
                 <?php foreach($order as $key=>$o){ 
@@ -17,7 +17,7 @@ $order = array('reciente'=>'Recientes','barato'=>'M&aacutes barato','caro'=>'M&a
         </ul>
     </div>
 </div>
-
+</div>
 
 
 <!--

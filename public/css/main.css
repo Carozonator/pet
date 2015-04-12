@@ -42,7 +42,7 @@ a{
     background: -ms-linear-gradient(top,  #e552d6 0%,#e209c9 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #e552d6 0%,#e209c9 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e552d6', endColorstr='#e209c9',GradientType=0 ); /* IE6-9 */
-
+    z-index:5;
 }
 
 
@@ -377,7 +377,7 @@ input[type="submit"]:active{
     box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
     padding:5px 0px;
     float:right;
-    z-index:3;
+    z-index:10;
     color:#e209c9;
 }
 .wrapper-dropdown-5 {

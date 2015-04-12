@@ -90,7 +90,7 @@
                     </div>
         </div>
     </div>
-    <div id="top" style="width:100%;z-index:1">
+    <div id="top" style="width:100%;">
   
         <div class="container_12">
             <nav class="primary">

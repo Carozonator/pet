@@ -6,7 +6,7 @@ $animal = $_POST['animal'];
 
 $publication_hash = substr( md5(rand()), 0, 10); 
 
-$check1 = array('adoptar','encontrado','perdidos');
+$check1 = array('adoptar','encontrado','perdido');
 $check2 = array('cruzar');
 $precio = true;
 if(in_array($_POST['tab'],$check1)){

@@ -29,7 +29,7 @@ class Mascota extends Model{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($insert_id,$_POST['publication_hash']));
         
-        echo $_POST['animal_detail'];
+        //echo $_POST['animal_detail'];
         
         //$affected_rows = $stmt->rowCount();
         return $insert_id;

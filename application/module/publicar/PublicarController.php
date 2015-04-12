@@ -70,7 +70,7 @@ class PublicarController extends \pluralpet\Controller{
     function addConsejo(){
         $producto = new \pluralpet\Consejo();
         $id =  $producto->add();
-        echo 'table=consejo&id='.$id;
+        echo 't=producto&id='.$id;
     }
     
     

@@ -129,7 +129,7 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
                     <div class="mascota-list">
                         <div style="float:left;margin-right:10px;" class="thumb">
                             <a title="<?php echo $row['titulo'];?>" href="/mascota/<?php echo $row['id'];?>" >
-                                <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">
+                                <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/thumb_'.$row['foto_name']; ?>">
                             </a>
                         </div>
                         <div class="overflow mbottom">
@@ -137,9 +137,11 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
                             <h3>
                                 <a class="bigtxt" style="color:#9C2490" href="/mascota/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
                             </h3>
+                            <?php if(strcmp($tab,'comprar')===0){?>
                             <div class="precio" style="font-size:20px;position:absolute;left:600px;top:70px;" class="">
                                 <?php echo moneda($row['moneda']); ?><?php echo number_format($row['precio'],0,',','.'); ?>
                             </div>
+                            <?php }?>
                             <p><span class="gristxt_1"><?php echo $raza_o_animal[$row['animal']]; ?>:</span> <?php echo ucfirst($row['animal_detail']);?></p>
                             <p><span class="gristxt_1">Localizacion:</span> <?php echo ucfirst($row['ciudad_barrio']);?>, <?php echo ucfirst($row['departamento']);?></p>
                             <p><span class="gristxt_1">Tama&ntilde;o:</span> <?php echo ucfirst($row['tamano']);?></p>

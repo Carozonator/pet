@@ -41,7 +41,7 @@
             
             
         
-
+        <!--
         <div class="item_datos" style="margin-top:20px;">
             <h4>Datos</h4>
             <?php 
@@ -50,6 +50,7 @@
             }
             ?>
         </div>
+        -->
         <div style="margin-top:20px;">
             <h4>Descripci&oacute;n</h4>
             <p class="descripcion"><?php echo $producto['descripcion'];?></p>

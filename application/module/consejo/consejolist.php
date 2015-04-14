@@ -21,7 +21,7 @@ foreach($data as $row){
     <div class="consejo_item img150" style="<?php echo $last_child; ?>">
         <div style="float:left;margin-right:10px;" class="thumb">
             <a title="<?php echo $row['titulo'];?>" href="/consejo/<?php echo $row['id'];?>">
-                <img style="height:100%;" alt="<?php echo $row['foto_name'];?>" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">
+                <img style="height:100%;" alt="<?php echo $row['foto_name'];?>" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/thumb_'.$row['foto_name']; ?>">
             </a>
         </div>
         <div class="overflow mbottom">

@@ -293,6 +293,10 @@ function moneda($moneda){
     }
 }
 
+function parseMoney($money){
+    return intval(str_replace(array(',','.'),'',$money));
+}
+
 function precio($precio){
     return number_format($precio,0,',','.');
 }

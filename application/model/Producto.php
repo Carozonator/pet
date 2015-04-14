@@ -14,7 +14,7 @@ class Producto extends Model{
         $sql =  "INSERT INTO producto (animal,tab,precio,titulo,descripcion,departamento,ciudad_barrio,usuario,status,moneda)"
                 . " VALUES(?,?,?,?,?,?,?,?,'activo',?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array($_POST['animal'],$_POST['tab'],$_POST['precio'],$_POST['titulo'],
+        $stmt->execute(array($_POST['animal'],$_POST['tab'],parseMoney($_POST['precio']),$_POST['titulo'],
             $_POST['descripcion'],$_POST['departamento'],$_POST['ciudad_barrio'],$_SESSION['user']->id,$_POST['moneda']));
         $insert_id = $this->pdo->lastInsertId(); 
         

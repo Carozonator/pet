@@ -4,11 +4,11 @@
         <h2 style="border-bottom: 1px solid grey;padding:5px;color:#9C2490">
             <?php echo $mascota['titulo'];?>
         </h2>
-        <div style="float:right;">
+        <div style="float:right;max-height:400px;width:300px;overflow:auto;">
         <?php 
             foreach($foto as $f){ ?>
             
-                <div class="img_box_small" style="margin-right:10px;" class="img_box_small">
+                <div class="img_box_small">
                     <a href="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>" data-lightbox="roadtrip" >
                         <img alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
                     </a>

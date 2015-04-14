@@ -4,7 +4,7 @@
         <h2 style="border-bottom: 1px solid grey;padding:5px;color:#9C2490">
             <?php echo $mascota['titulo'];?>
         </h2>
-        <div style="float:right;max-height:400px;width:300px;overflow:auto;">
+        <div style="float:right;max-height:400px;width:<?php echo (count($foto)>=4?'300':'150'); ?>px;overflow:auto;">
         <?php 
             foreach($foto as $f){ ?>
             

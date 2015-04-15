@@ -6,6 +6,7 @@ class ProductoController extends Controller{
     function index(){
         $producto = new \pluralpet\Producto();
         $result = $producto->get($this->request->getMethod());
+        $producto->incrementViewCount($this->request->getMethod());
         
         $foto = new \pluralpet\Foto();
         $fotos = $foto->get($this->request->getMethod(),'producto');

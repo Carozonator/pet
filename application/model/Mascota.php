@@ -52,7 +52,7 @@ class Mascota extends Model{
     function getAll($type,$animal){
         
         $sql = "SELECT mascota.*, foto.name as foto_name, foto.usuario as foto_usuario  FROM mascota LEFT OUTER JOIN foto on foto.publication_id=mascota.id "
-                . "WHERE tab=? and animal=? group by mascota.id";
+                . "WHERE tab=? and animal=? group by mascota.id order by id desc";
         
         
         
@@ -95,7 +95,7 @@ class Mascota extends Model{
             unset($vals['sexo']);
             $sexo_stmt = "and (sexo='camada' or sexo='".  mysql_escape_string($sexo)."')";
         }
-        if(isset($vals['orden'])){//sort
+        //if(isset($vals['orden'])){//sort
             $orden = $vals['orden'];
             unset($vals['orden']);
             switch($orden){
@@ -105,9 +105,15 @@ class Mascota extends Model{
                 case 'caro':
                     $order_by = "ORDER BY precio_sum DESC";
                 break;
+                case 'visitas':
+                    $order_by = "ORDER BY views DESC";
+                break;
+                default:
+                    $order_by = "ORDER BY id DESC";
+                break;
             }
             
-        }
+        //}
         
         foreach($vals as $rows){
             $vals_decoded[]=urldecode($rows);
@@ -131,7 +137,13 @@ class Mascota extends Model{
     
     
     
-    
+    function incrementViewCount($id){
+        $sql =  "UPDATE mascota set views=views+1 WHERE id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($id));
+        $affected_rows = $stmt->rowCount();
+        return $affected_rows;
+    }
     function updateStatus($status){
         $sql =  "UPDATE mascota set status=? WHERE id=?";
         $stmt = $this->pdo->prepare($sql);

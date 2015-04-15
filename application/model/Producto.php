@@ -114,6 +114,14 @@ class Producto extends Model{
         return $rows[0];
     }
     
+    function incrementViewCount($id){
+        $sql =  "UPDATE producto set views=views+1 WHERE id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($id));
+        $affected_rows = $stmt->rowCount();
+        return $affected_rows;
+    }
+    
     function filter($vals){
         foreach($vals as $rows){
             $vals_decoded[]=urldecode($rows);

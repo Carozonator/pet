@@ -366,16 +366,14 @@ var Validation = {
 Filter = {
     sort:function(sort_by){
         $('form').find('.ordenar_filtro').val(sort_by);
-        console.log(sort_by);
         Filter.submit();
     },
     
     submit: function(page){
         
         if(typeof page!=='undefined'){
-            $('form').append('<input value="'+page+'" name="page"/>');
+            $('form').append('<input type="hidden" value="'+page+'" name="page"/>');
         }
-        console.log("submit");
         console.log($('form#filter').html());
         $('form#filter').submit();
         //var tamano = $('input:radio[name=tamano]:checked').val();

@@ -1,7 +1,7 @@
 <?php 
 $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'=>'Animal','mamifero'=>'Animal','ave'=>'Animal','reptil'=>'Animal','otro'=>'Animal');
 
-$order = array('reciente'=>'Recientes','barato'=>'M&aacutes barato','caro'=>'M&aacutes caro','visitados'=>'M&aacutes visitados');
+$order = array('reciente'=>'Recientes','barato'=>'M&aacutes barato','caro'=>'M&aacutes caro','visitas'=>'M&aacutes visitados');
 
 ?>
 
@@ -19,15 +19,6 @@ $order = array('reciente'=>'Recientes','barato'=>'M&aacutes barato','caro'=>'M&a
 </div>
 </div>
 
-
-<!--
-<div>
-    <span>Recientes</span>
-    <span>M&aacutes barato</span>
-    <span>M&aacutes caro</span>
-    <span>M&aacute;s visitados</span>
-</div>
--->
 <div style="margin-top:40px">
     <div class="publicar" style='margin:30px 20px 0px 0px;width:20%;float:left;'>
         <form action="/comprar/filtro/" method="GET" id="filter">
@@ -182,12 +173,9 @@ $order = array('reciente'=>'Recientes','barato'=>'M&aacutes barato','caro'=>'M&a
                                 echo '<a class="gristxt" title="" href="'.$row['link'].'">'.$row['link'].'</a>';
                             }
                             ?>
-                            <!--
-                            <p class="descripcion"><?php echo $row['descripcion'];?></p>
-                            -->
                             <div style="position:absolute;right:0px;top:0px;">
                                  <form style="display:inline;" method="POST" action="/comprar/delete/">
-                                    <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
+                                    <!--<input type="hidden" name="id" value="<?php echo $row['id'];?>"/>-->
                                     <!--<button style="margin-left:10px;">Borrar</button>-->
                                 </form>
                             </div>

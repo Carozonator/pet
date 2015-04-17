@@ -13,23 +13,8 @@ class MascotaController extends Controller{
             return;
         }
         
+        $this->filtro();
         
-        $mascota = new \pluralpet\Mascota();
-        $result = $mascota->getAll(strtolower($this->request->getTab()),strtolower($this->request->getMethod()));
-        
-        $list_count = count($result);
-        $result = array_slice($result, $page*5,($page+1)*5);
-        
-        $animal = strtolower($this->request->getMethod());
-        
-        
-        $tab = strtolower($this->request->getTab());
-        $this->view->assign(array('list_count'=>$list_count));
-        $this->view->assign(array('data'=>$result));
-        $this->view->assign(array('animal'=>$animal));
-        $this->view->assign(array('tab'=>$tab));
-        $this->view->setFile('mascotalist');
-        $this->view->render();
     }
     
     function singleItem(){
@@ -66,19 +51,21 @@ class MascotaController extends Controller{
             }
         }
         
+        $animal = strtolower($this->request->getMethod());
+        $tab = strtolower($this->request->getTab());
+        
+        $fill['tab']=$tab;
+        $fill['animal']=$animal;
+        
         $page = $fill['page'];
         unset($fill['page']);
-        
         
         $mascota = new \pluralpet\Mascota();
         $result = $mascota->filter($fill);
         
         $list_count = count($result);
-        $result = array_slice($result, $page*5,($page+1)*5);
+        $result = array_slice($result, $page*RESULTS_PER_PAGE,RESULTS_PER_PAGE);
         
-        
-        $animal = strtolower($_REQUEST['animal']);
-        $tab = strtolower($_REQUEST['tab']);
         $this->view->assign(array('list_count'=>$list_count));
         $this->view->assign(array('data'=>$result));
         $this->view->assign(array('animal'=>$animal));

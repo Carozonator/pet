@@ -96,6 +96,14 @@ class Anuncio extends Model{
     
     
     
+    function incrementViewCount($id){
+        $sql =  "UPDATE anuncio set views=views+1 WHERE id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($id));
+        $affected_rows = $stmt->rowCount();
+        return $affected_rows;
+    }
+    
     function updateStatus($status){
         $sql =  "UPDATE anuncio set status=? WHERE id=?";
         $stmt = $this->pdo->prepare($sql);

@@ -21,10 +21,10 @@ $order = array('reciente'=>'Recientes','barato'=>'M&aacutes barato','caro'=>'M&a
 
 <div style="margin-top:40px">
     <div class="publicar" style='margin:30px 20px 0px 0px;width:20%;float:left;'>
-        <form action="/comprar/filtro/" method="GET" id="filter">
-            <input type="hidden" value="<?php echo $animal; ?>" name="animal"/>
+        <form action="" method="GET" id="filter">
+            <!--<input type="hidden" value="<?php echo $animal; ?>" name="animal"/>-->
             <input type="hidden" value="<?php echo $_REQUEST['orden']; ?>" name="orden" class="ordenar_filtro"/>
-            <input type="hidden" value="<?php echo $tab; ?>" name="tab"/>
+            <!--<input type="hidden" value="<?php echo $tab; ?>" name="tab"/>-->
             <div class="filter_title" style="border:0px"><div class="publicar_item_header">Edad<span onclick="Filter.unfilter('edad')">x</span></div></div>
             <div class="filter_desc">
                 <input onclick="Filter.submit()" <?php if($_REQUEST['edad']=='junior'){echo 'checked';}?> type="radio" value="junior" name="edad"/> Junior<br/>
@@ -186,20 +186,9 @@ $order = array('reciente'=>'Recientes','barato'=>'M&aacutes barato','caro'=>'M&a
             <?php
             }
         } ?>
-        <div class="pagination">
-        <?php 
-        $page_set= ceil($list_count/5);
-        if($page_set>1){
-            for($i=0;$i<$page_set;$i++){
-                $class="";
-                if($_REQUEST['page']==$i){
-                    $class="button_highlight";
-                }
-                echo '<button onclick="Filter.submit('.($i).')" class="button '.$class.'">'.($i+1).'</button>';
-            }
-        }
-        ?>
-        </div>
+        
+        <?php include ROOT.'application/include/pagination.php'; ?>
+        
     </div>
     <div style="clear:both"></div>
 </div>

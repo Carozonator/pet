@@ -21,6 +21,7 @@ class AnuncioController extends Controller{
     function singleItem(){
         $anuncio = new \pluralpet\Anuncio();
         $result = $anuncio->getByID($this->request->getMethod());
+        $anuncio->incrementViewCount($this->request->getMethod());
         
         $foto = new \pluralpet\Foto();
         $fotos = $foto->get($this->request->getMethod(),'anuncio');

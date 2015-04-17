@@ -90,6 +90,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
 
 
 $constant['CAMBIO'] = 25;
+$constant['RESULTS_PER_PAGE'] =10;
 
 if($_SESSION['user']->id==7 || $_SESSION['user']->id==1){
     $GLOBALS['nav_menu']['publicar'][]=array('consejo'=>'Consejos');

@@ -119,10 +119,13 @@ class Mascota extends Model{
             $vals_decoded[]=urldecode($rows);
         }
         
-        $stmt = implode("=? and ",array_keys($vals))."=? ";
+        if(!empty($vals)){
+            $stmt = "WHERE ".implode("=? and ",array_keys($vals))."=? ";
+        }
+        
         $sql =    "SELECT mascota.*, foto.name as foto_name, foto.usuario as foto_usuario, "
                 . "CASE WHEN mascota.moneda = 'us' THEN mascota.precio * ".CAMBIO." ELSE mascota.precio END AS `precio_sum` "
-                . "FROM mascota LEFT OUTER JOIN foto on foto.publication_id=mascota.id WHERE ".$stmt." "
+                . "FROM mascota LEFT OUTER JOIN foto on foto.publication_id=mascota.id ".$stmt." "
                 . "$sexo_stmt "
                 . "group by mascota.id "
                 . "$order_by ";

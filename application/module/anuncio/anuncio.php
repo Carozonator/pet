@@ -4,12 +4,11 @@
         <h2 style="border-bottom: 1px solid grey;padding:5px;">
             <?php echo $anuncio['titulo'];?>
         </h2>
-        <div style="padding-top:20px;">
-            <div style="float:right;">
+        <div style="float:right;max-height:400px;width:<?php echo (count($foto)>=4?'300':'150'); ?>px;overflow:auto;">
             <?php 
                 foreach($foto as $f){ ?>
                 
-                <div class="img_box_small" style="margin-right:10px;" class="img_box_small">
+                <div class="img_box_small" >
                     <a href="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>" data-lightbox="roadtrip" >
                         <img alt="<?php echo $anuncio['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
                     </a>

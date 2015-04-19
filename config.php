@@ -98,6 +98,8 @@ if($_SESSION['user']->id==7 || $_SESSION['user']->id==1){
 
 $GLOBALS['refugio']= array('','Animales Sin Hogar','Animal Help','A.P.A el Refugio');
 
+$GLOBALS['tab'] = array('adoptar'=>'Adoptar','comprar'=>'Vender','cruzar'=>'Cruzar','encontrado'=>'Encontrado','perdido'=>'Perdido');
+
 $GLOBALS['departamento'] = array('Artigas'=>array('Artigas','Bella Union','Tom&aacute;s Gomensoro','Baltasar Brum','Sequeira'),
                      'Canelones'=>array('Ciudad de la Costa','Las Piedras','Barros Blancos','Pando','La Paz','Canelones','Santa Lucia','Progreso','18 de Mayo',
     'Aguas Corrientes','Atl&aacute;ntida','Colonia Nicolich','Empalme Olmos','Joaqu&iacute;n Su&aacute;rez','La Floresta','Los Cerrillos','Migues','Montes',

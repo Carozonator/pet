@@ -31,14 +31,33 @@ if(in_array($_REQUEST['tab'],$check1)){
         <div class="slides description" style="width:100%;">
             <form action="/publicar/updateMascota/" method="post" id="form_description" enctype="multipart/form-data">
                 <div style="position:relative;padding:40px">
-                    <input type="hidden" name="publication_id" value="<?php echo $id;?>"/>
+                    <input type="hidden" id="publication_id" name="publication_id" value="<?php echo $id;?>"/>
                     <input type="hidden" name="animal" value="<?php echo $animal;?>"/>
-                    <input type="hidden" name="tab_form" value="<?php echo $_REQUEST['tab'];?>"/>
-                    <div class="publicar_item">
+                    <?php foreach($foto as $f){ ?>
                         <div class="img_box_small">
-                                <img alt="<?php echo $mascota['nombre_original'];?>"src="<?php echo MEDIA.'upload/'.$mascota['foto_1']; ?>">
+                            <a href="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>" data-lightbox="roadtrip" >
+                                <img alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
+                            </a>
+                        </div>
+                    <?php } ?>
+                    
+                    
+                    <div class="publicar_item">
+                        <div class="publicar_item_header">Donde Publicar</div>
+                        <div class="publicar_sub_item">
+                            <select class="tab_select" name="tab_select" style="width:200px;">
+                                <?php foreach($GLOBALS['tab'] as $key=>$row){ 
+                                    if(strcmp($key,$_REQUEST['tab'])===0){
+                                        echo '<option value="'.$key.'" selected>'.$row.'</option>';
+                                    }else{
+                                        echo '<option value="'.$key.'">'.$row.'</option>';
+                                    }
+                                } ?>
+                            </select>
                         </div>
                     </div>
+                    
+                    
                     <div class="publicar_item">
                         <div class="publicar_item_header"><?php echo $GLOBALS['raza_o_animal'][$animal]; ?></div>
                         <div class="publicar_sub_item">
@@ -77,7 +96,8 @@ if(in_array($_REQUEST['tab'],$check1)){
                         <div class="publicar_item_header">Sexo</div>
                         <div class="publicar_sub_item">
                             <input type="radio" name="sexo" value="macho" <?php if($mascota['sexo']=='macho'){echo 'checked';}?>/> Macho<br/>
-                            <input type="radio" name="sexo" value="hembra" <?php if($mascota['sexo']=='hembra'){echo 'checked';}?>/> Hembra
+                            <input type="radio" name="sexo" value="hembra" <?php if($mascota['sexo']=='hembra'){echo 'checked';}?>/> Hembra<br/>
+                            <input type="radio" name="sexo" value="camada"/> Camada
                         </div>
                     </div>
 

@@ -106,6 +106,19 @@ var Ready = {
         });
         
         
+        /* mascota/masoctaedit.php */
+        $("select.tab_select").select2({
+            placeholder: "Eligue donde publicar",
+            allowClear: true,
+            enable:false,
+            readonly:true
+        }).on('change', function(e){
+            window.location = '/mascota/editar/'+$('#form_description').find('#publication_id').val()+'/?tab='+e.val;
+        });
+        
+        
+        
+        
         
         
         

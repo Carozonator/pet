@@ -78,9 +78,15 @@ class MascotaController extends Controller{
     function editar(){
         $args = $this->request->getArgs();
         $id = $args[0];
+        
         $mascota = new \pluralpet\Mascota();
         $result = $mascota->get($id);
+        
+        $foto = new \pluralpet\Foto();
+        $fotos = $foto->get($id,'mascota');
+        
         $this->view->assign(array('mascota'=>$result));
+        $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('id'=>$id));
         
         $this->view->setFile('mascotaedit');

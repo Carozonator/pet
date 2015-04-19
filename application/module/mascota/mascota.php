@@ -38,7 +38,7 @@
                 <br/>
                 <button onclick="Contactar.show(<?php echo $mascota['usuario']; ?>)">Contactar</button>
                 <?php if($_SESSION['user']->id==$mascota['usuario']){ ?>
-                    <form style="margin-top:20px;"method="GET" action="/mascota/editar/<?php echo $mascota['id'];?>">
+                    <form style="margin-top:20px;"method="GET" action="/mascota/editar/<?php echo $mascota['id'];?>/">
                         <input type="hidden" value="<?php echo $mascota['tab'];?>" name="tab"/>
                         <input type="submit" value="Editar"/>
                     </form>

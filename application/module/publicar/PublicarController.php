@@ -52,26 +52,45 @@ class PublicarController extends \pluralpet\Controller{
     function addAnuncio(){
         $anuncio = new \pluralpet\Anuncio();
         $id =  $anuncio->add();
-        echo 't=anuncio&id='.$id;
-        //header('Location: /anuncio/'.$id);
+        echo json_encode(array('link'=>'/publicar/publicado/?'.'t=anuncio&id='.$id));
+        //echo 't=anuncio&id='.$id;
     }
     
     function addMascota(){
         $mascota = new \pluralpet\Mascota();
         $id =  $mascota->add();
-        echo 't=mascota&id='.$id;
+        echo json_encode(array('link'=>'/publicar/publicado/?'.'t=mascota&id='.$id));
+        //echo 't=mascota&id='.$id;
     }
     
     function addProducto(){
         $producto = new \pluralpet\Producto();
         $id =  $producto->add();
-        echo 't=producto&id='.$id;
+        echo json_encode(array('link'=>'/publicar/publicado/?'.'t=producto&id='.$id));
     }
     function addConsejo(){
         $producto = new \pluralpet\Consejo();
         $id =  $producto->add();
-        echo 't=producto&id='.$id;
+        echo json_encode(array('link'=>'/publicar/publicado/?'.'t=consejgo&id='.$id));
+        //echo 't=producto&id='.$id;
     }
+    
+    function updateMascota(){
+        $mascota = new \pluralpet\Mascota();
+        $id =  $mascota->update($_POST['publication_id']);
+        echo json_encode(array('link'=>'/mascota/'.$id));
+        //echo 't=mascota&id='.$id;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

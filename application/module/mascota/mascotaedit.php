@@ -4,7 +4,9 @@
  */
 $animal = $mascota['animal'];
 
-$check1 = array('adoptar','encontrado','perdidos');
+//$publication_hash = substr( md5(rand()), 0, 10); 
+
+$check1 = array('adoptar','encontrado','perdido');
 $check2 = array('cruzar');
 $precio = true;
 if(in_array($_REQUEST['tab'],$check1)){
@@ -14,33 +16,25 @@ if(in_array($_REQUEST['tab'],$check1)){
     $detalles = array('perro'=>array('edad','tamano','pedigree'),'gato'=>array('edad','pedigree'));
     $precio=false;
 }else{
-    $detalles = array('perro'=>array('edad','tamano','pedigree','criadero'),'gato'=>array('edad','pedigree'));
+    $detalles = array('perro'=>array('edad','tamano','pedigree','criadero'),'gato'=>array('edad','pedigree','criadero'));
 }
 
 //var_dump($_REQUEST);die;
 ?>
 <div class="publicar" style="overflow-x:hidden;overflow-y:hidden">
     <div class="publicar_header">
-        <ol>
-            <li><a href="">Elige qu&eacute; publicar</a></li><li class="publicar_header_arrow">&#10095</li>
-            <li class="ch-wizard-current">Describe tu servicio</li><li class="publicar_header_arrow">&#10095;</li>
-            <li class="ch-wizard-step" style="border-right:0;">Publicar</li>
+        <ol style="text-align:center;">
+            <li class="ch-wizard-step" style="display:inline-block;margin-left:-100px;float:none;">Editar</li>
         </ol>
     </div>
     <div  id="publicar_slider" style="position:relative;width:100%;">
         <div class="slides description" style="width:100%;">
-            <form action="/publicar/addMascota/" method="post" enctype="multipart/form-data">
+            <form action="/publicar/updateMascota/" method="post" id="form_description" enctype="multipart/form-data">
                 <div style="position:relative;padding:40px">
+                    <input type="hidden" name="publication_id" value="<?php echo $id;?>"/>
                     <input type="hidden" name="animal" value="<?php echo $animal;?>"/>
-                    <input type="hidden" name="tab" value="<?php echo $_REQUEST['tab'];?>"/>
+                    <input type="hidden" name="tab_form" value="<?php echo $_REQUEST['tab'];?>"/>
                     <div class="publicar_item">
-                        <div class="publicar_item_header">Fotos</div>
-                        <!--
-                        <div class="publicar_sub_item">
-                                <label for="file">Elegir foto(s)</label>
-                                <input type="file" name="file[]" multiple="multiple" id="selectFile"><br>
-                        </div>
-                        -->
                         <div class="img_box_small">
                                 <img alt="<?php echo $mascota['nombre_original'];?>"src="<?php echo MEDIA.'upload/'.$mascota['foto_1']; ?>">
                         </div>
@@ -66,8 +60,14 @@ if(in_array($_REQUEST['tab'],$check1)){
                     <div class="publicar_item">
                         <div class="publicar_item_header">Refugio</div>
                         <div class="publicar_sub_item">
-                            <select class="" name="refugio" style="width:200px;">
-                                <option></option>
+                            <select class="refugio" name="refugio" style="width:200px;">
+                                <?php foreach($GLOBALS['refugio'] as $ref){ 
+                                    if(strcmp($ref,$mascota['refugio'])===0){
+                                        echo '<option selected>'.$ref.'</option>';
+                                    }else{
+                                        echo '<option>'.$ref.'</option>';
+                                    }
+                                } ?>
                             </select>
                         </div>
                     </div>
@@ -182,7 +182,7 @@ if(in_array($_REQUEST['tab'],$check1)){
                         </div>
                     </div>
                     <div style="text-align:center;">
-                        <button onclick="return false;Publicar.submit(this);return false;">Guardar</button>
+                        <button onclick="Publicar.submit(this,'updateMascota');return false;">Guardar</button>
                     </div>
                 </div>
                 <div style="clear:both"></div>
@@ -196,10 +196,14 @@ if(in_array($_REQUEST['tab'],$check1)){
 <script>
     $('.datepicker').datepicker({ 
         changeYear: true, 
-        yearRange: "1990:2014",
+        gotoCurrent:true,
+        yearRange: "1990:2015",
         altFormat: "yy-mm-dd",
         altField: "#fecha"
     });
+    
+    $(".datepicker").datepicker("setDate", today());
+    
     
     nicEditors.allTextAreas();
 

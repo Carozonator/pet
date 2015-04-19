@@ -28,6 +28,7 @@ class MascotaController extends Controller{
         $pregunta = new \pluralpet\Pregunta();
         $preguntas = $pregunta->get($this->request->getMethod(),'mascota');
         
+        $this->view->assign(array('tab'=>$this->request->getTab()));
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('pregunta'=>$preguntas));
         $this->view->assign(array('mascota'=>$result));
@@ -53,7 +54,6 @@ class MascotaController extends Controller{
         
         $animal = strtolower($this->request->getMethod());
         $tab = strtolower($this->request->getTab());
-        
         $fill['tab']=$tab;
         $fill['animal']=$animal;
         
@@ -81,11 +81,13 @@ class MascotaController extends Controller{
         $mascota = new \pluralpet\Mascota();
         $result = $mascota->get($id);
         $this->view->assign(array('mascota'=>$result));
-        //echo '<pre>';print_r($result);die;
+        $this->view->assign(array('id'=>$id));
         
         $this->view->setFile('mascotaedit');
         $this->view->render();
     }
+    
+    
     
     function delete(){
         $anuncio = new \pluralpet\Mascota();

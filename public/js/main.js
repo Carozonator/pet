@@ -1,3 +1,26 @@
+function today(){
+    var d = new Date();
+
+    var month = d.getMonth()+1;
+    var day = d.getDate();
+
+    var output =  ((''+month).length<2 ? '0' : '') + month + '/' +
+        ((''+day).length<2 ? '0' : '') + day +'/'+d.getFullYear();
+
+    return output;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 var Preguntas = {
     focus: function(elem){
         $(elem).closest('form').find('textarea').css('height','100px');
@@ -298,10 +321,16 @@ var Publicar = {
         $.ajax({
             url:url,
             type:'POST',
+            dataType:'json',
             data:submit_var,
             success:function(response){
                 //console.log(response);
-                window.location='/publicar/publicado/?'+response;
+                window.location = response.link;
+                
+                //window.location='/publicar/publicado/?'+response;
+            },
+            error:function(e){
+                console.log(e.responseText);
             }
         });
         

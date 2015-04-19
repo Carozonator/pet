@@ -190,17 +190,7 @@ if(in_array($_POST['tab'],$check1)){
 </form>
 <script>
     
-    function today(){
-        var d = new Date();
-
-        var month = d.getMonth()+1;
-        var day = d.getDate();
-
-        var output =  ((''+month).length<2 ? '0' : '') + month + '/' +
-            ((''+day).length<2 ? '0' : '') + day +'/'+d.getFullYear();
     
-        return output;
-    }
     
     $("#fotos").dropzone({addRemoveLinks:true,maxFiles:6});
     $('.datepicker').datepicker({ 

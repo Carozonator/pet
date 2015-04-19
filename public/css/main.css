@@ -122,6 +122,7 @@ div.img150 div.thumb {
     text-align:center;
     line-height:40px;
     width:250px;
+    list-style-type:none;
     
 }
 .publicar_header > ol > li.highlight{

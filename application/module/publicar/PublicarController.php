@@ -91,7 +91,11 @@ class PublicarController extends \pluralpet\Controller{
     
     
     
-    
+    function deletePhoto(){
+        $foto = new \pluralpet\Foto();
+        $foto->delete();
+        die;
+    }
     
     function addPhotoEditar(){
                 

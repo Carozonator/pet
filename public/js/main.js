@@ -15,7 +15,18 @@ function today(){
 
 
 
-
+var Foto = {
+    remove:function(id){
+        $.ajax({
+            url:'/publicar/deletePhoto',
+            type:'post',
+            data:{id:id},
+            success:function(response){
+                $('#'+id).remove();
+            }
+        });
+    }
+}
 
 
 

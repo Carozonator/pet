@@ -36,7 +36,7 @@ class Foto extends Model{
     
     
     function delete(){
-        $sql =  "DELETE FROM mascota WHERE id=?";
+        $sql =  "DELETE FROM foto WHERE id=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['id']));
         $affected_rows = $stmt->rowCount();

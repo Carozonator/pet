@@ -35,6 +35,7 @@ if(in_array($_REQUEST['tab'],$check1)){
                 <?php foreach($foto as $f){ ?>
                     <li class="img_li" id="<?php echo $f['id']; ?>" data-foto-order="<?php echo $f['photo_order']; ?>" >
                         <img style="cursor:move;" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
+                        <div class="photo_delete" onclick="Foto.remove(<?php echo $f['id']; ?>)">x</div>
                     </li>
                 <?php } ?>
                 <?php if(count($foto)<6){ ?>

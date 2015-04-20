@@ -28,20 +28,39 @@ if(in_array($_REQUEST['tab'],$check1)){
         </ol>
     </div>
     <div  id="publicar_slider" style="position:relative;width:100%;">
-        <div class="slides description" style="width:100%;">
+        <div class="slides description editar_fotos" style="width:100%;">
+            <div style="position:relative;padding:40px;position:relative;">
+            <div class="publicar_item" style="position:relative">
+                <ul class="sortable_photo" id="photo_order">
+                <?php foreach($foto as $f){ ?>
+                    <li class="img_li" id="<?php echo $f['id']; ?>" data-foto-order="<?php echo $f['photo_order']; ?>" >
+                        <img style="cursor:move;" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
+                    </li>
+                <?php } ?>
+                    <li class="unsortable">
+                        <form id="fotos" action="/publicar/addPhotoEditar/" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="publication_id" value="<?php echo $id;?>"/>
+                            <input type="hidden" name="table" value="mascota"/>
+                            <input type="file" id="selectedFile" name="file" style="display: none;" />
+                            <input id="submit_photo" type="submit" value="" onclick="" />
+                        </form>
+                        <!--
+                        <form action="/publicar/adddddPhoto/" method="post" class="dropzone" id="fotos" enctype="multipart/form-data">
+                            <div class="fallback">
+                                <input name="file" type="file" multiple />
+                            </div>
+                            <input type="hidden" name="table" value="mascota"/>
+                            <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>" id="publication_id"/>
+                        </form>
+                        -->
+                    </li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
             <form action="/publicar/updateMascota/" method="post" id="form_description" enctype="multipart/form-data">
-                <div style="position:relative;padding:40px">
+                
                     <input type="hidden" id="publication_id" name="publication_id" value="<?php echo $id;?>"/>
                     <input type="hidden" name="animal" value="<?php echo $animal;?>"/>
-                    <?php foreach($foto as $f){ ?>
-                        <div class="img_box_small">
-                            <a href="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>" data-lightbox="roadtrip" >
-                                <img alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
-                            </a>
-                        </div>
-                    <?php } ?>
-                    
-                    
                     <div class="publicar_item">
                         <div class="publicar_item_header">Donde Publicar</div>
                         <div class="publicar_sub_item">
@@ -214,6 +233,16 @@ if(in_array($_REQUEST['tab'],$check1)){
 </div>
 <div style="clear:both"></div>
 <script>
+    
+    
+    $('input[type=file]').change(function() {
+        $('#submit_photo').trigger("click");
+    });
+    
+    $('#fotos').on("click",function(){
+        document.getElementById('selectedFile').click();
+    });
+    
     $('.datepicker').datepicker({ 
         changeYear: true, 
         gotoCurrent:true,
@@ -224,6 +253,26 @@ if(in_array($_REQUEST['tab'],$check1)){
     
     $(".datepicker").datepicker("setDate", today());
     
+    $(".sortable_photo").sortable({
+        items: "li:not(.unsortable)",
+        update: function( event, ui ) {
+            var order = {};
+            $('#photo_order li').each(function(index,elem){
+                order[$(elem).attr('id')] = index;
+            });
+            
+            var data = {order:order,publication_id:$('#publication_id').val()};
+            
+            $.ajax({
+                url:'/publicar/updatePhoto/',
+                data:data,
+                type:'post',
+                success:function(response){
+                    console.log(response);
+                }
+            });
+        }
+    });
     
     nicEditors.allTextAreas();
 

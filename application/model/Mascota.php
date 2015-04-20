@@ -129,6 +129,7 @@ class Mascota extends Model{
                     $order_by = "ORDER BY id DESC";
                 break;
             }
+            $order_by.=", foto.photo_order";
             
         //}
         
@@ -140,17 +141,19 @@ class Mascota extends Model{
             $stmt = "WHERE ".implode("=? and ",array_keys($vals))."=? ";
         }
         
-        $sql =    "SELECT mascota.*, foto.name as foto_name, foto.usuario as foto_usuario, "
+        //adjust _table accordingly 
+        $sql =    "SELECT mascota.*, foto.name as foto_name, foto.usuario as foto_usuario, foto.photo_order, "
                 . "CASE WHEN mascota.moneda = 'us' THEN mascota.precio * ".CAMBIO." ELSE mascota.precio END AS `precio_sum` "
-                . "FROM mascota LEFT OUTER JOIN foto on foto.publication_id=mascota.id ".$stmt." "
+                . "FROM mascota "
+                . "LEFT OUTER JOIN (SELECT name, usuario,photo_order,publication_id FROM foto WHERE _table='mascota' order by photo_order) "
+                . "AS foto on foto.publication_id=mascota.id "
+                . "$stmt "
                 . "$sexo_stmt "
                 . "group by mascota.id "
                 . "$order_by ";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($vals_decoded);
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-        
-        
         return $rows;
     }
     

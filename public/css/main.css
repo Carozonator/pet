@@ -757,6 +757,29 @@ box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.53);
 
 
 
+
+
+
+
+.sortable_photo li{
+    width:100px;
+    height:100px;
+    border:1px solid #cacaca; -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;  
+    overflow:hidden;
+    margin-top:2px;
+    margin:5px;
+    display:inline-block;
+}
+
+.sortable_photo li img{
+    padding:0px;
+}
+
+.sortable_photo{
+    padding-bottom:20px;
+}
+
+
 .single_item p{
     font-size:14px;
 }
@@ -1035,4 +1058,66 @@ box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.53);
 }
 .wrapper-dropdown-5.orden .dropdown li:hover a{
     
+}
+
+
+
+
+
+
+
+
+.editar_fotos #fotos{
+    width:100px;
+    height:100px;
+    min-height: 100px;
+    padding:0px;
+}
+
+.editar_fotos .dropzone .dz-default.dz-message span{
+    display:none;
+}
+
+.editar_fotos #fotos{
+    cursor:pointer;
+    background-size:50px 50px;
+    background-position: 25px 25px;
+    height:100px;
+    background-image:url(/public/vendor/dropzone/images/spritemap.jpg);
+    background-repeat:no-repeat;
+}
+.editar_fotos .dz-preview.dz-processing.dz-image-preview{
+    margin:0px;
+    padding:0px;
+    border:0px;
+}
+.editar_fotos #submit_photo{
+    display:none;
+}
+
+
+
+
+
+
+
+
+
+div.fileinputs {
+	position: relative;
+}
+
+div.fakefile {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+input.file {
+	position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
 }

@@ -12,10 +12,17 @@ class Foto extends Model{
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($name,$org_name,$temp_hash,$table,null,$_SESSION['user']->id,1));
         $insert_id = $this->pdo->lastInsertId(); 
-        //$affected_rows = $stmt->rowCount();
         return $insert_id;
     }
     
+    
+    function addFromEditar($name,$org_name,$publication_id,$table){
+        $sql =  "INSERT INTO foto (name,org_name,_table,publication_id,usuario,photo_order) VALUES(?,?,?,?,?,?)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($name,$org_name,$table,$publication_id,$_SESSION['user']->id,20));
+        $insert_id = $this->pdo->lastInsertId(); 
+        return $insert_id;
+    }
     
     
     function get($id,$table){
@@ -34,5 +41,15 @@ class Foto extends Model{
         $stmt->execute(array($_POST['id']));
         $affected_rows = $stmt->rowCount();
         return $affected_rows;
+    }
+    
+    
+    function updateOrder(){
+        foreach($_POST['order'] as $key=>$row){
+            $sql = "UPDATE foto set photo_order=? WHERE id=? ";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute(array($row,$key));
+        }
+        
     }
 }

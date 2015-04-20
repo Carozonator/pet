@@ -1,7 +1,7 @@
 <?php 
 $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'=>'Animal','mamifero'=>'Animal','ave'=>'Animal','reptil'=>'Animal','otro'=>'Animal');
 
-$order = array('reciente'=>'Recientes','barato'=>'M&aacutes barato','caro'=>'M&aacutes caro','visitas'=>'M&aacutes visitados');
+$order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor precio','visitas'=>'M&aacutes visitados');
 
 ?>
 

@@ -93,8 +93,52 @@ class PublicarController extends \pluralpet\Controller{
     
     
     
+    function addPhotoEditar(){
+                
+        $upload_dir = UPLOAD.$_SESSION['user']->id;
+        if (!file_exists($upload_dir)) {
+            mkdir($upload_dir, 0777, true);
+        }
+        
+        $upload_entry_dir = $upload_dir.'/';//.'/'.$_POST['publication_id'];
+
+        if ($_FILES["file"][0]["error"] > 0)
+        {
+            echo "Error:<br/>";
+            echo "<pre>";
+            print_r($_FILES["file"]["error"]);
+            die;
+        }
+        else
+        {
+            
+            if (file_exists($_FILES['file']['tmp_name']) || is_uploaded_file($_FILES['file']['tmp_name'])){
+                $file_name = basename($_FILES['file']['name']);
+                $ext = substr($_FILES["file"]['name'], strrpos($_FILES["file"]['name'], '.')+1);
+                
+                $image_name = time().'_'.substr(rand(),0,5).'.'.$ext;
+                
+                $foto = new \pluralpet\Foto();
+                
+                $foto->addFromEditar($image_name,$file_name,$_POST['publication_id'],$_POST['table']);
+                
+                move_uploaded_file($_FILES["file"]['tmp_name'],$upload_entry_dir.$image_name);
+                
+                $this->resize_crop_image(200, 200, $upload_entry_dir.$image_name,$upload_entry_dir.'thumb_'.$image_name);
+                
+                
+            }else{
+                
+            }
+        }
+        
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    }
     
-    
+    function updatePhoto(){
+        $foto = new \pluralpet\Foto();
+        $foto->updateOrder();
+    }
     
     function addPhoto(){
         $upload_dir = UPLOAD.$_SESSION['user']->id;

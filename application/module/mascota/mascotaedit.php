@@ -37,10 +37,12 @@ if(in_array($_REQUEST['tab'],$check1)){
                         <img style="cursor:move;" alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
                     </li>
                 <?php } ?>
+                <?php if(count($foto)<6){ ?>
                     <li class="unsortable">
                         <form id="fotos" action="/publicar/addPhotoEditar/" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="publication_id" value="<?php echo $id;?>"/>
                             <input type="hidden" name="table" value="mascota"/>
+                            <input type="hidden" name="tab" value="<?php echo $_REQUEST['tab'];?>"/>
                             <input type="file" id="selectedFile" name="file" style="display: none;" />
                             <input id="submit_photo" type="submit" value="" onclick="" />
                         </form>
@@ -54,6 +56,7 @@ if(in_array($_REQUEST['tab'],$check1)){
                         </form>
                         -->
                     </li>
+                <?php } ?>
                 </ul>
             </div>
             <div style="clear:both"></div>

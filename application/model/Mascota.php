@@ -41,7 +41,7 @@ class Mascota extends Model{
         $stmt->execute(array(htmlentities($_POST['animal_detail']),$_POST['sexo'],$_POST['edad'],$_POST['tamano'],
             $_POST['pedigree'],$_POST['criadero'],  parseMoney($_POST['precio']),$_POST['titulo'],
             ($_POST['descripcion']),$_POST['tab_select'],$_POST['fecha'],$_POST['departamento'],
-            $_POST['ciudad_barrio'],$_SESSION['user']->id,$_POST['moneda'],$_POST['refugio'],$id));
+            htmlentities($_POST['ciudad_barrio']),$_SESSION['user']->id,$_POST['moneda'],$_POST['refugio'],$id));
         return $id;
     }
     

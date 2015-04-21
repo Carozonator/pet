@@ -18,7 +18,10 @@ if(in_array($_REQUEST['tab'],$check1)){
 }else{
     $detalles = array('perro'=>array('edad','tamano','pedigree','criadero'),'gato'=>array('edad','pedigree','criadero'));
 }
-
+//echo strcmp(($GLOBALS['raza'][$animal][54]),  htmlEncodeText($mascota['animal_detail']));
+//echo $mascota['animal_detail'];
+//echo $GLOBALS['raza'][$animal][54];
+//echo htmlspecialchars($mascota['animal_detail']);die;
 //var_dump($_REQUEST);die;
 ?>
 <div class="publicar" style="overflow-x:hidden;overflow-y:hidden">
@@ -88,7 +91,7 @@ if(in_array($_REQUEST['tab'],$check1)){
                                 <?php
                                     foreach($GLOBALS['raza'][$animal] as $row){
                                         $selected='';
-                                        if($row==$mascota['animal_detail']){
+                                        if(strcmp($row,($mascota['animal_detail']))===0){
                                             $selected = 'selected';
                                         }
                                         echo '<option '.$selected.'>'.$row.'</option>';
@@ -218,7 +221,7 @@ if(in_array($_REQUEST['tab'],$check1)){
                             <div>
                                 <label style="margin-bottom:10px;">Descripcion</label><br/>
                                 <div style="position:relative;margin-left:-3px;vertical-align: middle;display:inline-block;width:100%;">
-                                    <textarea id="nicedit_text" style="width:100%;height:250px;"><?php echo $mascota['descripcion']; ?></textarea>
+                                    <textarea id="nicedit_text" style="width:100%;height:250px;"><?php echo htmlEncodeText($mascota['descripcion']); ?></textarea>
                                     <span style="position:absolute;top:0px;right:0px;" class="input_error"></span>
                                 </div>
                             </div>

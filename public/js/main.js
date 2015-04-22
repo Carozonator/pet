@@ -348,7 +348,6 @@ var Publicar = {
                 }
             }
         }
-        
         for(var i in form_var){
             var key = form_var[i].name;
             var obj = {};
@@ -360,7 +359,11 @@ var Publicar = {
             
             submit_var[key]=form_var[i].value;
         }
-        console.log(submit_var);
+        if(description=='<br>' || description==''){
+            $('#nicedit_text').closest('.publicar_item').addClass('missing_input');
+            blank_found=true;
+        }
+        
         if(blank_found===true){
             return;
         }

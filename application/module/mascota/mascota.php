@@ -69,7 +69,7 @@
             <h4>Descripci&oacute;n</h4>
             <p class="descripcion"><?php echo htmlEncodeText($mascota['descripcion']);?></p>
         </div>
-        <a href="http://www.facebook.com/sharer.php?u=<?php echo DOMAIN.$controller.'/'.$mascota['id'];?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+        <a href="http://www.facebook.com/sharer.php?u=<?php echo DOMAIN.'/'.$controller.'/'.$mascota['id'];?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
             <img src="<?php echo MEDIA.'facebook_share.png'; ?>"</a>
         <div style="margin-top:20px;" class="preguntas">
             <h4>Preguntas</h4>

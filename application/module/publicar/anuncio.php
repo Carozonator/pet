@@ -46,6 +46,7 @@
                 </form>
                 <div style="clear:both"></div>
             </div>
+            <div class="datos_obligatorios">* Todos los datos obligatorios</div>
             <form id="form_description" action="/publicar/addAnuncio/" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>
                 <div style="position:relative;padding:40px">
@@ -60,9 +61,11 @@
                     <div class="publicar_item">
                         <div class="publicar_item_header">Ubicacion y contacto</div>
                         <div class="publicar_sub_item">
+                            <!--
                             <div style="display:none;height:45px;width:100%" class="emergencia">
                                 <label>Telefono de Emergencia </label><input name="telefono" type="text"/>
                             </div>
+                            -->
                             <div style="height:45px;width:100%">
                                 <label class="horario">Horario </label><input name="horario" type="text"/>
                             </div>

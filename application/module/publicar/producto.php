@@ -72,7 +72,7 @@ $publication_hash = substr( md5(rand()), 0, 10);
                 <div style="clear:both"></div>
             </div>
             
-            
+            <div class="datos_obligatorios">* Todos los datos obligatorios</div>
             
             <form id="form_description" action="/publicar/addProducto/" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>

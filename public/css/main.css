@@ -95,8 +95,16 @@ div.img150 div.thumb {
 
 
 
-
-
+.datos_obligatorios{
+    color:grey;
+    padding:20px 0px 0px 40px;
+    font-style: italic;
+}
+.missing_input{
+    padding:2px;
+    border:1px solid red;
+    border-radius:2px;
+}
 
 .publicar{
     border:1px solid gainsboro;

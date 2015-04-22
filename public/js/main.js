@@ -332,11 +332,37 @@ var Publicar = {
         }
         
         var form_var = form.serializeArray();
+        $('.publicar_item').removeClass('missing_input');
+        
         var submit_var = {};
+        var blank_found = false;
+        
+        // Check all radio buttons are filled
+        var radio_buttons = ['pedigree','criadero','tamano','edad','sexo'];
+        for(var i in radio_buttons){
+            var r = radio_buttons[i];
+            if($('input[name="'+r+'"]').size()>0){
+                if($('input[name="'+r+'"]:checked').size()===0){
+                    $('input[name="'+r+'"]').closest('.publicar_item').addClass('missing_input');
+                    blank_found = true;
+                }
+            }
+        }
+        
         for(var i in form_var){
             var key = form_var[i].name;
             var obj = {};
+            if(form_var[i].value==""){
+                $('input[name="'+key+'"').closest('.publicar_item').addClass('missing_input');
+                $('select[name="'+key+'"').closest('.publicar_item').addClass('missing_input');
+                blank_found = true;
+            }
+            
             submit_var[key]=form_var[i].value;
+        }
+        console.log(submit_var);
+        if(blank_found===true){
+            return;
         }
         submit_var.descripcion=description;
 

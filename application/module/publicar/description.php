@@ -39,6 +39,11 @@ if(in_array($_POST['tab'],$check1)){
     </form>
     <div style="clear:both"></div>
 </div>
+
+<div class="datos_obligatorios">
+    * Todos los datos obligatorios
+</div>
+
 <form action="/publicar/addMascota/" id="form_description" method="post" enctype="multipart/form-data">
     <div style="position:relative;padding:40px">
         <input type="hidden" name="animal" value="<?php echo $animal;?>"/>

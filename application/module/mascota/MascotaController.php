@@ -28,6 +28,7 @@ class MascotaController extends Controller{
         $pregunta = new \pluralpet\Pregunta();
         $preguntas = $pregunta->get($this->request->getMethod(),'mascota');
         
+        $this->view->assign(array('controller'=>strtolower($this->request->getController())));
         $this->view->assign(array('tab'=>$this->request->getTab()));
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('pregunta'=>$preguntas));

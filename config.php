@@ -340,5 +340,13 @@ function substrText($text,$len){
     return substr($t,0,$new_len);
 }
 
+function publicationValue($text){
+    if(empty($text)){
+        return 'N/I';
+    }else{
+        return ucfirst($text);
+    }
+}
+
 
 ?>

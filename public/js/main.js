@@ -225,6 +225,7 @@ var Publicar = {
         $('.step:eq('+(next_pos)+')').addClass('highlight');
         $('.publicar_header_arrow').removeClass('highlight_pink');
         //$('.publicar_header_arrow:eq('+(next_pos-1)+')').addClass('highlight_pink');
+        $('.tab_option').show();
         if(next_box.has('tab')){
             if(Publicar.animal=="ave" ||Publicar.animal=="reptil" ||Publicar.animal=="pez"){
                 $('.tab_perdido').hide();

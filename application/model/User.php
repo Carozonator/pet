@@ -97,7 +97,7 @@ class User extends Model{
     }
     
     function getPublicaciones(){
-        $tables = array('mascota','anuncio','producto');
+        $tables = array('mascota','anuncio','producto','consejo');
         
         $results=array();
         foreach($tables as $table){

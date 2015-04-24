@@ -15,6 +15,9 @@ class InformacionController extends Controller{
             case 'terminos-y-condiciones':
                 $this->view->setFile($file);
             break;
+            case 'contacto-empresarial':
+                $this->view->setFile($file);
+            break;
             
         }
         
@@ -24,7 +27,7 @@ class InformacionController extends Controller{
     function sugerenciaPost(){
         $msg = $_POST['message'];
         
-        $email_message = '<h3>Consulta</h3><br/><br/>email: '.$_POST['email'].'<br/><br/>nombre: '.$_POST['name'].'<br/><br/>mensaje: '.$msg;
+        $email_message = '<h3>Consulta</h3><br/><br/>email: '.$_POST['email'].'<br/><br/>nombre: '.$_POST['name'].'<br/><br/>empresa: '.$_POST['empresa'].'<br/><br/>mensaje: '.$msg;
         
         $to = 'rafaelarcieri@gmail.com,juanangel_leira@hotmail.com';
         $subject = $_POST['name'].' tiene una consulta';

@@ -53,11 +53,12 @@
             <h4 style="color:#9C2490">Datos</h4>
             <span class="gristxt_1"><?php echo $GLOBALS['raza_o_animal'][$mascota['animal']]; ?>:</span> <?php echo ucfirst($mascota['animal_detail']);?><br/>
             
-            <span class="gristxt_1">Tama&ntilde;o:</span>  <?php echo ucfirst($mascota['tamano']);?><br/>
-            <span class="gristxt_1">Edad:</span> <?php echo ucfirst($mascota['edad']);?><br/>
-            <span class="gristxt_1">Sexo:</span> <?php echo ucfirst($mascota['sexo']);?><br/>
-            <span class="gristxt_1">Pedigree:</span> <?php echo ucfirst($mascota['pedigree']);?><br/>
-            <span class="gristxt_1">Criadero:</span> <?php echo ucfirst($mascota['criadero']);?><br/>
+            <span class="gristxt_1">Tama&ntilde;o:</span>  <?php echo publicationValue($mascota['tamano']);?><br/>
+            <span class="gristxt_1">Edad:</span> <?php echo publicationValue($mascota['edad']);?><br/>
+            <span class="gristxt_1">Sexo:</span> <?php echo publicationValue($mascota['sexo']);?><br/>
+            <span class="gristxt_1">Fecha de nacimiento:</span> <?php echo publicationValue($mascota['fecha']);?><br/>
+            <span class="gristxt_1">Pedigree:</span> <?php echo publicationValue($mascota['pedigree']);?><br/>
+            <span class="gristxt_1">Criadero:</span> <?php echo publicationValue($mascota['criadero']);?><br/>
             <?php 
             if($mascota['horario']){
                 echo 'Horario: '.$mascota['horario'].'';

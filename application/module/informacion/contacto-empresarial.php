@@ -1,12 +1,8 @@
-
 <?php
 
-$title = "SUGERENCIAS";
-$subtitle1 = htmlentities("Comentarios, dudas o sugerencias");
-$text1 = htmlentities("Puedes contactar con nosotros siempre que lo desees para hacernos llegar tus sugerencias o preguntas.");
-$text2 = htmlentities("Respecto a atender consultas, te informamos que PluralPet es, por el momento, una
-web divulgativa, no podemos atender consultas que requieran la valoración de 
-profesionales como veterinarios, criadores, etc.");
+$title = "CONTACTO EMPRESARIAL";
+$text1 = htmlentities("Puedes contactar con nosotros para hacernos llegar tus propuestas o consultas");
+
 
 
 
@@ -26,7 +22,6 @@ profesionales como veterinarios, criadores, etc.");
 
 <div class="informacion">
     <h3><?php echo $title; ?></h3>
-    <h5><?php echo $subtitle1; ?></h5>
     <p><?php echo $text1; ?></p>
     <p><?php echo $text2; ?></p>
     <form method="POST" action="/informacion/sugerenciaPost/">
@@ -35,6 +30,12 @@ profesionales como veterinarios, criadores, etc.");
                 <td>Tu nombre</td>
                 <td>
                     <input name="name" required type="text" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>Nombre de la empresa</td>
+                <td>
+                    <input name="empresa" required type="text" value=""/>
                 </td>
             </tr>
             <tr>

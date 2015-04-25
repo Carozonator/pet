@@ -37,12 +37,12 @@ function submitUser(elem){
     $('.validation').html('');
     var form = $(elem).closest('form');
     var form_submit = true;
-    var email = form.find('input[name="email"]');
-    var email_con = form.find('input[name="confirm_email"]');
+    var email = form.find('input[name="email"]').val().trim();
+    var email_con = form.find('input[name="confirm_email"]').val().trim();
     var password = form.find('input[name="password"]');
     var password_con = form.find('input[name="confirm_password"]');
     
-    if(email.val() == email_con.val()){
+    if(email == email_con){
         //$('#confirm_email').html(' &#x2713;');
     }else{
         $('#confirm_email').html(' &#x2717;');
@@ -59,7 +59,7 @@ function submitUser(elem){
         $('input[name=password]').parent().find('.validation').html('minimo 5 caracteres');
         form_submit = false;
     }
-    if(! Validation.email(email.val())){
+    if(! Validation.email(email)){
         $('input[name=email]').parent().find('.validation').html('email no es valido');
         form_submit = false;
     }

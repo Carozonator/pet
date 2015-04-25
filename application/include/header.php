@@ -27,6 +27,7 @@
     <script src=""></script>
     <script type="text/javascript">
             $(document).ready(function(){
+                    Publicar.user_logged_in = <?php echo (isset($_SESSION['user'])?'true':'false'); ?>;
                     $('.dropdown-menu').click(function(event) {
                         event.stopPropagation();
                         $('.dropdown').hide();

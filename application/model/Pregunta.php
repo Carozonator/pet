@@ -8,6 +8,7 @@ class Pregunta extends Model{
     }
     
     function publicarPregunta(){
+        
         $sql = "SELECT usuario FROM ".$_POST['_table']." where id=? ";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['publication_id']));

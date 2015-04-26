@@ -11,144 +11,123 @@
     }
 </style>
 <div class="informacion">
-    <h6>T&#233;rminos y Condiciones de uso del Sitio</h6>
+    <h6>Términos y Condiciones de uso del Sitio</h6>
+<div>Versi&#243;n vigente <b>22/08/2014</b></div>
 
-    <div>Versi&#243;n vigente <b>22/08/2014</b></div>
+Este contrato describe los términos y condiciones generales (los "Términos y Condiciones 
 
-Este contrato describe los t&#233;rminos y condiciones generales (los &quot;T&#233;rminos y 
+Generales") aplicables al uso de los servicios ofrecidos por<b>PluralPet.com.uy de Uruguay S.A.</b>, 
 
-Condiciones Generales&quot;) aplicables al uso de los servicios ofrecidos 
+una empresa constituida bajo las leyes uruguayas, ("los Servicios") dentro del 
 
-por <b><b>PluralPet</b>.com.uy de Uruguay S.A.</b>, una empresa constituida bajo las leyes 
+sitio <b>PluralPet</b>.com.uy("<b>PluralPet</b>" o el "sitio"). Cualquier persona (en adelante "Usuario" o en 
 
-uruguayas, (&quot;los Servicios&quot;) dentro del sitio <b><b>PluralPet</b>.com.uy(&quot;<b>PluralPet</b>&quot; </b>o el &quot;sitio&quot;).
+plural "Usuarios") que desee acceder y/o usar el sitio o los servicios podrá hacerlo sujetándose a 
 
-Cualquier persona (en adelante &quot;Usuario&quot; o en plural &quot;Usuarios&quot;) que desee acceder y/o 
+los Términos y Condiciones Generales, junto con todas las demás políticas y principios que 
 
-usar el sitio o los servicios podr&#225; hacerlo sujet&#225;ndose a los T&#233;rminos y Condiciones 
+rigen <b>PluralPet</b> y que son incorporados al presente por referencia. <b>CUALQUIER PERSONA QUE 
 
-Generales, junto con todas las dem&#225;s pol&#237;ticas y principios que rigen&#160;<b>PluralPet</b>&#160;y que 
+NO ACEPTE ESTOS TÉRMINOS Y CONDICIONES GENERALES, LOS CUALES SON DE 
 
-son incorporados al presente por referencia.
+CARÁCTER OBLIGATORIO Y VINCULANTE, DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO 
 
-<b>CUALQUIER PERSONA QUE NO ACEPTE ESTOS T&#201;RMINOS Y CONDICIONES 
+Y/O LOS SERVICIOS.</b> El Usuario debe leer, entender y aceptar todas las condiciones establecidas 
 
-GENERALES, LOS CUALES SON DE CAR&#193;CTER OBLIGATORIO Y VINCULANTE, 
+en los Términos y Condiciones Generales y en las Políticas de Privacidad así como en los demás 
 
-DEBER&#193; ABSTENERSE DE UTILIZAR EL SITIO Y/O LOS SERVICIOS.</b>
+documentos incorporados a los mismos por referencia, previo a su inscripción como Usuario 
 
-El Usuario debe leer, entender y aceptar todas las condiciones establecidas en los 
+de <b>PluralPet</b>.
+<h6>
+01 – Capacidad
+</h6>
+Los Servicios serán únicamente disponibles para personas que tengan capacidad legal para 
 
-T&#233;rminos y Condiciones Generales y en las Pol&#237;ticas de Privacidad as&#237; como en los 
+contratar. No podrán ser utilizados los servicios por personas que no posean capacidad legal, 
 
-dem&#225;s documentos incorporados a los mismos por referencia, previo a su inscripci&#243;n 
+incluyendo los menores de edad o Usuarios de <b>PluralPet</b> que hayan sido suspendidos 
 
-como Usuario de <b>PluralPet</b>.
+temporalmente o inhabilitados definitivamente. En los casos donde el Usuario es registrado como 
 
-<h6>01 - Capacidad</h6>
+Empresa, debes tener capacidad para contratar a nombre de tal entidad y de obligar a la misma en 
 
-Los Servicios ser&#225;n &#250;nicamente disponibles para personas que tengan capacidad legal 
+los términos de este Acuerdo.
+<h6>
+02 – Registración
+</h6>
+Es de carácter obligatorio completar el formulario de registración, en todos sus campos con datos 
 
-para contratar. No podr&#225;n ser utilizados los servicios por personas que no posean 
+válidos para poder utilizar los servicios que brinda <b>PluralPet</b>. Para el uso efectivo de esta página, 
 
-capacidad legal, incluyendo los menores de edad o Usuarios de&#160;<b>PluralPet</b>&#160;que hayan 
+deberá completar con su información personal de manera exacta, precisa y verdadera en el área 
 
-sido suspendidos temporalmente o inhabilitados definitivamente. En los casos donde el 
+de "Datos Personales" y asumir el compromiso de actualizar dichos Datos Personales cuando 
 
-Usuario es registrado como Empresa, debes tener capacidad para contratar a nombre 
+resulte necesario.  <b>PluralPet</b> estará habilitado para utilizar diversos medios para identificar a sus 
 
-de tal entidad y de obligar a la misma en los t&#233;rminos de este Acuerdo.
+Usuarios, pero <b>PluralPet</b> NO se responsabiliza por la certeza de los Datos Personales 
 
-<h6>02 - Registraci&#243;n</h6>
+proporcionados por sus Usuarios. Los Usuarios deberán garantizan y responden, en cualquier 
 
-Es de car&#225;cter obligatorio completar el formulario de registraci&#243;n, en todos sus campos 
+caso, por la veracidad, exactitud, vigencia y autenticidad de los Datos Personales 
 
-con datos v&#225;lidos para poder utilizar los servicios que brinda&#160;<b>PluralPet</b>. Para el uso 
+ingresados. <b>PluralPet</b> se reserva el derecho de solicitar algún comprobante y/o dato adicional, a 
 
-efectivo de esta p&#225;gina, deber&#225; completar con su informaci&#243;n personal de manera 
+los efectos de corroborar los Datos Personales, así como podrá tener la potestad de suspender 
 
-exacta, precisa y verdadera en el &#225;rea de &quot;Datos Personales&quot; y asumir el compromiso de 
+temporal o definitivamente a aquellos Usuarios cuyos datos no hayan podido ser confirmados. En 
 
-actualizar dichos Datos Personales cuando resulte necesario.&#160;
+estos casos de inhabilitación, <b>PluralPet</b> podrá optar por dar de baja todos los artículos publicados, 
 
-<b>PluralPet</b>&#160;estar&#225; habilitado para utilizar diversos medios para identificar a sus Usuarios, 
+así como las ofertas realizadas, sin que ello genere algún derecho a resarcimiento. El Usuario 
 
-pero&#160;<b>PluralPet</b>&#160;NO se responsabiliza por la certeza de los Datos Personales 
+accederá a su cuenta personal ("Cuenta") mediante el ingreso de su Apodo y clave de seguridad 
 
-proporcionados por sus Usuarios. Los Usuarios deber&#225;n garantizan y responden, en 
+personal elegida ("Contraseña"). El Usuario se obliga a mantener la confidencialidad de su Clave 
 
-cualquier caso, por la veracidad, exactitud, vigencia y autenticidad de los Datos 
+de Seguridad. La Cuenta es personal, única e intransferible, siendo prohibido que un mismo 
 
-Personales ingresados.
+Usuario registre o posea más de una Cuenta. En caso que <b>PluralPet</b> detecte distintas Cuentas que 
 
-<b>PluralPet</b>&#160;se reserva el derecho de solicitar alg&#250;n comprobante y/o dato adicional, a los 
+contengan datos coincidentes o relacionados, podrá cancelar, suspender o inhabilitarlas. El 
 
-efectos de corroborar los Datos Personales, as&#237; como podr&#225; tener la potestad de 
+Usuario será responsable por todas las operaciones efectuadas por su propia Cuenta, ya que el 
 
-suspender temporal o definitivamente a aquellos Usuarios cuyos datos no hayan podido 
+acceso a la misma se encuentra restringido al ingreso y uso de su Clave de Seguridad, siendo la 
 
-ser confirmados. En estos casos de inhabilitaci&#243;n, <b>PluralPet</b> podr&#225; optar por dar de baja 
+misma de conocimiento exclusivo del Usuario. El Usuario se debe compromete en notificar 
 
-todos los art&#237;culos publicados, as&#237; como las ofertas realizadas, sin que ello genere alg&#250;n 
+a <b>PluralPet</b> de forma inmediata y por medio idóneo y fehaciente, cualquier uso no autorizado de su 
 
-derecho a resarcimiento.
+Cuenta, así como el ingreso por terceros no autorizados a la misma. <b>PluralPet</b> se reserva el 
 
-El Usuario acceder&#225; a su cuenta personal (&quot;Cuenta&quot;) mediante el ingreso de su Apodo y 
+derecho de rechazar cualquier solicitud de registración o de cancelar una registración que 
 
-clave de seguridad personal elegida (&quot;Contrase&#241;a&quot;). El Usuario se obliga a mantener la 
+previamente haya sido aceptada, sin que esté obligado a comunicar o exponer las razones de su 
 
-confidencialidad de su Clave de Seguridad.
+decisión, y sin que ello genere algún derecho a indemnización o resarcimiento.
+<h6>
+03 - Modificaciones del acuerdo
+</h6>
+<b>PluralPet</b> podrá modificar los Términos y Condiciones Generales en cualquier momento, 
 
-La Cuenta es personal, &#250;nica e intransferible, siendo prohibido que un mismo Usuario 
+haciéndolo público en el Sitio los términos modificados. Todos los términos modificados entrarán 
 
-registre o posea m&#225;s de una Cuenta. En caso que <b>PluralPet</b> detecte distintas Cuentas 
+en vigor a los 10 (diez) días posteriores a su publicación. En el plazo de los 5 (cinco) días 
 
-que contengan datos coincidentes o relacionados, podr&#225; cancelar, suspender o 
+siguientes a la realización de las publicaciones expresando las modificaciones introducidas 
 
-inhabilitarlas.
+por <b>PluralPet</b>, el Usuario deberá comunicar por e-mail si NO acepta las mismas; en dicho caso 
 
-El Usuario ser&#225; responsable por todas las operaciones efectuadas por su propia Cuenta, 
+quedará disuelto el vínculo contractual y será, por lo tanto, inhabilitado como Usuario. Vencido este 
 
-ya que el acceso a la misma se encuentra restringido al ingreso y uso de su Clave de 
+plazo de los 5 (cinco) días, se considerará que el Usuario acepta los nuevos términos y el contrato 
 
-Seguridad, siendo la misma de conocimiento exclusivo del Usuario. El Usuario se debe 
-
-compromete en notificar a&#160;<b>PluralPet</b>&#160;de forma inmediata y por medio id&#243;neo y 
-
-fehaciente, cualquier uso no autorizado de su Cuenta, as&#237; como el ingreso por terceros 
-
-no autorizados a la misma.
-
-<b>PluralPet</b>&#160;se reserva el derecho de rechazar cualquier solicitud de registraci&#243;n o de 
-
-cancelar una registraci&#243;n que previamente haya sido aceptada, sin que est&#233; obligado a 
-
-comunicar o exponer las razones de su decisi&#243;n, y sin que ello genere alg&#250;n derecho a 
-
-indemnizaci&#243;n o resarcimiento.
-
-<h6>03 - Modificaciones del acuerdo</h6>
-
-<b>PluralPet</b>&#160;podr&#225; modificar los T&#233;rminos y Condiciones Generales en cualquier momento, 
-
-haci&#233;ndolo p&#250;blico en el Sitio los t&#233;rminos modificados. Todos los t&#233;rminos modificados 
-
-entrar&#225;n en vigor a los 10 (diez) d&#237;as posteriores a su publicaci&#243;n. En el plazo de los 5 
-
-(cinco) d&#237;as siguientes a la realizaci&#243;n de las publicaciones expresando las 
-
-modificaciones introducidas por <b>PluralPet</b>, el Usuario deber&#225;&#160;comunicar por e-mail&#160;si NO 
-
-acepta las mismas; en dicho caso quedar&#225; disuelto el v&#237;nculo contractual y ser&#225;, por lo 
-
-tanto, inhabilitado como Usuario.
-
-Vencido este plazo de los 5 (cinco) d&#237;as, se considerar&#225; que el Usuario acepta los 
-
-nuevos t&#233;rminos y el contrato continuar&#225; vinculando a ambas partes.
-
-<h6>04 - Listado de Bienes</h6>
-
+continuará vinculando a ambas partes.
+<h6>
+04 - Listado de Bienes
+</h6>
 <b>4.1 Publicaci&#243;n de bienes y/o servicios.</b> El Usuario deber&#225; ofrecer a la venta, los 
 
 bienes y/o servicios en las categor&#237;as y subcategor&#237;as apropiadas. Las publicaciones 
@@ -210,339 +189,296 @@ de&#160;<b>PluralPet</b>,&#160;o por la ley vigente. Para obtener mayor informac
 servicios prohibidos, se pueden consultar nuestras&#160;Pol&#237;ticas de Art&#237;culos 
 
 Prohibidos&#160;de&#160;<b>PluralPet</b>.
+<h6>
+05 - Privacidad de la Información
+</h6>
+Para poder utilizar los Servicios ofrecidos por <b>PluralPet</b>, cada uno de los Usuarios, deberá facilitar 
 
-<h6>05 - Privacidad de la Informaci&#243;n</h6>
+determinados datos de carácter personal. La presente información personal será procesada y 
 
-Para poder utilizar los Servicios ofrecidos por&#160;<b>PluralPet</b>, cada uno de los Usuarios, 
+almacenada en servidores o medios magnéticos que mantienen altos estándares de seguridad y 
 
-deber&#225; facilitar determinados datos de car&#225;cter personal. La presente informaci&#243;n 
+protección tanto física como tecnológica.
+<h6>
+06 - Obligaciones de los Usuarios
+</h6>
+<b>6.1 Obligaciones del Comprador.</b> Durante el plazo que haya sido fijado por el Usuario Vendedor, 
 
-personal ser&#225; procesada y almacenada en servidores o medios magn&#233;ticos que 
+los Usuarios interesados realizarán ofertas de compra para los bienes y ofertas de contratación 
 
-mantienen altos est&#225;ndares de seguridad y protecci&#243;n tanto f&#237;sica como tecnol&#243;gica.
+para los servicios. La oferta de venta se cierra una vez que vence el plazo establecido o se acaban 
 
-<h6>06 - Obligaciones de los Usuarios</h6>
+las cantidades estipuladas por el Vendedor del bien a ofertar. El Comprador está obligado a 
 
-<b>6.1 Obligaciones del Comprador.</b> Durante el plazo que haya sido fijado por el Usuario 
+intentar comunicarse con el vendedor y completar la operación si ha realizado una oferta por un 
 
-Vendedor, los Usuarios interesados realizar&#225;n ofertas de compra para los bienes y 
+artículo publicado bajo la modalidad de "compra inmediata" o si realizó la oferta más alta, en los 
 
-ofertas de contrataci&#243;n para los servicios. La oferta de venta se cierra una vez que 
+casos en que esta modalidad esté permitida, salvo que la operación esté prohibida por la ley o los 
 
-vence el plazo establecido o se acaban las cantidades estipuladas por el Vendedor del 
+Términos y Condiciones Generales y demás políticas de <b>PluralPet</b>, en cuyo caso no estará 
 
-bien a ofertar.
+obligado a concretar la operación.
 
-El Comprador est&#225; obligado a intentar comunicarse con el vendedor y completar la 
+<b>6.2. Obligaciones del Vendedor.</b> El Usuario Vendedor debe tener capacidad legal para vender el 
 
-operaci&#243;n si ha realizado una oferta por un art&#237;culo publicado bajo la modalidad de 
+bien objeto de su oferta. Dado que <b>PluralPet</b> es un punto de encuentro entre comprador y 
 
-&quot;compra inmediata&quot; o si realiz&#243; la oferta m&#225;s alta, en los casos en que esta modalidad 
+vendedor, y al no participar en las operaciones que se realizan entre ellos, el Vendedor será 
 
-est&#233; permitida, salvo que la operaci&#243;n est&#233; prohibida por la ley o los T&#233;rminos y 
+responsable por todas las obligaciones y cargas impositivas que correspondan por la venta de sus 
 
-Condiciones Generales y dem&#225;s pol&#237;ticas de <b>PluralPet</b>, en cuyo caso no estar&#225; obligado 
+artículos, sin que pudiera imputársele a <b>PluralPet</b> algún tipo de responsabilidad por 
 
-a concretar la operaci&#243;n.<br/><br/>
+incumplimientos en tal sentido. Impuestos. Como ha sido explicado anteriormente, <b>PluralPet</b> sólo 
 
-<b>6.2. Obligaciones del Vendedor.</b> El Usuario Vendedor debe tener capacidad legal para 
+pone a disposición de los Usuarios un espacio virtual que les permite comunicarse mediante 
 
-vender el bien objeto de su oferta.
+Internet para encontrar una forma de vender o comprar mascotas, artículos y/o 
 
-Dado que <b>PluralPet</b> es un punto de encuentro entre comprador y vendedor, y al no 
+servicios. <b>PluralPet</b> NO realiza participación alguna en el proceso de negociación y cumplimiento 
 
-participar en las operaciones que se realizan entre ellos, el Vendedor ser&#225; responsable 
+del contrato definitivo entre las partes. Por lo tanto, <b>PluralPet</b> no es responsable por el efectivo 
 
-por todas las obligaciones y cargas impositivas que correspondan por la venta de sus 
+cumplimiento de las obligaciones fiscales o impositivas establecidas por la ley vigente. Para mayor 
 
-art&#237;culos, sin que pudiera imput&#225;rsele a <b>PluralPet</b> alg&#250;n tipo de responsabilidad por 
+información por favor haz clic aquí.
+<h6>
+07 - Violaciones del Sistema o Bases de Datos
+</h6>
 
-incumplimientos en tal sentido.
+Esta determinantemente PROHIBIDO cualquier acción o uso de dispositivo, software, u otro medio 
 
-Impuestos. Como ha sido explicado anteriormente, <b>PluralPet</b> s&#243;lo pone a disposici&#243;n 
+tendiente a interferir tanto en las actividades y operatoria de <b>PluralPet</b> como en las ofertas, 
 
-de los Usuarios un espacio virtual que les permite comunicarse mediante Internet para 
+descripciones, cuentas o bases de datos de <b>PluralPet</b>. Cualquier intromisión, tentativa o actividad 
 
-encontrar una forma de vender o comprar mascotas, art&#237;culos y/o servicios. <b>PluralPet</b> 
+violatoria o contraria a las leyes sobre derecho de propiedad intelectual y/o a las prohibiciones 
 
-NO realiza participaci&#243;n alguna en el proceso de negociaci&#243;n y cumplimiento del 
+estipuladas en este contrato será responsable de las acciones legales pertinentes, y a las 
 
-contrato definitivo entre las partes. Por lo tanto, <b>PluralPet</b> no es responsable por el 
+sanciones previstas por este acuerdo, así como lo hará responsable de indemnizar los daños y 
 
-efectivo cumplimiento de las obligaciones fiscales o impositivas establecidas por la ley 
+perjuicios ocasionados.
+<h6>
+08 - Sanciones. Suspensión de operaciones
+</h6>
+Sin perjuicio de otras medidas, <b>PluralPet</b> podrá advertir, suspender en forma temporal o inhabilitar 
 
-vigente.
+definitivamente la Cuenta de un Usuario o una publicación, iniciar las acciones que estime 
 
-Para mayor informaci&#243;n por favor haz clic&#160;aqu&#237;.
+pertinentes y/o suspender la prestación de sus Servicios si (a) se quebrantara alguna ley, o 
 
-<h6>07 - Violaciones del Sistema o Bases de Datos</h6>
+cualquiera de las estipulaciones de los Términos y Condiciones Generales y demás políticas 
 
-Esta determinantemente PROHIBIDO cualquier acci&#243;n o uso de dispositivo, software, u 
+de <b>PluralPet</b>; (b) si incumpliera sus compromisos como Usuario; (c) si se incurriera a criterio 
 
-otro medio tendiente a interferir tanto en las actividades y operatoria de&#160;<b>PluralPet</b>&#160;como 
+de <b>PluralPet</b> en conductas o actos dolosos o fraudulentos; (d) no pudiera verificarse la identidad 
 
-en las ofertas, descripciones, cuentas o bases de datos de&#160;<b>PluralPet</b>. Cualquier 
+del Usuario o cualquier información proporcionada por el mismo fuere errónea; (e) <b>PluralPet</b> 
 
-intromisi&#243;n, tentativa o actividad violatoria o contraria a las leyes sobre derecho de 
+entendiera que las publicaciones u otras acciones pueden ser causa de responsabilidad para el 
 
-propiedad intelectual y/o a las prohibiciones estipuladas en este contrato ser&#225; 
+Usuario que las publicó, para <b>PluralPet</b> o para los Usuarios. En el caso de la suspensión o 
 
-responsable de las acciones legales pertinentes, y a las sanciones previstas por este 
+inhabilitación de un Usuario, todos los artículos que tuviera publicados serán removidos del 
 
-acuerdo, as&#237; como lo har&#225; responsable de indemnizar los da&#241;os y perjuicios 
+sistema.
+<h6>
+09 – Responsabilidad
+</h6>
+<b>PluralPet</b> sólo y únicamente pone a disposición de los Usuarios un espacio virtual que les permite 
 
-ocasionados.
+ponerse en comunicación mediante Internet para encontrar una forma de vender o comprar 
 
-<h6>08 - Sanciones. Suspensi&#243;n de operaciones</h6>
+mascotas, servicios o bienes. Por lo tanto, <b>PluralPet</b> no es el propietario de los artículos ofrecidos, 
 
-Sin perjuicio de otras medidas, <b>PluralPet</b> podr&#225; advertir, suspender en forma temporal o 
+no tiene posesión de ellos ni los ofrece en venta. <b>PluralPet</b> tampoco interviene en el 
 
-inhabilitar definitivamente la Cuenta de un Usuario o una publicaci&#243;n, iniciar las acciones 
+perfeccionamiento de las operaciones realizadas entre los Usuarios ni en las condiciones por ellos 
 
-que estime pertinentes y/o suspender la prestaci&#243;n de sus Servicios si (a) se 
+estipuladas para las mismas, por ello NO será responsable respecto de la existencia, calidad, 
 
-quebrantara alguna ley, o cualquiera de las estipulaciones de los T&#233;rminos y 
+cantidad, estado, integridad o legitimidad de los bienes ofrecidos, adquiridos o enajenados por los 
 
-Condiciones Generales y dem&#225;s pol&#237;ticas de <b>PluralPet</b>; (b) si incumpliera sus 
+Usuarios, así como de la capacidad para contratar de los Usuarios o de la veracidad de los Datos 
 
-compromisos como Usuario; (c) si se incurriera a criterio de <b>PluralPet</b> en conductas o 
+Personales por ellos ingresados. Cada Usuario conoce y acepta ser el exclusivo responsable por 
 
-actos dolosos o fraudulentos; (d) no pudiera verificarse la identidad del Usuario o 
+los artículos que publica para su venta y por las ofertas y/o compras que realiza.  Dado a que en el 
 
-cualquier informaci&#243;n proporcionada por el mismo fuere err&#243;nea; (e) <b>PluralPet</b> 
+periodo en el cual el artículo se encuentra ofertado para la venta <b>PluralPet</b> no tiene ninguna 
 
-entendiera que las publicaciones u otras acciones pueden ser causa de responsabilidad 
+participación, ni así en la posterior negociación y perfeccionamiento del contrato definitivo entre las 
 
-para el Usuario que las public&#243;, para <b>PluralPet</b> o para los Usuarios. En el caso de la 
+partes, <b>PluralPet</b> no será responsable en el caso de incumplimiento de las obligaciones asumidas 
 
-suspensi&#243;n o inhabilitaci&#243;n de un Usuario, todos los art&#237;culos que tuviera publicados 
+por los Usuarios en el perfeccionamiento de la operación. El Usuario debe conocer y aceptar que al 
 
-ser&#225;n removidos del sistema.
+realizar operaciones con otros Usuarios o terceros lo hace bajo su propio riesgo. En ningún 
 
-<h6>09 - Responsabilidad</h6>
+caso <b>PluralPet</b> será responsable por lucro cesante, o por cualquier otro daño y/o perjuicio que 
 
-<b>PluralPet</b>&#160;s&#243;lo y &#250;nicamente pone a disposici&#243;n de los Usuarios un espacio virtual que 
+haya podido sufrir el Usuario, debido a las operaciones realizadas o no realizadas por artículos 
 
-les permite ponerse en comunicaci&#243;n mediante Internet para encontrar una forma de 
+publicados a través de <b>PluralPet</b>.  Por lo tanto, <b>PluralPet</b> recomienda a sus Usuarios actuar con 
 
-vender o comprar mascotas, servicios o bienes. Por lo tanto, <b>PluralPet</b>&#160;no es el 
+prudencia y sentido común al momento de realizar operaciones, ya sean personales o con otros 
 
-propietario de los art&#237;culos ofrecidos, no tiene posesi&#243;n de ellos ni los ofrece en 
+Usuarios. El Usuario debe tener presente cuales son los riesgos de contratar con menores o con 
 
-venta.&#160;<b>PluralPet</b>&#160;tampoco interviene en el perfeccionamiento de las operaciones 
+personas que se valgan de una identidad falsa. <b>PluralPet</b> NO será responsable por la realización 
 
-realizadas entre los Usuarios ni en las condiciones por ellos estipuladas para las 
+de ofertas y/o operaciones con otros Usuarios basadas en la confianza depositada en el sistema o 
 
-mismas, por ello NO ser&#225; responsable respecto de la existencia, calidad, cantidad, 
+los Servicios brindados por <b>PluralPet</b>.  En caso que uno o más Usuarios o algún tercero inicien 
 
-estado, integridad o legitimidad de los bienes ofrecidos, adquiridos o enajenados por los 
+cualquier tipo de reclamo o acciones legales contra otro u otros Usuarios, todos y cada uno de los 
 
-Usuarios, as&#237; como de la capacidad para contratar de los Usuarios o de la veracidad de 
+Usuarios involucrados en dichos reclamos o acciones eximen de toda responsabilidad 
 
-los Datos Personales por ellos ingresados. Cada Usuario conoce y acepta ser el 
+a <b>PluralPet</b> y a sus directores, gerentes, empleados, agentes, operarios, representantes y 
 
-exclusivo responsable por los art&#237;culos que publica para su venta y por las ofertas y/o 
+apoderados. En virtud de que el usuario vendedor posee la facultad para eliminar preguntas o 
 
-compras que realiza.&#160;
+impedir a determinados usuario hacer preguntas u ofertas en sus publicaciones, se deja aclarado 
 
-Dado a que en el periodo en el cual el art&#237;culo se encuentra ofertado para la 
+que en estos casos, el usuario será el exclusivo responsable por esa decisión y las consecuencias 
 
-venta&#160;<b>PluralPet</b>&#160;no tiene ninguna participaci&#243;n, ni as&#237; en la posterior negociaci&#243;n y 
+que pudieran acarrear.
+<h6>
+10 - Alcance de los servicios de <b>PluralPet</b>
+</h6>
+Con este acuerdo NO se crea ningún contrato de sociedad, de mandato, de franquicia, o relación 
 
-perfeccionamiento del contrato definitivo entre las partes, <b>PluralPet</b> no ser&#225; responsable 
+laboral entre <b>PluralPet</b> y el Usuario. El Usuario reconoce y acepta que <b>PluralPet</b> no es parte en 
 
-en el caso de  incumplimiento de las obligaciones asumidas por los Usuarios en el 
+ninguna operación, ni tiene control alguno sobre la calidad, seguridad o legalidad de los artículos 
 
-perfeccionamiento de la operaci&#243;n. El Usuario debe conocer y aceptar que al realizar 
+anunciados, la veracidad o exactitud de los anuncios, la capacidad de los Usuarios para vender o 
 
-operaciones con otros Usuarios o terceros lo hace bajo su propio riesgo. En ning&#250;n 
+comprar artículos. <b>PluralPet</b> no puede asegurar, y por lo tanto no se hace responsable, que un 
 
-caso&#160;<b>PluralPet</b>&#160;ser&#225; responsable por lucro cesante, o por cualquier otro da&#241;o y/o 
+Usuario completará una operación ni podrá verificar la identidad o Datos Personales ingresados 
 
-perjuicio que haya podido sufrir el Usuario, debido a las operaciones realizadas o no 
+por los Usuarios. <b>PluralPet</b> NO garantiza la veracidad de la publicidad de terceros que aparezca 
 
-realizadas por art&#237;culos publicados a trav&#233;s de&#160;<b>PluralPet</b>.&#160;
+en el sitio y NO será responsable por la correspondencia o contratos que el Usuario celebre con 
 
-Por lo tanto, <b>PluralPet</b>&#160;recomienda a sus Usuarios actuar con prudencia y sentido 
+dichos terceros o con otros Usuarios.
+<h6>
+11 - Fallas en el sistema
+</h6>
+<b>PluralPet</b> no es responsable por cualquier daño, perjuicio o pérdida causados al Usuario por fallas 
 
-com&#250;n al momento de realizar operaciones, ya sean personales o con otros Usuarios. El 
+en el sistema, en el servidor o en Internet. <b>PluralPet</b> tampoco será responsable por cualquier virus 
 
-Usuario debe tener presente cuales son los riesgos de contratar con menores o con 
+que pudiera infectar el equipo del Usuario como consecuencia del acceso, uso o examen de su 
 
-personas que se valgan de una identidad falsa.&#160;<b>PluralPet</b>&#160;NO ser&#225; responsable por la 
+sitio web o a raíz de cualquier transferencia de datos, archivos, imágenes, textos, o audio 
 
-realizaci&#243;n de ofertas y/o operaciones con otros Usuarios basadas en la confianza 
+contenidos en el mismo. Los Usuarios NO podrán imputarle responsabilidad alguna, ni exigir pago 
 
-depositada en el sistema o los Servicios brindados por&#160;<b>PluralPet</b>.&#160;
+por lucro cesante o perdido de chance, en virtud de perjuicios resultantes de dificultades técnicas o 
 
-En caso que uno o m&#225;s Usuarios o alg&#250;n tercero inicien cualquier tipo de reclamo o 
-
-acciones legales contra otro u otros Usuarios, todos y cada uno de los Usuarios 
-
-involucrados en dichos reclamos o acciones eximen de toda responsabilidad 
-
-a&#160;<b>PluralPet</b>&#160;y a sus directores, gerentes, empleados, agentes, operarios, representantes 
-
-y apoderados.
-
-En virtud de que el usuario vendedor posee la facultad para eliminar preguntas o impedir 
-
-a determinados usuario hacer preguntas u ofertas en sus publicaciones, se deja 
-
-aclarado que en estos casos, el usuario ser&#225; el exclusivo responsable por esa decisi&#243;n y 
-
-las consecuencias que pudieran acarrear.
-
-<h6>10 - Alcance de los servicios de PluralPet</h6>
-
-Con este acuerdo NO se crea ning&#250;n contrato de sociedad, de mandato, de franquicia, o 
-
-relaci&#243;n laboral entre&#160;<b>PluralPet</b>&#160;y el Usuario. El Usuario reconoce y acepta 
-
-que&#160;<b>PluralPet</b>&#160;no es parte en ninguna operaci&#243;n, ni tiene control alguno sobre la calidad, 
-
-seguridad o legalidad de los art&#237;culos anunciados, la veracidad o exactitud de los 
-
-anuncios, la capacidad de los Usuarios para vender o comprar art&#237;culos.&#160;<b>PluralPet</b>&#160;no 
-
-puede asegurar, y por lo tanto no se hace responsable, que un Usuario completar&#225; una 
-
-operaci&#243;n ni podr&#225; verificar la identidad o Datos Personales ingresados por los 
-
-Usuarios.&#160;<b>PluralPet</b>&#160;NO garantiza la veracidad de la publicidad de terceros que 
-
-aparezca en el sitio y NO ser&#225; responsable por la correspondencia o contratos que el 
-
-Usuario celebre con dichos terceros o con otros Usuarios.
-
-<h6>11 - Fallas en el sistema</h6>
-
-<b>PluralPet</b>&#160;no es responsable por cualquier da&#241;o, perjuicio o p&#233;rdida causados al Usuario 
-
-por fallas en el sistema, en el servidor o en Internet.&#160;<b>PluralPet</b> tampoco ser&#225; 
-
-responsable por cualquier virus que pudiera infectar el equipo del Usuario como 
-
-consecuencia del acceso, uso o examen de su sitio web o a ra&#237;z de cualquier 
-
-transferencia de datos, archivos, im&#225;genes, textos, o audio contenidos en el mismo. Los 
-
-Usuarios NO podr&#225;n imputarle responsabilidad alguna, ni exigir pago por lucro cesante o 
-
-perdida de chance, en virtud de perjuicios resultantes de dificultades t&#233;cnicas o fallas en 
-
-los sistemas o en Internet.&#160;<b>PluralPet</b>&#160;no garantiza el acceso y uso continuado e 
+fallas en los sistemas o en Internet. <b>PluralPet</b> no garantiza el acceso y uso continuado e 
 
 ininterrumpido de su sitio. El sistema puede eventualmente no estar disponible debido a 
 
-dificultades t&#233;cnicas o fallas de Internet, o por cualquier otra circunstancia ajena 
+dificultades técnicas o fallas de Internet, o por cualquier otra circunstancia ajena a <b>PluralPet</b>; en 
 
-a&#160;<b>PluralPet</b>; en tales casos se procurar&#225; restablecerlo con la mayor celeridad posible sin 
+tales casos se procurará restablecerlo con la mayor celeridad posible sin que por ello pueda 
 
-que por ello pueda imput&#225;rsele alg&#250;n tipo de responsabilidad. <b>PluralPet</b>&#160;NO ser&#225; 
+imputársele algún tipo de responsabilidad. <b>PluralPet</b> NO será responsable por ningún error u 
 
-responsable por ning&#250;n error u omisi&#243;n contenidos en su sitio web.
+omisión contenidos en su sitio web.
+<h6>
+12 - Tarifas. Facturación
+</h6>
+La registración en <b>PluralPet</b> es gratuita. <b>PluralPet</b> se reserva el derecho de modificar, cambiar, 
 
-<h6>12 - Tarifas. Facturaci&#243;n</h6>
+agregar, o eliminar las tarifas vigentes, en cualquier momento. Cada modificación será notificada a 
 
-La registraci&#243;n en&#160;<b>PluralPet</b>&#160;es gratuita.
+los Usuarios, en la forma establecida en la página. <b>PluralPet</b> podrá modificar temporalmente la 
 
-<b>PluralPet</b>&#160;se reserva el derecho de modificar, cambiar, agregar, o eliminar las tarifas 
+Política de Tarifas y las tarifas por sus servicios por razón de promociones, efectivizándose las 
 
-vigentes, en cualquier momento. Cada modificaci&#243;n ser&#225; notificada a los Usuarios, en la 
+pertinentes modificaciones cuando se haga pública la promoción o se realice el anuncio.
+<h6>
+13 – Verificación de identidad
+</h6>
+Entendiendo que la verificación de la identidad de los Usuarios en Internet es sumamente difícil de 
 
-forma establecida en la p&#225;gina. <b>PluralPet</b>&#160;podr&#225; modificar temporalmente la Pol&#237;tica de 
+efectuar, <b>PluralPet</b> no puede ni debe confirmar la identidad pretendida de cada Usuario. Los 
 
-Tarifas y las tarifas por sus servicios por raz&#243;n de promociones, efectiviz&#225;ndose las 
+comentarios y réplicas realizados por los Usuarios, serán incluidos bajo exclusiva responsabilidad 
 
-pertinentes modificaciones cuando se haga p&#250;blica la promoci&#243;n o se realice el anuncio.
+de los Usuarios que los emitan. <b>PluralPet</b> NO tiene la obligación de verificar la veracidad o 
 
-<h6>13 - Sistema de reputaci&#243;n</h6>
+exactitud de los mismos y NO se responsabiliza por los dichos allí vertidos por cualquier Usuario, 
 
-Entendiendo que la verificaci&#243;n de la identidad de los Usuarios en Internet es 
+por las ofertas de compras o ventas que los Usuarios realicen teniéndolos en cuenta por la 
 
-sumamente dif&#237;cil de efectuar, <b>PluralPet</b> no puede ni debe confirmar la identidad 
+confianza depositada por cualquier comentario expresado dentro del sitio o a través de cualquier 
 
-pretendida de cada Usuario.
+otro medio, incluido el correo electrónico. <b>PluralPet</b> se reserva el derecho de eliminar aquellos 
 
-Los  comentarios y r&#233;plicas realizados por los Usuarios, ser&#225;n incluidos bajo exclusiva 
+comentarios que sean considerados inadecuados u ofensivos. <b>PluralPet</b> mantiene el derecho de 
 
-responsabilidad de los Usuarios que los emitan. <b>PluralPet</b> NO tiene la obligaci&#243;n de 
-
-verificar la veracidad o exactitud de los mismos y NO se responsabiliza por los dichos all&#237; 
-
-vertidos por cualquier Usuario, por las ofertas de compras o ventas que los Usuarios 
-
-realicen teni&#233;ndolos en cuenta por la confianza depositada por cualquier comentario 
-
-expresado dentro del sitio o a trav&#233;s de cualquier otro medio, incluido el correo 
-
-electr&#243;nico. <b>PluralPet</b> se reserva el derecho de eliminar aquellos comentarios que sean 
-
-considerados inadecuados u ofensivos. <b>PluralPet</b> mantiene el derecho de excluir a 
-
-aquellos Usuarios que sean objeto de comentarios negativos provenientes de fuentes 
+excluir a aquellos Usuarios que sean objeto de comentarios negativos provenientes de fuentes 
 
 distintas.
+<h6>
+14 - Propiedad intelectual. Enlaces
+</h6>
+Los contenidos de las pantallas relativas a los servicios de <b>PluralPet</b> como así también los 
 
-<h6>14 - Propiedad intelectual. Enlaces</h6>
+programas, bases de datos, redes, archivos que permiten al Usuario acceder y usar su Cuenta, son 
 
-Los contenidos de las pantallas relativas a los servicios de&#160;<b>PluralPet</b>&#160;como as&#237; tambi&#233;n 
+de propiedad pura y exclusiva de <b>PluralPet</b> y están protegidas por las leyes y los tratados 
 
-los programas, bases de datos, redes, archivos que permiten al Usuario acceder y usar 
+internacionales de derecho de autor, marcas, patentes, modelos y diseños industriales. El uso 
 
-su Cuenta, son de propiedad pura y exclusiva de&#160;<b>PluralPet</b>&#160;y est&#225;n protegidas por las 
+indebido y la reproducción total o parcial de dichos contenidos quedan prohibidos, salvo 
 
-leyes y los tratados internacionales de derecho de autor, marcas, patentes, modelos y 
+autorización expresa y por escrito de <b>PluralPet</b>. El Sitio puede contener enlaces a otros sitios web, 
 
-dise&#241;os industriales. El uso indebido y la reproducci&#243;n total o parcial de dichos 
+lo cual NO indica que sean propiedad u operados por <b>PluralPet</b>. En virtud que <b>PluralPet</b> no tiene 
 
-contenidos quedan prohibidos, salvo autorizaci&#243;n expresa y por escrito de&#160;<b>PluralPet</b>.
+control sobre tales sitios, NO será responsable por los contenidos, materiales, acciones y/o 
 
-El Sitio puede contener enlaces a otros sitios web, lo cual NO indica que sean propiedad 
+servicios prestados por los mismos, ni por daños o pérdidas ocasionadas por la utilización de los 
 
-u operados por&#160;<b>PluralPet</b>. En virtud que <b>PluralPet</b>&#160;no tiene control sobre tales sitios, NO 
+mismos, sean causadas directa o indirectamente. La presencia de enlaces a otros sitios web no 
 
-ser&#225; responsable por los contenidos, materiales, acciones y/o servicios prestados por los 
+implica una sociedad, relación, aprobación, respaldo de <b>PluralPet</b> a dichos sitios y sus contenidos.
+<h6>
+15 – Indemnización
+</h6>
+El Usuario indemnizará y mantendrá indemne a <b>PluralPet</b>, sus filiales, empresas controladas y/o 
 
-mismos, ni por da&#241;os o p&#233;rdidas ocasionadas por la utilizaci&#243;n de los mismos, sean 
+controlantes, directivos, administradores, representantes y empleados, por cualquier reclamo o 
 
-causadas directa o indirectamente. La presencia de enlaces a otros sitios web no implica 
+demanda de otros Usuarios o terceros, por sus actividades en el Sitio o por incumplimiento de los 
 
-una sociedad, relaci&#243;n, aprobaci&#243;n, respaldo de&#160;<b>PluralPet</b>&#160;a dichos sitios y sus 
+Términos y Condiciones Generales y demás Políticas que se entienden incorporadas al presente, o 
 
-contenidos.
+por la violación de cualesquiera leyes o derechos de terceros, incluyendo los honorarios de 
 
-<h6>15 - Indemnizaci&#243;n</h6>
+abogados en una cantidad razonable.
+<h6>
+16 - Jurisdicción y Ley Aplicable
+</h6>
+Este acuerdo estará regido en todos sus puntos por las leyes vigentes en la República Oriental del 
 
-El Usuario indemnizar&#225; y mantendr&#225; indemne a&#160;<b>PluralPet</b>, sus filiales, empresas 
+Uruguay. Cualquier controversia derivada del presente acuerdo ya se por su existencia, validez, 
 
-controladas y/o controlantes, directivos, administradores, representantes y empleados, 
+interpretación, alcance o cumplimiento, será sometida a la competencia de los tribunales ordinarios 
 
-por cualquier reclamo o demanda de otros Usuarios o terceros, por sus actividades en 
-
-el Sitio o por  incumplimiento de los T&#233;rminos y Condiciones Generales y dem&#225;s 
-
-Pol&#237;ticas que se entienden incorporadas al presente, o por la violaci&#243;n de cualesquiera 
-
-leyes o derechos de terceros, incluyendo los honorarios de abogados en una cantidad 
-
-razonable.
-
-<h6>18 - Jurisdicci&#243;n y Ley Aplicable</h6>
-
-Este acuerdo estar&#225; regido en todos sus puntos por las leyes vigentes en la Rep&#250;blica 
-
-Oriental del Uruguay.
-
-Cualquier controversia derivada del presente acuerdo ya se por su existencia, validez, 
-
-interpretaci&#243;n, alcance o cumplimiento, ser&#225; sometida a la competencia de los tribunales 
-
-ordinarios de la Ciudad de Montevideo.
-
-<h6>Art&#237;culos Prohibidos</h6>
-
+de la Ciudad de Montevideo.
+<h6>
+Artículos Prohibidos
+</h6>
 &#218;ltima actualizaci&#243;n 22/08/2014<br/>
 
 A continuaci&#243;n se realizara un listado de productos y servicios cuyo <b>ofrecimiento, 

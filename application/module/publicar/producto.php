@@ -72,17 +72,16 @@ $publication_hash = substr( md5(rand()), 0, 10);
                 <div style="clear:both"></div>
             </div>
             
-            <div class="datos_obligatorios">* Todos los datos obligatorios</div>
+            <div class="datos_obligatorios">* Campos obligatorios</div>
             
             <form id="form_description" action="/publicar/addProducto/" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>
                 <div style="position:relative;padding:40px">
                     
                     <div class="publicar_item">
-                        <div class="publicar_item_header">Ubicacion y Contacto</div>
+                        <div class="publicar_item_header">Ubicacion y Contacto *</div>
                         <div class="publicar_sub_item">
-                            <div style="height:45px;width:100%">
-                                <label>Departamento </label>
+                                <label>Departamento *</label>
                                 <select class="departamento" name="departamento" style="margin-left:-4px;width:300px;">
                                     <option></option>
                                     <?php
@@ -93,7 +92,8 @@ $publication_hash = substr( md5(rand()), 0, 10);
                                         }
                                     ?>
                                 </select><br/>
-                            </div>
+                        </div>
+                        <div class="publicar_sub_item">
                             <div style="height:45px;width:100%">
                                 <label>Ciudad/Barrio</label>
                                 <select class="ciudad_barrio" name="ciudad_barrio" style="display:none;margin-left:-4px;width:300px;">
@@ -104,9 +104,9 @@ $publication_hash = substr( md5(rand()), 0, 10);
                     </div>
                    
                     <div class="publicar_item">
-                        <div class="publicar_item_header">Descripcion</div>
+                        <div class="publicar_item_header">Descripcion *</div>
                         <div class="publicar_sub_item">
-                            <label>Precio</label>
+                            <label>Precio *</label>
                             <select class="moneda" name="moneda" style="width:70px;margin-left:-5px;margin-top:-5px;">
                                 <option value="uy">$</option>
                                 <option value="us">US$</option>
@@ -114,7 +114,8 @@ $publication_hash = substr( md5(rand()), 0, 10);
                             <input style="margin-left:5px;width:222px;" name="precio" type="text"/><br/>
                         </div>
                         <div class="publicar_sub_item">
-                            <label>Titulo</label><input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
+                            <label>Titulo *</label>
+                            <input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
                         </div>
                         <div class="publicar_sub_item">
                             <div>

@@ -98,11 +98,23 @@ class AccountController extends Controller{
             if(strcmp($referer[4],'nueva_contrasena')===0){
                 header('Location: /account/');
             }else{
-                header('Location: '.$_SERVER['HTTP_REFERER']);
+                if(isset($_SESSION['referrer'])){
+                    $s = $_SESSION['referrer'];
+                    unset($_SESSION['referrer']);
+                    header('Location: '.$s);
+                }else{
+                    header('Location: '.$_SERVER['HTTP_REFERER']);
+                }
             }
         }
         else{
-            $this->view->assign(array('invalid'=>true));
+            $args = $this->request->getArgs();
+            if($args[0]==='1'){
+                $this->view->assign(array('contactar'=>true));
+                $_SESSION['referrer']=$_SERVER['HTTP_REFERER'];
+            }else{
+                $this->view->assign(array('invalid'=>true));
+            }
             $this->view->setFile('login');
             $this->view->render();
         }

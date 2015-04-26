@@ -46,7 +46,7 @@
                 </form>
                 <div style="clear:both"></div>
             </div>
-            <div class="datos_obligatorios">* Todos los datos obligatorios</div>
+            <div class="datos_obligatorios">* Campos obligatorios</div>
             <form id="form_description" action="/publicar/addAnuncio/" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="publication_hash" value="<?php echo $publication_hash; ?>"/>
                 <div style="position:relative;padding:40px">
@@ -59,51 +59,52 @@
                     </div>
                     -->
                     <div class="publicar_item">
-                        <div class="publicar_item_header">Ubicacion y contacto</div>
+                        <div class="publicar_item_header">Ubicacion y contacto *</div>
                         <div class="publicar_sub_item">
                             <!--
                             <div style="display:none;height:45px;width:100%" class="emergencia">
                                 <label>Telefono de Emergencia </label><input name="telefono" type="text"/>
                             </div>
                             -->
-                            <div style="height:45px;width:100%">
+                            
                                 <label class="horario">Horario </label><input name="horario" type="text"/>
-                            </div>
-                            <div style="height:45px;width:100%">
-                                <label>Departamento </label>
-                                <select class="departamento" name="departamento" style="margin-left:-4px;width:300px;">
-                                    <option></option>
-                                    <?php
-                                       $counter = 0;
-                                        foreach($GLOBALS['departamento'] as $key=>$row){
-                                            echo '<option value="'.$key.'">'.$key.'</option>';
-                                            $counter++;
-                                        }
-                                    ?>
-                                </select><br/>
-                            </div>
-                            <div style="height:45px;width:100%">
-                                <label>Ciudad/Barrio</label>
-                                <select class="ciudad_barrio" name="ciudad_barrio" style="display:none;margin-left:-4px;width:300px;">
-                                    <option></option>
-                                </select><br/>
-                            </div>
-                            <div class="direccion" style="height:45px;width:100%">
-                                <label>Direcci&oacute;n </label><input name="direccion" type="text"/>
-                            </div>
+                        </div>
+                        <div class="publicar_sub_item">
+                            <label>Departamento *</label>
+                            <select class="departamento" name="departamento" style="margin-left:-4px;width:300px;">
+                                <option></option>
+                                <?php
+                                   $counter = 0;
+                                    foreach($GLOBALS['departamento'] as $key=>$row){
+                                        echo '<option value="'.$key.'">'.$key.'</option>';
+                                        $counter++;
+                                    }
+                                ?>
+                            </select><br/>
+                            
+                        </div>
+                        <div class="publicar_sub_item">
+                            <label>Ciudad/Barrio</label>
+                            <select class="ciudad_barrio" name="ciudad_barrio" style="display:none;margin-left:-4px;width:300px;">
+                                <option></option>
+                            </select><br/>
+                        </div>
+                        <div class="publicar_sub_item">
+                            <label>Direcci&oacute;n </label><input name="direccion" type="text"/>
                         </div>
                     </div>
 
                     <div class="publicar_item">
-                        <div class="publicar_item_header">Describe tu servicio</div>
+                        <div class="publicar_item_header">Describe tu servicio *</div>
                         <div class="publicar_sub_item">
-                            <label>Titulo</label><input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
-                            <div>
-                                <label style="margin-bottom:10px;">Describe tu servicio</label><br/>
-                                <div style="position:relative;margin-left:-3px;vertical-align: middle;display:inline-block;width:100%;">
-                                    <textarea id="nicedit_text" style="width:100%;height:250px;"></textarea>
-                                    <span style="position:absolute;top:0px;right:0px;" class="input_error"></span>
-                                </div>
+                            <label>Titulo *</label>
+                            <input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
+                        </div>
+                        <div class="publicar_sub_item">
+                            <label style="margin-bottom:10px;">Describe tu servicio</label><br/>
+                            <div style="position:relative;margin-left:-3px;vertical-align: middle;display:inline-block;width:100%;">
+                                <textarea id="nicedit_text" style="width:100%;height:250px;"></textarea>
+                                <span style="position:absolute;top:0px;right:0px;" class="input_error"></span>
                             </div>
                         </div>
                     </div>

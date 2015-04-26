@@ -21,7 +21,7 @@
 
     <script src="<?php echo PUBLIC_PATH; ?>vendor/lightbox/js/lightbox.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/lightbox/css/lightbox.css"/>
-    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <?php echo $head_tags; ?>
     
     <script src=""></script>

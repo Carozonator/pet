@@ -41,7 +41,7 @@ if(in_array($_POST['tab'],$check1)){
 </div>
 
 <div class="datos_obligatorios">
-    * Todos los datos obligatorios
+    * Campos obligatorios
 </div>
 
 <form action="/publicar/addMascota/" id="form_description" method="post" enctype="multipart/form-data">
@@ -59,7 +59,7 @@ if(in_array($_POST['tab'],$check1)){
         </div>
         -->
         <div class="publicar_item">
-            <div class="publicar_item_header"><?php echo $GLOBALS['raza_o_animal'][$animal]; ?></div>
+            <div class="publicar_item_header"><?php echo $GLOBALS['raza_o_animal'][$animal]; ?> *</div>
             <div class="publicar_sub_item">
                 <select class="animal_detail" name="animal_detail" style="width:200px;">
                     <?php
@@ -85,7 +85,7 @@ if(in_array($_POST['tab'],$check1)){
         <?php } ?>
         
         <div class="publicar_item item_sexo">
-            <div class="publicar_item_header">Sexo</div>
+            <div class="publicar_item_header">Sexo *</div>
             <div class="publicar_sub_item">
                 <input type="radio" name="sexo" value="macho"/> Macho<br/>
                 <input type="radio" name="sexo" value="hembra"/> Hembra<br/>
@@ -94,7 +94,7 @@ if(in_array($_POST['tab'],$check1)){
         </div>
         
         <div class="publicar_item item_edad">
-            <div class="publicar_item_header">Edad</div>
+            <div class="publicar_item_header">Edad *</div>
             <?php if($detalles[$animal] && in_array('edad', $detalles[$animal])){?>
             <div class="publicar_sub_item">
                 <input type="radio" name="edad" value="junior"/> Junior <span class="gristxt">(0 a 12 meses)</span><br/>
@@ -111,7 +111,7 @@ if(in_array($_POST['tab'],$check1)){
         </div>
         <?php if($detalles[$animal] && in_array('tamano', $detalles[$animal])){?>
         <div class="publicar_item item_tamano">
-            <div class="publicar_item_header">Tama&ntilde;o</div>
+            <div class="publicar_item_header">Tama&ntilde;o *</div>
             <div class="publicar_sub_item">
                 <input type="radio" name="tamano" value="peque&ntilde;o"/> Peque&ntilde;o <span class="gristxt">(0 a 14kg)</span><br/>
                 <input type="radio" name="tamano" value="mediano"/> Mediano <span class="gristxt">(14 a 40kg)</span><br/>
@@ -120,10 +120,10 @@ if(in_array($_POST['tab'],$check1)){
         </div>
         <?php } ?>
         <div class="publicar_item">
-            <div class="publicar_item_header">Ubicaci&oacute;n y Contacto</div>
+            <div class="publicar_item_header">Ubicaci&oacute;n y Contacto *</div>
             <div class="publicar_sub_item">
                 <div style="height:45px;width:100%">
-                    <label>Departamento </label>
+                    <label>Departamento *</label>
                     <select class="departamento" name="departamento" style="margin-left:-4px;width:300px;">
                         <option></option>
                         <?php
@@ -135,6 +135,8 @@ if(in_array($_POST['tab'],$check1)){
                         ?>
                     </select><br/>
                 </div>
+            </div>
+            <div class="publicar_sub_item">
                 <div style="height:45px;width:100%">
                     <label>Ciudad/Barrio</label>
                     <select class="ciudad_barrio" name="ciudad_barrio" style="display:none;margin-left:-4px;width:300px;">
@@ -163,10 +165,10 @@ if(in_array($_POST['tab'],$check1)){
         </div>
         <?php } ?>
         <div class="publicar_item">
-            <div class="publicar_item_header">Describe tu mascota</div>
+            <div class="publicar_item_header">Describe tu mascota *</div>
             <?php if($precio){?>
             <div class="publicar_sub_item">
-                <label>Precio</label>
+                <label>Precio *</label>
                 <select class="moneda" name="moneda" style="width:70px;margin-left:-5px;margin-top:-5px;">
                     <option value="uy">$</option>
                     <option value="us">US$</option>
@@ -175,7 +177,7 @@ if(in_array($_POST['tab'],$check1)){
             </div>
             <?php } ?>
             <div class="publicar_sub_item">
-                <label>Titulo</label><input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
+                <label>Titulo *</label><input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
             </div>
             <div class="publicar_sub_item" style="margin-top:10px;">
                 <div>

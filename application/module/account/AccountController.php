@@ -112,6 +112,8 @@ class AccountController extends Controller{
             if($args[0]==='1'){
                 $this->view->assign(array('contactar'=>true));
                 $_SESSION['referrer']=$_SERVER['HTTP_REFERER'];
+            }else if($args[0]==='2'){
+                $_SESSION['referrer']='/';
             }else{
                 $this->view->assign(array('invalid'=>true));
             }

@@ -1,3 +1,15 @@
+
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
+
+
+
+
+
 function today(){
     var d = new Date();
 
@@ -495,14 +507,32 @@ Register = {
         var register_h = $('#register').height();
         var to_h = (h-register_h)/2;
         
-        if(h<register_h){
-            to_h=0;
-            $('#register').css({height:h});
+        if(h-100<register_h){
+            to_h=50;
+            $('#register').css({height:h-100});
         }
         
         $('#register').css({top:to_h,left:w/2,display:''});
         $('#register').show();
+    },
+    
+    popup: function(){
+        $('.overlay').show();
+        var w = $('body').width();
+        var h = $('body').height();
+        
+        var register_h = $('#popup_registracion').height();
+        var to_h = (h-register_h)/2;
+        
+        if(h-100<register_h){
+            to_h=50;
+            $('#popup_registracion').css({height:h-100});
+        }
+        
+        $('#popup_registracion').css({top:to_h,left:w/2,display:''});
+        $('#popup_registracion').show();
     }
+    
 };
 
 

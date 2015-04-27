@@ -27,7 +27,21 @@
     <script src=""></script>
     <script type="text/javascript">
             $(document).ready(function(){
+                
                     Publicar.user_logged_in = <?php echo (isset($_SESSION['user'])?'true':'false'); ?>;
+                    var visit=getCookie("FIRST_VISIT");
+                    
+                    
+                    if(Publicar.user_logged_in==false && window.location.pathname=='/' && typeof visit=='undefined'){
+                        Register.popup();
+                    }
+                    
+                    if(typeof visit=='undefined' &&  window.location.pathname=='/'){
+                        var expire=new Date();
+                        expire=new Date(expire.getTime()+7776000000);
+                        document.cookie="FIRST_VISIT=true; expires="+expire;
+                    }
+                    
                     $('.dropdown-menu').click(function(event) {
                         event.stopPropagation();
                         $('.dropdown').hide();

@@ -91,5 +91,10 @@
 <?php include ROOT.'application/include/registracion.php'; ?>
 <div id="empty_box" class="overlay_box"><div class="overlay_box_inner"></div><div class="overlay_close" onclick="closeOverlay();">X</div></div>
 <div class="overlay" onclick="closeOverlay();"></div>
+<div id="popup_registracion" class="overlay_box">
+    <img src="/media/popup.jpg"/>
+    <div style="position:absolute;bottom:0px;right:0px;width:120px;height:40px;cursor:pointer" onclick="closeOverlay();"></div>
+    <div style="position:absolute;top:90px;left:130px;width:330px;height:210px;cursor:pointer;" onclick="window.location='/account/login/2'"></div>
+</div>
 </body>
 </html>

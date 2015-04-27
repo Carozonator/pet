@@ -607,7 +607,10 @@ box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.53);
 
 
 
-
+.overlay_box#popup_registracion{
+    width:600px;
+    margin-left:-300px;
+}
 .overlay_box{
     z-index:20;
     position:fixed;
@@ -620,6 +623,7 @@ box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.53);
     margin-left:-200px;
     width:400px;
     overflow:auto;
+    border-radius:5px;
 }
 .overlay_box>div.publicar{
     border:1px solid gainsboro;
@@ -635,7 +639,7 @@ box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.53);
     padding:30px;
 }
 .overlay{
-    opacity:.3;
+    opacity:.6;
     background-color:black;
     width:100%;
     height:100%;

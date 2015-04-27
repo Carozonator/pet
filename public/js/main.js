@@ -520,8 +520,8 @@ Register = {
         $('.overlay').show();
         var w = $('body').width();
         var h = $('body').height();
-        alert(h);
-        var register_h = $('#popup_registracion').height();
+        
+        var register_h = 540;
         var to_h = (h-register_h)/2;
         
         if(h-100<register_h){

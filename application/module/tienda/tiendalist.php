@@ -139,7 +139,7 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
                                 </form>
                             </div>
                         </div>
-                        <div style="clear:both"></div>
+                        <div style="clear:both"> </div>
                     </div>
         
 
@@ -149,5 +149,4 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
         
         <?php include ROOT.'application/include/pagination.php'; ?>
         
-    </div><div style="clear:both"></div></div>';
-?>
+    </div><div style="clear:both"></div></div>

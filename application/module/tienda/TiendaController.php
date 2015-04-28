@@ -40,7 +40,7 @@ class TiendaController extends Controller{
         
         $mascota = new \pluralpet\Producto();
         $result = $mascota->filter($fill);
-        
+        //test
         $list_count = count($result);
         $result = array_slice($result, $page*RESULTS_PER_PAGE,RESULTS_PER_PAGE);
         

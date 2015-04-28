@@ -47,8 +47,15 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('mamifero'=>'Peque&ntilde;os mamiferos'),
                                                             array('otro'=>'Otros')
                                 ),'tienda'=> array(
-                                                            array('producto' => 'Ir a la tienda'),
-                                                            array('ofertas' => 'Ofertas del dia')
+                                                            /*array('producto' => 'Ir a la tienda')*/
+                                                            array('perro'=>'Perros'),
+                                                            array('gato'=>'Gatos'),
+                                                            array('ave'=>'Aves'),
+                                                            array('reptil'=>'Reptiles'),
+                                                            array('pez'=>'Peces'),
+                                                            array('mamifero'=>'Peque&ntilde;os mamiferos'),
+                                                            array('otro'=>'Otros'),
+                                                            /*array('ofertas' => 'Ofertas del dia')*/
                                 ),'adoptar'=> array(
                                                             array('perro'=> 'Perros'),
                                                             array('gato'=> 'Gatos'),

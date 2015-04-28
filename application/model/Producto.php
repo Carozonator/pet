@@ -122,6 +122,56 @@ class Producto extends Model{
         return $affected_rows;
     }
     
+    
+    
+    
+    
+    
+    
+    function filter($vals){
+       
+        $orden = $vals['orden'];
+        unset($vals['orden']);
+        switch($orden){
+            case 'barato':
+                $order_by = "ORDER BY precio_sum";
+            break;
+            case 'caro':
+                $order_by = "ORDER BY precio_sum DESC";
+            break;
+            case 'visitas':
+                $order_by = "ORDER BY views DESC";
+            break;
+            default:
+                $order_by = "ORDER BY id DESC";
+            break;
+        }
+        $order_by.=", foto.photo_order";
+            
+        
+        foreach($vals as $rows){
+            $vals_decoded[]=urldecode($rows);
+        }
+        
+        if(!empty($vals)){
+            $stmt = "WHERE ".implode("=? and ",array_keys($vals))."=? ";
+        }
+        
+        //adjust _table accordingly 
+        $sql =    "SELECT producto.*, foto.name as foto_name, foto.usuario as foto_usuario, foto.photo_order "
+                . "FROM producto "
+                . "LEFT OUTER JOIN (SELECT name, usuario,photo_order,publication_id FROM foto WHERE _table='producto' order by photo_order) "
+                . "AS foto on foto.publication_id=producto.id "
+                . "$stmt "
+                . "$sexo_stmt "
+                . "group by producto.id "
+                . "$order_by ";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($vals_decoded);
+        $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $rows;
+    }
+    /*
     function filter($vals){
         foreach($vals as $rows){
             $vals_decoded[]=urldecode($rows);
@@ -133,5 +183,5 @@ class Producto extends Model{
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
     }
-    
+    */
 }

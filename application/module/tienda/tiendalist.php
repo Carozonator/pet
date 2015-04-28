@@ -11,10 +11,13 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
 ?>
 <div style="margin-top:40px">
     <div class="publicar" style='margin:0px 20px 0px 0px;width:20%;float:left;'>
-        <form action="/tienda/filtro/" method="GET" id="filter">
+        <form action="" method="GET" id="filter">
             <!--<input type="hidden" value="<?php echo $animal; ?>" name="animal"/>
             <input type="hidden" value="<?php echo $tab; ?>" name="tab"/>-->
-            <div class="filter_title"><div class="publicar_item_header"><?php echo 'Animal'; ?><!--<span onclick="Filter.unfilter('animal')">x</span>--></div></div>
+            <!--
+            <div class="filter_title">
+                <div class="publicar_item_header"><?php echo 'Animal'; ?><span onclick="Filter.unfilter('animal')">x</span></div>
+            </div>
             <div class="filter_desc">
                 <select class="animal" name="animal" style="width:100%;">
                     <option></option>
@@ -33,8 +36,8 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
                 </select>
             </div>
             <div class="filter_title" style="<?php if(empty($_REQUEST['animal'])){echo 'display:none;';}?>">
-                <div class="publicar_item_header producto"><?php echo 'Producto'; ?><!--<span onclick="Filter.unfilter('tab')">x</span>--></div>
-            </div>
+                <div class="publicar_item_header producto"><?php echo 'Producto'; ?><span onclick="Filter.unfilter('tab')">x</span></div>
+            </div>-->
             <div class="filter_desc producto" style="<?php if(empty($_REQUEST['animal'])){echo 'display:none;';}?>">
                 <select class="tab" name="tab" style="width:100%;">
                     <option></option>
@@ -95,52 +98,56 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
             </div>
         </form>
     </div>
-    <div style="width:75%;position:relative;float:right;margin-bottom:60px;min-height:500px;" class="img150 results">
+    <div style="width:75%;position:relative;float:right;margin-bottom:60px;min-height:700px;" class="img150 results">
 
-<?php
-if(empty($data)){
-    echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay productos en esta categoria</div>';
-}
-else{
-foreach($data as $row){
-?>
-
-        <div style="margin-bottom: 30px;position:relative;min-height:160px;">
-        <div style="float:left;margin-right:10px;" class="thumb">
-            <a title="<?php echo $row['titulo'];?>" href="/producto/<?php echo $row['id'];?>" >
-                <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/'.$row['foto_name']; ?>">
-            </a>
-        </div>
-        <div class="overflow mbottom">
-            <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
-            <h3>
-                <a class="bigtxt" href="/producto/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
-            </h3>
-            <p class="gristxt">Precio: <?php echo ucfirst($row['precio']);?></p>
-            <p class="gristxt">Localizacion: <?php echo ucfirst($row['ciudad_barrio']);?>, <?php echo ucfirst($row['departamento']);?></p>
-            <?php 
-            
-            if($row['horario']){
-                echo '<p class="gristxt nolink" title="" href="#">Horario: '.$row['horario'].'</p>';
-            }
-            if($row['link']){
-                echo '<a class="gristxt" title="" href="'.$row['link'].'">'.$row['link'].'</a>';
-            }
+        <?php
+        if(empty($data)){
+            echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay productos en esta categoria</div>';
+        }
+        else{
+            foreach($data as $row){
             ?>
-            <p class="descripcion"><?php echo $row['descripcion'];?></p>
-            <div style="position:absolute;right:0px;top:0px;">
-                 <form style="display:inline;" method="POST" action="/producto/delete/">
-                    <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
-                    <!--<button style="margin-left:10px;">Borrar</button>-->
-                </form>
-            </div>
-        </div>
-        </div>
 
-<?php
-}
-}
-echo '</div>';
-echo '<div style="clear:both"></div>';
-echo '</div>';
+                    <div class="mascota-list">
+                        <div style="float:left;margin-right:10px;" class="thumb">
+                            <a title="<?php echo $row['titulo'];?>" href="/producto/<?php echo $row['id'];?>" >
+                                <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/thumb_'.$row['foto_name']; ?>">
+                            </a>
+                        </div>
+                        <div class="overflow mbottom">
+                            <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
+                            <h3>
+                                <a class="bigtxt" style="color:#9C2490" href="/producto/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
+                            </h3>
+                            <div class="precio" style="font-size:20px;position:absolute;left:600px;top:70px;" class="">
+                                <?php echo moneda($row['moneda']); ?><?php echo number_format($row['precio'],0,',','.'); ?>
+                            </div>
+                            <p><span class="gristxt_1">Localizacion:</span> <?php echo htmlEncodeText(ucfirst($row['ciudad_barrio']));?>, <?php echo htmlEncodeText(ucfirst($row['departamento']));?></p>
+                            <?php 
+
+                            if($row['horario']){
+                                echo '<p class="gristxt nolink" title="" href="#">Horario: '.$row['horario'].'</p>';
+                            }
+                            if($row['link']){
+                                echo '<a class="gristxt" title="" href="'.$row['link'].'">'.$row['link'].'</a>';
+                            }
+                            ?>
+                            <div style="position:absolute;right:0px;top:0px;">
+                                 <form style="display:inline;" method="POST" action="/comprar/delete/">
+                                    <!--<input type="hidden" name="id" value="<?php echo $row['id'];?>"/>-->
+                                    <!--<button style="margin-left:10px;">Borrar</button>-->
+                                </form>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+        
+
+            <?php
+            }
+        } ?>
+        
+        <?php include ROOT.'application/include/pagination.php'; ?>
+        
+    </div><div style="clear:both"></div></div>';
 ?>

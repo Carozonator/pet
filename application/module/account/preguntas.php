@@ -22,13 +22,14 @@
             </div>
             <div style="margin:10px;display:inline-block;position:absolute;top:0px;font-size:15px;">
                 <span><?php echo $row->titulo;?></span><br/>
-                <span style="font-size:12px;"><?php echo $row->question;?></span>
+                <span style="font-size:12px;"><?php echo $row->question;?></span><br/>
+                <span style="font-size:12px;"><?php echo fecha($row->question_timestamp);?></span>
             </div>
-            <div >
+            <div style="margin:10px 0px;">
                 <form method="post" action="/pregunta/publicarRespuesta">
                     <textarea onblur="Preguntas.blur(this);" onfocus="Preguntas.focus(this);" name="answer" style="width:100%;height:30px;"placeholder="Escribe tu respuesta"></textarea>
                     <input type="hidden" value="<?php echo $row->pregunta_id;?>" name="pregunta_id"/>
-                    <button style="display:none;margin:10px 0px;">Publicar</button>
+                    <button style="display:none;margin:10px 0px;">Publicar Respuesta</button>
                 </form>
             </div>
         </li>

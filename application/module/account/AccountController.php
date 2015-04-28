@@ -4,6 +4,10 @@ namespace pluralpet;
 class AccountController extends Controller{
     
     function index(){
+        if(!isset($_SESSION['user'])){
+            header('Location: /account/login/3');
+            die;
+        }
         $user = new User();
         $pregunta = new \pluralpet\Pregunta();
         $this->view->assign(array('publicaciones'=>$user->getPublicacionesStatus()));
@@ -114,6 +118,8 @@ class AccountController extends Controller{
                 $_SESSION['referrer']=$_SERVER['HTTP_REFERER'];
             }else if($args[0]==='2'){
                 $_SESSION['referrer']='/';
+            }else if($args[0]==='3'){
+                $_SESSION['referrer']='/account/';
             }else{
                 $this->view->assign(array('invalid'=>true));
             }

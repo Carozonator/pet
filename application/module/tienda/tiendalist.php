@@ -48,6 +48,7 @@ foreach($files as $row){
             <div class="filter_title" style="<?php if(empty($_REQUEST['animal'])){echo 'display:none;';}?>">
                 <div class="publicar_item_header producto"><?php echo 'Producto'; ?><span onclick="Filter.unfilter('tab')">x</span></div>
             </div>-->
+            <!--
             <div class="filter_desc producto" style="<?php if(empty($_REQUEST['animal'])){echo 'display:none;';}?>">
                 <select class="tab" name="tab" style="width:100%;">
                     <option></option>
@@ -63,7 +64,7 @@ foreach($files as $row){
                     ?>
                 </select>
             </div>
-            
+            -->
             
             
             
@@ -113,13 +114,17 @@ foreach($files as $row){
             <div class="filter_desc">
                 <?php
                         
-
+                if(!empty($_REQUEST['tab'])){
+                    echo ucfirst(str_replace("_"," ",$_REQUEST['tab']));
+                }else{
+                
                         foreach($images[$animal] as $k=>$r){
                             if(substr($r,0,1)!='.'){
-                                //echo '<input type="checkbox"/> '.array_shift(explode('.', $r)).'<br/>';
+                                $display = ucfirst(str_replace("_"," ",array_shift(explode('.', $r))));
+                                echo '<input onclick="Filter.submit()" type="checkbox" name="tab" value="'.array_shift(explode('.', $r)).'"> '.$display.'<br/>';
                             }
                         }
-
+                }
                 ?>
             </div>
         </form>

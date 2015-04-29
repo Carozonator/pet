@@ -3,6 +3,16 @@
 $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'=>'Animal','mamifero'=>'Animal','ave'=>'Animal','reptil'=>'Animal','otro'=>'Animal');
 
 
+$dir = ROOT.MEDIA."/tienda";
+$files = scandir($dir);
+$images = array();
+foreach($files as $row){
+    if($row =='.' || $row=='..' || $row=='.DS_Store'){
+        continue;
+    }
+    $dir = ROOT.MEDIA."/tienda/".$row;
+    $images[$row] = scandir($dir);
+}
 
 
 
@@ -94,7 +104,23 @@ $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'
                     ?>
                     </select>
                 </div>
-                
+            </div>
+            
+            
+            
+            
+            <div class="filter_title"><div class="publicar_item_header">Productos<span onclick="Filter.unfilter('departamento')">x</span></div></div>
+            <div class="filter_desc">
+                <?php
+                        
+
+                        foreach($images[$animal] as $k=>$r){
+                            if(substr($r,0,1)!='.'){
+                                //echo '<input type="checkbox"/> '.array_shift(explode('.', $r)).'<br/>';
+                            }
+                        }
+
+                ?>
             </div>
         </form>
     </div>

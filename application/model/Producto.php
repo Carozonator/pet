@@ -150,7 +150,7 @@ class Producto extends Model{
         
         $tabs = $vals['tab'];
         unset($vals['tab']);
-        
+        unset($vals['PHPSESSID']);// hot fix for prod
         foreach($vals as $rows){
             $vals_decoded[]=urldecode($rows);
         }

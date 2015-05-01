@@ -34,7 +34,7 @@ $text5 = htmlentities("Ser líderes en mejorar continuamente la relación entre 
     <p><?php echo $text3; ?></p>
     <div>
     <ul>
-        <li><b>Juan Leira</b> - Directora general y Desarrollo del negocio</li>
+        <li><b>Juan Leira</b> - Director general y Desarrollo del negocio</li>
         <li><b>Rafael Arcieri</b> - Responsable T&eacute;cnico</li>
         <li><b>Diego Monteri&ntilde;o</b> - Responsable Grafico</li>
     </ul>

@@ -147,7 +147,9 @@ class Producto extends Model{
             break;
         }
         $order_by.=", foto.photo_order";
-            
+        
+        $tabs = $vals['tab'];
+        unset($vals['tab']);
         
         foreach($vals as $rows){
             $vals_decoded[]=urldecode($rows);
@@ -157,13 +159,21 @@ class Producto extends Model{
             $stmt = "WHERE ".implode("=? and ",array_keys($vals))."=? ";
         }
         
+        if(count($tabs)>0){
+            if(empty($stmt)){
+                $stmt=" WHERE ";
+            }else{
+                $stmt.=" and ";
+            }
+            $stmt.= " (tab='".implode("' or tab='",$tabs)."') ";
+        }
+        
         //adjust _table accordingly 
         $sql =    "SELECT producto.*, foto.name as foto_name, foto.usuario as foto_usuario, foto.photo_order "
                 . "FROM producto "
                 . "LEFT OUTER JOIN (SELECT name, usuario,photo_order,publication_id FROM foto WHERE _table='producto' order by photo_order) "
                 . "AS foto on foto.publication_id=producto.id "
                 . "$stmt "
-                . "$sexo_stmt "
                 . "group by producto.id "
                 . "$order_by ";
         $stmt = $this->pdo->prepare($sql);

@@ -478,10 +478,17 @@ Filter = {
         
     },
     unfilter: function(name){
+        
         $('input[name='+name+']').each(function(){
             $(this).prop('checked', false);
             $(this).val('');
         });
+        if(name=='tab'){
+            $('.tab_checkbox').each(function(){
+                $(this).prop('checked', false);
+                $(this).val('');
+            });
+        }
         if(name=='departamento'){
             $("select").select2("val", '');
         }

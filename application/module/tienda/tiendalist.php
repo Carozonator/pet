@@ -16,8 +16,6 @@ foreach($files as $row){
 
 
 
-
-
 ?>
 <div style="margin-top:40px">
     <div class="publicar" style='margin:0px 20px 0px 0px;width:20%;float:left;'>
@@ -110,21 +108,30 @@ foreach($files as $row){
             
             
             
-            <div class="filter_title"><div class="publicar_item_header">Productos<span onclick="Filter.unfilter('departamento')">x</span></div></div>
+            <div class="filter_title"><div class="publicar_item_header">Productos<span onclick="Filter.unfilter('tab')">x</span></div></div>
             <div class="filter_desc">
                 <?php
-                        
+                       /* 
                 if(!empty($_REQUEST['tab'])){
                     echo ucfirst(str_replace("_"," ",$_REQUEST['tab']));
-                }else{
-                
+                }else{*/
+                    $counter=0;
                         foreach($images[$animal] as $k=>$r){
+                            $counter++;
+                            $checked = (in_array(array_shift(explode('.', $r)),$_REQUEST['tab'])===true?'checked':'');
                             if(substr($r,0,1)!='.'){
                                 $display = ucfirst(str_replace("_"," ",array_shift(explode('.', $r))));
-                                echo '<input onclick="Filter.submit()" type="checkbox" name="tab" value="'.array_shift(explode('.', $r)).'"> '.$display.'<br/>';
+                                ?>
+                                <div class="squaredOne">
+                                        <input class="tab_checkbox" onclick="Filter.submit()" <?php echo $checked; ?> type="checkbox" value="<?php echo array_shift(explode('.', $r)); ?>" id="squaredOne_<?php echo $counter;?>" name="tab[]" />
+                                        <label for="squaredOne_<?php echo $counter;?>"></label>
+                                        <span onclick="checkboxSibling(this)"><?php echo $display; ?></span>
+                                </div>
+                                <!--<input onclick="Filter.submit()" type="checkbox" name="tab" value="'.array_shift(explode('.', $r)).'"> '.$display.'<br/>';-->
+                                <?php 
                             }
                         }
-                }
+                //}
                 ?>
             </div>
         </form>
@@ -181,3 +188,93 @@ foreach($files as $row){
         <?php include ROOT.'application/include/pagination.php'; ?>
         
     </div><div style="clear:both"></div></div>
+<style>
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+/* SQUARED ONE */
+.squaredOne span{
+    position:absolute;
+    top:0px;
+    left:35px;
+    font-size:14px;
+    width:150px;
+    cursor: pointer;
+}
+.squaredOne {
+	width: 22px;
+	height: 22px;
+        margin: 5px;
+	position: relative;
+        border:1px solid lightgrey;
+}
+
+.squaredOne label {
+	cursor: pointer;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	left: 3px;
+	top: 3px;
+        background:white;
+        /*
+	background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -moz-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -o-linear-gradient(top, #222 0%, #45484d 100%);
+	background: -ms-linear-gradient(top, #222 0%, #45484d 100%);
+	background: linear-gradient(top, #222 0%, #45484d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
+        */
+}
+
+.squaredOne label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background: #e552d6; /* Old browsers */
+        background: -moz-linear-gradient(top,  #e552d6 0%, #e209c9 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e552d6), color-stop(100%,#e209c9)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #e552d6 0%,#e209c9 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #e552d6 0%,#e209c9 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #e552d6 0%,#e209c9 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #e552d6 0%,#e209c9 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e552d6', endColorstr='#e209c9',GradientType=0 ); /* IE6-9 */
+
+	-webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.squaredOne span:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.7;
+}
+
+.squaredOne:hover label::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.7;
+}
+
+.squaredOne input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
+
+</style>
+<script>
+    function checkboxSibling(elem){
+        var input = $(elem).siblings('input');
+        var val = !input.is(":checked");
+        input.prop('checked',val);
+        input.trigger('click');
+    }
+</script>

@@ -170,6 +170,7 @@ foreach($files as $row){
                                 echo '<a class="gristxt" title="" href="'.$row['link'].'">'.$row['link'].'</a>';
                             }
                             ?>
+                            <p class="" title="" href="#"><?php echo $row['descripcion']; ?></p>
                             <div style="position:absolute;right:0px;top:0px;">
                                  <form style="display:inline;" method="POST" action="/comprar/delete/">
                                     <!--<input type="hidden" name="id" value="<?php echo $row['id'];?>"/>-->

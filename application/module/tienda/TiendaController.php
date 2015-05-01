@@ -17,7 +17,7 @@ class TiendaController extends Controller{
     }
     
     function filtro(){
-        unset($_REQUEST['go']);
+        unset($_GET['go']);
         foreach($_REQUEST as $key => $row){
             if(!empty($row)){
                 $fill[$key]=$row;

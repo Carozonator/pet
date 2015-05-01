@@ -93,9 +93,9 @@
 <div class="overlay" onclick="closeOverlay();"></div>
 <div id="popup_registracion" class="overlay_box">
     <img src="/media/popup.jpg"/>
-    <div style="position:absolute;bottom:0px;left:0px;width:540px;height:40px;cursor:pointer" onclick="closeOverlay();"></div>
+    <div style="position:absolute;bottom:0px;left:0px;width:540px;height:40px;cursor:pointer" onclick="window.location='/informacion/terminos-y-condiciones/'"></div>
     <div style="position:absolute;bottom:0px;right:0px;width:200px;height:40px;cursor:pointer" onclick="closeOverlay();"></div>
-    <div style="position:absolute;top:300px;left:330px;width:50px;height:280px;cursor:pointer;" onclick="window.location='/account/login/2'"></div>
+    <div style="position:absolute;top:290px;left:330px;width:50px;height:20px;cursor:pointer;" onclick="$('#popup_registracion').hide();Register.open();"></div>
 </div>
 </body>
 </html>

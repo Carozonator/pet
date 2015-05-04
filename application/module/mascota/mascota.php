@@ -28,7 +28,7 @@
                 <p class="gristxt"><?php echo (!empty($mascota['ciudad_barrio'])?htmlEncodeText(ucfirst($mascota['ciudad_barrio'])).", ":"");?><?php echo htmlEncodeText(ucfirst($mascota['departamento']));?></p>
                 <div class="precio" style="font-size:20px;">
                     <?php 
-                    $no_precio = array('encontrado','perdido');
+                    $no_precio = array('encontrado','perdido','adoptar');
                     if(!in_array($mascota['tab'],$no_precio)){
                         echo moneda($mascota['moneda']).precio($mascota['precio']);
                     }   

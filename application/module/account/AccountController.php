@@ -112,8 +112,15 @@ class AccountController extends Controller{
             }
         }
         else{
+            //echo '<pre>';print_r($_POST);
             $args = $this->request->getArgs();
-            if($args[0]==='1'){
+            
+            if(isset($_POST['user'])){// failed login
+                $this->view->assign(array('invalid'=>true));
+                if(!isset($_SESSION['referrer'])){ 
+                    $_SESSION['referrer'] = $_SERVER['HTTP_REFERER'];
+                }
+            }else if($args[0]==='1'){
                 $this->view->assign(array('contactar'=>true));
                 $_SESSION['referrer']=$_SERVER['HTTP_REFERER'];
             }else if($args[0]==='2'){
@@ -121,7 +128,7 @@ class AccountController extends Controller{
             }else if($args[0]==='3'){
                 $_SESSION['referrer']='/account/';
             }else{
-                $this->view->assign(array('invalid'=>true));
+                $_SESSION['referrer']=$_SERVER['HTTP_REFERER'];
             }
             $this->view->setFile('login');
             $this->view->render();

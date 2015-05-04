@@ -29,7 +29,7 @@
                 <img onclick="Publicar.type='servicio_medico';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/servicios_medicos_adicionales.jpg"/>
                 <img onclick="Publicar.type='otros';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/otros.jpg"/>
                 
-                <?php if($_SESSION['user']->id==7){?>
+                <?php if($_SESSION['user']->id==7 || $_SESSION['user']->id==1){?>
                     <img onclick="Publicar.type='evento';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>anuncios/evento.png"/>
                 <?php } ?>
             </div>
@@ -58,8 +58,16 @@
                         </div>
                     </div>
                     -->
+                    
                     <div class="publicar_item">
+                        
                         <div class="publicar_item_header">Ubicacion y contacto *</div>
+                        <div class="publicar_sub_item item_fecha">
+                            <label>Fecha</label>
+                            <input name="fecha_datepicker" value="" class="datepicker" type="text"/>
+                            <input name="fecha" id="fecha" value="" type="hidden"/>
+                            <span class="input_error"></span>
+                        </div>
                         <div class="publicar_sub_item">
                             <!--
                             <div style="display:none;height:45px;width:100%" class="emergencia">
@@ -132,4 +140,12 @@
 <script>
     Publicar.group='anuncio';
     nicEditors.allTextAreas();
+    
+    $('.datepicker').datepicker({ 
+        changeYear: true, 
+        gotoCurrent:true,
+        yearRange: "1990:2015",
+        altFormat: "yy-mm-dd",
+        altField: "#fecha"
+    });
 </script>

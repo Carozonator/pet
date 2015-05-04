@@ -23,7 +23,8 @@
                 <li><a href="/account/publicados/?status=finalizado"><?php echo $publicaciones['finalizado'];?> Finalizadas</a></li>
             </ul>
         </div>
-        <div class="wrapper">
+        <!--
+        <div style="class="wrapper">
             <div class="header">
                 <i class="icon-shopping-cart"></i>
                 Operaciones
@@ -33,6 +34,7 @@
                 <li>Ventas</li>
             </ul>
         </div>
+        -->
         <div class="wrapper">
             <div class="header">
                 <i class="icon-adjust"></i>

@@ -10,12 +10,12 @@ class Anuncio extends Model{
     function add(){
         //header("Content-type: text/plain");
         //print_r($_POST);die;
-        $sql =  "INSERT INTO anuncio (sub_tab,titulo,link,departamento,ciudad_barrio,direccion,descripcion,horario,telefono,usuario,status)"
-                . " VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        $sql =  "INSERT INTO anuncio (sub_tab,titulo,link,departamento,ciudad_barrio,direccion,descripcion,horario,telefono,usuario,status,fecha)"
+                . " VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['tipo'],$_POST['titulo'],$_POST['link'],$_POST['departamento'],
             $_POST['ciudad_barrio'],$_POST['direccion'],$_POST['descripcion'],
-            $_POST['horario'],$_POST['telefono'],$_SESSION['user']->id,'activo'));
+            $_POST['horario'],$_POST['telefono'],$_SESSION['user']->id,'activo',$_POST['fecha']));
         $insert_id = $this->pdo->lastInsertId(); 
         
         $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=?";

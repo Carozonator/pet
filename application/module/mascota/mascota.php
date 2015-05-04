@@ -1,4 +1,3 @@
-
 <div class="main-content_container" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
         <h2 style="border-bottom: 1px solid grey;padding:5px;color:#9C2490">
@@ -29,12 +28,11 @@
                 <p class="gristxt"><?php echo (!empty($mascota['ciudad_barrio'])?htmlEncodeText(ucfirst($mascota['ciudad_barrio'])).", ":"");?><?php echo htmlEncodeText(ucfirst($mascota['departamento']));?></p>
                 <div class="precio" style="font-size:20px;">
                     <?php 
-                    if($mascota['moneda']=='uy'){
-                        $moneda = '$';
-                    }elseif($mascota['moneda']=='us'){
-                        $moneda = 'U$S';
-                    }
-                    echo moneda($mascota['moneda']).precio($mascota['precio']);?>
+                    $no_precio = array('encontrado','perdido');
+                    if(!in_array($mascota['tab'],$no_precio)){
+                        echo moneda($mascota['moneda']).precio($mascota['precio']);
+                    }   
+                    ?>
                 </div>
                 <br/>
                 <button onclick="Contactar.show(<?php echo $mascota['usuario']; ?>)">Contactar</button>
@@ -77,6 +75,9 @@
         <div style="margin-top:20px;" class="preguntas">
             <h4>Preguntas</h4>
             <ol>
+                <?php 
+                // Do not allow to post question if you publish it
+                if($_SESSION['user']->id !== $mascota['usuario']) { ?>
                 <li>
                     <div>
                         <form method="post" action="/pregunta/publicarPregunta">
@@ -87,12 +88,23 @@
                         </form>
                     </div>
                 </li>
+                <?php } ?>
                 <?php 
                 foreach($pregunta as $row){
                     echo '<li>';
                     echo '<i class="icon-comment"></i>'.$row['question'].' <span style="float:right">'.fecha($row['question_timestamp']).'</span>';
                     if(!empty($row['answer'])){
                         echo '<div class="answer"><i class="icon-comments"></i>'.$row['answer'].' <span style="float:right">'.fecha($row['answer_timestamp']).'</span></div>';
+                    }else if($_SESSION['user']->id === $mascota['usuario']){
+                        ?>
+                        <div>
+                            <form method="post" action="/pregunta/publicarRespuesta">
+                                <textarea onblur="Preguntas.blur(this);" onfocus="Preguntas.focus(this);" name="answer" style="width:100%;height:30px;"placeholder="Escribe tu respuesta"></textarea>
+                                <input type="hidden" value="<?php echo $row['id'];?>" name="pregunta_id"/>
+                                <button style="display:none;margin:10px 0px;">Publicar Respuesta</button>
+                            </form>
+                        </div>
+                        <?php
                     }
                     echo '</li>';
                 }

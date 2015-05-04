@@ -32,7 +32,11 @@ class AnuncioController extends Controller{
         $this->view->assign(array('pregunta'=>$preguntas));
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('anuncio'=>$result));
-        $this->view->setFile('anuncio');
+        if(strcmp($result['sub_tab'],'evento')===0){
+            $this->view->setFile('evento');
+        }else{
+            $this->view->setFile('anuncio');
+        }
         $this->view->render();
     }
     

@@ -58,7 +58,6 @@ class MascotaController extends Controller{
         $tab = strtolower($this->request->getTab());
         $fill['tab']=$tab;
         $fill['animal']=$animal;
-        
         $page = $fill['page'];
         unset($fill['page']);
         

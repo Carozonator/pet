@@ -33,12 +33,12 @@ $constant['DB_USER'] = 'root';
 $constant['DB_PASSWORD'] = '';
 */
 
-$GLOBALS['nav_menu'] = array('publicar'=>array(
+$GLOBALS['nav_menu'] = array('publicar'=>array('name'=>'publicar','sub_menus'=>array(
                                                             array('mascota'=>'Mascotas'),
                                                             array('producto'=>'Productos En Tienda'),
                                                             array('anuncio'=>'Anuncios')
                                                             
-                                ),'mascota'=>array(
+                                )),'mascota'=>array('name'=>'mascotas','sub_menus'=>array(
                                                             array('perro'=>'Perros'),
                                                             array('gato'=>'Gatos'),
                                                             array('ave'=>'Aves'),
@@ -46,7 +46,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('pez'=>'Peces'),
                                                             array('mamifero'=>'Peque&ntilde;os mamiferos'),
                                                             array('otro'=>'Otros')
-                                ),'tienda'=> array(
+                                )),'tienda'=>array('name'=>'tienda','sub_menus'=>array(
                                                             /*array('producto' => 'Ir a la tienda')*/
                                                             array('perro'=>'Perros'),
                                                             array('gato'=>'Gatos'),
@@ -56,32 +56,32 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('mamifero'=>'Peque&ntilde;os mamiferos'),
                                                             array('otro'=>'Otros'),
                                                             /*array('ofertas' => 'Ofertas del dia')*/
-                                ),'adoptar'=> array(
+                                )),'adoptar'=>array('name'=>'adoptar','sub_menus'=>array(
                                                             array('perro'=> 'Perros'),
                                                             array('gato'=> 'Gatos'),
                                                             array('otro'=> 'Otros')
-                                ),'perdido'=> array(
+                                )),'perdido'=>array('name'=>'perdidos','sub_menus'=>array(
                                                             array('perro'=> 'Perros'),
                                                             array('gato'=> 'Gatos'),
                                                             array('otro'=> 'Otros')
-                                ),'encontrado'=> array(
+                                )),'encontrado'=>array('name'=>'encontrados','sub_menus'=>array(
                                                             array('perro'=> 'Perros'),
                                                             array('gato'=> 'Gatos'),
                                                             array('otro'=> 'Otros')
-                                ),'cruzar'=> array(
+                                )),'cruzar'=>array('name'=>'cruzar','sub_menus'=>array(
                                                             array('perro'=> 'Perros'),
                                                             array('gato'=> 'Gatos'),
                                                             array('otro'=> 'Otros')
-                                ),'anuncio'=> array(
+                                )),'anuncio'=>array('name'=>'anuncios','sub_menus'=>array(
                                                             array('veterinaria'=> 'veterinarias'),
                                                             array('paseador'=> 'paseadores'),
                                                             array('adiestrador'=> 'Adiestradores'),
                                                             array('pensionado'=> 'pensionado'),
                                                             array('peluqueria'=> 'peluqueria'),
                                                             array('servicio-medico-adicionales'=> 'Servicios m&eacute;dicos adicionales'),
-                                                            /*array('evento'=>'Eventos')*/
+                                                            array('evento'=>'Eventos'),
                                                             array('otros'=> 'otros')
-                                ),'consejo'=> array(
+                                )),'consejo'=>array('name'=>'consejos','sub_menus'=>array(
                                                             array('perro'=>'Perros'),
                                                             array('gato'=>'Gatos'),
                                                             array('ave'=>'Aves'),
@@ -89,7 +89,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array(
                                                             array('peces'=>'Peces'),
                                                             array('mamiferos'=>'Peque&ntilde;os mamiferos'),
                                                             array('otros'=>'Otros')
-                                )
+                                ))
                                 );
 
 
@@ -100,7 +100,7 @@ $constant['CAMBIO'] = 25;
 $constant['RESULTS_PER_PAGE'] =10;
 
 if($_SESSION['user']->id==7 || $_SESSION['user']->id==1){
-    $GLOBALS['nav_menu']['publicar'][]=array('consejo'=>'Consejos');
+    $GLOBALS['nav_menu']['publicar']['sub_menus'][]=array('consejo'=>'Consejos');
 }
 
 $GLOBALS['refugio']= array('','Animales Sin Hogar','Animal Help','A.P.A el Refugio');

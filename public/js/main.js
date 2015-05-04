@@ -232,6 +232,9 @@ var Publicar = {
         if(this.group=='anuncio' && this.type=='paseador'){
             $('.direccion').hide();
         }
+        if(this.group=='anuncio' && this.type!='evento'){
+            $('.item_fecha').hide();
+        }
         
         $('.step').attr('class','step');
         $('.step:eq('+(next_pos)+')').addClass('highlight');

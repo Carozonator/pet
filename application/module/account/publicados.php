@@ -49,6 +49,12 @@
     </ul>
     </div>
 </div>
+<style>
+    li + h3{
+        border-top:1px solid lightgrey;
+        margin-top:30px;
+    }
+</style>
 <script>
     $('select').select2({
         minimumResultsForSearch: -1,

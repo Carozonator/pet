@@ -20,7 +20,8 @@ class Pregunta extends Model{
         $stmt->execute(array($_POST['question'],$_POST['publication_id'],$_POST['_table'],$_SESSION['user']->id,$respondent,time()));
         $affected_rows = $stmt->rowCount();
         
-        
+        $publication_id = $_POST['publication_id'];
+        $table = $_POST['_table'];
         
         $sql = "SELECT * FROM user where id=? ";
         $stmt = $this->pdo->prepare($sql);

@@ -142,33 +142,35 @@
                 <ul id="menu-main" class="menu" style="text-align:center;">
                     <?php 
                     foreach($GLOBALS['nav_menu'] as $k1 => $r1){
-                        $class = (strcasecmp($tab,$k1)===0?'nav-current-module':'');
-                        if(count($r1)==0){
-                            echo "<li style='display:inline-block;float:none;' class='$class'><a href='/$k1'>".ucfirst($k1)."</a></li>";
-                            continue;
-                        }
-                        
-                        
-                        if(strcmp($k1,'consejo')===0){
-                            echo "<li style='display:inline-block;float:none;' class='$class'><a href='/consejo/'>".ucfirst($k1)."</a>";
-                        }else{
-                            echo "<li style='display:inline-block;float:none;' class='$class'><a href='#'>".ucfirst($k1)."</a>";
-                        }
-                        
-                        
-                        $k1=  str_replace(' ', '-', $k1);
-                        //echo '<div style="display:inline-block;margin-left:50%;">';
-                        echo '<ul class="sub-menu">';
-                        foreach($r1 as $k2 => $r2){
-                            foreach($r2 as $k3=>$r3){
-                                if(strcmp($k1,'mascota')===0){
-                                    echo "<li style='margin-left:-112px'><a href='/comprar/$k3/'>".$r3."</a></li>";
-                                }else{
-                                    echo "<li style='margin-left:-112px'><a href='/$k1/$k3/'>".$r3."</a></li>";
-                                }
+                            /*
+                            $class = (strcasecmp($tab,$k1)===0?'nav-current-module':'');
+                            if(count($r1)==0){
+                                echo "<li style='display:inline-block;float:none;' class='$class'><a href='/$k1'>".ucfirst($r1['name'])."</a></li>";
+                                continue;
                             }
-                        }
-                        echo '</ul></li>';
+                            */
+
+                            if(strcmp($k1,'consejo')===0){
+                                echo "<li style='display:inline-block;float:none;' class='$class'><a href='/consejo/'>".ucfirst($r1['name'])."</a>";
+                            }else{
+                                echo "<li style='display:inline-block;float:none;' class='$class'><a href='#'>".ucfirst($r1['name'])."</a>";
+                            }
+
+
+                            $k1=  str_replace(' ', '-', $k1);
+                            echo '<ul class="sub-menu">';
+                            foreach($r1['sub_menus'] as $sub_menu){
+                                foreach($sub_menu as $k3=>$r3){
+                                    if(strcmp($k1,'mascota')===0){
+                                        echo "<li style='margin-left:-112px'><a href='/comprar/$k3/'>".$r3."</a></li>";
+                                    }else{
+                                        echo "<li style='margin-left:-112px'><a href='/$k1/$k3/'>".$r3."</a></li>";
+                                    }
+                                }
+
+                            }
+                        echo '</ul>';
+                        echo '</li>';
                     }
                     ?>
                 </ul> 

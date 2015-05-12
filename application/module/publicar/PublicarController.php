@@ -194,7 +194,7 @@ class PublicarController extends \pluralpet\Controller{
     function modify(){
         switch($_POST['event']){
             case 'editar':
-                header('Location: /'.$_POST['table'].'/'.$_POST['id']);
+                header('Location: /'.$_POST['table'].'/editar/'.$_POST['id'].'?tab='.$_POST['tab']);
             break;
             case 'borrar':
                 $this->delete();

@@ -11,11 +11,11 @@ class Producto extends Model{
     
     function add(){
         
-        $sql =  "INSERT INTO producto (animal,tab,precio,titulo,descripcion,departamento,ciudad_barrio,usuario,status,moneda)"
-                . " VALUES(?,?,?,?,?,?,?,?,'activo',?)";
+        $sql =  "INSERT INTO producto (animal,tab,precio,titulo,descripcion,departamento,ciudad_barrio,usuario,status,moneda,vendedor_id)"
+                . " VALUES(?,?,?,?,?,?,?,?,'activo',?,?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($_POST['animal'],$_POST['tab'],parseMoney($_POST['precio']),$_POST['titulo'],
-            $_POST['descripcion'],$_POST['departamento'],$_POST['ciudad_barrio'],$_SESSION['user']->id,$_POST['moneda']));
+            $_POST['descripcion'],$_POST['departamento'],$_POST['ciudad_barrio'],$_SESSION['user']->id,$_POST['moneda'],$_POST['vendedor_id']));
         $insert_id = $this->pdo->lastInsertId(); 
         
         // Update foto with the new added publication id

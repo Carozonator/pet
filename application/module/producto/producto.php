@@ -1,4 +1,4 @@
-<div class="main-content_container" style="padding:30px">
+<div class="main-content_container single_publication" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
         <h2 style="border-bottom: 1px solid grey;padding:5px;">
             <?php echo $producto['titulo'];?>
@@ -21,9 +21,12 @@
                 <h2 style="padding-bottom:20px;"><?php echo strtoupper($producto['tab']);?></h2>
                 <h5 >Direcc&iacute;on:</h5>
                 <p class="gristxt"><?php echo (!empty($producto['ciudad_barrio'])?ucfirst($producto['ciudad_barrio']).", ":"");?><?php echo ucfirst($producto['departamento']);?></p>
+                <p><?php echo (!empty($producto['vendedor_id'])?('Producto ID: '.$producto['vendedor_id']):"");?></p>
+                
                 <div class="precio" style="font-size:20px;">
                     <?php 
-                    echo moneda($producto['moneda']).precio($producto['precio']);?>
+                    echo moneda($producto['moneda']).precio($producto['precio']);
+                    ?>
                 </div>
                 <br/>
                 
@@ -31,10 +34,12 @@
                 
                 <button onclick="Contactar.show(<?php echo $producto['usuario']; ?>)">Contactar</button>
                 <?php if($_SESSION['user']->id==$producto['usuario']){ ?>
+                <!--
                     <form style="margin-top:20px;"method="GET" action="/mascota/editar/<?php echo $producto['id'];?>">
                         <input type="hidden" value="<?php echo $producto['tab'];?>" name="tab"/>
                         <input type="submit" value="Editar"/>
                     </form>
+                -->
                 <?php } ?>
             </div>
         </div>
@@ -51,9 +56,11 @@
             ?>
         </div>
         -->
-        <div style="margin-top:20px;">
+        <div style="margin-top:20px;" class="description">
             <h4>Descripci&oacute;n</h4>
-            <p class="descripcion"><?php echo $producto['descripcion'];?></p>
+            <div class="wrapper">
+                <p class="descripcion"><?php echo htmlEncodeText($producto['descripcion']);?></p>
+            </div>
         </div>
         
         <div style="margin-top:20px;" class="preguntas">

@@ -31,6 +31,7 @@
                 
                 <form style="display:inline;" method="POST" action="/publicar/modify/">
                    <input type="hidden" name="id" value="<?php echo $row->id;?>"/>
+                   <input type="hidden" name="tab" value="<?php echo $row->tab;?>"/>
                    <input type="hidden" name="table" value="<?php echo $key;?>"/>
                    <select name="event" style="width:100px;">
                         <option></option>

@@ -1,4 +1,4 @@
-<div class="main-content_container" style="padding:30px">
+<div class="main-content_container single_publication" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
         <h2 style="border-bottom: 1px solid grey;padding:5px;color:#9C2490">
             <?php echo $mascota['titulo'];?>
@@ -67,9 +67,11 @@
             }
             ?>
         </div>
-        <div style="margin-top:20px;" >
+        <div style="margin-top:20px;" class="description">
             <h4>Descripci&oacute;n</h4>
-            <p class="descripcion"><?php echo htmlEncodeText($mascota['descripcion']);?></p>
+            <div class="wrapper">
+                <p class="descripcion"><?php echo htmlEncodeText($mascota['descripcion']);?></p>
+            </div>
         </div>
        
         <div style="margin-top:20px;" class="preguntas">

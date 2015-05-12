@@ -118,6 +118,10 @@ $publication_hash = substr( md5(rand()), 0, 10);
                             <input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
                         </div>
                         <div class="publicar_sub_item">
+                            <label>Producto ID</label>
+                            <input name="vendedor_id" maxlength="30" placeholder="" type="text"/><span class="input_error"></span>
+                        </div>
+                        <div class="publicar_sub_item">
                             <div>
                                 <label style="margin-bottom:10px;">Describe tu producto</label><br/>
                                 <div style="position:relative;margin-left:-3px;vertical-align: middle;display:inline-block;width:100%;">

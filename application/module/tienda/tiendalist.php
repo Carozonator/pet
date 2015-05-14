@@ -149,7 +149,14 @@ foreach($files as $row){
                     <div class="mascota-list">
                         <div style="float:left;margin-right:10px;" class="thumb">
                             <a title="<?php echo $row['titulo'];?>" href="/producto/<?php echo $row['id'];?>" >
-                                <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo MEDIA.'upload/'.$row['foto_usuario'].'/thumb_'.$row['foto_name']; ?>">
+                                <?php
+                                if(empty($row['foto_usuario'])){
+                                    $src = "/public/vendor/dropzone/images/spritemap.jpg";
+                                }else{
+                                    $src = MEDIA.'upload/'.$row['foto_usuario'].'/thumb_'.$row['foto_name'];
+                                }
+                                ?>
+                                <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo $src; ?>">
                             </a>
                         </div>
                         <div class="overflow mbottom">

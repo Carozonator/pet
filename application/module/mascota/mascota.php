@@ -17,6 +17,15 @@
         </div>
         <div style="padding-top:20px;">
             <div class="img_box_xl" style="margin-right:20px;">
+                
+                <?php 
+                if(empty($row['foto_usuario'])){
+                    $src = "/public/vendor/dropzone/images/spritemap.jpg";
+                }else{
+                    $src = MEDIA.'upload/'.$row['foto_usuario'].'/thumb_'.$row['foto_name'];
+                }
+                ?>
+                
                 <img alt="<?php echo $mascota['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$foto[0]['usuario'].'/'.$foto[0]['name']; ?>">
             </div>
             <div style="display:inline-block">

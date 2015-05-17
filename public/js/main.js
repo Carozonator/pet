@@ -368,7 +368,7 @@ var Publicar = {
             
             var key = form_var[i].name;
             var obj = {};
-            if(form_var[i].value=="" && key!='ciudad_barrio' && key!='horario' && key!='direccion'){
+            if(form_var[i].value=="" && key!='ciudad_barrio' && key!='horario' && key!='direccion' && key!='fecha' && key!='fecha_datepicker'){
                 $('input[name="'+key+'"').closest('.publicar_sub_item').addClass('missing_input');
                 $('select[name="'+key+'"').closest('.publicar_sub_item').addClass('missing_input');
                 blank_found = true;

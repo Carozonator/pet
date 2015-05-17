@@ -165,12 +165,36 @@ $order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor p
                                 <?php echo moneda($row['moneda']); ?><?php echo number_format($row['precio'],0,',','.'); ?>
                             </div>
                             <?php }?>
+                            
+                            
+                            
+                            <?php 
+                            
+                            $details = array(
+                                array($GLOBALS['raza_o_animal'][$row['animal']],ucfirst($row['animal_detail'])),
+                                array('Tamaño',ucfirst($row['tamano'])),
+                                array('Edad',ucfirst($row['edad'])),
+                                array('Sexo',ucfirst($row['sexo'])),
+                                array('Pedigree',ucfirst($row['pedigree'])),
+                                array('Criadero',ucfirst($row['criadero'])),
+                            );
+                            foreach($details as $row){
+                                if(!empty($row[1])){
+                                    echo '<p><span class="gristxt_1">'.$row[0].':</span> '.$row[1].'</p>';
+                                }
+                            }
+                            
+                            ?>
+                            <div style="clear:both;"></div>
+                            
+                            <!--
                             <p><span class="gristxt_1"><?php echo $raza_o_animal[$row['animal']]; ?>:</span> <?php echo ucfirst($row['animal_detail']);?></p>
                             <p><span class="gristxt_1">Localizacion:</span> <?php echo htmlEncodeText(ucfirst($row['ciudad_barrio']));?>, <?php echo htmlEncodeText(ucfirst($row['departamento']));?></p>
                             <p><span class="gristxt_1">Tama&ntilde;o:</span> <?php echo htmlEncodeText(ucfirst($row['tamano']));?></p>
                             <p><span class="gristxt_1">Edad:</span> <?php echo ucfirst($row['edad']);?></p>
                             <p><span class="gristxt_1">Sexo:</span> <?php echo ucfirst($row['sexo']);?></p>
                             <p><span class="gristxt_1">Pedigree:</span> <?php echo ucfirst($row['pedigree']);?> - Criadero: <?php echo ucfirst($row['criadero']);?></p>
+                            -->
                             <?php 
 
                             if($row['horario']){

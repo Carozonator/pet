@@ -126,15 +126,15 @@ $GLOBALS['departamento'] = array('Artigas'=>array('Artigas','Bella Union','Tom&a
         "Punta Rieles","Reducto","Santiago V&aacutezquez","Sayago","Toledo Chico","Tres Cruces","Uni&oacute;n","Villa Biarritz","Villa Col&oacute;n","Villa Dolores","Villa Espa&ntilde;ola",
 	"Villa Garc&iacute;a","Villa Mu&ntilde;oz","Villa del Cerro","Larra&ntilde;aga","Barrio Sur","Barros Blancos","Conciliaci&oacute;n","Paso de las Duranas","Las Canteras",
         "Playa Pascual","Libertad","Casavalle"),
-                     'Paysandu'=>array('Paysandu','Nuevo Paysand&uacute;','Guich&oacute;n','Chacras de Paysand&uacute;','Quebracho','San Félix','Porvenir','Tambores','Piedras Coloradas'),
-                     'Rio Negro'=>array('Fray Bentos','Young','Nuevo Berl&iacute;n','San Javier','Nuevo Berl&iacute;n','San Javier'),
+                     'Paysandú'=>array('Paysandú','Nuevo Paysand&uacute;','Guich&oacute;n','Chacras de Paysand&uacute;','Quebracho','San Félix','Porvenir','Tambores','Piedras Coloradas'),
+                     'Río Negro'=>array('Fray Bentos','Young','Nuevo Berl&iacute;n','San Javier','Nuevo Berl&iacute;n','San Javier'),
                      'Rivera'=>array('Rivera','Tranqueras','Minas de Corrales','Vichadero'),
                      'Rocha'=>array('Rocha','Chuy','Lascano','Castillos','La Paloma','Cebollat&iacute;','La Aguada-Costa Azul','Vel&aacute;zquez','Punta del Diablo',
         'Aguas Dulces','Barra del Chuy','Barra de Valizas','Arachania','Cabo Polonio'),
                      'Salto'=>array('Salto','Constituci&oacute;n','Belén'),
-                     'San Jose'=>array('San Jose de Mayo','Ciudad del Plata','Libertad','Rodr&iacute;guez','Ecilda Paullier','Puntas de Valdez','Rafael Perazza'),
+                     'San José'=>array('San José de Mayo','Ciudad del Plata','Libertad','Rodr&iacute;guez','Ecilda Paullier','Puntas de Valdez','Rafael Perazza'),
                      'Soriano'=>array('Mercedes','Dolores','Cardona','Palmitas','José Enrique Rod&oacute;','Chacras de Dolores','Villa Soriano'),
-                     'Tacuarembo'=>array('Tacuarembo','Paso de los Toros','San Gregorio de Polanco','Villa Ansina','Tambores','Las Toscas','Curtina'),
+                     'Tacuarembó'=>array('Tacuarembó','Paso de los Toros','San Gregorio de Polanco','Villa Ansina','Tambores','Las Toscas','Curtina'),
                      'Treinta y Tres'=>array('Treinta y Tres','Vergara','Santa Clara de Olimar','Cerro Chato','Villa Sara','General Enrique Mart&iacute;nez')
                      );
 
@@ -191,7 +191,7 @@ $raza['perro'] = array('','Akita Inu', 'Alaskan Malamute', 'American Staffordshi
     'Pit Bull', 'Podenco Canario', 'Podenco Ibicenco', 'Pointer Inglés', 'Pomerania','Presa Canario', 'Pug','Puli Húngaro', 'Rafeiro do Alentejo', 'Rodesiano',
     'Rottweiler','Saluky', 'Samoyedo', 'San Bernardo', 'Schnauzer gigante', 'Schnauzer mediano', 'Schnauzer miniatura', 'Scottish Terrier', 
     'Setter Inglés', 'Setter Irlandés', 'Shar Pei', 'Shih Tzu', 'Spitz', 'Springer Spaniel Galés', 'Springer Spaniel Inglés', 
-    'Teckel', 'Terranova', 'Vizsla','Weimaraner', 'Westies','West Highland White Terrier', 'Whippet', 'Yorkshire Terrier','OTRO');
+    'Teckel', 'Terranova', 'Vizsla','Weimaraner', 'Westies','West Highland White Terrier', 'Whippet', 'Yorkshire Terrier','Cruza');
 
 foreach($raza['perro'] as $row){
     $r[]=  htmlentities($row);
@@ -203,7 +203,7 @@ $raza['gato'] = array('','Abisinio','Aphrodite\'s Giants','Australian Mist','Ame
     'Burm&eacute;s','Burmilla','Cornish rex','California Spangled','Ceylon','Cymric','Chartreux','Deutsch Langhaar','Devon rex','Dorado africano','Don Sphynx',
     'Europeo com&uacute;n','German Rex','Habana brown','Himalayo','Korat','Khao Manee','Maine Coon','Manx','Mau egipcio','Munchkin','Ocicat','Oriental',
     'Oriental de pelo largo','Ojos azules','Persa','Peterbald','Pixi Bob','Ragdoll','Sagrado de Birmania','Scottish Fold','Selkirk rex','Serengeti',
-    'Seychellois','Siam&eacute;s','Siam&eacute;s Moderno','Siam&eacute;s Tradicional','Siberiano','Snowshoe','Sphynx','Tonkin&eacute;s','Van Turco'
+    'Seychellois','Siam&eacute;s','Siam&eacute;s Moderno','Siam&eacute;s Tradicional','Siberiano','Snowshoe','Sphynx','Tonkin&eacute;s','Van Turco','Cruza'
 );
 
 $raza['mamifero'] = array('','Conejo Enano','Cobaya','Ardilla de Corea','Chinchilla','Ardilla Richardson','Rata Canguro','H&aacute;mster Com&uacute;n',

@@ -19,7 +19,19 @@ if(in_array($_POST['tab'],$check1)){
     $detalles = array('perro'=>array('edad','tamano','pedigree','criadero'),'gato'=>array('edad','pedigree','criadero'));
 }
 
-//var_dump($_POST);die;
+//fechas
+switch($_POST['tab']){
+    case 'encontrado':
+        $fecha_text = 'Se encontró el día...';
+        break;
+    case 'perdido':
+        $fecha_text = 'Se perdio el día...';
+        break;
+    default:
+        $fecha_text = 'Fecha de nacimiento';
+}
+
+
 ?>
 <!--
 <form style="min-height:260px;" action="/file-upload" class="dropzone" id="dropzone" enctype="multipart/form-data">
@@ -29,7 +41,9 @@ if(in_array($_POST['tab'],$check1)){
 </form>
 -->
 <div style="margin:40px 40px 0px 40px;">
-    <div class="publicar_item_header">Fotos</div>
+    <div class="publicar_item_header">Fotos
+    &nbsp;<span class="gristxt" style="font-size:13px;font-weight:normal;">(Presionar dentro del rectángulo para agregar imágenes)</span>
+    </div>
     <form action="/publicar/addPhoto/" method="post" class="dropzone" id="fotos" enctype="multipart/form-data">
         <div class="fallback">
             <input name="file" type="file" multiple />
@@ -59,7 +73,7 @@ if(in_array($_POST['tab'],$check1)){
         </div>
         -->
         <div class="publicar_item">
-            <div class="publicar_item_header"><?php echo $GLOBALS['raza_o_animal'][$animal]; ?> *</div>
+            <div class="publicar_item_header"><?php echo $GLOBALS['raza_o_animal'][$animal]; ?> * </div>
             <div class="publicar_sub_item">
                 <select class="animal_detail" name="animal_detail" style="width:200px;">
                     <?php
@@ -68,6 +82,9 @@ if(in_array($_POST['tab'],$check1)){
                         }
                     ?>
                 </select>
+                <?php if(strcmp($GLOBALS['raza_o_animal'][$animal],'Raza')===0){ ?>
+                &nbsp;&nbsp;<span class="gristxt" style="font-size:13px;font-weight:normal;">(seleccionar "Cruza", en caso de no ser de ninguna raza en particular)</span>
+                <?php } ?>
             </div>
         </div>
         
@@ -103,7 +120,7 @@ if(in_array($_POST['tab'],$check1)){
             </div>
             <?php }?>
             <div class="publicar_sub_item item_fecha">
-                <label>Fecha de nacimiento</label>
+                <label><?php echo $fecha_text; ?></label>
                 <input name="fecha_datepicker" value="" class="datepicker" type="text"/>
                 <input name="fecha" id="fecha" value="" type="hidden"/>
                 <span class="input_error"></span>
@@ -208,7 +225,7 @@ if(in_array($_POST['tab'],$check1)){
         altField: "#fecha"
     });
     
-    $(".datepicker").datepicker("setDate", today());
+    //$(".datepicker").datepicker("setDate", today());
     
     
     

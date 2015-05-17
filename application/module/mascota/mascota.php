@@ -50,14 +50,34 @@
 
         <div class="item_datos" style="margin-top:20px;">
             <h4 style="color:#9C2490">Datos</h4>
-            <span class="gristxt_1"><?php echo $GLOBALS['raza_o_animal'][$mascota['animal']]; ?>:</span> <?php echo ucfirst($mascota['animal_detail']);?><br/>
             
-            <span class="gristxt_1">Tama&ntilde;o:</span>  <?php echo publicationValue($mascota['tamano']);?><br/>
-            <span class="gristxt_1">Edad:</span> <?php echo publicationValue($mascota['edad']);?><br/>
-            <span class="gristxt_1">Sexo:</span> <?php echo publicationValue($mascota['sexo']);?><br/>
-            <span class="gristxt_1">Fecha de nacimiento:</span> <?php echo publicationValue($mascota['fecha']);?><br/>
-            <span class="gristxt_1">Pedigree:</span> <?php echo publicationValue($mascota['pedigree']);?><br/>
-            <span class="gristxt_1">Criadero:</span> <?php echo publicationValue($mascota['criadero']);?><br/>
+            <?php 
+            
+                switch($mascota['tab']){
+                    case 'encontrado':
+                        $fecha_text = 'Se encontró el día';
+                        break;
+                    case 'perdido':
+                        $fecha_text = 'Se perdio el día';
+                        break;
+                    default:
+                        $fecha_text = 'Fecha de nacimiento';
+                }
+            
+                $details = array(
+                    array($GLOBALS['raza_o_animal'][$mascota['animal']],ucfirst($mascota['animal_detail'])),
+                    array('Tamaño',ucfirst($mascota['tamano'])),
+                    array('Sexo',ucfirst($mascota['sexo'])),
+                    array($fecha_text,ucfirst($mascota['fecha'])),
+                    array('Pedigree',ucfirst($mascota['pedigree'])),
+                    array('Criadero',ucfirst($mascota['criadero'])),
+                );
+                foreach($details as $row){
+                    if(!empty($row[1])){
+                        echo '<span class="gristxt_1">'.$row[0].':</span> '.$row[1].'<br/>';
+                    }
+                }
+            ?>
             <?php 
             if($mascota['horario']){
                 echo 'Horario: '.$mascota['horario'].'';

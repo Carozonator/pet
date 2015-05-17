@@ -46,12 +46,12 @@ var Foto = {
 
 var Preguntas = {
     focus: function(elem){
-        $(elem).closest('form').find('textarea').css('height','100px');
+        //$(elem).closest('form').find('textarea').css('height','100px');
         $(elem).closest('form').find('button').show();
     },
     blur:function(elem){
         if($(elem).val()==''){
-            $(elem).closest('form').find('textarea').css('height','30px');
+            //$(elem).closest('form').find('textarea').css('height','30px');
             $(elem).closest('form').find('button').hide();
         }
     }
@@ -172,15 +172,15 @@ var departamentos={'Artigas':['Artigas','Bella Union','Tom&aacute;s Gomensoro','
         "Punta Rieles","Reducto","Santiago V&aacutezquez","Sayago","Toledo Chico","Tres Cruces","Uni&oacute;n","Villa Biarritz","Villa Col&oacute;n","Villa Dolores","Villa Espa&ntilde;ola",
 	"Villa Garc&iacute;a","Villa Mu&ntilde;oz","Villa del Cerro","Larra&ntilde;aga","Barrio Sur","Barros Blancos","Conciliaci&oacute;n","Paso de las Duranas","Las Canteras",
         "Playa Pascual","Libertad","Casavalle"],
-                     'Paysandu':['Paysandu','Nuevo Paysand&uacute;','Guich&oacute;n','Chacras de Paysand&uacute;','Quebracho','San F&eacute;lix','Porvenir','Tambores','Piedras Coloradas'],
-                     'Rio Negro':['Fray Bentos','Young','Nuevo Berl&iacute;n','San Javier','Nuevo Berl&iacute;n','San Javier'],
+                     'Paysandú':['Paysandú','Nuevo Paysand&uacute;','Guich&oacute;n','Chacras de Paysand&uacute;','Quebracho','San F&eacute;lix','Porvenir','Tambores','Piedras Coloradas'],
+                     'Río Negro':['Fray Bentos','Young','Nuevo Berl&iacute;n','San Javier','Nuevo Berl&iacute;n','San Javier'],
                      'Rivera':['Rivera','Tranqueras','Minas de Corrales','Vichadero'],
                      'Rocha':['Rocha','Chuy','Lascano','Castillos','La Paloma','Cebollat&iacute;','La Aguada-Costa Azul','Vel&aacute;zquez','Punta del Diablo',
         'Aguas Dulces','Barra del Chuy','Barra de Valizas','Arachania','Cabo Polonio'],
                      'Salto':['Salto','Constituci&oacute;n','Bel&eacute;n'],
-                     'San Jose':['San Jose de Mayo','Ciudad del Plata','Libertad','Rodr&iacute;guez','Ecilda Paullier','Puntas de Valdez','Rafael Perazza'],
+                     'San José':['San José de Mayo','Ciudad del Plata','Libertad','Rodr&iacute;guez','Ecilda Paullier','Puntas de Valdez','Rafael Perazza'],
                      'Soriano':['Mercedes','Dolores','Cardona','Palmitas','Jos&eacute; Enrique Rod&oacute;','Chacras de Dolores','Villa Soriano'],
-                     'Tacuarembo':['Tacuarembo','Paso de los Toros','San Gregorio de Polanco','Villa Ansina','Tambores','Las Toscas','Curtina'],
+                     'Tacuarembó':['Tacuarembó','Paso de los Toros','San Gregorio de Polanco','Villa Ansina','Tambores','Las Toscas','Curtina'],
                      'Treinta y Tres':['Treinta y Tres','Vergara','Santa Clara de Olimar','Cerro Chato','Villa Sara','General Enrique Mart&iacute;nez']
                  };
 

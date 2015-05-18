@@ -25,7 +25,7 @@ $order = array('reciente'=>'Recientes','visitas'=>'M&aacutes visitados');
 
 
 <div style="margin-top:40px">
-    <div class="publicar" style='min-height:0px;margin:0px 20px 0px 0px;width:20%;float:left;'>
+    <div class="publicar" style='min-height:0px;margin:30px 20px 0px 0px;width:20%;float:left;'>
         <form action="" method="GET" id="filter">
             <input type="hidden" value="<?php echo $sub_tab; ?>" name="titulo"/>
             <input type="hidden" value="<?php echo $_REQUEST['orden']; ?>" name="orden" class="ordenar_filtro"/>

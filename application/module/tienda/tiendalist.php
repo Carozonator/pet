@@ -32,7 +32,7 @@ $order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor p
 
 
 <div style="margin-top:40px">
-    <div class="publicar" style='margin:0px 20px 0px 0px;width:20%;float:left;'>
+    <div class="publicar" style='margin:30px 20px 0px 0px;width:20%;float:left;'>
         <form action="" method="GET" id="filter">
             <input type="hidden" value="<?php echo $_REQUEST['orden']; ?>" name="orden" class="ordenar_filtro"/>
             <!--<input type="hidden" value="<?php echo $animal; ?>" name="animal"/>

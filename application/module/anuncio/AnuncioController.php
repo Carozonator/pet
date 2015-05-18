@@ -4,11 +4,14 @@ namespace pluralpet;
 class AnuncioController extends Controller{
     
     function index(){
+        
+        
         if(is_numeric($this->request->getMethod())){
             $this->singleItem();
             return;
         }
-        
+        $this->filtro();
+        /*
         $anuncio = new \pluralpet\Anuncio();
         $result = $anuncio->getAll(strtolower($this->request->getMethod()));
         
@@ -16,6 +19,8 @@ class AnuncioController extends Controller{
         $this->view->assign(array('data'=>$result));
         $this->view->assign(array('sub_tab'=>strtolower($this->request->getMethod())));
         $this->view->render();
+         * 
+         */
     }
     
     function singleItem(){
@@ -46,6 +51,42 @@ class AnuncioController extends Controller{
     
     
     function filtro(){
+        
+        
+        unset($_GET['go']);
+        foreach($_GET as $key => $row){
+            if(!empty($row)){
+                $fill[$key]=$row;
+            }
+        }
+        $animal = strtolower($this->request->getMethod());
+        $tab = strtolower($this->request->getTab());
+        
+        //$fill['tab']=$tab;
+        $fill['sub_tab']=$animal;
+        
+        $page = $fill['page'];
+        unset($fill['page']);
+        
+        $mascota = new \pluralpet\Anuncio();
+        $result = $mascota->filter($fill);
+        
+        $list_count = count($result);
+        $result = array_slice($result, $page*RESULTS_PER_PAGE,RESULTS_PER_PAGE);
+        
+        $this->view->assign(array('list_count'=>$list_count));
+        $this->view->assign(array('data'=>$result));
+        $this->view->assign(array('animal'=>$animal));
+        $this->view->assign(array('tab'=>$tab));
+        $this->view->setFile('anuncioList');
+        $this->view->render();
+        
+        
+        
+        
+        
+        
+        /*
         $filters = $this->request->getArgs();
         $filters = explode('&',substr($filters[0],1));
         
@@ -64,7 +105,7 @@ class AnuncioController extends Controller{
         $this->view->assign(array('tab'=>$tab));
         $this->view->setFile('anuncioList');
         $this->view->render();
-        
+        */
     }
     
 }

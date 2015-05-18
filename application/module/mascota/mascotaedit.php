@@ -241,6 +241,7 @@ if(in_array($_REQUEST['tab'],$check1)){
 <div style="clear:both"></div>
 <script>
     
+    var fecha = '<?php echo $mascota['fecha'];?>';
     
     $('input[type=file]').change(function() {
         $('#submit_photo').trigger("click");
@@ -254,11 +255,26 @@ if(in_array($_REQUEST['tab'],$check1)){
         changeYear: true, 
         gotoCurrent:true,
         yearRange: "1990:2015",
-        altFormat: "yy-mm-dd",
-        altField: "#fecha"
+        dateFormat: 'dd/mm/yy',
+        altFormat: "yy-m-d",
+        altField: "#fecha",
+        onClose:function(dateText){
+            if(dateText==''){
+                $(this).datepicker('setDate','');
+            }
+        }
     });
     
-    $(".datepicker").datepicker("setDate", today());
+    function fechaSetDatepicker(f){
+        var fecha = f.split('-');
+        var ret = fecha[2]+'/'+fecha[1]+'/'+fecha[0];
+        if(fecha[2]==='00'){
+            return;
+        }
+        
+        $(".datepicker").datepicker("setDate", ret);
+    }
+    fechaSetDatepicker(fecha);
     
     $(".sortable_photo").sortable({
         items: "li:not(.unsortable)",

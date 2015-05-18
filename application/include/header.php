@@ -84,7 +84,7 @@
                     </div>
 
                     <?php }else{ ?>
-                    <div id="dd" style="min-width:50px;max-width:120px;" class="dropdown-menu" tabindex="1">
+                    <div id="dd" style="min-width:50px;" class="dropdown-menu" tabindex="1">
                         <a href="/account/"><i class="icon-user"></i> <?php echo $_SESSION['user']->username;?></a>
                         <a style="padding-left:20px;" href="/account/logout"><i style="padding-right:5px;" class="icon-eject"></i>Salir</a>
                         <!--

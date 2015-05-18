@@ -1,12 +1,15 @@
 <?php 
 $raza_o_animal = array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Animal','pez'=>'Animal','mamifero'=>'Animal','ave'=>'Animal','reptil'=>'Animal','otro'=>'Animal');
 
-$order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor precio','visitas'=>'M&aacutes visitados');
+$order = array('reciente'=>'Recientes','visitas'=>'M&aacutes visitados');
 
+
+if(strcmp($tab,'comprar')===0){
+    $order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor precio','visitas'=>'M&aacutes visitados');
+}
 ?>
 
 
-<div style="">
 <div class="wrapper-dropdown-5 orden" style="">
     <div class="dropdown-menu" style="width:90%;"><i class="icon-sort"></i> 
         <?php echo (!empty($_REQUEST['orden'])?$order[$_REQUEST['orden']]:'Recientes'); ?>
@@ -16,7 +19,6 @@ $order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor p
                 } ?>
         </ul>
     </div>
-</div>
 </div>
 
 <div style="margin-top:40px">

@@ -175,7 +175,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
             <?php 
             $paneles_to_table = array('perro'=>'mascota','gato'=>'mascota','servicio'=>'anuncio','producto'=>'producto');
             $paneles = array(
-                //'oferta'=>'Ofertas del d&iacute;a',
+                'oferta'=>'Ofertas de la semana',
                 'producto'=>'Productos destacados',
                 'perro'=>'Perros destacados',
                 'gato'=>'Gatos destacados', 
@@ -221,12 +221,14 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                             <div class="details">
                                                     <?php 
                                                         //if($key=='servicio'){
-                                                            echo '<span title="'.$r->ciudad_barrio.', '.$r->departamento.'" style="font-size:14px;">'.$r->ciudad_barrio.', '.$r->departamento.'</span>';
+                                                            echo '<span title="'.$r->ciudad_barrio.', '.$r->departamento.'" style="font-size:14px;">'.(!empty($r->ciudad_barrio)?$r->ciudad_barrio.', ':'').$r->departamento.'</span>';
                                                         //}else{
                                                             //echo '<span class="precio">'.moneda($moneda).number_format($r->precio,0,',','.').'</span>'; 
                                                         //}
                                                     ?>
-                                                <span style="text-align:right;float:right;width:50px;"><button onclick="window.location='/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>'" class="button">VER</button></span>
+                                                <span style="text-align:right;float:right;width:50px;margin-top:10px;">
+                                                    <button onclick="window.location='/<?php echo $paneles_to_table[$key];?>/<?php echo $r->id;?>'" class="button">VER</button>
+                                                </span>
                                                 <div style="clear:both"></div>
                                             </div>
                                         </div>

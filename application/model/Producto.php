@@ -129,7 +129,7 @@ class Producto extends Model{
     
     
     function filter($vals){
-       
+       //print_r($vals);die;
         $orden = $vals['orden'];
         unset($vals['orden']);
         switch($orden){
@@ -169,7 +169,8 @@ class Producto extends Model{
         }
         
         //adjust _table accordingly 
-        $sql =    "SELECT producto.*, foto.name as foto_name, foto.usuario as foto_usuario, foto.photo_order "
+        $sql =    "SELECT producto.*, foto.name as foto_name, foto.usuario as foto_usuario, foto.photo_order, "
+                . "CASE WHEN producto.moneda = 'us' THEN producto.precio * ".CAMBIO." ELSE producto.precio END AS `precio_sum` "
                 . "FROM producto "
                 . "LEFT OUTER JOIN (SELECT name, usuario,photo_order,publication_id FROM foto WHERE _table='producto' order by photo_order) "
                 . "AS foto on foto.publication_id=producto.id "
@@ -194,4 +195,20 @@ class Producto extends Model{
         return $rows;
     }
     */
+    
+    
+    
+    
+    
+    function markAsOffer(){
+        if(isset($_POST['oferta_checkbox'])){
+            $date = time();
+        }else{
+            $date = 0;
+        }
+        $sql =  "UPDATE producto set oferta=? where id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($date,$_POST['id']));
+        
+    }
 }

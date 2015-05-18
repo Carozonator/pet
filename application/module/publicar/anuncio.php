@@ -119,6 +119,9 @@
                     <div style="text-align:center;">
                         <button onclick="Publicar.submit(this,'addAnuncio');return false;">Publicar</button>
                     </div>
+                    <div class="publication_error">
+                        * Falta completar campos obligatorios
+                    </div>
                 </div>
                 <div style="clear:both"></div>
             </form>

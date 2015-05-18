@@ -83,7 +83,7 @@
                     array('Criadero',ucfirst($mascota['criadero'])),
                 );
                 foreach($details as $row){
-                    if(!empty($row[1])){
+                    if(!empty($row[1]) && strcmp(substr($row[1],0,4),'0000')!==0){
                         echo '<span class="gristxt_1">'.$row[0].':</span> '.$row[1].'<br/>';
                     }
                 }

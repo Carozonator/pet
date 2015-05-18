@@ -14,12 +14,27 @@ foreach($files as $row){
     $images[$row] = scandir($dir);
 }
 
-
+$order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor precio','visitas'=>'M&aacutes visitados');
 
 ?>
+
+
+<div class="wrapper-dropdown-5 orden" style="">
+    <div class="dropdown-menu" style="width:90%;"><i class="icon-sort"></i> 
+        <?php echo (!empty($_REQUEST['orden'])?$order[$_REQUEST['orden']]:'Recientes'); ?>
+        <ul style=""class="dropdown">
+                <?php foreach($order as $key=>$o){ 
+                    echo '<li><a onclick="Filter.sort(\''.$key.'\');">'.$o.'</a></li>';
+                } ?>
+        </ul>
+    </div>
+</div>
+
+
 <div style="margin-top:40px">
     <div class="publicar" style='margin:0px 20px 0px 0px;width:20%;float:left;'>
         <form action="" method="GET" id="filter">
+            <input type="hidden" value="<?php echo $_REQUEST['orden']; ?>" name="orden" class="ordenar_filtro"/>
             <!--<input type="hidden" value="<?php echo $animal; ?>" name="animal"/>
             <input type="hidden" value="<?php echo $tab; ?>" name="tab"/>-->
             <!--
@@ -167,7 +182,7 @@ foreach($files as $row){
                             <div class="precio" style="font-size:20px;position:absolute;left:600px;top:70px;" class="">
                                 <?php echo moneda($row['moneda']); ?><?php echo number_format($row['precio'],0,',','.'); ?>
                             </div>
-                            <p><span class="gristxt_1">Localizacion:</span> <?php echo htmlEncodeText(ucfirst($row['ciudad_barrio']));?>, <?php echo htmlEncodeText(ucfirst($row['departamento']));?></p>
+                            <p><span class="gristxt_1">Localizacion:</span> <?php echo (!empty($row['ciudad_barrio'])?htmlEncodeText(ucfirst($row['ciudad_barrio'])).', ':'');?><?php echo htmlEncodeText(ucfirst($row['departamento']));?></p>
                             <?php 
 
                             if($row['horario']){
@@ -176,14 +191,33 @@ foreach($files as $row){
                             if($row['link']){
                                 echo '<a class="gristxt" title="" href="'.$row['link'].'">'.$row['link'].'</a>';
                             }
+                            if($row['vendedor_id']){
+                                echo '<p><span class="gristxt_1">Producto ID:</span> '.$row['vendedor_id'].'</p>';
+                            }
                             ?>
-                            <p class="" title="" href="#"><?php echo $row['descripcion']; ?></p>
+                            
+                            <!--
                             <div style="position:absolute;right:0px;top:0px;">
                                  <form style="display:inline;" method="POST" action="/comprar/delete/">
-                                    <!--<input type="hidden" name="id" value="<?php echo $row['id'];?>"/>-->
-                                    <!--<button style="margin-left:10px;">Borrar</button>-->
+                                    <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
+                                    button style="margin-left:10px;">Borrar</button>
                                 </form>
                             </div>
+                            -->
+                            
+                            <?php if($_SESSION['user']->id==7 || $_SESSION['user']->id==1){ ?>
+                            
+                            <div style="position:absolute;right:0px;top:0px;">
+                                 <form style="display:inline;" method="POST" action="/producto/oferta">
+                                     oferta
+                                    <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
+                                    <input style="visibility:visible" type="checkbox" name="oferta_checkbox" <?php echo (!empty($row['oferta'])?'checked':''); ?> onclick="$(this).closest('form').submit();"/>
+                                </form>
+                            </div>
+                            
+                            <?php } ?>
+                            
+                            
                         </div>
                         <div style="clear:both"> </div>
                     </div>

@@ -25,4 +25,13 @@ class ProductoController extends Controller{
         
     }
     
+    
+    function oferta(){
+        $model = new \pluralpet\Producto();
+        $model->markAsOffer();
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    }
+    
+    
+    
 }

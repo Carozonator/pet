@@ -113,23 +113,23 @@ class Mascota extends Model{
             $sexo_stmt = "and (sexo='camada' or sexo='".  mysql_escape_string($sexo)."')";
         }
         //if(isset($vals['orden'])){//sort
-            $orden = $vals['orden'];
-            unset($vals['orden']);
-            switch($orden){
-                case 'barato':
-                    $order_by = "ORDER BY precio_sum";
-                break;
-                case 'caro':
-                    $order_by = "ORDER BY precio_sum DESC";
-                break;
-                case 'visitas':
-                    $order_by = "ORDER BY views DESC";
-                break;
-                default:
-                    $order_by = "ORDER BY id DESC";
-                break;
-            }
-            $order_by.=", foto.photo_order";
+        $orden = $vals['orden'];
+        unset($vals['orden']);
+        switch($orden){
+            case 'barato':
+                $order_by = "ORDER BY precio_sum";
+            break;
+            case 'caro':
+                $order_by = "ORDER BY precio_sum DESC";
+            break;
+            case 'visitas':
+                $order_by = "ORDER BY views DESC";
+            break;
+            default:
+                $order_by = "ORDER BY id DESC";
+            break;
+        }
+        $order_by.=", foto.photo_order";
             
         //}
         

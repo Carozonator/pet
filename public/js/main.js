@@ -229,6 +229,11 @@ var Publicar = {
             $('.tienda').hide();
             $('.'+Publicar.animal).show();
         }
+        
+        
+        
+        
+        
         if(this.group=='anuncio' && this.type=='paseador'){
             $('.direccion').hide();
         }
@@ -239,6 +244,15 @@ var Publicar = {
         $('.step').attr('class','step');
         $('.step:eq('+(next_pos)+')').addClass('highlight');
         $('.publicar_header_arrow').removeClass('highlight_pink');
+        
+        
+        
+        //Skip for otros
+        if(this.group=='producto' && Publicar.animal=='otro' && next_pos==1){
+            Publicar.tab='otro';
+            Publicar.slideRight(2,true);
+        }
+        
         //$('.publicar_header_arrow:eq('+(next_pos-1)+')').addClass('highlight_pink');
         $('.tab_option').show();
         if(next_box.has('tab')){
@@ -384,8 +398,12 @@ var Publicar = {
         }
         */
         if(blank_found===true){
+            $('.publication_error').show();
             return;
         }
+        
+        $('.publication_error').hide();
+        
         submit_var.descripcion=description;
 
 

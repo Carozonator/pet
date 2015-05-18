@@ -209,6 +209,9 @@ switch($_POST['tab']){
         <div style="text-align:center;">
             <button onclick="Publicar.submit(this,'addMascota');return false;/*Publicar.submit(this);return false;*/">Publicar</button>
         </div>
+        <div class="publication_error">
+            * Falta completar campos obligatorios
+        </div>
     </div>
     <div style="clear:both"></div>
 </form>
@@ -221,6 +224,7 @@ switch($_POST['tab']){
         changeYear: true, 
         gotoCurrent:true,
         yearRange: "1990:2015",
+        dateFormat: 'dd/mm/yy',
         altFormat: "yy-mm-dd",
         altField: "#fecha"
     });

@@ -34,6 +34,7 @@ class AnuncioController extends Controller{
         $pregunta = new \pluralpet\Pregunta();
         $preguntas = $pregunta->get($this->request->getMethod(),'anuncio');
         
+        $this->view->assign(array('controller'=>strtolower($this->request->getController())));
         $this->view->assign(array('pregunta'=>$preguntas));
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('anuncio'=>$result));

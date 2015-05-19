@@ -311,6 +311,18 @@ function precio($precio){
     return number_format($precio,0,',','.');
 }
 
+function monedaPercio($moneda,$precio){
+    if(empty($precio)){
+        return '';
+    }
+    return moneda($moneda).precio($precio);
+}
+
+
+
+
+
+
 function fecha($uts){
     $post_day = strtotime('today midnight',$uts);
     $today = strtotime('today midnight',time());

@@ -173,7 +173,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         <div class="main-content-box" style="" id="">
             
             <?php 
-            $paneles_to_table = array('perro'=>'mascota','gato'=>'mascota','servicio'=>'anuncio','producto'=>'producto');
+            $paneles_to_table = array('perro'=>'mascota','gato'=>'mascota','servicio'=>'anuncio','producto'=>'producto','oferta'=>'producto');
             $paneles = array(
                 'oferta'=>'Ofertas de la semana',
                 'producto'=>'Productos destacados',

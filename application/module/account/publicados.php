@@ -31,7 +31,11 @@
             </div>
             <div style="margin:10px;display:inline-block;position:absolute;top:0px;font-size:15px;">
                 <span style="font-size:16px;font-weight:bold"><?php echo $row->titulo;?></span><br/>
-                <span style="font-size:14px;font-weight:bold">$<?php echo (empty($row->precio)?"":$row->precio);?></span>
+                <span style="font-size:14px;font-weight:bold">
+                    <?php 
+                    echo monedaPercio($row->moneda,$row->precio);
+                    ?>
+                </span>
             </div>
             <div style="position:absolute;right:5px;top:10px;">
                 <!--<button style="margin-left:10px;height:25px;"><i class="icon-wrench"></i></button>-->

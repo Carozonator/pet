@@ -323,6 +323,23 @@ function monedaPercio($moneda,$precio){
 
 
 
+function displayLocation($ciudad,$departamento,$direccion,$separator){
+    if(!empty($ciudad) && !empty($departamento)){
+        $rtn = $ciudad.', '.$departamento;
+    }else{
+        $rtn = $ciudad.$departamento;
+    }
+    
+    if(!empty($direccion)){
+        $rtn = $direccion.$separator.$rtn;
+    }
+    return $rtn;
+}
+
+
+
+
+
 function fecha($uts){
     $post_day = strtotime('today midnight',$uts);
     $today = strtotime('today midnight',time());

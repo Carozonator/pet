@@ -11,16 +11,7 @@ class AnuncioController extends Controller{
             return;
         }
         $this->filtro();
-        /*
-        $anuncio = new \pluralpet\Anuncio();
-        $result = $anuncio->getAll(strtolower($this->request->getMethod()));
         
-        $this->view->setFile('anunciolist');
-        $this->view->assign(array('data'=>$result));
-        $this->view->assign(array('sub_tab'=>strtolower($this->request->getMethod())));
-        $this->view->render();
-         * 
-         */
     }
     
     function singleItem(){
@@ -37,7 +28,7 @@ class AnuncioController extends Controller{
         $this->view->assign(array('controller'=>strtolower($this->request->getController())));
         $this->view->assign(array('pregunta'=>$preguntas));
         $this->view->assign(array('foto'=>$fotos));
-        $this->view->assign(array('anuncio'=>$result));
+        $this->view->assign(array('data'=>$result));
         
         $this->view->addHeadTag('<meta property="og:title" content="'.$result['titulo'].'" />');
         //$this->view->addHeadTag('<meta property="og:description" content="'.strip_tags($result['descripcion']).'" />');

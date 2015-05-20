@@ -1,8 +1,8 @@
 <div class="main-content_container single_publication" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
         <h2 style="border-bottom: 1px solid grey;padding:5px;">
-            <?php echo $producto['titulo'];?>
-            <a style="float:right;margin-top:-3px;" href="http://www.facebook.com/sharer.php?u=<?php echo DOMAIN.'/'.$controller.'/'.$producto['id'];?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <?php echo $data['titulo'];?>
+            <a style="float:right;margin-top:-3px;" href="http://www.facebook.com/sharer.php?u=<?php echo DOMAIN.'/'.$controller.'/'.$data['id'];?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                 <img style="width:100px;" src="<?php echo MEDIA.'facebook_share.png'; ?>"/>
              </a>
         </h2>
@@ -11,7 +11,7 @@
         <?php foreach($foto as $f){ ?>
             <div class="img_box_small">
                 <a href="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>" data-lightbox="roadtrip" >
-                    <img alt="<?php echo $producto['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
+                    <img alt="<?php echo $data['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
                 </a>
             </div>
         <?php } ?>
@@ -19,28 +19,28 @@
         
         <div style="padding-top:20px;">
             <div class="img_box_xl" style="margin-right:20px;">
-                <img alt="<?php echo $producto['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$foto[0]['usuario'].'/'.$foto[0]['name']; ?>">
+                <img alt="<?php echo $data['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$foto[0]['usuario'].'/'.$foto[0]['name']; ?>">
             </div>
             <div style="display:inline-block">
-                <h2 style="padding-bottom:20px;"><?php echo strtoupper($producto['tab']);?></h2>
+                <h2 style="padding-bottom:20px;"><?php echo strtoupper($data['tab']);?></h2>
                 <h5 >Direcc&iacute;on:</h5>
-                <p class="gristxt"><?php echo (!empty($producto['ciudad_barrio'])?ucfirst($producto['ciudad_barrio']).", ":"");?><?php echo ucfirst($producto['departamento']);?></p>
-                <p><?php echo (!empty($producto['vendedor_id'])?('Producto ID: '.$producto['vendedor_id']):"");?></p>
+                <p class="gristxt"><?php echo (!empty($data['ciudad_barrio'])?ucfirst($data['ciudad_barrio']).", ":"");?><?php echo ucfirst($data['departamento']);?></p>
+                <p><?php echo (!empty($data['vendedor_id'])?('Producto ID: '.$data['vendedor_id']):"");?></p>
                 
                 <div class="precio" style="font-size:20px;">
                     <?php 
-                    echo moneda($producto['moneda']).precio($producto['precio']);
+                    echo moneda($data['moneda']).precio($data['precio']);
                     ?>
                 </div>
                 <br/>
                 
                 
                 
-                <button onclick="Contactar.show(<?php echo $producto['usuario']; ?>)">Contactar</button>
-                <?php if($_SESSION['user']->id==$producto['usuario']){ ?>
+                <button onclick="Contactar.show(<?php echo $data['usuario']; ?>)">Contactar</button>
+                <?php if($_SESSION['user']->id==$data['usuario']){ ?>
                 <!--
-                    <form style="margin-top:20px;"method="GET" action="/mascota/editar/<?php echo $producto['id'];?>">
-                        <input type="hidden" value="<?php echo $producto['tab'];?>" name="tab"/>
+                    <form style="margin-top:20px;"method="GET" action="/mascota/editar/<?php echo $data['id'];?>">
+                        <input type="hidden" value="<?php echo $data['tab'];?>" name="tab"/>
                         <input type="submit" value="Editar"/>
                     </form>
                 -->
@@ -54,8 +54,8 @@
         <div class="item_datos" style="margin-top:20px;">
             <h4>Datos</h4>
             <?php 
-            if($producto['link']){
-                echo '<a class="gristxt" title="" href="'.$producto['link'].'">'.$producto['link'].'</a>';
+            if($data['link']){
+                echo '<a class="gristxt" title="" href="'.$data['link'].'">'.$data['link'].'</a>';
             }
             ?>
         </div>
@@ -63,36 +63,11 @@
         <div style="margin-top:20px;" class="description">
             <h4>Descripci&oacute;n</h4>
             <div class="wrapper">
-                <p class="descripcion"><?php echo htmlEncodeText($producto['descripcion']);?></p>
+                <p class="descripcion"><?php echo htmlEncodeText($data['descripcion']);?></p>
             </div>
         </div>
         
-        <div style="margin-top:20px;" class="preguntas">
-            <h4>Preguntas</h4>
-            <ol>
-                <li>
-                    <div>
-                        <form method="post" action="/pregunta/publicarPregunta">
-                            <textarea onblur="Preguntas.blur(this);" onfocus="Preguntas.focus(this);" name="question" style="width:100%;height:30px;"placeholder="Escribe tu pregunta"></textarea>
-                            <input type="hidden" value="<?php echo $producto['id'];?>" name="publication_id"/>
-                            <input type="hidden" value="producto" name="_table"/>
-                            <button style="display:none;margin:10px 0px;">Publicar</button>
-                        </form>
-                    </div>
-                </li>
-                <?php 
-                foreach($pregunta as $row){
-                    echo '<li>';
-                    echo '<i class="icon-comment"></i><span>'.$row['question'].'<span>';
-                    if(!empty($row['answer'])){
-                        $date = date("F j, g:i a",$row['answer_timestamp']);
-                        echo '<div class="answer"><i class="icon-comments"></i>'.$row['answer'].'<span class="date">'.$date.'</span></div>';
-                    }
-                    echo '</li>';
-                }
-                ?>
-            </ol>
-        </div>
+        <?php include ROOT.'application/include/pregunta.php'; ?>
         
     </div>
 </div>

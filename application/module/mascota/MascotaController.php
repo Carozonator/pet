@@ -33,7 +33,7 @@ class MascotaController extends Controller{
         $this->view->assign(array('tab'=>$this->request->getTab()));
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('pregunta'=>$preguntas));
-        $this->view->assign(array('mascota'=>$result));
+        $this->view->assign(array('data'=>$result));
         
         
         $this->view->addHeadTag('<meta property="og:title" content="'.$result['titulo'].'" />');

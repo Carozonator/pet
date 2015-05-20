@@ -21,7 +21,7 @@ class ProductoController extends Controller{
         $this->view->assign(array('controller'=>strtolower($this->request->getController())));
         $this->view->assign(array('pregunta'=>$preguntas));
         $this->view->assign(array('foto'=>$fotos));
-        $this->view->assign(array('producto'=>$result));
+        $this->view->assign(array('data'=>$result));
         $this->view->setFile('producto');
         $this->view->render();
         

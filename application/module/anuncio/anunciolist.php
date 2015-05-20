@@ -92,16 +92,21 @@ foreach($data as $row){
             </div>
             <div class="overflow mbottom">
             <h3>
-                <a class="bigtxt" href="#"><?php echo $row['titulo'];?></a>
+                <a class="bigtxt" style="color:#9C2490" href="/anuncio/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
             </h3>
             <?php 
             
-            if($row['horario']){
-                echo '<p class="gristxt nolink" title="" href="#">Horario: '.$row['horario'].'</p>';
+             $details = array(
+                array('Direccíon',displayLocation($row['ciudad_barrio'],$row['departamento'],$row['direccion'],', ')),
+                array('Horario',ucfirst($row['horario']))
+                
+            );
+            foreach($details as $row){
+                if(!empty($row[1])){
+                    echo '<p><span class="gristxt_1">'.$row[0].':</span> '.$row[1].'</p>';
+                }
             }
-            if($row['link']){
-                echo '<a class="gristxt" title="" href="'.$row['link'].'">'.$row['link'].'</a>';
-            }
+                            
             ?>
             <p class="descripcion"><?php echo $row['descripcion'];?></p>
             

@@ -26,13 +26,10 @@ class ConsejoController extends Controller{
         $fotos = $foto->get($this->request->getMethod(),'consejo');
         
         $this->view->addHeadTag('<meta property="og:title" content="'.$result['titulo'].'" />');
-        //$this->view->addHeadTag('<meta property="og:description" content="'.strip_tags($result['descripcion']).'" />');
+        $this->view->addHeadTag('<meta property="og:description" content="'.strip_tags($result['descripcion']).'" />');
         $this->view->addHeadTag('<meta property="og:image" content="'.DOMAIN.MEDIA.'upload/'.$fotos[0]['usuario'].'/'.$fotos[0]['name'].'" />');
         
         $this->view->assign(array('controller'=>strtolower($this->request->getController())));
-        $this->view->addHeadTag('<meta property="og:title" content="'.$result['titulo'].'" />');
-        $this->view->addHeadTag('<meta property="og:description" content="'.strip_tags($result['descripcion']).'" />');
-        $this->view->addHeadTag('<meta property="og:image" content="'.DOMAIN.MEDIA.'upload/'.$fotos[0]['usuario'].'/'.$fotos[0]['name'].'" />');
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('data'=>$result));
         $this->view->setFile('consejo');

@@ -39,7 +39,7 @@
                 <button onclick="Contactar.show(<?php echo $data['usuario']; ?>)" style="">Contactar</button>
             </div>
             
-            <div style="margin-top:20px;" class="description">
+            <div style="margin-top:40px;" class="description">
                 <h4>Descripci&oacute;n</h4>
                 <div class="wrapper">
                     <p class="descripcion"><?php echo htmlEncodeText($data['descripcion']);?></p>

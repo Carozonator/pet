@@ -142,7 +142,6 @@
 <div style="clear:both"></div>
 <script>
     Publicar.group='anuncio';
-    nicEditors.allTextAreas();
     
     $('.datepicker').datepicker({ 
         changeYear: true, 

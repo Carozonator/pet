@@ -234,7 +234,7 @@ switch($_POST['tab']){
     
     
     
-    nicEditors.allTextAreas();
+    //nicEditors.allTextAreas();
 
     Ready.init();
 </script>

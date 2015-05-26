@@ -348,8 +348,12 @@ var Publicar = {
     submit: function(elem,test){
         
         $('.input_error').html('');
-        var nicE = new nicEditors.findEditor('nicedit_text');
-        var description = nicE.getContent();
+        //Do not use niceedit plugin
+        //var nicE = new nicEditors.findEditor('nicedit_text');
+        //var description = nicE.getContent();
+        var description = $('#nicedit_text').val();
+        
+        
         
         var form =$('#form_description');
         var submit_ok = true;

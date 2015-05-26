@@ -297,7 +297,6 @@ if(in_array($_REQUEST['tab'],$check1)){
         }
     });
     
-    nicEditors.allTextAreas();
 
     Ready.init();
 </script>

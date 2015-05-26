@@ -99,5 +99,4 @@
 <div style="clear:both"></div>
 <script>
     Publicar.group='consejo';
-    nicEditors.allTextAreas();
 </script>

@@ -149,59 +149,7 @@ $publication_hash = substr( md5(rand()), 0, 10);
 <script>
     
     Publicar.group = 'producto';
-    nicEditors.allTextAreas();
-    /*
-    $(document).ready(function(){
-        $("select.raza").select2({
-            placeholder: "Eligue Raza",
-            allowClear: false
-        });
-        $(document).ready(function(){
-        nicEditors.allTextAreas();
-        
-        $("select.departamento").select2({
-            placeholder: "Eligue Departamento",
-            allowClear: false,
-            
-        });
-        
-        
-        
-        $("select.ciudad").select2({
-            placeholder: "Eligue Ciudad",
-            allowClear: false,
-            enable:false,
-            readonly:true
-        });
-        
-        
-        
-        $("select.departamento").select2().on('change', function(e){
-            var type;
-            if(e.val=='Montevideo'){
-                $('.barrio').show();
-                $('.ciudad').hide();
-                type='barrio';
-            }else{
-                $('.barrio').hide();
-                $('.ciudad').show();
-                type='ciudad';
-            }
-            $('select.'+type).html('');
-            var data = Publicar.departamento[e.val]
-            for(var i in data){
-                    $('.'+type).append('<option value="' + data[i]+ '">'+data[i]+'</option>');
-            }
-        });
-        
-        
-        $("select.barrio").select2({
-            placeholder: "Eligue Barrio",
-            allowClear: false
-        });
-        
-    });
-    })
-    */
+    
+    
 </script>
 

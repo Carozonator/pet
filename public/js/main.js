@@ -248,7 +248,7 @@ var Publicar = {
         
         
         //Skip for otros
-        if(this.group=='producto' && Publicar.animal=='otro' && next_pos==1){
+        if(this.group=='producto' && Publicar.animal=='articulo' && next_pos==1){
             Publicar.tab='otro';
             Publicar.slideRight(2,true);
         }

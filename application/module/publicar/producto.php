@@ -37,7 +37,8 @@ $publication_hash = substr( md5(rand()), 0, 10);
                 <img onclick="Publicar.animal='reptil';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_reptil.jpg"/><br/>
                 <img onclick="Publicar.animal='mamifero';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_pequenosmamiferos.jpg"/>
                 <img onclick="Publicar.animal='pez';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_pez.jpg"/>
-                <img onclick="Publicar.animal='otro';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_otros.jpg"/>
+                <img onclick="Publicar.animal='articulo';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_articulo.jpg"/>
+                <!--<img onclick="Publicar.animal='otro';Publicar.slideRight(1,true);" src="<?php echo MEDIA; ?>mascota_otros.jpg"/>-->
             </div>
         </div>
         <div class="slides" style="position:absolute;left:1000px;width:100%;">

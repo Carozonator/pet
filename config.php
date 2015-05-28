@@ -54,7 +54,7 @@ $GLOBALS['nav_menu'] = array('publicar'=>array('name'=>'publicar','sub_menus'=>a
                                                             array('reptil'=>'Reptiles'),
                                                             array('pez'=>'Peces'),
                                                             array('mamifero'=>'Peque&ntilde;os mamiferos'),
-                                                            array('otro'=>'Otros'),
+                                                            array('articulo'=>'Artículo con motivos'),
                                                             /*array('ofertas' => 'Ofertas del dia')*/
                                 )),'adoptar'=>array('name'=>'adoptar','sub_menus'=>array(
                                                             array('perro'=> 'Perros'),

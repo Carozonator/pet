@@ -104,7 +104,7 @@ class User extends Model{
             $sql =    "SELECT $table.*, foto.name as foto_name, foto.usuario as foto_usuario FROM user "
                     . "INNER JOIN $table on user.id=$table.usuario "
                     . "LEFT OUTER JOIN foto on foto.publication_id= $table.id "
-                    . "WHERE user.id=?"
+                    . "WHERE user.id=? and foto.usuario=user.id "
                     . "GROUP BY foto.publication_id ";
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute(array($_SESSION['user']->id));

@@ -70,7 +70,11 @@ a{
     margin-left:10px;
 }
 
-.bigtxt {font-size:1.15em;font-weight:bold;  font-family: arial;}
+.bigtxt {
+    /*font-size:1.15em;*/
+    font-size:22px;
+    font-weight:bold;  
+    font-family: arial;}
 a.bigtxt {color:#333; /*color:#cc0033;*/ }
 .gristxt{
     color:#939393;

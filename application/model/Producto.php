@@ -104,7 +104,17 @@ class Producto extends Model{
     
     
     
-    
+    function update($id){
+        
+        //animal,tab,precio,titulo,descripcion,departamento,ciudad_barrio,usuario,status,moneda,vendedor_id
+        $sql =  "UPDATE producto set animal=?, tab=?,titulo=?,descripcion=?,departamento=?,ciudad_barrio=?,precio=?,moneda=?,vendedor_id=? "
+                . "WHERE id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($_POST['tab_select'],$_POST['tab_tipo'],$_POST['titulo'],
+            $_POST['descripcion'],$_POST['departamento'] ,$_POST['ciudad_barrio'],parseMoney($_POST['precio']),
+            $_POST['moneda'],$_POST['vendedor_id'],intval($id)));
+        return $id;
+    }
     
     function get($id){
         $sql = "SELECT * FROM producto WHERE id=?";

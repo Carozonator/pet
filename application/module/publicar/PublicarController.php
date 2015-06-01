@@ -75,13 +75,26 @@ class PublicarController extends \pluralpet\Controller{
         //echo 't=producto&id='.$id;
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
     function updateMascota(){
         $mascota = new \pluralpet\Mascota();
         $id =  $mascota->update($_POST['publication_id']);
         echo json_encode(array('link'=>'/mascota/'.$id));
         //echo 't=mascota&id='.$id;
     }
-    
+    function updateProducto(){
+        $mascota = new \pluralpet\Producto();
+        $id =  $mascota->update($_POST['publication_id']);
+        echo json_encode(array('link'=>'/producto/'.$id));
+        //echo 't=mascota&id='.$id;
+    }
     
     
     

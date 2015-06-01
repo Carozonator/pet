@@ -39,4 +39,23 @@ class ProductoController extends Controller{
     
     
     
+    function editar(){
+        $args = $this->request->getArgs();
+        $id = $args[0];
+        
+        $mascota = new \pluralpet\Producto();
+        $result = $mascota->get($id);
+        
+        $foto = new \pluralpet\Foto();
+        $fotos = $foto->get($id,'producto');
+        
+        $this->view->assign(array('data'=>$result));
+        $this->view->assign(array('foto'=>$fotos));
+        $this->view->assign(array('id'=>$id));
+        
+        $this->view->setFile('productoedit');
+        $this->view->render();
+    }
+    
+    
 }

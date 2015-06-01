@@ -86,7 +86,7 @@ class MascotaController extends Controller{
         $foto = new \pluralpet\Foto();
         $fotos = $foto->get($id,'mascota');
         
-        $this->view->assign(array('mascota'=>$result));
+        $this->view->assign(array('data'=>$result));
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('id'=>$id));
         

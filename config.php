@@ -248,7 +248,7 @@ $GLOBALS['raza_o_animal']= array('perro'=>'Raza','gato'=>'Raza','mamifero'=>'Ani
 
 
 
-
+/*
 $GLOBALS['producto'] = array(
                 'perro'=>array("accesorios","transporte","alimentos","camas","casillas","collarez","comederos","correas","jaulas","juguetes","ropa"),
                 'gato'=>array("accesorios","transporte","alimentos","camas","casillas","collarez","comederos","juguetes"),
@@ -256,8 +256,10 @@ $GLOBALS['producto'] = array(
                 'repitl' => array("accesorios","alimentos","salud","terrarios","transporte"),
                 'mamifero' =>  array("accesorios","alimentos","jaulas","juguetes","salud","transporte"),
                 'pez' => array("accesorios","alimentos","parideras","peceras","salud"));
-
-
+*/
+$GLOBALS['producto'] = array(
+    'perro'=>'Perros','gato'=>'Gatos','ave'=>'Aves','reptil'=>'Reptiles','pez'=>'Peces','mamifero'=>'Peque&ntilde;os mamiferos','articulo'=>'Artículo con motivos'
+);
 
 
 

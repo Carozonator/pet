@@ -47,12 +47,10 @@
                 
                 <button onclick="Contactar.show(<?php echo $data['usuario']; ?>)">Contactar</button>
                 <?php if($_SESSION['user']->id==$data['usuario']){ ?>
-                <!--
-                    <form style="margin-top:20px;"method="GET" action="/mascota/editar/<?php echo $data['id'];?>">
-                        <input type="hidden" value="<?php echo $data['tab'];?>" name="tab"/>
+                    <form style="margin-top:20px;"method="GET" action="/producto/editar/<?php echo $data['id'];?>/">
+                        <input type="hidden" value="<?php echo $data['animal'];?>" name="animal"/>
                         <input type="submit" value="Editar"/>
                     </form>
-                -->
                 <?php } ?>
             </div>
         </div>

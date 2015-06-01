@@ -194,7 +194,7 @@ switch($_POST['tab']){
             </div>
             <?php } ?>
             <div class="publicar_sub_item">
-                <label>Titulo *</label><input name="titulo" maxlength="30" placeholder="(30 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
+                <label>Titulo *</label><input name="titulo" maxlength="40" placeholder="(40 car&aacute;cteres maximo)" type="text"/><span class="input_error"></span>
             </div>
             <div class="publicar_sub_item" style="margin-top:10px;">
                 <div>

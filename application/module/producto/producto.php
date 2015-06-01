@@ -19,7 +19,16 @@
         
         <div style="padding-top:20px;">
             <div class="img_box_xl" style="margin-right:20px;">
-                <img alt="<?php echo $data['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$foto[0]['usuario'].'/'.$foto[0]['name']; ?>">
+                
+                <?php 
+                if(empty($foto[0]['name'])){
+                    $src = "/public/vendor/dropzone/images/spritemap.jpg";
+                }else{
+                    $src = MEDIA.'upload/'.$foto[0]['usuario'].'/'.$foto[0]['name'];
+                }
+                ?>
+                
+                <img alt="<?php echo $data['nombre_original'];?>" src="<?php echo $src; ?>">
             </div>
             <div style="display:inline-block">
                 <h2 style="padding-bottom:20px;"><?php echo strtoupper($data['tab']);?></h2>

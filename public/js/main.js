@@ -144,6 +144,39 @@ var Ready = {
         
         
         
+        $("#fotos").dropzone({
+            addRemoveLinks:true,
+            maxFiles:6,
+            dictRemoveFile:'Remover imagen',
+            success:function(file,response){
+                file.new_filename = response;
+            },
+            removedfile: function(file) {
+                var name = file.new_filename;        
+                $.ajax({
+                    type: 'POST',
+                    url: '/publicar/deletePhotoPrePublish',
+                    data: "filename="+name,
+                    dataType: 'html'
+                });
+                var _ref;
+                return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;        
+            }
+        });
+        
+        
+        
+        
+        $('.datepicker').datepicker({ 
+            changeYear: true, 
+            gotoCurrent:true,
+            yearRange: "1990:2015",
+            dateFormat: 'dd/mm/yy',
+            altFormat: "yy-mm-dd",
+            altField: "#fecha"
+        });
+        
+        
         
         
         $('select').on('change',function(){Filter.submit()});
@@ -635,3 +668,31 @@ UpdateUser = {
 //<p style="font-size:16px;padding-bottom:20px;">Modificar</p><span>'+$(elem).find('.item_user_align:first').html()+'</span>&nbsp;<input name="'+column+'" type="text" value="'+$(elem).find('.item_user_align:last').html()+'">&nbsp;<button class="button">Guardar</button>');
     }
 }
+
+
+
+
+
+
+
+
+
+$(function($){
+    $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '<Ant',
+        nextText: 'Sig>',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        weekHeader: 'Sm',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['es']);
+});

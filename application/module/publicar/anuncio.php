@@ -143,11 +143,4 @@
 <script>
     Publicar.group='anuncio';
     
-    $('.datepicker').datepicker({ 
-        changeYear: true, 
-        gotoCurrent:true,
-        yearRange: "1990:2015",
-        altFormat: "yy-mm-dd",
-        altField: "#fecha"
-    });
 </script>

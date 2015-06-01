@@ -88,7 +88,7 @@ class Consejo extends Model{
     }
     
     function getAllJoinPhoto($where_stmt,$where_vals){
-        $sql = "SELECT consejo.*,foto.name as foto_name, foto.usuario as foto_usuario FROM consejo LEFT OUTER JOIN foto on consejo.id=foto.publication_id ".$where_stmt;
+        $sql = "SELECT consejo.*,foto.name as foto_name, foto.usuario as foto_usuario FROM consejo LEFT OUTER JOIN (select * from foto order by photo_order) as foto on consejo.id=foto.publication_id ".$where_stmt;
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($where_vals);
         $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);

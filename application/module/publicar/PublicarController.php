@@ -89,7 +89,11 @@ class PublicarController extends \pluralpet\Controller{
     
     
     
-    
+    function deletePhotoPrePublish(){
+        $foto = new \pluralpet\Foto();
+        $foto->deletePrePublish();
+        die;
+    }
     
     function deletePhoto(){
         $foto = new \pluralpet\Foto();
@@ -177,6 +181,7 @@ class PublicarController extends \pluralpet\Controller{
                 
             }
         }
+        echo $image_name;
         die;
     }
     

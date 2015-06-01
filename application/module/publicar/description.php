@@ -219,20 +219,6 @@ switch($_POST['tab']){
     
     
     
-    $("#fotos").dropzone({addRemoveLinks:true,maxFiles:6});
-    $('.datepicker').datepicker({ 
-        changeYear: true, 
-        gotoCurrent:true,
-        yearRange: "1990:2015",
-        dateFormat: 'dd/mm/yy',
-        altFormat: "yy-mm-dd",
-        altField: "#fecha"
-    });
-    
-    //$(".datepicker").datepicker("setDate", today());
-    
-    
-    
     
     //nicEditors.allTextAreas();
 

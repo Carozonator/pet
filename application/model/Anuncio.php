@@ -86,7 +86,7 @@ class Anuncio extends Model{
     }
     
     function getAllJoinPhoto($where_stmt,$where_vals){
-        $sql = "SELECT anuncio.*,foto.name as foto_name, foto.usuario as foto_usuario FROM anuncio LEFT OUTER JOIN foto on anuncio.id=foto.publication_id ".$where_stmt;
+        $sql = "SELECT anuncio.*,foto.name as foto_name, foto.usuario as foto_usuario FROM anuncio LEFT OUTER JOIN (select * from foto order by photo_order) as foto on anuncio.id=foto.publication_id ".$where_stmt;
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($where_vals);
         $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);

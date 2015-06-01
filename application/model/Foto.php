@@ -43,6 +43,14 @@ class Foto extends Model{
         return $affected_rows;
     }
     
+    function deletePrePublish(){
+        $sql =  "DELETE FROM foto WHERE name=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($_POST['filename']));
+        $affected_rows = $stmt->rowCount();
+        return $affected_rows;
+    }
+    
     
     function updateOrder(){
         foreach($_POST['order'] as $key=>$row){

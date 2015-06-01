@@ -146,7 +146,7 @@ class Producto extends Model{
                 $order_by = "ORDER BY id DESC";
             break;
         }
-        $order_by.=", foto.photo_order";
+        $order_by.=", foto.photo_order ";
         
         $tabs = $vals['tab'];
         unset($vals['tab']);
@@ -172,7 +172,7 @@ class Producto extends Model{
         $sql =    "SELECT producto.*, foto.name as foto_name, foto.usuario as foto_usuario, foto.photo_order, "
                 . "CASE WHEN producto.moneda = 'us' THEN producto.precio * ".CAMBIO." ELSE producto.precio END AS `precio_sum` "
                 . "FROM producto "
-                . "LEFT OUTER JOIN (SELECT name, usuario,photo_order,publication_id FROM foto WHERE _table='producto' order by photo_order) "
+                . "LEFT OUTER JOIN (SELECT name, usuario,photo_order,publication_id,id FROM foto WHERE _table='producto' order by photo_order,id) "
                 . "AS foto on foto.publication_id=producto.id "
                 . "$stmt "
                 . "group by producto.id "

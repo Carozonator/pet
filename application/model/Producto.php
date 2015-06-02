@@ -106,7 +106,6 @@ class Producto extends Model{
     
     function update($id){
         
-        //animal,tab,precio,titulo,descripcion,departamento,ciudad_barrio,usuario,status,moneda,vendedor_id
         $sql =  "UPDATE producto set animal=?, tab=?,titulo=?,descripcion=?,departamento=?,ciudad_barrio=?,precio=?,moneda=?,vendedor_id=? "
                 . "WHERE id=?";
         $stmt = $this->pdo->prepare($sql);

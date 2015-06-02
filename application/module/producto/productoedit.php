@@ -17,7 +17,7 @@ foreach($files as $row){
     $images[$row] = scandir($dir);
 }
 $tab = array();
-foreach($images[$_REQUEST['animal']] as $key => $row){
+foreach($images[$_REQUEST['tab']] as $key => $row){
     if(substr($r,0,1)!='.'){
         $t = array_shift(explode('.', $row));
         if(!empty($t)){
@@ -78,7 +78,7 @@ foreach($images[$_REQUEST['animal']] as $key => $row){
                             <select class="tab_select" name="tab_select" style="width:200px;">
                                 <?php foreach($GLOBALS['producto'] as $key=>$row){ 
                                     
-                                    if(strcmp($key,$_REQUEST['animal'])===0){
+                                    if(strcmp($key,$_REQUEST['tab'])===0){
                                         echo '<option value="'.$key.'" selected>'.$row.'</option>';
                                     }else{
                                         echo '<option value="'.$key.'">'.$row.'</option>';
@@ -143,17 +143,14 @@ foreach($images[$_REQUEST['animal']] as $key => $row){
                     </div>
                     <div class="publicar_item">
                         <div class="publicar_item_header">Describe tu producto</div>
-                        <?php if($precio){?>
                         <div class="publicar_sub_item">
-                            <label>Precio</label><input name="precio" type="text" value="<?php echo $data['precio']; ?>"/><br/>
+                            <label>Precio</label><input name="precio" type="text" value="<?php echo $data['precio']; ?>"/><span class="input_error"></span>
                         </div>
-                        <?php } ?>
                         <div class="publicar_sub_item">
                             <label>Titulo</label><input name="titulo" type="text" value="<?php echo $data['titulo']; ?>"/><span class="input_error"></span>
                         </div>
                         <div class="publicar_sub_item">
-                            <label>Producto ID</label>
-                            <input name="vendedor_id" placeholder="" type="text" value="<?php echo $data['vendedor_id']; ?>"/><span class="input_error"></span>
+                            <label>Producto ID</label><input name="vendedor_id" placeholder="" type="text" value="<?php echo $data['vendedor_id']; ?>"/><span class="input_error"></span>
                         </div>
                         <div class="publicar_sub_item">
                             <div>
@@ -182,70 +179,6 @@ foreach($images[$_REQUEST['animal']] as $key => $row){
 <div style="clear:both"></div>
 <script>
     
-    var fecha = '<?php echo $data['fecha'];?>';
+    Ready.initEdit('<?php echo $data['fecha'];?>','producto','tab');
     
-    $('input[type=file]').change(function() {
-        $('#submit_photo').trigger("click");
-    });
-    
-    $('#fotos').on("click",function(){
-        document.getElementById('selectedFile').click();
-    });
-    
-    $('.datepicker').datepicker({ 
-        changeYear: true, 
-        gotoCurrent:true,
-        yearRange: "1990:2015",
-        dateFormat: 'dd/mm/yy',
-        altFormat: "yy-m-d",
-        altField: "#fecha",
-        onClose:function(dateText){
-            if(dateText==''){
-                $(this).datepicker('setDate','');
-            }
-        }
-    });
-    
-    function fechaSetDatepicker(f){
-        var fecha = f.split('-');
-        var ret = fecha[2]+'/'+fecha[1]+'/'+fecha[0];
-        if(fecha[2]==='00'){
-            return;
-        }
-        
-        $(".datepicker").datepicker("setDate", ret);
-    }
-    fechaSetDatepicker(fecha);
-    
-    $(".sortable_photo").sortable({
-        items: "li:not(.unsortable)",
-        update: function( event, ui ) {
-            var order = {};
-            $('#photo_order li').each(function(index,elem){
-                order[$(elem).attr('id')] = index;
-            });
-            
-            var data = {order:order,publication_id:$('#publication_id').val()};
-            
-            $.ajax({
-                url:'/publicar/updatePhoto/',
-                data:data,
-                type:'post',
-                success:function(response){
-                    console.log(response);
-                }
-            });
-        }
-    });
-    
-    $("select.tab_select").select2({
-        placeholder: "Eligue donde publicar",
-        allowClear: true,
-        enable:false,
-        readonly:true
-    }).on('change', function(e){
-        window.location = '/producto/editar/'+$('#form_description').find('#publication_id').val()+'/?animal='+e.val;
-    });
-
-    //Ready.init();
 </script>

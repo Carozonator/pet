@@ -260,7 +260,16 @@ $GLOBALS['producto'] = array(
 $GLOBALS['producto'] = array(
     'perro'=>'Perros','gato'=>'Gatos','ave'=>'Aves','reptil'=>'Reptiles','pez'=>'Peces','mamifero'=>'Peque&ntilde;os mamiferos','articulo'=>'Artículo con motivos'
 );
-
+$GLOBALS['anuncio'] = array(
+    'veterinaria'=> 'Veterinarias',
+    'paseador'=> 'Paseadores',
+    'adiestrador'=> 'Adiestradores',
+    'pensionado'=> 'Pensionado',
+    'peluqueria'=> 'Peluqueria',
+    'servicio-medico-adicionales'=> 'Servicios m&eacute;dicos adicionales',
+    'evento'=>'Eventos',
+    'otros'=> 'Otros'
+);
 
 
 

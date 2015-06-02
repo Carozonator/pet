@@ -172,7 +172,86 @@ var Ready = {
         
         
         $('select').on('change',function(){Filter.submit()});
+        nicEditors.allTextAreas({buttonList:['bold','italic','underline']});
+    },
+    
+    
+    
+    initEdit: function(date,table,uri_key){
+        
+        
+        
+        nicEditors.allTextAreas({buttonList:['bold','italic','underline']});
+        
+        var fecha = date;
+    
+        $('input[type=file]').change(function() {
+            $('#submit_photo').trigger("click");
+        });
+
+        $('#fotos').on("click",function(){
+            document.getElementById('selectedFile').click();
+        });
+
+        $('.datepicker').datepicker({ 
+            changeYear: true, 
+            gotoCurrent:true,
+            yearRange: "1990:2015",
+            dateFormat: 'dd/mm/yy',
+            altFormat: "yy-m-d",
+            altField: "#fecha",
+            onClose:function(dateText){
+                if(dateText==''){
+                    $(this).datepicker('setDate','');
+                }
+            }
+        });
+
+        function fechaSetDatepicker(f){
+            var fecha = f.split('-');
+            var ret = fecha[2]+'/'+fecha[1]+'/'+fecha[0];
+            if(fecha[2]==='00'){
+                return;
+            }
+
+            $(".datepicker").datepicker("setDate", ret);
+        }
+        fechaSetDatepicker(fecha);
+
+        $(".sortable_photo").sortable({
+            items: "li:not(.unsortable)",
+            update: function( event, ui ) {
+                var order = {};
+                $('#photo_order li').each(function(index,elem){
+                    order[$(elem).attr('id')] = index;
+                });
+
+                var data = {order:order,publication_id:$('#publication_id').val()};
+
+                $.ajax({
+                    url:'/publicar/updatePhoto/',
+                    data:data,
+                    type:'post',
+                    success:function(response){
+                        console.log(response);
+                    }
+                });
+            }
+        });
+
+        $("select.tab_select").select2({
+            placeholder: "Eligue donde publicar",
+            allowClear: true,
+            enable:false,
+            readonly:true
+        }).on('change', function(e){
+            window.location = '/'+table+'/editar/'+$('#form_description').find('#publication_id').val()+'/?'+uri_key+'='+e.val;
+        });
     }
+    
+    
+    
+    
 }
 $(document).ready(function(){Ready.init();});
 
@@ -376,7 +455,13 @@ var Publicar = {
         //Do not use niceedit plugin
         //var nicE = new nicEditors.findEditor('nicedit_text');
         //var description = nicE.getContent();
-        var description = $('#nicedit_text').val();
+        var description='';
+        if($('.nicEdit-main').length>0){
+            var nicE = new nicEditors.findEditor('nicedit_text');
+            description = nicE.getContent();
+        }else{
+            description = $('#nicedit_text').val();
+        }
         
         
         

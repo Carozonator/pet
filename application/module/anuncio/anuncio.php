@@ -46,6 +46,12 @@
                 <p class="gristxt"><?php echo ucfirst($data['telefono']);?></p><br/>
                 <?php } ?>
                 <button onclick="Contactar.show(<?php echo $data['usuario']; ?>)" style="">Contactar</button>
+                <?php if($_SESSION['user']->id==$data['usuario']){ ?>
+                    <form style="margin-top:20px;"method="GET" action="/anuncio/editar/<?php echo $data['id'];?>/">
+                        <input type="hidden" value="<?php echo $data['sub_tab'];?>" name="tab"/>
+                        <input type="submit" value="Editar"/>
+                    </form>
+                <?php } ?>
             </div>
             
             <div style="margin-top:40px;" class="description">

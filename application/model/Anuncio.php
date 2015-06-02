@@ -54,6 +54,20 @@ class Anuncio extends Model{
     
     
     
+    function update($id){
+        
+        $sql =  "UPDATE anuncio set sub_tab=?,fecha=?,horario=?,departamento=?,ciudad_barrio=?,titulo=?,descripcion=? "
+                . "WHERE id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($_POST['tab_select'],$_POST['fecha'],$_POST['horario'],
+            $_POST['departamento'],$_POST['ciudad_barrio'] ,$_POST['titulo'],$_POST['descripcion'],intval($id)));
+        return $id;
+    }
+    
+    
+    
+    
+    
     
     function getAll($type){
         

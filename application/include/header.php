@@ -54,10 +54,11 @@
              });
             
     </script>
+    <?php include(ROOT.'application/include/analytics_tracking.php'); ?>
 </head>
 <body>
-<div>
     
+<div>
     <div class="container_12">
         <a href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
         <div class="wrapper-dropdown-5 user_controls" style="">

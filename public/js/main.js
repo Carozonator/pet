@@ -172,7 +172,9 @@ var Ready = {
         
         
         $('select').on('change',function(){Filter.submit()});
-        nicEditors.allTextAreas({buttonList:['bold','italic','underline']});
+        if($('.dropzone').length>0){
+            nicEditors.allTextAreas({buttonList:['bold','italic','underline']});
+        }
     },
     
     

@@ -10,8 +10,8 @@
 <footer>
     
     <div class="f_navigation_container">
-    <div class="f_navigation">
-        <div class="container_12">
+    <div class="f_navigation" style="position:relative;">
+        <div class="container_12" >
             <div class="grid_3">
                 <nav class="f_menu">
                     <h3>Contacto</h3>
@@ -67,9 +67,15 @@
                 
                 <!--<div data-width="240" data-colorscheme="dark" class="fb-like-box" data-href="https://www.facebook.com/HowIMetYourMotherCBS" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>-->
             </div>
+            
             <div class="clear"></div>
+            
         </div><!-- .container_12 -->
+        <div id="sitelock_shield_logo" style="position:absolute;right:0px;bottom:0px;">
+        <a href="https://www.sitelock.com/verify.php?site=pluralpet.com.uy" onclick="window.open('https://www.sitelock.com/verify.php?site=pluralpet.com.uy','SiteLock','width=600,height=600,left=160,top=170');return false;" ><img style="width:70px;margin:30px;"alt="SiteLock" title="SiteLock" src="//shield.sitelock.com/shield/pluralpet.com.uy"></a>
+    </div>
     </div><!-- .f_navigation -->
+    
     </div>
     <!--
     <div class="f_info">
@@ -87,6 +93,7 @@
             <div class="clear"></div>
         </div>
     </div>-->
+    
 </footer>
 <?php include ROOT.'application/include/registracion.php'; ?>
 <div id="empty_box" class="overlay_box"><div class="overlay_box_inner"></div><div class="overlay_close" onclick="closeOverlay();">X</div></div>
@@ -97,5 +104,6 @@
     <div style="position:absolute;bottom:0px;right:0px;width:200px;height:40px;cursor:pointer" onclick="closeOverlay();"></div>
     <div style="position:absolute;top:290px;left:330px;width:50px;height:20px;cursor:pointer;" onclick="$('#popup_registracion').hide();Register.open();"></div>
 </div>
+
 </body>
 </html>

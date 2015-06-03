@@ -71,9 +71,13 @@
             <div class="clear"></div>
             
         </div><!-- .container_12 -->
-        <div id="sitelock_shield_logo" style="position:absolute;right:0px;bottom:0px;">
-        <a href="https://www.sitelock.com/verify.php?site=pluralpet.com.uy" onclick="window.open('https://www.sitelock.com/verify.php?site=pluralpet.com.uy','SiteLock','width=600,height=600,left=160,top=170');return false;" ><img style="width:70px;margin:30px;"alt="SiteLock" title="SiteLock" src="//shield.sitelock.com/shield/pluralpet.com.uy"></a>
-    </div>
+        <div style="position:absolute;right:0px;bottom:50px;">
+            <span id="siteseal" style=""><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=F7JwIa5M33kiK56jCZ6bwlVDqVyPcsBaozLwo4ldDIjvd07zjscBrKkX35ol"></script></span>
+            <div id="sitelock_shield_logo" style="position:absolute;right:220px;bottom:-30px;">
+                <a href="https://www.sitelock.com/verify.php?site=pluralpet.com.uy" onclick="window.open('https://www.sitelock.com/verify.php?site=pluralpet.com.uy','SiteLock','width=600,height=600,left=160,top=170');return false;" ><img style="width:70px;margin:30px;"alt="SiteLock" title="SiteLock" src="//shield.sitelock.com/shield/pluralpet.com.uy"></a>
+            </div>
+        </div>
+        
     </div><!-- .f_navigation -->
     
     </div>

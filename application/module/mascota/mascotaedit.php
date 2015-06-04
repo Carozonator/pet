@@ -175,7 +175,7 @@ if(in_array($_REQUEST['tab'],$check1)){
                             </div>
                             <div style="height:45px;width:100%">
                                 <label>Ciudad/Barrio</label>
-                                <select class="ciudad_barrio" name="ciudad_barrio" style="display:none;margin-left:-4px;width:300px;">
+                                <select class="ciudad_barrio" name="ciudad_barrio" style="margin-left:-4px;width:300px;">
                                     <?php 
                                     if($data['ciudad_barrio']!=''){
                                         echo '<option value="'.$data['ciudad_barrio'].'">'.$data['ciudad_barrio'].'<option>';

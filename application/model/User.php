@@ -103,7 +103,7 @@ class User extends Model{
         foreach($tables as $table){
             $sql =    "SELECT $table.*, foto.name as foto_name, foto.usuario as foto_usuario FROM user "
                     . "INNER JOIN $table on user.id=$table.usuario "
-                    . "LEFT OUTER JOIN (SELECT * FROM foto where _table='$table' and foto.usuario=?) as foto on foto.publication_id= $table.id "
+                    . "LEFT OUTER JOIN (SELECT * FROM foto where _table='$table' and foto.usuario=? order by photo_order) as foto on foto.publication_id= $table.id "
                     . "WHERE user.id=? "
                     . "GROUP BY foto.publication_id ";
             $stmt = $this->pdo->prepare($sql);

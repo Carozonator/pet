@@ -17,7 +17,7 @@
         <?php } ?>
         </div>
         
-        <div style="padding-top:20px;">
+        <div style="padding-top:20px;min-height:300px;">
             <div class="img_box_xl" style="margin-right:20px;">
                 
                 <?php 

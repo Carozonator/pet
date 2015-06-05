@@ -18,6 +18,7 @@
                 </div>
             <?php } ?>
             </div>
+        <div style="padding-top:20px;min-height:300px;">
             <div class="img_box_xl" style="margin-right:20px;">
                 
                 <?php 
@@ -53,7 +54,7 @@
                     </form>
                 <?php } ?>
             </div>
-            
+        </div>
             <div style="margin-top:40px;" class="description">
                 <h4>Descripci&oacute;n</h4>
                 <div class="wrapper">

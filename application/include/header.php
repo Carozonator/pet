@@ -57,8 +57,6 @@
     <?php include(ROOT.'application/include/analytics_tracking.php'); ?>
 </head>
 <body>
-    
-<div>
     <div class="container_12">
         <a href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
         <div class="wrapper-dropdown-5 user_controls" style="">
@@ -98,12 +96,12 @@
                     <?php } ?>
             
                         
-                    <!--<div style="" class="dropdown-menu" tabindex="1"><i class="icon-shopping-cart"></i> Carrito</div>-->
+                    <!--<div style="" class="dropdown-menu" tabindex="1"><i class="icon-shopping-cart"></i> Carrito</div>
                     <div style="float:right">
-                        <!--<input style="background-color:none;height:22px;" type="text" value="" name="s"  placeholder="Buscar por productos">
+                        <input style="background-color:none;height:22px;" type="text" value="" name="s"  placeholder="Buscar por productos">
                         <i class="icon-search"></i>
-                        -->
-                    </div>
+                    </div>-->
+                    
         </div>
     </div>
     <div id="top" style="width:100%;">
@@ -180,5 +178,4 @@
         </div>
     </div>
     <div class="clear"></div>
-</div>
     <div class="container_12">

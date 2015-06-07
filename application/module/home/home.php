@@ -51,9 +51,9 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         var jssor_slider1 = new $JssorSlider$('slider1_container', options);
     });
 </script>
-<div id="slider1_container" style="position: relative;margin:0px auto; width: 984px; height: 480px;">
+<div id="slider1_container">
     <!-- Slides Container -->
-    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 984px; height: 480px;">
+    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 984px; height: 480px;" class="slider_inner">
         <?php 
         foreach($carrusel as $key => $row){
             $src = MEDIA.'carrusel/'.$row['img'];
@@ -182,10 +182,10 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                 'servicio'=>'Servicios destacados');
             foreach($paneles as $key=>$row){ ?>
                 
+                        <div class="destacado_title">
+                            <h2><?php echo $row; ?></h2>
+                        </div>
                         <div class="destacado">
-                            <div class="grid_10" style="margin-left:0px;">
-                                <h2><?php echo $row; ?></h2>
-                            </div><!-- .grid_10 -->
                             <div style="clear:both"></div>
                             <div class="strip">
                             <?php 

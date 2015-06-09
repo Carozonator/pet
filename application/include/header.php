@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/dropzone/css/dropzone.css"/>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/CustomDropDown/js/modernizr.custom.79639.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/nicEdit/nicEdit.js"></script> 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/jquery_ui/js/jquery_ui.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/select2/select2.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/select2/select2_locale_es.js"></script> 

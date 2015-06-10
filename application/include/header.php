@@ -18,7 +18,7 @@
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/dropzone/dropzone.js"></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>js/main.js"/></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/slider-master/js/jssor.slider.mini.js"/></script>
-
+    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/tinymce/tinymce.min.js"></script>
     <script src="<?php echo PUBLIC_PATH; ?>vendor/lightbox/js/lightbox.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/lightbox/css/lightbox.css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

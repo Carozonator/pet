@@ -173,8 +173,35 @@ var Ready = {
         
         $('select').on('change',function(){Filter.submit()});
         if($('.dropzone').length>0){
-            nicEditors.allTextAreas({buttonList:['bold','italic','underline']});
+            
+            Ready.initTextarea();
+            
+            //nicEditors.allTextAreas({buttonList:['bold','italic','underline']});
         }
+    },
+    
+    
+    initTextarea: function(){
+        
+        tinymce.init({
+                selector: "textarea",
+                theme: "modern",
+                language: "es",
+                plugins: [
+                    "advlist autolink lists link charmap print preview hr anchor pagebreak",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen",
+                    "insertdatetime media nonbreaking contextmenu directionality",
+                    "emoticons template paste textcolor colorpicker textpattern"
+                ],
+                toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link",
+                toolbar2: "print preview media | forecolor backcolor emoticons",
+                image_advtab: true,
+                templates: [
+                    {title: 'Test template 1', content: 'Test 1'},
+                    {title: 'Test template 2', content: 'Test 2'}
+                ]
+            });
+        
     },
     
     
@@ -182,8 +209,8 @@ var Ready = {
     initEdit: function(date,table,uri_key){
         
         
-        
-        nicEditors.allTextAreas({buttonList:['bold','italic','underline']});
+        Ready.initTextarea();
+        //nicEditors.allTextAreas({buttonList:['bold','italic','underline']});
         
         var fecha = date;
     
@@ -458,13 +485,15 @@ var Publicar = {
         //var nicE = new nicEditors.findEditor('nicedit_text');
         //var description = nicE.getContent();
         var description='';
-        if($('.nicEdit-main').length>0){
-            var nicE = new nicEditors.findEditor('nicedit_text');
-            description = nicE.getContent();
+        if($('.mce-tinymce').length>0){
+            
+            
+            
+            //var nicE = new nicEditors.findEditor('nicedit_text');
+            description = tinymce.activeEditor.getContent({format : 'raw'});
         }else{
             description = $('#nicedit_text').val();
         }
-        
         
         
         var form =$('#form_description');

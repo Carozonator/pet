@@ -115,6 +115,7 @@ class Mascota extends Model{
         //if(isset($vals['orden'])){//sort
         $orden = $vals['orden'];
         unset($vals['orden']);
+        $vals['status']='activo';
         switch($orden){
             case 'barato':
                 $order_by = "ORDER BY precio_sum";

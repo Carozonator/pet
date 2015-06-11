@@ -1179,7 +1179,9 @@ input[type="submit"]:active{
 
 
 
-
+.description p {
+    margin: .75em 0;
+}
 
 
 

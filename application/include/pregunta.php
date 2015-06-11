@@ -1,3 +1,5 @@
+<?php if(count($pregunta)!=0 || $_SESSION['user']->id !== $data['usuario']): ?>
+
 <div style="margin-top:20px;" class="preguntas">
     <h4>Preguntas</h4>
     <ol>
@@ -37,3 +39,4 @@
         ?>
     </ol>
 </div>
+<?php endif; ?>

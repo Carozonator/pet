@@ -92,8 +92,8 @@
         </div>
         <div style="margin-top:20px;" class="description">
             <h4>Descripci&oacute;n</h4>
-            <div class="wrapper">
-                <p class="descripcion"><?php echo htmlEncodeText($data['descripcion']);?></p>
+            <div class="wrapper descripcion">
+                <?php echo htmlEncodeText($data['descripcion']);?>
             </div>
         </div>
        

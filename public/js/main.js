@@ -187,14 +187,16 @@ var Ready = {
                 selector: "textarea",
                 theme: "modern",
                 language: "es",
+                menubar : false,
+                fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
                 plugins: [
                     "advlist autolink lists link charmap print preview hr anchor pagebreak",
                     "searchreplace wordcount visualblocks visualchars code fullscreen",
                     "insertdatetime media nonbreaking contextmenu directionality",
                     "emoticons template paste textcolor colorpicker textpattern"
                 ],
-                toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link",
-                toolbar2: "print preview media | forecolor backcolor emoticons",
+                toolbar1: "fontsizeselect |  bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link",
+                toolbar2: "undo redo | print preview | forecolor backcolor emoticons",
                 image_advtab: true,
                 templates: [
                     {title: 'Test template 1', content: 'Test 1'},
@@ -204,7 +206,7 @@ var Ready = {
         
     },
     
-    
+    //styleselect
     
     initEdit: function(date,table,uri_key){
         

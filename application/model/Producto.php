@@ -104,6 +104,18 @@ class Producto extends Model{
     
     
     
+    
+    
+    
+    
+    
+    function updateStatus($status){
+        $sql =  "UPDATE producto set status=? WHERE id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($status,$_POST['id']));
+        $affected_rows = $stmt->rowCount();
+        return $affected_rows;
+    }
     function update($id){
         
         $sql =  "UPDATE producto set animal=?, tab=?,titulo=?,descripcion=?,departamento=?,ciudad_barrio=?,precio=?,moneda=?,vendedor_id=? "
@@ -141,6 +153,7 @@ class Producto extends Model{
        //print_r($vals);die;
         $orden = $vals['orden'];
         unset($vals['orden']);
+        $vals['status']='activo';
         switch($orden){
             case 'barato':
                 $order_by = "ORDER BY precio_sum";

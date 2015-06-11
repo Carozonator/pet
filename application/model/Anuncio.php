@@ -135,6 +135,7 @@ class Anuncio extends Model{
         
         $orden = $vals['orden'];
         unset($vals['orden']);
+        $vals['status']='activo';
         switch($orden){
             case 'barato':
                 $order_by = "ORDER BY precio_sum";

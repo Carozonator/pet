@@ -38,6 +38,7 @@ class TiendaController extends Controller{
         $list_count = count($result);
         $result = array_slice($result, $page*RESULTS_PER_PAGE,RESULTS_PER_PAGE);
         
+        $this->view->addHeadTag('<title>Tienda | PluralPet</title>');
         $this->view->assign(array('list_count'=>$list_count));
         $this->view->assign(array('data'=>$result));
         $this->view->assign(array('animal'=>$animal));

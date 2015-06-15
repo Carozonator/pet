@@ -30,6 +30,7 @@ class AnuncioController extends Controller{
         $this->view->assign(array('foto'=>$fotos));
         $this->view->assign(array('data'=>$result));
         
+        $this->view->addHeadTag('<title>'.$result['titulo'].' | Anuncio</title>');
         $this->view->addHeadTag('<meta property="og:title" content="'.$result['titulo'].'" />');
         $this->view->addHeadTag('<meta property="og:description" content="'.strip_tags($result['descripcion']).'" />');
         $this->view->addHeadTag('<meta property="og:image" content="'.DOMAIN.MEDIA.'upload/'.$fotos[0]['usuario'].'/'.$fotos[0]['name'].'" />');
@@ -72,6 +73,7 @@ class AnuncioController extends Controller{
         $list_count = count($result);
         $result = array_slice($result, $page*RESULTS_PER_PAGE,RESULTS_PER_PAGE);
         
+        $this->view->addHeadTag('<title>Lista de Anuncios | PluralPet</title>');
         $this->view->assign(array('list_count'=>$list_count));
         $this->view->assign(array('data'=>$result));
         $this->view->assign(array('animal'=>$animal));

@@ -25,6 +25,7 @@ class ConsejoController extends Controller{
         $foto = new \pluralpet\Foto();
         $fotos = $foto->get($this->request->getMethod(),'consejo');
         
+        $this->view->addHeadTag('<title>'.$result['titulo'].' | Consejo | PluralPet</title>');
         $this->view->addHeadTag('<meta property="og:title" content="'.$result['titulo'].'" />');
         $this->view->addHeadTag('<meta property="og:description" content="'.strip_tags($result['descripcion']).'" />');
         $this->view->addHeadTag('<meta property="og:image" content="'.DOMAIN.MEDIA.'upload/'.$fotos[0]['usuario'].'/'.$fotos[0]['name'].'" />');
@@ -51,6 +52,8 @@ class ConsejoController extends Controller{
         $result = $mascota->filter($fill);
         $animal = strtolower($_REQUEST['animal']);
         $tab = strtolower($_REQUEST['tab']);
+        
+        $this->view->addHeadTag('<title>Lista de Consejos | PluralPet</title>');
         $this->view->assign(array('data'=>$result));
         $this->view->assign(array('animal'=>$animal));
         $this->view->assign(array('tab'=>$tab));

@@ -162,7 +162,7 @@ $order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor p
             ?>
 
                     <div class="mascota-list">
-                        <div style="float:left;margin-right:10px;" class="thumb">
+                        <div class="thumb mascota-list-thumb">
                             <a title="<?php echo $row['titulo'];?>" href="/producto/<?php echo $row['id'];?>" >
                                 <?php
                                 if(empty($row['foto_usuario'])){
@@ -174,7 +174,7 @@ $order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor p
                                 <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo $src; ?>">
                             </a>
                         </div>
-                        <div class="overflow mbottom">
+                        <div class="overflow mbottom mascota-list-description">
                             <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
                             <h3>
                                 <a class="bigtxt" style="color:#9C2490" href="/producto/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>

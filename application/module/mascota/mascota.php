@@ -38,7 +38,7 @@
                 <p class="gristxt"><?php echo (!empty($data['ciudad_barrio'])?htmlEncodeText(ucfirst($data['ciudad_barrio'])).", ":"");?><?php echo htmlEncodeText(ucfirst($data['departamento']));?></p>
                 <div class="precio" style="font-size:20px;">
                     <?php 
-                    $no_precio = array('encontrado','perdido','adoptar');
+                    $no_precio = array('encontrado','perdido','adoptar','cruzar');
                     if(!in_array($data['tab'],$no_precio)){
                         echo moneda($data['moneda']).precio($data['precio']);
                     }   

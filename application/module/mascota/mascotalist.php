@@ -145,7 +145,7 @@ if(strcmp($tab,'comprar')===0){
             ?>
 
                     <div class="mascota-list">
-                        <div style="float:left;margin-right:10px;" class="thumb">
+                        <div class="thumb mascota-list-thumb">
                             <a title="<?php echo $row['titulo'];?>" href="/mascota/<?php echo $row['id'];?>" >
                                 <?php 
                                 if(empty($row['foto_usuario'])){
@@ -157,7 +157,7 @@ if(strcmp($tab,'comprar')===0){
                                 <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo $src; ?>">
                             </a>
                         </div>
-                        <div class="overflow mbottom">
+                        <div class="overflow mbottom mascota-list-description">
                             <!--<div class="fright gristxt">1 voto <span class="excelente">10,00</span></div>-->
                             <h3>
                                 <a class="bigtxt" style="color:#9C2490" href="/mascota/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>

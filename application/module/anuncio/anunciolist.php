@@ -78,7 +78,7 @@ foreach($data as $row){
 ?>
 
         <div class="mascota-list">
-            <div style="float:left;margin-right:10px;" class="thumb">
+            <div class="thumb mascota-list-thumb">
                 <a title="<?php echo $row['titulo'];?>" href="/anuncio/<?php echo $row['id'];?>" >
                     <?php 
                     if(empty($row['foto_usuario'])){
@@ -90,7 +90,7 @@ foreach($data as $row){
                     <img alt="<?php echo $row['nombre_original'];?>" style="width:100%;height:100%;" src="<?php echo $src; ?>">
                 </a>
             </div>
-            <div class="overflow mbottom">
+            <div class="overflow mbottom mascota-list-description">
             <h3>
                 <a class="bigtxt" style="color:#9C2490" href="/anuncio/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
             </h3>

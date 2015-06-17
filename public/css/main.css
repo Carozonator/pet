@@ -1029,8 +1029,15 @@ input[type="submit"]:active{
 .mascota-list:last-child{
     border-bottom:1px solid lightgrey;
 }
-
-
+.mascota-list > div.mascota-list-thumb{
+    margin-right:10px;
+    display:inline-block !important;
+    vertical-align:top;
+}
+.mascota-list > div.mascota-list-description{
+    display:inline-block;
+    max-width:560px;
+}
 
 
 

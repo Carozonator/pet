@@ -7,15 +7,19 @@ class InformacionController extends Controller{
         $file = strtolower($this->request->getMethod());
         switch($file){
             case 'sobre-nosotros':
+                $this->view->addHeadTag('<title>Sobre Nosotros | PluralPet</title>');
                 $this->view->setFile($file);
             break;
             case 'sugerencias':
+                $this->view->addHeadTag('<title>Sugerencias | PluralPet</title>');
                 $this->view->setFile($file);
             break;
             case 'terminos-y-condiciones':
+                $this->view->addHeadTag('<title>Terminos y Condiciones | PluralPet</title>');
                 $this->view->setFile($file);
             break;
             case 'contacto-empresarial':
+                $this->view->addHeadTag('<title>Contacto Empresarial | PluralPet</title>');
                 $this->view->setFile($file);
             break;
             

@@ -5,12 +5,15 @@
     <ul>
         
     <?php 
+        $total=0;
         foreach($publicados as $key=>$table){
             $counter=0;
         foreach($table as $row){
+            
             if(strcmp($row->status,$_GET['status'])!==0){
                 continue;
             }
+            $total++;
             $counter++;
             if($counter==1){
                 echo '<h3 style="padding-top:10px;">'.ucfirst($key).'s</h3>';
@@ -65,6 +68,10 @@
             </div>
         </li>
         <?php }
+        }
+        if($total==0){
+            $map=array('activo'=>'activas','pausado'=>'pausadas','finalizado'=>'finalizadas');
+            echo '<li style="text-align:center">No hay publicaciones '.$map[$_REQUEST['status']].'</li>';
         }
         ?>
     </ul>

@@ -4,7 +4,10 @@
 <head>
     <link href="<?php echo MEDIA; ?>favicon.ico" type="image/x-icon" rel="shortcut icon" />
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>css/breeze.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/css/main.css"/>
+    
+    
+    <!-- change version -->
+    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/css/main.css?v=1"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/vendor/select2/select2.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/CustomDropDown/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/jquery_ui/css/custom-theme/jquery_ui.css"/>
@@ -16,7 +19,9 @@
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/select2/select2.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/select2/select2_locale_es.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/dropzone/dropzone.js"></script>
-    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>js/main.js"/></script>
+    
+    <!-- change version -->
+    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>js/main.js?v=1"/></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/slider-master/js/jssor.slider.mini.js"/></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/tinymce/tinymce.min.js"></script>
     <script src="<?php echo PUBLIC_PATH; ?>vendor/lightbox/js/lightbox.min.js"></script>

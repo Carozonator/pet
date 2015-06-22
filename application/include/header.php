@@ -8,7 +8,7 @@
     
     <!-- change version -->
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/responsivemenu/css/component.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/css/main.css?v=5"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/css/main.css?v=6"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/vendor/select2/select2.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/CustomDropDown/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/jquery_ui/css/custom-theme/jquery_ui.css"/>

@@ -1207,7 +1207,7 @@ input[type="submit"]:active{
     
     /*navs*/
     #top{
-        /*display:none;*/
+        display:none;
     }
     #top_banner{
         text-align:center;
@@ -1230,7 +1230,7 @@ input[type="submit"]:active{
         overflow:scroll;
     }
     .destacado .strip{
-        /*width:966px;*/
+        width:966px;
         height:330px;
     }
     

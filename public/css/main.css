@@ -1198,10 +1198,10 @@ input[type="submit"]:active{
         min-width: 0px;
     }
     .container_12{
-       width:100%;
+       /*width:100%;*/
     }
     .main-content-box{
-        width:100%;
+        /*width:100%;*/
     }
     
     

@@ -7,31 +7,45 @@
     
     
     <!-- change version -->
+    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/responsivemenu/css/component.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/css/main.css?v=1"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/vendor/select2/select2.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/CustomDropDown/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/jquery_ui/css/custom-theme/jquery_ui.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/dropzone/css/dropzone.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/responsivemenu/css/default.css"/>-->
+    
+    
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/CustomDropDown/js/modernizr.custom.79639.js"></script> 
-    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/nicEdit/nicEdit.js"></script> 
+    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/nicEdit/nicEdit.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/jquery_ui/js/jquery_ui.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/select2/select2.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/select2/select2_locale_es.js"></script> 
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/dropzone/dropzone.js"></script>
     
+    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/responsivemenu/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/responsivemenu/js/jquery.dlmenu.js"></script>
+    
+    
     <!-- change version -->
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>js/main.js?v=1"/></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/slider-master/js/jssor.slider.mini.js"/></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/tinymce/tinymce.min.js"></script>
-    <script src="<?php echo PUBLIC_PATH; ?>vendor/lightbox/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/lightbox/js/lightbox.min.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/lightbox/css/lightbox.css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <?php echo $head_tags; ?>
     
     <script src=""></script>
     <script type="text/javascript">
+        
             $(document).ready(function(){
+                
+                    $( '#dl-menu' ).dlmenu({
+                        animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+                    });
                 
                     Publicar.user_logged_in = <?php echo (isset($_SESSION['user'])?'true':'false'); ?>;
                     var visit=getCookie("FIRST_VISIT");
@@ -62,7 +76,42 @@
     <?php include(ROOT.'application/include/analytics_tracking.php'); ?>
 </head>
 <body>
-    <div class="container_12">
+    
+    
+    <div id="dl-menu" class="dl-menuwrapper">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+        <?php 
+        foreach($GLOBALS['nav_menu'] as $k1 => $r1){
+               if(strcmp($k1,'consejo')===0){
+                    echo "<li class='$class'><a href='/consejo/'>".ucfirst($r1['name'])."</a>";
+                }else{
+                    echo "<li class='$class'><a href='#'>".ucfirst($r1['name'])."</a>";
+                }
+
+
+                $k1=  str_replace(' ', '-', $k1);
+                echo '<ul class="dl-submenu">';
+                foreach($r1['sub_menus'] as $sub_menu){
+                    foreach($sub_menu as $k3=>$r3){
+                        if(strcmp($k1,'mascota')===0){
+                            echo "<li><a href='/comprar/$k3/'>".$r3."</a></li>";
+                        }else{
+                            echo "<li><a href='/$k1/$k3/'>".$r3."</a></li>";
+                        }
+                    }
+
+                }
+            echo '</ul>';
+            echo '</li>';
+        }
+        ?>
+    
+        </ul>
+    </div><!-- /dl-menuwrapper -->
+    
+    
+    <div class="container_12" id="top_banner">
         <a href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
         <div class="wrapper-dropdown-5 user_controls" style="">
                     <?php if(!isset($_SESSION['user'])) { ?>

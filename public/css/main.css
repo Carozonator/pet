@@ -1205,6 +1205,18 @@ input[type="submit"]:active{
     }
     
     
+    /*navs*/
+    #top{
+        display:none;
+    }
+    #top_banner{
+        text-align:center;
+    }
+    .dl-menuwrapper{
+        display:block;
+    }
+    
+    
     
     
     

@@ -5,6 +5,7 @@
     <link href="<?php echo MEDIA; ?>favicon.ico" type="image/x-icon" rel="shortcut icon" />
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>css/breeze.css?v=2"/>
     
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- change version -->
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/responsivemenu/css/component.css"/>

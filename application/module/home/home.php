@@ -51,8 +51,8 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         var jssor_slider1 = new $JssorSlider$('slider1_container', options);
     });
 </script>
+<!--
 <div id="slider1_container">
-    <!-- Slides Container -->
     <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 984px; height: 480px;" class="slider_inner">
         <?php 
         foreach($carrusel as $key => $row){
@@ -101,13 +101,10 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
             .jssora14ldn { background-position: -255px -35px; }
             .jssora14rdn { background-position: -315px -35px; }
         </style>
-        <!-- Arrow Left -->
         <span u="arrowleft" class="jssora14l" style="width: 30px; height: 50px; top: 123px; left: 0px;">
         </span>
-        <!-- Arrow Right -->
         <span u="arrowright" class="jssora14r" style="width: 30px; height: 50px; top: 123px; right: 0px">
         </span>
-        <!-- Arrow Navigator Skin End -->
         <a style="display: none" href="http://www.jssor.com">Image Slider</a>
         
         
@@ -118,6 +115,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         
     </div>
 </div>
+-->
             <!--
             <div class="slidprev" style="display: block;margin-top:230px;margin-left:20px;"><span>Prev</span></div>
             <div class="slidnext" style="display: block;margin-top:230px;margin-right:24px;"><span>Next</span></div>

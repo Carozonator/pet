@@ -1191,6 +1191,9 @@ input[type="submit"]:active{
 }
 
 
+#top_banner{
+    height:70px;
+}
 
 
 @media screen and (max-width: 1080px) {
@@ -1203,6 +1206,17 @@ input[type="submit"]:active{
     .main-content-box{
         width:100%;
     }
+    
+    
+    
+    .logo{
+        position:absolute;
+        left:50%;
+        margin-left:-100px;
+        top:30px;
+    }
+    
+    
     
     
     /*navs*/

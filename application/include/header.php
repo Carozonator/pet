@@ -113,7 +113,7 @@
     
     
     <div class="container_12" id="top_banner">
-        <a href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
+       <a class="logo" href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
         <div class="wrapper-dropdown-5 user_controls" style="">
                     <?php if(!isset($_SESSION['user'])) { ?>
                     <div id="dd" style="" class="dropdown-menu" tabindex="1"><i class="icon-user"></i> Ingresa

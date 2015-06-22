@@ -51,7 +51,6 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         var jssor_slider1 = new $JssorSlider$('slider1_container', options);
     });
 </script>
-<!--
 <div id="slider1_container">
     <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 984px; height: 480px;" class="slider_inner">
         <?php 
@@ -115,7 +114,6 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         
     </div>
 </div>
--->
             <!--
             <div class="slidprev" style="display: block;margin-top:230px;margin-left:20px;"><span>Prev</span></div>
             <div class="slidnext" style="display: block;margin-top:230px;margin-right:24px;"><span>Next</span></div>

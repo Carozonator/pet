@@ -13,7 +13,7 @@ Text Domain: breeze
 
 /*** => Grid ***/
 body{
-    min-width: 1008px;
+    /*min-width: 1008px;*/
 }
 .container_12{
     

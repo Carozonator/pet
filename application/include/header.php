@@ -3,12 +3,12 @@
 <html lang="es-ES">
 <head>
     <link href="<?php echo MEDIA; ?>favicon.ico" type="image/x-icon" rel="shortcut icon" />
-    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>css/breeze.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>css/breeze.css?v=2"/>
     
     
     <!-- change version -->
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/responsivemenu/css/component.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/css/main.css?v=1"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/css/main.css?v=2"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/vendor/select2/select2.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/CustomDropDown/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/jquery_ui/css/custom-theme/jquery_ui.css"/>
@@ -29,7 +29,7 @@
     
     
     <!-- change version -->
-    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>js/main.js?v=1"/></script>
+    <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>js/main.js?v=2"/></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/slider-master/js/jssor.slider.mini.js"/></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/lightbox/js/lightbox.min.js"></script>

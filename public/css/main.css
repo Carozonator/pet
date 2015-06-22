@@ -1242,5 +1242,7 @@ input[type="submit"]:active{
 }
 
 @media screen and (max-width: 480px) {
-    
+    body{
+        width:480px;
+    }
 }

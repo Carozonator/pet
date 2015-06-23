@@ -1236,7 +1236,7 @@ input[type="submit"]:active{
     
     /*home*/
     #slider1_container{
-        width:100%;
+        display:none;
     }
     .slider_inner{
     }

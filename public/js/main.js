@@ -195,8 +195,7 @@ var Ready = {
                     "insertdatetime media nonbreaking contextmenu directionality",
                     "emoticons template paste textcolor colorpicker textpattern"
                 ],
-                toolbar1: "fontsizeselect |  bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link",
-                toolbar2: "undo redo | print preview | forecolor backcolor emoticons",
+                toolbar1: "fontsizeselect |  bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | undo redo | print preview | forecolor backcolor emoticons",
                 image_advtab: true,
                 templates: [
                     {title: 'Test template 1', content: 'Test 1'},

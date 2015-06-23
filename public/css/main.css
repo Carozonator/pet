@@ -1303,4 +1303,15 @@ input[type="submit"]:active{
     .toggle_filters{
         display:block;
     }
+    div.img150.publication_list div.thumb{
+        width:250px;
+        height:250px;
+    }
+    div.img150.publication_list div.thumb a{
+        width:250px;
+        height:250px;
+    }
+    .mascota-list{
+        text-align:center;
+    }
 }

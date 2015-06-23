@@ -60,7 +60,7 @@
                     </div>                
                 </nav><!-- .f_menu -->
             </div><!-- .grid_3 -->
-            <div class="grid_3 facebook_footer" style="margin-top:-41px;">
+            <div class="grid_3 facebook_footer">
                 
                 <div class="fb-like-box" data-width="235" data-href="https://www.facebook.com/pages/PluralPet/741155449229264?ref=hl" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
                 
@@ -77,7 +77,7 @@
                 <a href="https://www.sitelock.com/verify.php?site=pluralpet.com.uy" onclick="window.open('https://www.sitelock.com/verify.php?site=pluralpet.com.uy','SiteLock','width=600,height=600,left=160,top=170');return false;" ><img style="width:70px;margin:30px;"alt="SiteLock" title="SiteLock" src="//shield.sitelock.com/shield/pluralpet.com.uy"></a>
             </div>
         </div>
-        
+        <div class="clear"></div>
     </div><!-- .f_navigation -->
     
     </div>

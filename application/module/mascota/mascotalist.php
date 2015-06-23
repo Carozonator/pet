@@ -22,7 +22,7 @@ if(strcmp($tab,'comprar')===0){
 </div>
 
 <div style="margin-top:40px">
-    <div class="publicar" style='margin:30px 20px 0px 0px;width:20%;float:left;'>
+    <div class="filter_sidebar">
         <form action="" method="GET" id="filter">
             <!--<input type="hidden" value="<?php echo $animal; ?>" name="animal"/>-->
             <input type="hidden" value="<?php echo $_REQUEST['orden']; ?>" name="orden" class="ordenar_filtro"/>
@@ -134,8 +134,12 @@ if(strcmp($tab,'comprar')===0){
             </div>
         </form>
     </div>
-    <div style="width:75%;position:relative;float:right;margin-bottom:60px;min-height:700px;" class="img150 results">
-
+    
+    <div class="toggle_filters">
+        <button onclick="Filter.toggle()">Mostrar filtros</button>
+    </div>
+    
+    <div class="img150 publication_list">
         <?php
         if(empty($data)){
             echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay mascotas en esta categoria</div>';

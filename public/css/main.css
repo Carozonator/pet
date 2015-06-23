@@ -324,7 +324,6 @@ button:focus,
 button:active,
 input[type="submit"]:focus,
 input[type="submit"]:active{
-    background: #e835d7;
 }
 
 .button.button_highlight{
@@ -1196,6 +1195,39 @@ input[type="submit"]:active{
 }
 
 
+
+
+
+.filter_sidebar{
+    margin:30px 20px 0px 0px;
+    width:20%;
+    float:left;
+    border:1px solid gainsboro;
+    border-radius:5px;
+    background-color:white;
+    display:block;
+}
+.publication_list{
+    width:75%;
+    position:relative;
+    float:right;
+    margin-bottom:60px;
+    min-height:700px;
+}
+.toggle_filters{
+    display:none;
+}
+.toggle_filters button{
+    width:100%;
+    background:linear-gradient(to bottom, #ffffff 0%,#f3f3f3 50%,#ededed 51%);
+    color:#e209c9;
+    box-shadow:0px 0px 6px 0px rgba(0,0,0,0.5);
+}
+
+
+
+
+
 @media screen and (max-width: 1080px) {
     body{
         min-width: 0px;
@@ -1257,5 +1289,18 @@ input[type="submit"]:active{
 
 @media screen and (max-width: 480px) {
     body{
+    }
+    
+    /*publications*/
+    .filter_sidebar{
+        width:100%;
+        margin:0px;
+        display:none;
+    }
+    .publication_list{
+        width:100%;
+    }
+    .toggle_filters{
+        display:block;
     }
 }

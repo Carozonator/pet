@@ -382,10 +382,7 @@ button:focus,
 button:active,
 input[type="submit"]:focus,
 input[type="submit"]:active{
-    background: #2baab9;
-    box-shadow: inset 0px 0px 10px #1d8d9b;
-    -moz-box-shadow: inset 0px 0px 10px #1d8d9b;
-    -webkit-box-shadow: inset 0px 0px 10px #1d8d9b;
+    
 }
 
 /*** Input **/

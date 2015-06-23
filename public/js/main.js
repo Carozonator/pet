@@ -629,6 +629,16 @@ var Validation = {
 
 
 Filter = {
+    toggle: function(){
+        if($('.filter_sidebar').is(":visible")){
+            $('.toggle_filters button').html('Mostrar filtros');
+            $('.filter_sidebar').slideToggle();
+        }else{
+            $('.toggle_filters button').html('Esconder filtros');
+            $('.filter_sidebar').slideToggle();
+        }
+        console.log($('.toggle_filters').is(":visible"));
+    },
     sort:function(sort_by){
         $('form').find('.ordenar_filtro').val(sort_by);
         Filter.submit();

@@ -32,7 +32,7 @@
             </div>
             <div style="display:inline-block">
                 <h2 style="padding-bottom:20px;"><?php echo strtoupper($data['tab']);?></h2>
-                <h5 >Direcc&iacute;on:</h5>
+                <h5>Dirección:</h5>
                 <p class="gristxt"><?php echo (!empty($data['ciudad_barrio'])?ucfirst($data['ciudad_barrio']).", ":"");?><?php echo ucfirst($data['departamento']);?></p>
                 <p><?php echo (!empty($data['vendedor_id'])?('Producto ID: '.$data['vendedor_id']):"");?></p>
                 

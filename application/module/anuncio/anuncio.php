@@ -34,7 +34,7 @@
             <div style="display:inline-block" class="single_item">
                 <h2 style="padding-bottom:20px;"><?php echo strtoupper($data['tab']);?></h2>
                 
-                <h5>Direcc&iacute;on:</h5>
+                <h5>Dirección:</h5>
                 <p class="gristxt"><?php echo displayLocation($data['ciudad_barrio'],$data['departamento'],$data['direccion'],'<br/>');?></p><br/>
                 
                 <?php if(!empty($data['horario'])){ ?>

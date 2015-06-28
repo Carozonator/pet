@@ -33,7 +33,7 @@
                 <h2 style="padding-bottom:20px;">
                     <!--<?php echo strtoupper($data['tab']);?>-->
                 </h2>
-                <h5>Direcc&iacute;on:</h5>
+                <h5>Dirección:</h5>
                 
                 <p class="gristxt"><?php echo (!empty($data['ciudad_barrio'])?htmlEncodeText(ucfirst($data['ciudad_barrio'])).", ":"");?><?php echo htmlEncodeText(ucfirst($data['departamento']));?></p>
                 <div class="precio" style="font-size:20px;">

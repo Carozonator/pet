@@ -30,6 +30,7 @@
                         <ul id="menu-information" class="menu">
                             <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="/informacion/sobre-nosotros/">Sobre Nosotros</a></li>
                             <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="/informacion/terminos-y-condiciones/">T&eacute;rminos y Condiciones</a></li>
+                            <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="/informacion/politicas-de-privacidad/">Políticas de Privacidad</a></li>
                         </ul>
                     </div>                
                 </nav>

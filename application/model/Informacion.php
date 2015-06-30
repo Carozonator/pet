@@ -9,7 +9,7 @@ class Informacion extends Model{
     }
     
     function get(){
-        $sql = "SELECT * FROM mascota WHERE mascota.id=260";
+        $sql = "SELECT * FROM consejo WHERE consejo.id=13";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($id));
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);

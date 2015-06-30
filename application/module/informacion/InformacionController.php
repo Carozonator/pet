@@ -22,6 +22,10 @@ class InformacionController extends Controller{
                 $this->view->addHeadTag('<title>Contacto Empresarial | PluralPet</title>');
                 $this->view->setFile($file);
             break;
+            case 'politicas-de-privacidad':
+                $this->view->addHeadTag('<title>Políticas De Privacidad | PluralPet</title>');
+                $this->view->setFile($file);
+            break;
             
         }
         

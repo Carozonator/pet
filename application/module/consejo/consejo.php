@@ -20,5 +20,10 @@
                 </div>
             </div>
         </div>
+        <?php if($_SESSION['user']->id==$data['usuario']){ ?>
+                <form style="margin-top:20px;"method="GET" action="/consejo/editar/<?php echo $data['id'];?>/">
+                    <input type="submit" value="Editar"/>
+                </form>
+            <?php } ?>
     </div>
 </div>

@@ -62,4 +62,25 @@ class ConsejoController extends Controller{
         
     }
     
+    
+    
+    
+    function editar(){
+        $args = $this->request->getArgs();
+        $id = $args[0];
+        
+        $mascota = new \pluralpet\Consejo();
+        $result = $mascota->getByID($id);
+        
+        $foto = new \pluralpet\Foto();
+        $fotos = $foto->get($id,'consejo');
+        
+        $this->view->assign(array('data'=>$result));
+        $this->view->assign(array('foto'=>$fotos));
+        $this->view->assign(array('id'=>$id));
+        
+        $this->view->setFile('consejoedit');
+        $this->view->render();
+    }
+    
 }

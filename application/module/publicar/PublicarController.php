@@ -71,7 +71,7 @@ class PublicarController extends \pluralpet\Controller{
     function addConsejo(){
         $producto = new \pluralpet\Consejo();
         $id =  $producto->add();
-        echo json_encode(array('link'=>'/publicar/publicado/?'.'t=consejgo&id='.$id));
+        echo json_encode(array('link'=>'/publicar/publicado/?'.'t=consejo&id='.$id));
         //echo 't=producto&id='.$id;
     }
     
@@ -97,6 +97,11 @@ class PublicarController extends \pluralpet\Controller{
         $mascota = new \pluralpet\Anuncio();
         $id =  $mascota->update($_POST['publication_id']);
         echo json_encode(array('link'=>'/anuncio/'.$id));
+    }
+    function updateConsejo(){
+        $mascota = new \pluralpet\Consejo();
+        $id =  $mascota->update($_POST['publication_id']);
+        echo json_encode(array('link'=>'/consejo/'.$id));
     }
     
     

@@ -67,6 +67,7 @@ class Consejo extends Model{
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute(array($type));
         }
+        
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
     }
@@ -120,6 +121,22 @@ class Consejo extends Model{
         $stmt->execute($vals_decoded);
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    function update($id){
+        $sql =  "UPDATE consejo set titulo=?,descripcion=? "
+                . "WHERE id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(array($_POST['titulo'],($_POST['descripcion']),$id));
+        return $id;
     }
     
 }

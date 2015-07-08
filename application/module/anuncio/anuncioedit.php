@@ -57,11 +57,13 @@
                     </div>
                     <div class="publicar_item">
                         <div class="publicar_item_header">Ubicacion y Contacto</div>
+                        <!--
                         <div class="publicar_sub_item item_fecha">
                             <label>Fecha</label><input name="fecha_datepicker" value="<?php echo $data['fecha'];?>" class="datepicker" type="text"/>
                             <input name="fecha" id="fecha" value="<?php echo $data['fecha'];?>" type="hidden"/>
                             <span class="input_error"></span>
                         </div>
+                        -->
                         <div class="publicar_sub_item">
                             <label class="horario">Horario </label><input name="horario" value="<?php echo $data['horario'];?>" type="text"/>
                         </div>

@@ -18,9 +18,9 @@ class Anuncio extends Model{
             $_POST['horario'],$_POST['telefono'],$_SESSION['user']->id,'activo',$_POST['fecha']));
         $insert_id = $this->pdo->lastInsertId(); 
         
-        $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=?";
+        $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=? and usuario=?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array($insert_id,$_POST['publication_hash']));
+        $stmt->execute(array($insert_id,$_POST['publication_hash'],$_SESSION['user']->id));
         
         $affected_rows = $stmt->rowCount();
         return $insert_id;
@@ -73,7 +73,6 @@ class Anuncio extends Model{
         
         $sql = "SELECT anuncio.*, foto.name as foto_name, foto.usuario as foto_usuario  FROM anuncio LEFT OUTER JOIN foto on foto.publication_id=anuncio.id "
                 . "WHERE sub_tab=? group by anuncio.id";
-        
         
         
         //$sql = "SELECT * FROM mascota WHERE tab=? and animal=?";

@@ -29,6 +29,7 @@ class Foto extends Model{
         $sql = "SELECT * FROM foto WHERE publication_id=? and _table=? order by photo_order";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array($id,$table));
+        
         $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
     }

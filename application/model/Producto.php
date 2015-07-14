@@ -19,9 +19,9 @@ class Producto extends Model{
         $insert_id = $this->pdo->lastInsertId(); 
         
         // Update foto with the new added publication id
-        $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=?";
+        $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=? and usuario=?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array($insert_id,$_POST['publication_hash']));
+        $stmt->execute(array($insert_id,$_POST['publication_hash'],$_SESSION['user']->id));
         
         return $insert_id;
     }

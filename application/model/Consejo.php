@@ -16,9 +16,9 @@ class Consejo extends Model{
             $_POST['horario'],$_POST['telefono'],$_SESSION['user']->id,'activo'));
         $insert_id = $this->pdo->lastInsertId(); 
         
-        $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=?";
+        $sql =  "UPDATE foto set publication_id=?,temp_hash=null where temp_hash=? and usuario=?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(array($insert_id,$_POST['publication_hash']));
+        $stmt->execute(array($insert_id,$_POST['publication_hash'],$_SESSION['user']->id));
         
         $affected_rows = $stmt->rowCount();
         return $insert_id;
@@ -55,6 +55,7 @@ class Consejo extends Model{
     
     function getAll($type){
         if(strcmp($type,'index')===0){
+            
             $sql = "SELECT consejo.*, foto.name as foto_name, foto.usuario as foto_usuario  FROM consejo LEFT OUTER JOIN foto on foto.publication_id=consejo.id "
                     . "where foto._table='consejo' group by consejo.id";
             $stmt = $this->pdo->prepare($sql);

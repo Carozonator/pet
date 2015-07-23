@@ -103,7 +103,7 @@ if($_SESSION['user']->id==7 || $_SESSION['user']->id==1){
     $GLOBALS['nav_menu']['publicar']['sub_menus'][]=array('consejo'=>'Consejos');
 }
 
-$GLOBALS['refugio']= array('','Animal Help');
+$GLOBALS['refugio']= array('','Animal Help','Otro Refugio','Particular');
 
 $GLOBALS['tab'] = array('adoptar'=>'Adoptar','comprar'=>'Vender','cruzar'=>'Cruzar','encontrado'=>'Encontrado','perdido'=>'Perdido');
 

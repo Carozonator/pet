@@ -131,7 +131,7 @@ class Mascota extends Model{
             break;
         }
         $order_by.=", foto.photo_order";
-            
+            echo $order_by;
         //}
         
         foreach($vals as $rows){
@@ -146,7 +146,7 @@ class Mascota extends Model{
         $sql =    "SELECT mascota.*, foto.name as foto_name, foto.usuario as foto_usuario, foto.photo_order, "
                 . "CASE WHEN mascota.moneda = 'us' THEN mascota.precio * ".CAMBIO." ELSE mascota.precio END AS `precio_sum` "
                 . "FROM mascota "
-                . "LEFT OUTER JOIN (SELECT name, usuario,photo_order,publication_id FROM foto WHERE _table='mascota' order by photo_order) "
+                . "LEFT OUTER JOIN (SELECT name, usuario,photo_order,publication_id,id FROM foto WHERE _table='mascota' order by photo_order,id) "
                 . "AS foto on foto.publication_id=mascota.id "
                 . "$stmt "
                 . "$sexo_stmt "

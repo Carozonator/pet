@@ -131,7 +131,6 @@ class Mascota extends Model{
             break;
         }
         $order_by.=", foto.photo_order";
-            echo $order_by;
         //}
         
         foreach($vals as $rows){

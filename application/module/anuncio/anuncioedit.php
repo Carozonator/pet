@@ -23,8 +23,8 @@
                         <div class="photo_delete" onclick="Foto.remove(<?php echo $f['id']; ?>)">x</div>
                     </li>
                 <?php } ?>
-                <?php if(count($foto)<6){ ?>
-                    <li class="unsortable">
+                
+                    <li class="unsortable" style="<?php if(count($foto)>=6){echo 'display:none';}?>">
                         <form id="fotos" action="/publicar/addPhotoEditar/" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="publication_id" value="<?php echo $id;?>"/>
                             <input type="hidden" name="table" value="anuncio"/>
@@ -33,7 +33,6 @@
                             <input id="submit_photo" type="submit" value="" onclick="" />
                         </form>
                     </li>
-                <?php } ?>
                 </ul>
             </div>
             <div style="clear:both"></div>

@@ -84,6 +84,11 @@ class MascotaController extends Controller{
         $mascota = new \pluralpet\Mascota();
         $result = $mascota->get($id);
         
+        // handle error when user is trying to edit another users publication
+        if(intval($result['usuario']) !== intval($_SESSION['user']->id)){
+            header('Location: /');
+        }
+        
         $foto = new \pluralpet\Foto();
         $fotos = $foto->get($id,'mascota');
         

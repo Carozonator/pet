@@ -47,6 +47,10 @@ class ProductoController extends Controller{
         $mascota = new \pluralpet\Producto();
         $result = $mascota->get($id);
         
+        if(intval($result['usuario']) !== intval($_SESSION['user']->id)){
+            header('Location: /');
+        }
+        
         $foto = new \pluralpet\Foto();
         $fotos = $foto->get($id,'producto');
         

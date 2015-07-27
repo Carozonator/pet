@@ -35,6 +35,8 @@ var Foto = {
             data:{id:id},
             success:function(response){
                 $('#'+id).remove();
+                $('.unsortable').show();
+                
             }
         });
     }

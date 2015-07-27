@@ -45,8 +45,8 @@ foreach($images[$_REQUEST['tab']] as $key => $row){
                         <div class="photo_delete" onclick="Foto.remove(<?php echo $f['id']; ?>)">x</div>
                     </li>
                 <?php } ?>
-                <?php if(count($foto)<6){ ?>
-                    <li class="unsortable">
+                
+                    <li class="unsortable" style="<?php if(count($foto)>=6){echo 'display:none';}?>">
                         <form id="fotos" action="/publicar/addPhotoEditar/" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="publication_id" value="<?php echo $id;?>"/>
                             <input type="hidden" name="table" value="producto"/>
@@ -64,7 +64,6 @@ foreach($images[$_REQUEST['tab']] as $key => $row){
                         </form>
                         -->
                     </li>
-                <?php } ?>
                 </ul>
             </div>
             <div style="clear:both"></div>
@@ -144,7 +143,12 @@ foreach($images[$_REQUEST['tab']] as $key => $row){
                     <div class="publicar_item">
                         <div class="publicar_item_header">Describe tu producto</div>
                         <div class="publicar_sub_item">
-                            <label>Precio</label><input name="precio" type="text" value="<?php echo $data['precio']; ?>"/><span class="input_error"></span>
+                            <label>Precio *</label>
+                            <select class="moneda" name="moneda" style="width:70px;margin-left:-5px;margin-top:-5px;">
+                                <option value="uy">$</option>
+                                <option value="us" <?php if($data['moneda']=='us'){echo 'selected';} ?>>US$</option>
+                            </select>
+                            <input style="margin-left:5px;width:222px;" name="precio" type="text" value="<?php echo $data['precio']; ?>"/><br/>
                         </div>
                         <div class="publicar_sub_item">
                             <label>Titulo</label><input name="titulo" type="text" value="<?php echo $data['titulo']; ?>"/><span class="input_error"></span>

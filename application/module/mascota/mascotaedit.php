@@ -41,8 +41,7 @@ if(in_array($_REQUEST['tab'],$check1)){
                         <div class="photo_delete" onclick="Foto.remove(<?php echo $f['id']; ?>)">x</div>
                     </li>
                 <?php } ?>
-                <?php if(count($foto)<6){ ?>
-                    <li class="unsortable">
+                    <li class="unsortable" style="<?php if(count($foto)>=6){echo 'display:none';}?>">
                         <form id="fotos" action="/publicar/addPhotoEditar/" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="publication_id" value="<?php echo $id;?>"/>
                             <input type="hidden" name="table" value="mascota"/>
@@ -60,7 +59,7 @@ if(in_array($_REQUEST['tab'],$check1)){
                         </form>
                         -->
                     </li>
-                <?php } ?>
+                
                 </ul>
             </div>
             <div style="clear:both"></div>
@@ -123,7 +122,7 @@ if(in_array($_REQUEST['tab'],$check1)){
                         <div class="publicar_sub_item">
                             <input type="radio" name="sexo" value="macho" <?php if($data['sexo']=='macho'){echo 'checked';}?>/> Macho<br/>
                             <input type="radio" name="sexo" value="hembra" <?php if($data['sexo']=='hembra'){echo 'checked';}?>/> Hembra<br/>
-                            <input type="radio" name="sexo" value="camada"/> Camada
+                            <input type="radio" name="sexo" value="camada" <?php if($data['sexo']=='camada'){echo 'checked';}?>/> Camada
                         </div>
                     </div>
 
@@ -211,7 +210,13 @@ if(in_array($_REQUEST['tab'],$check1)){
                         <div class="publicar_item_header">Describe tu mascota</div>
                         <?php if($precio){?>
                         <div class="publicar_sub_item">
-                            <label>Precio</label><input name="precio" type="text" value="<?php echo $data['precio']; ?>"/><br/>
+                            <!--<label>Precio</label><input name="precio" type="text" value="<?php echo $data['precio']; ?>"/><br/>-->
+                            <label>Precio *</label>
+                            <select class="moneda" name="moneda" style="width:70px;margin-left:-5px;margin-top:-5px;">
+                                <option value="uy">$</option>
+                                <option value="us" <?php if($data['moneda']=='us'){echo 'selected';} ?>>US$</option>
+                            </select>
+                            <input style="margin-left:5px;width:222px;" name="precio" type="text" value="<?php echo $data['precio']; ?>"/><br/>
                         </div>
                         <?php } ?>
                         <div class="publicar_sub_item">

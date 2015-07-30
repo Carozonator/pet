@@ -25,7 +25,7 @@
                 <?php } ?>
                 
                     <li class="unsortable" style="<?php if(count($foto)>=6){echo 'display:none';}?>">
-                        <form id="fotos" action="/publicar/addPhotoEditar/" method="POST" enctype="multipart/form-data">
+                        <form id="fotos_edit" action="/publicar/addPhotoEditar/" method="POST" enctype="multipart/form-data">
                             <input type="hidden" name="publication_id" value="<?php echo $id;?>"/>
                             <input type="hidden" name="table" value="anuncio"/>
                             <!--<input type="hidden" name="tab" value="<?php echo $_REQUEST['tab'];?>"/>-->

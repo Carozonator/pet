@@ -1111,7 +1111,7 @@ input[type="submit"]:active{
 
 
 
-.editar_fotos #fotos{
+.editar_fotos #fotos_edit{
     width:100px;
     height:100px;
     min-height: 100px;
@@ -1122,7 +1122,7 @@ input[type="submit"]:active{
     display:none;
 }
 
-.editar_fotos #fotos{
+.editar_fotos #fotos_edit{
     cursor:pointer;
     background-size:50px 50px;
     background-position: 25px 25px;

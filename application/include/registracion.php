@@ -12,8 +12,8 @@
             <span style="color:#999;">* Datos obligatorios</span>
             <div style="height:10px;width:100%"></div>
                 <form action="/account/register" method="POST">
-                    <div><label>Nombre *</label><input name="firstname" type="text"></div>
-                    <div><label>Apellido *</label><input name="lastname" type="text"></div>
+                    <div><label>Nombre *</label><input name="firstname" type="text"><br/><span class="validation"></span></div>
+                    <div><label>Apellido *</label><input name="lastname" type="text"><br/><span class="validation"></span></div>
                     <div><label>Usuario *</label><input name="username" type="text"><br/><span class="validation"></span></div>
                     <div><label>Email *</label><input name="email" type="text"><br/><span class="validation"></span></div>
                     <div><label>Confirmar Email *</label><input name="confirm_email" type="text"><br/><span class="validation" id="confirm_email"></span></div>
@@ -42,6 +42,24 @@ function submitUser(elem){
     var password = form.find('input[name="password"]');
     var password_con = form.find('input[name="confirm_password"]');
     
+    var firstname = form.find('input[name="firstname"]');
+    var lastname = form.find('input[name="lastname"]');
+    var username = form.find('input[name="username"]');
+    
+    if(firstname.val()==''){
+        firstname.parent().find('.validation').html(' &#x2717;');
+        form_submit = false;
+    }
+    if(username.val()==''){
+        username.parent().find('.validation').html(' &#x2717;');
+        form_submit = false;
+    }
+    if(lastname.val()==''){
+        lastname.parent().find('.validation').html(' &#x2717;');
+        form_submit = false;
+    }
+    
+    
     if(email == email_con){
         //$('#confirm_email').html(' &#x2713;');
     }else{
@@ -52,7 +70,7 @@ function submitUser(elem){
     if(password.val() == password_con.val()){
         //$('#confirm_password').html(' &#x2713;');
     }else{
-        $('#confirm_password').html(' &#x2717;');
+        $('#confirm_password').html('contraseña no son iguales');
         form_submit = false;
     }
     if(password.val().length<5){

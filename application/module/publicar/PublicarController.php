@@ -151,8 +151,10 @@ class PublicarController extends \pluralpet\Controller{
                 
                 $foto->addFromEditar($image_name,$file_name,$_POST['publication_id'],$_POST['table']);
                 
+                
                 move_uploaded_file($_FILES["file"]['tmp_name'],$upload_entry_dir.$image_name);
                 
+                $this->lower_quality($upload_entry_dir.$image_name,$upload_entry_dir.'lower_res_'.$image_name);
                 $this->resize_crop_image(200, 200, $upload_entry_dir.$image_name,$upload_entry_dir.'thumb_'.$image_name);
                 
                 
@@ -197,6 +199,7 @@ class PublicarController extends \pluralpet\Controller{
                 
                 move_uploaded_file($_FILES["file"]['tmp_name'],$upload_entry_dir.$image_name);
                 
+                $this->lower_quality($upload_entry_dir.$image_name,$upload_entry_dir.'lower_res_'.$image_name);
                 $this->resize_crop_image(200, 200, $upload_entry_dir.$image_name,$upload_entry_dir.'thumb_'.$image_name);
                 
                 
@@ -242,7 +245,29 @@ class PublicarController extends \pluralpet\Controller{
     
     
     
-    
+    function lower_quality($source,$destination){
+        $size = filesize($source);
+        $info = getimagesize($source);
+        
+        if ($info['mime'] == 'image/jpeg'){ 
+            $image = imagecreatefromjpeg($source);
+            $quality = 100;
+        }elseif ($info['mime'] == 'image/gif'){ 
+            $image = imagecreatefromgif($source);
+            $quality = 100;
+        }elseif ($info['mime'] == 'image/png'){ 
+            $image = imagecreatefrompng($source);
+            $quality = 100;
+        }
+
+        if($size>1000000){
+            $q = 1000000/$size/2;
+            $quality = $quality * $q;
+            imagejpeg($image, $source, $quality);
+        }
+        
+        
+    }
     function resize_crop_image($max_width, $max_height, $source_file, $dst_dir, $quality = 80){
         $imgsize = getimagesize($source_file);
         $width = $imgsize[0];

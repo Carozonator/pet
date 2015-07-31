@@ -39,6 +39,9 @@ class TiendaController extends Controller{
         $result = array_slice($result, $page*RESULTS_PER_PAGE,RESULTS_PER_PAGE);
         
         $this->view->addHeadTag('<title>Tienda | PluralPet</title>');
+        $this->view->addHeadTag('<meta name="description" content="Gran variedad de productos, sumado a ofertas únicas semanales">');
+        
+        
         $this->view->assign(array('list_count'=>$list_count));
         $this->view->assign(array('data'=>$result));
         $this->view->assign(array('animal'=>$animal));

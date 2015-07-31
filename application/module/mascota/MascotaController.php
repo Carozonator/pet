@@ -56,6 +56,11 @@ class MascotaController extends Controller{
         
         $animal = strtolower($this->request->getMethod());
         $tab = strtolower($this->request->getTab());
+        
+        
+        
+        
+        
         $fill['tab']=$tab;
         $fill['animal']=$animal;
         $page = $fill['page'];
@@ -68,6 +73,19 @@ class MascotaController extends Controller{
         $result = array_slice($result, $page*RESULTS_PER_PAGE,RESULTS_PER_PAGE);
         
         $this->view->addHeadTag('<title>Lista de Mascotas | PluralPet</title>');
+        $content = "";
+        if($tab=='adoptar'){
+            $content = "Nos consideramos privilegiados de poder hacer la diferencia trabajando en conjunto con los principales refugios del país.";
+        }elseif($tab=='perdido'){
+            $content = "Nuestra sección dedicada a reunir mascotas con sus familias brindando una herramienta sencilla y de gran alcance.";
+        }elseif($tab=='encontrado'){
+            $content = "Nuestra sección dedicada a reunir mascotas con sus familias brindando una herramienta sencilla y de gran alcance.";
+        }
+        
+        
+        $this->view->addHeadTag('<meta name="description" content="'.$content.'">');
+        
+        
         $this->view->assign(array('list_count'=>$list_count));
         $this->view->assign(array('data'=>$result));
         $this->view->assign(array('animal'=>$animal));

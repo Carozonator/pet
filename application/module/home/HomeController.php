@@ -36,7 +36,7 @@ class HomeController extends Controller{
         
         $this->view->addHeadTag('<title>PluralPet - El mundo de las mascotas a un click!</title>');
         $this->view->addHeadTag('<meta name="description" content="El sitio de referencia en el ámbito de los animales domésticos y punto de encuentro entre comunidades afines al sector. TOTALMENTE GRATUITA!">');
-        $this->view->addHeadTag('<meta property="og:image" content="'.DOMAIN.'/media/logo.png" />');
+        $this->view->addHeadTag('<meta property="og:image" content="'.DOMAIN.'/media/facebook_tag.jpg" />');
         
         $this->view->assign(array('oferta'=>$oferta,'perro'=>$perro,'servicio'=>$servicio,'gato'=>$gato,'producto'=>$producto,'articulos'=>$articulos));
         $this->view->setFile('home');

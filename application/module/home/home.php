@@ -15,6 +15,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                      array('title'=>'','text'=>'Visita nuestra sección dedicada específicamente a refugios.','loc'=>'left:600px;','img'=>'adoptar.jpg','link'=>'/adoptar/perro/'),
                  array('title'=>'','text'=>'Solvit','loc'=>'left:0px;','img'=>'solvit.jpg','link'=>'http://www.solvitproducts.com/'),
                      array('title'=>'','text'=>'Agrega un nuevo integrante a tu familia.','loc'=>'right:0px;','img'=>'comprar.jpg','link'=>'/comprar/perro/'),
+                 array('title'=>'','text'=>'Reyes de la Pradera','loc'=>'left:0px;','img'=>'reyes.jpg','link'=>'https://www.facebook.com/reyesdela.pradera?ref=br_rs'),
                  
     
     );

@@ -1,24 +1,33 @@
 
-<div class="main-content_container" style="margin:30px auto;width:500px;">
+<div class="main-content_container message_container">
     <div class="header">Ingresa a tu cuenta</div>
-    <form style="margin-top:10px;" method="POST" action="/account/login/">
-        <div style="width:400px;text-align:right;position:relative;border-bottom:1px solid lightgrey;">
-            <div style="margin:20px">
-                <label>Usuario o Email: </label><input style="width:200px" name="user" type="text">
+    <div style="border-bottom:1px solid lightgrey;">
+        <form class="form-horizontal" method="POST" action="/account/login/">
+            <div class="form-group">
+                <label for="user" class="col-sm-4 control-label">Usuario o Email</label>
+                <div class="col-sm-8">
+                  <input name="user" type="text" class="form-control" id="user">
+                </div>
             </div>
-            <div style="margin:20px">
-                <label>Password: </label><input style="width:200px" name="password" type="password">
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-4 control-label">Contraseña</label>
+                <div class="col-sm-8">
+                  <input type="password" class="form-control" id="inputPassword3" name="password">
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-4 col-sm-10">
+                <button type="submit" class="button">Ingresar</button>
+              </div>
             </div>
             <?php if($invalid==true){ ?>
-                <div style="padding-top:10px;color:red;text-align:center;">Verifica la clave y/o el usuario que ingresaste</div>
+                <div style="padding:10px;color:red;text-align:center;">Verifica la clave y/o el usuario que ingresaste</div>
             <?php } ?>
             <?php if($contactar===true){ ?>
-                <div style="padding-top:10px;color:red;text-align:center;">Necesitas ingresar a tu cuenta para contactar al publicador</div>
+                <div style="padding:10px;color:red;text-align:center;">Necesitas ingresar a tu cuenta para contactar al publicador</div>
             <?php } ?>
-            <div style="position:absolute;right:-20px;top:36px;" onclick="$(this).closest('form').submit();" class="icon-circle-arrow-right submit_arrow"></div>
-        </div>
-    </form>
-    
+        </form>
+    </div>
     <div style="font-size:15px;margin-top:20px;">
         <a href="#" onclick="Register.open()">No estas registrado?</a><br/><br/>
         <a href="/account/recupere_contrasena/">Has olvidado tu contrase&ntilde;a?</a>

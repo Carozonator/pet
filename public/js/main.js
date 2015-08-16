@@ -724,18 +724,26 @@ Register = {
     
     popup: function(){
         $('.overlay').show();
-        var w = $('body').width();
+        var w = $(document).width();
+        
         var h = $('body').height();
         
         var register_h = 540;
         var to_h = (h-register_h)/2;
+        
+        
+        if(w>900){
+            w=900;
+        }
+        
+        $('#popup_registracion').css({width:w});
         
         if(h-100<register_h){
             to_h=50;
             $('#popup_registracion').css({height:h-100});
         }
         
-        $('#popup_registracion').css({top:to_h,left:w/2,display:''});
+        $('#popup_registracion').css({top:to_h,left:'50%',display:'',marginLeft:-1*w/2});
         $('#popup_registracion').show();
     }
     

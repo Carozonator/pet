@@ -11,7 +11,7 @@ if(strcmp($tab,'comprar')===0){
 
 
 <div class="wrapper-dropdown-5 orden" style="">
-    <div class="dropdown-menu" style="width:90%;"><i class="icon-sort"></i> 
+    <div class="account-dropdown-menu" style="width:90%;"><i class="icon-sort"></i> 
         <?php echo (!empty($_REQUEST['orden'])?$order[$_REQUEST['orden']]:'Recientes'); ?>
         <ul style=""class="dropdown">
                 <?php foreach($order as $key=>$o){ 
@@ -167,7 +167,7 @@ if(strcmp($tab,'comprar')===0){
                                 <a class="bigtxt" style="color:#9C2490" href="/mascota/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
                             </h3>
                             <?php if(strcmp($tab,'comprar')===0){?>
-                            <div class="precio" style="font-size:20px;position:absolute;left:600px;top:70px;" class="">
+                            <div class="precio">
                                 <?php echo moneda($row['moneda']); ?><?php echo number_format($row['precio'],0,',','.'); ?>
                             </div>
                             <?php }?>

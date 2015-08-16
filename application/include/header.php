@@ -7,6 +7,8 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     <!-- change version -->
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/responsivemenu/css/component.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>/css/main.css?v=9"/>
@@ -36,12 +38,32 @@
     <script type="text/javascript" src="<?php echo PUBLIC_PATH; ?>vendor/lightbox/js/lightbox.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH; ?>vendor/lightbox/css/lightbox.css"/>
+    
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <?php echo $head_tags; ?>
     
     <script src=""></script>
     <script type="text/javascript">
         
+        
+        
+         function openLoginBoxContainer(event,elem){
+             event.stopPropagation();
+         }
+         function openLoginBox(event,elem){
+             event.stopPropagation();
+             if($('.wrapper-dropdown-5').hasClass('active')){
+                 $('.dropdown').hide();
+                 $('.wrapper-dropdown-5').removeClass('active');
+                 return;
+             }
+                
+                var parent = $(elem).parent();
+                $('.dropdown').hide();
+                $(parent).find('.dropdown').show();
+                $('.wrapper-dropdown-5').addClass('active');
+            }
+         
             $(document).ready(function(){
                 
                     $( '#dl-menu' ).dlmenu({
@@ -51,7 +73,7 @@
                     Publicar.user_logged_in = <?php echo (isset($_SESSION['user'])?'true':'false'); ?>;
                     var visit=getCookie("FIRST_VISIT");
                     
-                    
+                    //Register.popup();
                     if(Publicar.user_logged_in==false && window.location.pathname=='/' && typeof visit=='undefined'){
                         Register.popup();
                     }
@@ -62,12 +84,6 @@
                         document.cookie="FIRST_VISIT=true; expires="+expire;
                     }
                     
-                    $('.dropdown-menu').click(function(event) {
-                        event.stopPropagation();
-                        $('.dropdown').hide();
-                        $(this).find('.dropdown').show();
-                        $('.wrapper-dropdown-5').addClass('active');
-                    });
                     $('body').click(function(){
                         $('.wrapper-dropdown-5').removeClass('active');
                     })
@@ -116,7 +132,8 @@
        <a class="logo" href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
         <div class="wrapper-dropdown-5 user_controls" style="">
                     <?php if(!isset($_SESSION['user'])) { ?>
-                    <div id="dd" style="" class="dropdown-menu" tabindex="1"><i class="icon-user"></i> Ingresa
+                    <div id="dd" onclick="openLoginBoxContainer(event,this)" class="account-dropdown-menu" tabindex="1">
+                        <a href="#" onclick="openLoginBox(event,this)"><i class="icon-user"></i> Ingresa</a>
                         <ul style=""class="dropdown">
                             <form style="margin-top:10px;" method="POST" action="/account/login/">
                                 <input type="hidden" name="action" value="login"/>
@@ -134,11 +151,12 @@
                             <li><a href="/account/recupere_contrasena/"></i>Has olvidado tu contrase&ntilde;a?</a></li>
                         </ul>
                     </div>
-                    <div style="" class="dropdown-menu" tabindex="1"><a href="#" onclick="Register.open();return false;"><i class="icon-pencil"></i> Registrarme</a>
+                    <div style="" class="account-dropdown-menu" tabindex="1">
+                        <a href="#" onclick="Register.open();return false;"><i class="icon-pencil"></i> Registrarme</a>
                     </div>
 
                     <?php }else{ ?>
-                    <div id="dd" style="min-width:50px;" class="dropdown-menu" tabindex="1">
+                    <div id="dd" style="min-width:50px;" class="account-dropdown-menu" tabindex="1">
                         <a href="/account/"><i class="icon-user"></i> <?php echo $_SESSION['user']->username;?></a>
                         <a style="padding-left:20px;" href="/account/logout"><i style="padding-right:5px;" class="icon-eject"></i>Salir</a>
                         <!--
@@ -151,7 +169,7 @@
                     <?php } ?>
             
                         
-                    <!--<div style="" class="dropdown-menu" tabindex="1"><i class="icon-shopping-cart"></i> Carrito</div>
+                    <!--<div style="" class="account-dropdown-menu" tabindex="1"><i class="icon-shopping-cart"></i> Carrito</div>
                     <div style="float:right">
                         <input style="background-color:none;height:22px;" type="text" value="" name="s"  placeholder="Buscar por productos">
                         <i class="icon-search"></i>

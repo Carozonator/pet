@@ -434,7 +434,7 @@ input[type="submit"]:active{
 }
 
 
-.wrapper-dropdown-5 .account-dropdown-menu{
+.wrapper-dropdown-5 .dropdown-menu{
     font-size:12px;
 }
 
@@ -625,7 +625,8 @@ input[type="submit"]:active{
 
 
 .overlay_box#popup_registracion{
-    max-width:900px;
+    width:900px;
+    margin-left:-450px;
 }
 .overlay_box{
     z-index:20;
@@ -727,9 +728,8 @@ input[type="submit"]:active{
 
 
 
- /*----------------------------------------*\
-                    All                    
- \*----------------------------------------*/
+
+/* ALL */
 .main-content_container{
     border:1px solid gainsboro;
     margin:30px 0px;
@@ -743,36 +743,6 @@ input[type="submit"]:active{
     font-size:20px;
     margin-bottom:50px;
 }
-.main-content_container.message_container{
-    margin:30px auto;
-    width:500px;
-}
-.main-content_container.message_container.text_only{
-    color:#C807B1;
-    font-size:22px;
-    text-align:center;
-}
-@media screen and (max-width: 480px) {
-    .main-content_container.message_container{
-        margin:30px auto;
-        width:100%;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .submit_arrow{
     color:#e552d6;
     font-size:40px;
@@ -781,11 +751,6 @@ input[type="submit"]:active{
 }
 
 
-
-
- /*----------------------------------------*\
-                  Images                    
- \*----------------------------------------*/
 .img_box_xl{
     max-width:400px;
     min-width:200px;
@@ -796,6 +761,9 @@ input[type="submit"]:active{
     display:inline-block;
     text-align:center;
 }
+.img_box_xl{
+}
+
 
 .img_box_large{
     width:300px;
@@ -803,6 +771,9 @@ input[type="submit"]:active{
     border:1px solid #cacaca; -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;  
     height:auto !important;
     overflow:hidden;
+}
+
+.img_box_large img{
 }
 
 .img_box_small{
@@ -1094,11 +1065,11 @@ input[type="submit"]:active{
 
 
 
-.publication_pagination{
+.pagination{
     text-align:center;
     margin-top:20px;
 }
-.publication_pagination button{
+.pagination button{
     margin:0px 5px;
 }
 
@@ -1252,12 +1223,6 @@ input[type="submit"]:active{
     margin-bottom:60px;
     min-height:700px;
 }
-.publication_list .precio{
-    font-size:20px;
-    position:absolute;
-    left:640px;
-    top:70px;
-}
 .toggle_filters{
     display:none;
 }
@@ -1267,28 +1232,6 @@ input[type="submit"]:active{
     color:#e209c9;
     box-shadow:0px 0px 6px 0px rgba(0,0,0,0.5);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.publication_thumbs{
-    float:right;
-    max-height:400px;
-    overflow:auto;
-}
-
-
 
 
 
@@ -1353,10 +1296,11 @@ input[type="submit"]:active{
     
 }
 
-@media screen and (max-width: 1080px) {
-    /*----------------------------------------*\
-                  Publications                    
-    \*----------------------------------------*/
+@media screen and (max-width: 480px) {
+    body{
+    }
+    
+    /*publications*/
     .filter_sidebar{
         width:100%;
         margin:0px;
@@ -1382,69 +1326,14 @@ input[type="submit"]:active{
     .mascota-list:nth-child(2n){
         background:whitesmoke;
     }
-    .publication_list .precio{
-        position:relative;
-        left:0px;
-        top:0px;
-        padding-bottom:10px;
-    }
-    .publication_list .thumb.mascota-list-thumb{
-        margin:auto;
-        display:block !important;
-    }
-    
-    /*----------------------------------------*\
-                  Single Items                    
-    \*----------------------------------------*/
-    .publication_thumbs{
-        float:none;
-        width:100% !important;
-        max-height:400px;
-        overflow:auto;
-    }
-    .publication_thumbs .img_box_small{
-        float:left;
-    }
     
     
     
-    
-    
-    
-    
-    /*----------------------------------------*\
-                     Footer                      
-    \*----------------------------------------*/
+    /*footer*/
     .grid_3.facebook_footer{
         margin-top:30px;
     }
     .grid_3{
         margin-top:30px;
     }
-}
-
-
-
-
-
-
-
-
- /*----------------------------------------*\
-             Override Bootstrap                    
- \*----------------------------------------*/
-p{
-    margin:0px;
-}
-h3{
-    margin:0px;
-}
-i,a,img,div{
-    box-sizing:initial;
-}
-ol, ul{
-    margin:0px;
-}
-.form-group div{
-    box-sizing:border-box;
 }

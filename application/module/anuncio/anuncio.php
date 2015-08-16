@@ -7,7 +7,7 @@
                 <img style="width:100px;" src="<?php echo MEDIA.'facebook_share.png'; ?>"/>
              </a>
         </h2>
-        <div style="float:right;max-height:400px;width:<?php echo (count($foto)>=4?'300':'150'); ?>px;overflow:auto;">
+        <div class="publication_thumbs" style="width:<?php echo (count($foto)>=4?'300':'150'); ?>px;">
             <?php 
                 foreach($foto as $f){ ?>
                 

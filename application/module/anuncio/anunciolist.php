@@ -13,7 +13,7 @@ $order = array('reciente'=>'Recientes','visitas'=>'M&aacutes visitados');
 
 
 <div class="wrapper-dropdown-5 orden" style="">
-    <div class="dropdown-menu" style="width:90%;"><i class="icon-sort"></i> 
+    <div class="account-dropdown-menu" style="width:90%;"><i class="icon-sort"></i> 
         <?php echo (!empty($_REQUEST['orden'])?$order[$_REQUEST['orden']]:'Recientes'); ?>
         <ul style=""class="dropdown">
                 <?php foreach($order as $key=>$o){ 
@@ -25,7 +25,7 @@ $order = array('reciente'=>'Recientes','visitas'=>'M&aacutes visitados');
 
 
 <div style="margin-top:40px">
-    <div class="publicar" style='min-height:0px;margin:30px 20px 0px 0px;width:20%;float:left;'>
+    <div class="filter_sidebar">
         <form action="" method="GET" id="filter">
             <input type="hidden" value="<?php echo $sub_tab; ?>" name="titulo"/>
             <input type="hidden" value="<?php echo $_REQUEST['orden']; ?>" name="orden" class="ordenar_filtro"/>
@@ -67,15 +67,21 @@ $order = array('reciente'=>'Recientes','visitas'=>'M&aacutes visitados');
             </div>
         </form>
     </div>
-    <div style="width:75%;position:relative;float:right;margin-bottom:60px;min-height:700px;" class="img150 results">
+    
+    
+    <div class="toggle_filters">
+        <button onclick="Filter.toggle()">Mostrar filtros</button>
+    </div>
+    
+    <div class="img150 publication_list">
 
-<?php
-if(empty($data)){
-    echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay anuncios en esta categoria</div>';
-}
-else{
-foreach($data as $row){
-?>
+        <?php
+        if(empty($data)){
+            echo '<div style="font-weigth:bold;text-align:center;font-size:15px;">No hay anuncios en esta categoria</div>';
+        }
+        else{
+        foreach($data as $row){
+        ?>
 
         <div class="mascota-list">
             <div class="thumb mascota-list-thumb">

@@ -1,4 +1,4 @@
-<div class="pagination">
+<div class="publication_pagination">
 <?php 
 $page_set= ceil($list_count/RESULTS_PER_PAGE);
 $current = $_REQUEST['page'];

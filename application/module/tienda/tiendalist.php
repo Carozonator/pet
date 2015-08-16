@@ -20,7 +20,7 @@ $order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor p
 
 
 <div class="wrapper-dropdown-5 orden" style="">
-    <div class="dropdown-menu" style="width:90%;"><i class="icon-sort"></i> 
+    <div class="account-dropdown-menu" style="width:90%;"><i class="icon-sort"></i> 
         <?php echo (!empty($_REQUEST['orden'])?$order[$_REQUEST['orden']]:'Recientes'); ?>
         <ul style=""class="dropdown">
                 <?php foreach($order as $key=>$o){ 
@@ -32,58 +32,9 @@ $order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor p
 
 
 <div style="margin-top:40px">
-    <div class="publicar" style='margin:30px 20px 0px 0px;width:20%;float:left;'>
+    <div class="filter_sidebar">
         <form action="" method="GET" id="filter">
             <input type="hidden" value="<?php echo $_REQUEST['orden']; ?>" name="orden" class="ordenar_filtro"/>
-            <!--<input type="hidden" value="<?php echo $animal; ?>" name="animal"/>
-            <input type="hidden" value="<?php echo $tab; ?>" name="tab"/>-->
-            <!--
-            <div class="filter_title">
-                <div class="publicar_item_header"><?php echo 'Animal'; ?><span onclick="Filter.unfilter('animal')">x</span></div>
-            </div>
-            <div class="filter_desc">
-                <select class="animal" name="animal" style="width:100%;">
-                    <option></option>
-                    <?php
-                        foreach($GLOBALS['nav_menu']['comprar'] as $r){
-                            foreach($r as $key=>$other){
-                                if($_REQUEST['animal']==$key){
-                                    echo '<option value="'.$key.'" selected>'.ucfirst($key).'</option>';
-                                }
-                                else{
-                                    echo '<option value="'.$key.'">'.ucfirst($key).'</option>';
-                                }
-                            }
-                        }
-                    ?>
-                </select>
-            </div>
-            <div class="filter_title" style="<?php if(empty($_REQUEST['animal'])){echo 'display:none;';}?>">
-                <div class="publicar_item_header producto"><?php echo 'Producto'; ?><span onclick="Filter.unfilter('tab')">x</span></div>
-            </div>-->
-            <!--
-            <div class="filter_desc producto" style="<?php if(empty($_REQUEST['animal'])){echo 'display:none;';}?>">
-                <select class="tab" name="tab" style="width:100%;">
-                    <option></option>
-                    <?php
-                        foreach($GLOBALS['producto'][$_REQUEST['animal']] as $key=>$r){
-                            if($_REQUEST['tab']==$r){
-                                echo '<option value="'.$r.'" selected>'.ucfirst($r).'</option>';
-                            }
-                            else{
-                                echo '<option value="'.$r.'">'.ucfirst($r).'</option>';
-                            }
-                        }
-                    ?>
-                </select>
-            </div>
-            -->
-            
-            
-            
-            
-            
-            
             <div class="filter_title"><div class="publicar_item_header">Localizaci&oacute;n<span onclick="Filter.unfilter('departamento')">x</span></div></div>
             <div class="filter_desc">
                 <select class="departamento" name="departamento" style="width:100%;">
@@ -151,7 +102,12 @@ $order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor p
             </div>
         </form>
     </div>
-    <div style="width:75%;position:relative;float:right;margin-bottom:60px;min-height:700px;" class="img150 results">
+    
+    <div class="toggle_filters">
+        <button onclick="Filter.toggle()">Mostrar filtros</button>
+    </div>
+    
+    <div class="img150 publication_list">
 
         <?php
         if(empty($data)){
@@ -179,7 +135,7 @@ $order = array('reciente'=>'Recientes','barato'=>'Menor precio','caro'=>'Mayor p
                             <h3>
                                 <a class="bigtxt" style="color:#9C2490" href="/producto/<?php echo $row['id'];?>"><?php echo $row['titulo'];?></a>
                             </h3>
-                            <div class="precio" style="font-size:20px;position:absolute;left:600px;top:70px;" class="">
+                            <div class="precio">
                                 <?php echo moneda($row['moneda']); ?><?php echo number_format($row['precio'],0,',','.'); ?>
                             </div>
                             <p><span class="gristxt_1">Localizacion:</span> <?php echo (!empty($row['ciudad_barrio'])?htmlEncodeText(ucfirst($row['ciudad_barrio'])).', ':'');?><?php echo htmlEncodeText(ucfirst($row['departamento']));?></p>
@@ -257,8 +213,8 @@ input[type=checkbox] {
 	position: absolute;
 	width: 16px;
 	height: 16px;
-	left: 3px;
-	top: 3px;
+	left: 2px;
+	top: 2px;
         background:white;
         /*
 	background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);

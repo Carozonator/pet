@@ -6,14 +6,14 @@
                 <img style="width:100px;" src="<?php echo MEDIA.'facebook_share.png'; ?>"/>
              </a>
         </h2>
-        <div style="float:right;max-height:400px;width:<?php echo (count($foto)>=4?'300':'150'); ?>px;overflow:auto;">
-        <?php foreach($foto as $f){ ?>
-            <div class="img_box_small">
-                <a href="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>" data-lightbox="roadtrip" >
-                    <img alt="<?php echo $data['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
-                </a>
-            </div>
-        <?php } ?>
+        <div class="publication_thumbs" style="width:<?php echo (count($foto)>=4?'300':'150'); ?>px;">
+            <?php foreach($foto as $f){ ?>
+                <div class="img_box_small">
+                    <a href="<?php echo MEDIA.'upload/'.$f['usuario'].'/'.$f['name']; ?>" data-lightbox="roadtrip" >
+                        <img alt="<?php echo $data['nombre_original'];?>" src="<?php echo MEDIA.'upload/'.$f['usuario'].'/thumb_'.$f['name']; ?>">
+                    </a>
+                </div>
+            <?php } ?>
         </div>
         <div style="padding-top:20px;min-height:300px;">
             <div class="img_box_xl" style="margin-right:20px;">

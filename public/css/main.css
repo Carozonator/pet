@@ -1230,6 +1230,7 @@ input[type="submit"]:active{
 
 #top_banner{
     height:70px;
+    z-index:30000;
 }
 
 
@@ -1448,3 +1449,4 @@ ol, ul{
 .form-group div{
     box-sizing:border-box;
 }
+

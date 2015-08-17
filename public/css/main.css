@@ -403,7 +403,7 @@ input[type="submit"]:active{
     box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
     padding:5px 0px;
     float:right;
-    z-index:10;
+    z-index:5000;
     color:#e209c9;
 }
 .wrapper-dropdown-5 {
@@ -745,19 +745,14 @@ input[type="submit"]:active{
 }
 .main-content_container.message_container{
     margin:30px auto;
-    width:500px;
+    max-width:500px;
 }
 .main-content_container.message_container.text_only{
     color:#C807B1;
     font-size:22px;
     text-align:center;
 }
-@media screen and (max-width: 480px) {
-    .main-content_container.message_container{
-        margin:30px auto;
-        width:100%;
-    }
-}
+
 
 
 

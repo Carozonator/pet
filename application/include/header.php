@@ -82,7 +82,11 @@
 <body>
     
     
-    <div id="dl-menu" class="dl-menuwrapper">
+    
+    
+    
+    <div class="container_12" id="top_banner">
+        <div id="dl-menu" class="dl-menuwrapper">
 	<button class="dl-trigger">Open Menu</button>
 	<ul class="dl-menu">
         <?php 
@@ -113,9 +117,6 @@
     
         </ul>
     </div><!-- /dl-menuwrapper -->
-    
-    
-    <div class="container_12" id="top_banner">
        <a class="logo" href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
         <div class="wrapper-dropdown-5 user_controls" style="">
                     <?php if(!isset($_SESSION['user'])) { ?>

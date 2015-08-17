@@ -20,27 +20,29 @@
             }
     ?>
         <li style="position:relative;border:1px solid lightgrey;border-radius:5px;margin:10px;padding:10px 10px 5px 10px;">
-            <div style="width:100px;height:100px" class="thumb">
-                <a title="<?php echo $row->titulo;?>" href="/<?php echo $key;?>/<?php echo $row->id;?>">
-                    <?php 
-                    if(empty($row->foto_name)){
-                        $src = "/public/vendor/dropzone/images/spritemap.jpg";
-                    }else{
-                        $src = MEDIA.'upload/'.$row->usuario.'/thumb_'.$row->foto_name;
-                    }
-                    ?>
-                    <img alt="<?php echo $row->nombre_original;?>" src="<?php echo $src; ?>" style="width:100%;height:100%;" >
-                </a>
+            <div style="float:left">
+                <div style="width:100px;height:100px" class="thumb">
+                    <a title="<?php echo $row->titulo;?>" href="/<?php echo $key;?>/<?php echo $row->id;?>">
+                        <?php 
+                        if(empty($row->foto_name)){
+                            $src = "/public/vendor/dropzone/images/spritemap.jpg";
+                        }else{
+                            $src = MEDIA.'upload/'.$row->usuario.'/thumb_'.$row->foto_name;
+                        }
+                        ?>
+                        <img alt="<?php echo $row->nombre_original;?>" src="<?php echo $src; ?>" style="width:100%;height:100%;" >
+                    </a>
+                </div>
+                <div style="margin:10px;display:inline-block;vertical-align:top;font-size:15px;">
+                    <span style="font-size:16px;font-weight:bold"><?php echo $row->titulo;?></span><br/>
+                    <span style="font-size:14px;font-weight:bold">
+                        <?php 
+                        echo monedaPercio($row->moneda,$row->precio);
+                        ?>
+                    </span>
+                </div>
             </div>
-            <div style="margin:10px;display:inline-block;position:absolute;top:0px;font-size:15px;">
-                <span style="font-size:16px;font-weight:bold"><?php echo $row->titulo;?></span><br/>
-                <span style="font-size:14px;font-weight:bold">
-                    <?php 
-                    echo monedaPercio($row->moneda,$row->precio);
-                    ?>
-                </span>
-            </div>
-            <div style="position:absolute;right:5px;top:10px;">
+            <div style="float:right;">
                 <!--<button style="margin-left:10px;height:25px;"><i class="icon-wrench"></i></button>-->
                 
                 <form style="display:inline;" method="POST" action="/publicar/modify/">
@@ -66,6 +68,7 @@
                     </select>
                 </form>
             </div>
+            <div style="clear: both"></div>
         </li>
         <?php }
         }

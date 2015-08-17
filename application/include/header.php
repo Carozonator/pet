@@ -45,25 +45,6 @@
     <script src=""></script>
     <script type="text/javascript">
         
-        
-        
-         function openLoginBoxContainer(event,elem){
-             event.stopPropagation();
-         }
-         function openLoginBox(event,elem){
-             event.stopPropagation();
-             if($('.wrapper-dropdown-5').hasClass('active')){
-                 $('.dropdown').hide();
-                 $('.wrapper-dropdown-5').removeClass('active');
-                 return;
-             }
-                
-                var parent = $(elem).parent();
-                $('.dropdown').hide();
-                $(parent).find('.dropdown').show();
-                $('.wrapper-dropdown-5').addClass('active');
-            }
-         
             $(document).ready(function(){
                 
                     $( '#dl-menu' ).dlmenu({
@@ -73,7 +54,7 @@
                     Publicar.user_logged_in = <?php echo (isset($_SESSION['user'])?'true':'false'); ?>;
                     var visit=getCookie("FIRST_VISIT");
                     
-                    //Register.popup();
+                    
                     if(Publicar.user_logged_in==false && window.location.pathname=='/' && typeof visit=='undefined'){
                         Register.popup();
                     }
@@ -84,6 +65,12 @@
                         document.cookie="FIRST_VISIT=true; expires="+expire;
                     }
                     
+                    $('.account-dropdown-menu').click(function(event) {
+                        event.stopPropagation();
+                        $('.dropdown').hide();
+                        $(this).find('.dropdown').show();
+                        $('.wrapper-dropdown-5').addClass('active');
+                    });
                     $('body').click(function(){
                         $('.wrapper-dropdown-5').removeClass('active');
                     })
@@ -132,8 +119,7 @@
        <a class="logo" href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
         <div class="wrapper-dropdown-5 user_controls" style="">
                     <?php if(!isset($_SESSION['user'])) { ?>
-                    <div id="dd" onclick="openLoginBoxContainer(event,this)" class="account-dropdown-menu" tabindex="1">
-                        <a href="#" onclick="openLoginBox(event,this)"><i class="icon-user"></i> Ingresa</a>
+                    <div id="dd" style="" class="account-dropdown-menu" tabindex="1"><i class="icon-user"></i> Ingresa
                         <ul style=""class="dropdown">
                             <form style="margin-top:10px;" method="POST" action="/account/login/">
                                 <input type="hidden" name="action" value="login"/>
@@ -151,8 +137,7 @@
                             <li><a href="/account/recupere_contrasena/"></i>Has olvidado tu contrase&ntilde;a?</a></li>
                         </ul>
                     </div>
-                    <div style="" class="account-dropdown-menu" tabindex="1">
-                        <a href="#" onclick="Register.open();return false;"><i class="icon-pencil"></i> Registrarme</a>
+                    <div style="" class="account-dropdown-menu" tabindex="1"><a href="#" onclick="Register.open();return false;"><i class="icon-pencil"></i> Registrarme</a>
                     </div>
 
                     <?php }else{ ?>

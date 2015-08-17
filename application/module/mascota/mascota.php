@@ -1,10 +1,13 @@
 <div class="main-content_container single_publication" style="padding:30px">
     <div style="margin-bottom: 30px;position:relative;">
         <h2 style="border-bottom: 1px solid grey;padding:5px;color:#9C2490">
+            <span style="float:left;margin-right:10px;">
             <?php echo $data['titulo'];?>
-             <a style="float:right;margin-top:-3px;" href="http://www.facebook.com/sharer.php?u=<?php echo DOMAIN.'/'.$controller.'/'.$data['id'];?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            </span>
+             <a class="facebook_share" href="http://www.facebook.com/sharer.php?u=<?php echo DOMAIN.'/'.$controller.'/'.$data['id'];?>" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                 <img style="width:100px;" src="<?php echo MEDIA.'facebook_share.png'; ?>"/>
              </a>
+            <div style="clear:both"></div>
         </h2>
         <div class="publication_thumbs" style="width:<?php echo (count($foto)>=4?'300':'150'); ?>px;">
             <?php foreach($foto as $f){ ?>

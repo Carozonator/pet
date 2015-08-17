@@ -260,7 +260,7 @@ ul.dropdown > li{
 
 .f_navigation{
     min-height: 195px;
-    padding: 58px 0;
+    padding: 58px 0px 0px 0px;
     border-top: 1px solid #e0e0e0;
     border-bottom: 0px solid #e0e0e0;
     background: url(/media/bg_footer_black.gif) no-repeat center top;
@@ -1283,7 +1283,10 @@ input[type="submit"]:active{
     max-height:400px;
     overflow:auto;
 }
-
+.facebook_share{
+    float:right;
+    margin-top:-3px;
+}
 
 
 
@@ -1400,6 +1403,9 @@ input[type="submit"]:active{
     }
     .publication_thumbs .img_box_small{
         float:left;
+    }
+    .facebook_share{
+        float:none;
     }
     
     

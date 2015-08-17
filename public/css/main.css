@@ -865,7 +865,6 @@ input[type="submit"]:active{
 }
 
 .articulo_container{
-    width:420px;
     display:inline-block;
     border:1px solid lightgrey; 
     -webkit-border-radius: 5px 5px 5px 5px;

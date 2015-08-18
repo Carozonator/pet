@@ -105,6 +105,9 @@ class AccountController extends Controller{
                 if(isset($_SESSION['referrer'])){
                     $s = $_SESSION['referrer'];
                     unset($_SESSION['referrer']);
+                    if(strcmp($s, '/account/login')===0){
+                        $s = '/';
+                    }
                     header('Location: '.$s);
                 }else{
                     header('Location: '.$_SERVER['HTTP_REFERER']);

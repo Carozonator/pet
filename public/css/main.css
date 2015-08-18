@@ -1375,6 +1375,7 @@ input[type="submit"]:active{
     #top_banner{
         background:white;
         border-bottom:1px solid #dedede;
+        height:55px;
     }
     .dl-menuwrapper{
         display:block;

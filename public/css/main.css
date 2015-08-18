@@ -1370,9 +1370,11 @@ input[type="submit"]:active{
     /*navs*/
     #top{
         display:none;
+        
     }
     #top_banner{
         background:white;
+        border-bottom:1px solid #dedede;
     }
     .dl-menuwrapper{
         display:block;

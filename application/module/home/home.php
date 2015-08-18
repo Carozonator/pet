@@ -70,9 +70,6 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
             echo '</div>';
         }
         ?>
-        
-        
-        
         <div u="thumbnavigator" class="sliderb-T" style="position: absolute; bottom: 0px; left: 0px; height:45px; width:984px;">
             <div style="filter: alpha(opacity=40); opacity:0.4; position: absolute; display: block;
                 background-color: #000000; top: 0px; left: 0px; width: 100%; height: 100%;">
@@ -83,11 +80,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                     <div u="thumbnailtemplate" style="font-family: verdana; font-weight: normal; POSITION: absolute; WIDTH: 100%; HEIGHT: 100%; TOP: 0; LEFT: 0; color:#fff; line-height: 45px; font-size:20px; padding-left:10px;"></div>
                 </div>
             </div>
-            
         </div>
-        
-        
-        
         
         
         

@@ -1290,7 +1290,7 @@ input[type="submit"]:active{
 .mobile_account.user_controls{
     display:none;
 }
-.logo{
+.logo img{
     width:200px;
     height:auto;
 }

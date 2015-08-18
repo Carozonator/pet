@@ -1372,7 +1372,7 @@ input[type="submit"]:active{
         display:none;
     }
     #top_banner{
-        
+        background:white;
     }
     .dl-menuwrapper{
         display:block;

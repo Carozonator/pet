@@ -48,6 +48,7 @@
                 <li onclick="UpdateUser.selectField(this,'document')"><div class="item_user_align">Documento</div><div class="item_user_align"><?php echo $user->document;?></div></li>
             </ul>
         </div>
+        <a href='/account/logout/'class="button">Cerrar Sesión</a>
     </div>
 </div>
 <div style="display:none" class="update_user">

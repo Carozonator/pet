@@ -118,6 +118,9 @@
         </ul>
     </div><!-- /dl-menuwrapper -->
        <a class="logo" href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
+       <div class="mobile_account user_controls">
+           <button class="button" onclick="window.location='<?php if(!isset($_SESSION['user'])) {echo '/account/login';}else{echo '/account/';} ?>'"><span class="glyphicon glyphicon-user"></span></button>
+       </div>
         <div class="wrapper-dropdown-5 user_controls" style="">
                     <?php if(!isset($_SESSION['user'])) { ?>
                     <div id="dd" style="" class="account-dropdown-menu" tabindex="1"><i class="icon-user"></i> Ingresa

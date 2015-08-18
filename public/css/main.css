@@ -349,6 +349,7 @@ input[type="submit"]:active{
     color:white;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
     cursor:default;
+    text-decoration: none;
 }
 .button {
     text-align: center;
@@ -1286,7 +1287,9 @@ input[type="submit"]:active{
     float:right;
     margin-top:-3px;
 }
-
+.mobile_account.user_controls{
+    display:none;
+}
 
 
 
@@ -1305,12 +1308,8 @@ input[type="submit"]:active{
     
     
     
-    .logo{
-        position:absolute;
-        left:50%;
-        margin-left:-100px;
-        top:30px;
-    }
+    
+    
     
     
     
@@ -1325,8 +1324,23 @@ input[type="submit"]:active{
     .dl-menuwrapper{
         display:block;
     }
-    
-    
+    .wrapper-dropdown-5.user_controls{
+        display:none;
+    }
+    .logo{
+        position:absolute;
+        left:50%;
+        margin-left:-100px;
+        top:0px;
+    }
+    .mobile_account.user_controls{
+        float:right;
+        display:block;
+    }
+    .mobile_account.user_controls button{
+        font-size:25px;
+        height:45px;
+    }
     
     
     

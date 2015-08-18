@@ -578,19 +578,19 @@ input[type="submit"]:active{
 }
 @media screen and (max-width: 1080px) {
     #slider1_container{
-        width: 384px; 
-        height: 180px;
+        width: 100%;
+        height: 200px;
     }
     .slider_inner{
-        width: 384px; 
-        height: 180px;
+        width: 100%;
+        height: 200px;
     }
     .sliderb-T{
         height:45px; 
-        width:384px;
+        width:100%;
     }
     .slider_prototype{
-        width:384px;
+        width:100%;
     }
     .container_12 .grid_12{
         float:none;

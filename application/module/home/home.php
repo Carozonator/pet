@@ -31,7 +31,9 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
         //_CaptionTransitions["transtion_name2"] =  "code2" ;
         //_CaptionTransitions["transtion_name3"] =  "code3" ;
         //_CaptionTransitions["transtion_name4"] =  "code4" ;
-        
+        var width = $(document).width();
+        $('#slider1_container').css('height',width*.55);
+        $('.slider_inner').css('height',width*.55);
         var options = { 
                 $AutoPlay: true,
                 $Duration:1000,

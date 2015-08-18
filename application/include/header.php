@@ -117,7 +117,7 @@
     
         </ul>
     </div><!-- /dl-menuwrapper -->
-       <a class="logo" href="/"><img src="<?php echo MEDIA; ?>logo.png" style="width:200px;height:auto;" alt=""></a>
+       <a class="logo" href="/"><img src="<?php echo MEDIA; ?>logo.png"></a>
        <div class="mobile_account user_controls">
            <button class="button" onclick="window.location='<?php if(!isset($_SESSION['user'])) {echo '/account/login';}else{echo '/account/';} ?>'"><span class="glyphicon glyphicon-user"></span></button>
        </div>

@@ -1290,7 +1290,10 @@ input[type="submit"]:active{
 .mobile_account.user_controls{
     display:none;
 }
-
+.logo{
+    width:200px;
+    height:auto;
+}
 
 
 
@@ -1330,15 +1333,18 @@ input[type="submit"]:active{
     .logo{
         position:absolute;
         left:50%;
-        margin-left:-100px;
+        margin-left:-75px;
         top:0px;
+    }
+    .logo img{
+        width:150px;
     }
     .mobile_account.user_controls{
         float:right;
         display:block;
     }
     .mobile_account.user_controls button{
-        font-size:25px;
+        font-size:23px;
         height:45px;
     }
     

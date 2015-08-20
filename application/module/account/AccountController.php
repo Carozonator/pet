@@ -18,7 +18,11 @@ class AccountController extends Controller{
     }
     
     
-    
+    function mobile(){
+        $this->view->setMessage("En este momento no es posible publicar desde tu mobile. <br/><br/>Por favor publique desde una computadora desktop.");
+        $this->view->render();
+        die;
+    }
     
     
     

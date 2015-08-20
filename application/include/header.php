@@ -54,6 +54,14 @@
                     Publicar.user_logged_in = <?php echo (isset($_SESSION['user'])?'true':'false'); ?>;
                     var visit=getCookie("FIRST_VISIT");
                     
+                    var path = window.location.pathname
+                    
+                    
+                    
+                    if(window.mobilecheck() && path.indexOf('publicar')>-1){
+                        window.location='/account/mobile/';
+                        return;
+                    }
                     
                     if((!window.mobilecheck()) && Publicar.user_logged_in==false && window.location.pathname=='/' && typeof visit=='undefined'){
                         Register.popup();

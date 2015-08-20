@@ -55,7 +55,7 @@
                     var visit=getCookie("FIRST_VISIT");
                     
                     
-                    if(Publicar.user_logged_in==false && window.location.pathname=='/' && typeof visit=='undefined'){
+                    if((!window.mobilecheck()) && Publicar.user_logged_in==false && window.location.pathname=='/' && typeof visit=='undefined'){
                         Register.popup();
                     }
                     

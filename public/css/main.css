@@ -920,6 +920,7 @@ input[type="submit"]:active{
     background: white; 
     padding:8px;
     margin:10px;
+    
 }
 .articulo .thumb {
     text-decoration: none; 
@@ -1345,7 +1346,12 @@ input[type="submit"]:active{
 }
 
 
-
+.articulo_ver_button{
+    text-align:right;position:absolute;bottom:10px;right:10px;
+}
+.articulo_text{
+        width:180px;
+}
 
 @media screen and (max-width: 1080px) {
     body{
@@ -1359,6 +1365,9 @@ input[type="submit"]:active{
         margin-top:20px;
         padding:0px;
     }
+    
+    
+    
     
     
     
@@ -1416,6 +1425,20 @@ input[type="submit"]:active{
     
     .destacado .destacado_title{
         
+    }
+    
+    .articulo_ver_button{
+        position:static;
+    }
+    .articulo_container{
+        text-align:center;
+    }
+    .articulo .articulo_container .thumb{
+        float:none;
+        margin:0px auto;
+    }
+    .articulo_text{
+        width:100%;
     }
     
     

@@ -204,7 +204,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                     <img onclick="window.location='/<?php echo $key;?>/<?php echo $r->id;?>'" alt="<?php echo $r->nombre_original;?>" style="width:100%;height:100%;cursor:pointer;" src="<?php echo MEDIA.'upload/'.$r->foto_usuario.'/thumb_'.$r->foto_name; ?>">
                                 </a>
                             </div>
-                            <div style="width:180px;overflow:hidden;">
+                            <div class="articulo_text" style="overflow:hidden;">
                                 <div class="title">
                                     <a href="/anuncio/<?php echo $r->id;?>">
                                         <?php echo htmlEncodeText($r->titulo); ?>
@@ -215,7 +215,7 @@ $carrusel = array(/*array('title'=>'','text'=>'Encuentrala de manera sensilla','
                                 </span>
                             </div>
                         </div>
-                            <span style="text-align:right;position:absolute;bottom:10px;right:10px;">
+                            <span class="articulo_ver_button">
                                 <button onclick="window.location='/<?php echo $key;?>/<?php echo $r->id;?>'" class="button">Ver m&aacute;s</button>
                             </span>
                     </div>
